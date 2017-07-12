@@ -8,51 +8,7 @@ $this->title = 'My Yii Application';
 
        <div class="">
 
-           <div class="col-md-2" style="padding-left: 0px; height: 100%">
 
-               <div class="profile-sidebar">
-                   <!-- SIDEBAR USERPIC -->
-                   <div class="profile-userpic">
-                       <img src="https://i.ytimg.com/vi/0Rs-XCrxUpY/maxresdefault.jpg" class="img-responsive" alt="">
-                   </div>
-                   <!-- END SIDEBAR USERPIC -->
-                   <!-- SIDEBAR USER TITLE -->
-                   <div class="profile-usertitle">
-                       <div class="profile-usertitle-name">
-                           Валера89
-                       </div>
-                       <div class="profile-usertitle-job">
-                           Нуб \ Донатер
-                       </div>
-                   </div>
-                   <!-- END SIDEBAR USER TITLE -->
-                   <!-- SIDEBAR BUTTONS -->
-                   <div class="profile-userbuttons">
-                       <button type="button" class="btn btn-success btn-sm">Мой профиль</button>
-                       <button type="button" class="btn btn-danger btn-sm">Выход</button>
-                   </div>
-                   <!-- END SIDEBAR BUTTONS -->
-               </div>
-                   <!-- SIDEBAR MENU -->
-                   <div class="sidebar-menu">
-                       <ul class="nav">
-                           <li class="active">
-                               <a href="#">menu1</a>
-                           </li>
-                           <li>
-                               <a href="#">menu2</a>
-                           </li>
-                           <li>
-                               <a href="#">menu3</a>
-                           </li>
-                           <li>
-                               <a href="#">menu4</a>
-                           </li>
-                       </ul>
-                   </div>
-                   <!-- END MENU -->
-
-           </div>
 
            <div class="col-md-10 index-video">
 
