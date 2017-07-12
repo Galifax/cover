@@ -1,25 +1,30 @@
+<?php 
+use yii\helpers\Url;
+use yii\helpers\Html;
+use yii\widgets\Pjax;
+use yii\widgets\ActiveForm;
+
+$this->title = $model->name;
+?>
 <div class="container-fluid">
 
     <div class="col-md-8">
 
         <div class="padding-30 nopadding">
-            <video width="100%" height="400px" controls="controls" poster="https://i.ytimg.com/vi/Q_9qCMlBQjY/maxresdefault.jpg">
-                <source src="video/duel.ogv" type='video/ogg; codecs="theora, vorbis"'>
-                <source src="video/duel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                <source src="video/duel.webm" type='video/webm; codecs="vp8, vorbis"'>
-                Тег video не поддерживается вашим браузером.
-                <a href="video/duel.mp4">Скачайте видео</a>.
-            </video>
+          <video src="/<?=$model->src?>" width="100%" height="400" controls="controls"></video>
+
          </div>
-
+         <form method="POST">
+             <input type="submit" name="like" value="like">
+         </form>
         <div class="about-video  background-gray" style="padding: 15px">
-
-            <h2>Name</h2>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt distinctio ducimus nisi optio placeat quo rerum sapiente voluptatum! Accusamus accusantium asperiores assumenda id nisi ratione. Consequuntur labore quisquam quo temporibus?</p>
-
+            <h1><?=$model->name?></h1>
+            <h2><p><?=$model->profile->nickname?></p></h2>
+            <p><?=$model->date?></p>
+            <p><?=$model->description?></p>
+            <p><i class="glyphicon glyphicon-eye-open"></i> <?=$model->view->views?></p>
+           
             <span class="vote plus" title="Нравится"><i class="fa fa-thumbs-up"></i></span>
-
         </div>
 
             <div class="comments padding-30 background-gray">
@@ -32,7 +37,7 @@
                         <div class="profile-sidebar">
                             <!-- SIDEBAR USERPIC -->
                             <div class="profile-userpic">
-                                <img src="https://i.ytimg.com/vi/0Rs-XCrxUpY/maxresdefault.jpg" class="img-responsive" alt="">
+                                <img src="" class="img-responsive" alt="">
                             </div>
                             <!-- END SIDEBAR USERPIC -->
                             <!-- SIDEBAR USER TITLE -->
@@ -69,7 +74,7 @@
                     <li class="media">
                         <div class="media-left">
                             <a href="#">
-                                <img class="media-object img-rounded img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr0up1MOJK4YMamnriIyJcJexH_l7BMCvK7v-Qrz8-pflAPiUC" alt="...">
+                                <img class="media-object img-rounded img1" src="" alt="...">
                             </a>
                         </div>
                         <div class="media-body">

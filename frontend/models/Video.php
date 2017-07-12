@@ -39,7 +39,7 @@ class Video extends \yii\db\ActiveRecord
             [['src'], 'string', 'max' => 55],
             [['name'], 'string', 'max' => 255],
             [['description'], 'string', 'max' => 1000],
-            [['profile_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['profile_id' => 'id']],
+           
         ];
     }
 
@@ -72,5 +72,15 @@ class Video extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'profile_id']);
+    }
+
+       public function getView()
+    {
+        return $this->hasOne(View::className(), ['video_id' => 'id']);
+    }
+
+      public function getLikes()
+    {
+        return $this->hasOne(Likes::className(), ['video_id' => 'id']);
     }
 }

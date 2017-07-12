@@ -7,6 +7,11 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use frontend\models\Video;
+use frontend\models\Profile;
+use frontend\models\View;
+use frontend\models\likes;
+
 
 /**
  * Site controller
@@ -69,9 +74,13 @@ class VideoController extends Controller
     {
         return $this->render('index');
     }
-    public function actionView()
+    public function actionView($id)
     {
-        return $this->render('view');
+        $view = View::findOne($id);
+        $view->views += 1;
+        $view->save();
+        $model = Video::find()->with('profile', 'view', 'likes')->where(['id' => $id])->one();
+        return $this->render('view', compact('model'));
     }
 
 }

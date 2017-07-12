@@ -1,5 +1,5 @@
 <?php
-
+use yii\helpers\Url;
 $this->title = 'My Yii Application';
 ?>
 <div class="body-content">

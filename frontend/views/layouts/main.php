@@ -50,7 +50,7 @@ AppAsset::register($this);
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form>
-                    <li><a href="">Войди в меня</a></li>
+                    <li><a href="">Войти</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
@@ -64,7 +64,7 @@ AppAsset::register($this);
                 <div class="profile-sidebar">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic">
-                        <img src="https://i.ytimg.com/vi/0Rs-XCrxUpY/maxresdefault.jpg" class="img-responsive" alt="">
+                        <img src="" alt="">
                     </div>
                     <!-- END SIDEBAR USERPIC -->
                     <!-- SIDEBAR USER TITLE -->
