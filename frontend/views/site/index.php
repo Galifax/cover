@@ -6,9 +6,9 @@ $this->title = 'My Yii Application';
 ?>
     <div class="body-content">
 
-       <div class="container-fluid">
+       <div class="">
 
-           <div class="col-md-2">
+           <div class="col-md-2" style="padding-left: 0px; height: 100%">
 
                    <div class="profile-sidebar">
                        <!-- SIDEBAR USERPIC -->
@@ -19,10 +19,10 @@ $this->title = 'My Yii Application';
                        <!-- SIDEBAR USER TITLE -->
                        <div class="profile-usertitle">
                            <div class="profile-usertitle-name">
-                               name
+                               Валера89
                            </div>
                            <div class="profile-usertitle-job">
-                               status
+                               Нуб \ Донатер
                            </div>
                        </div>
                        <!-- END SIDEBAR USER TITLE -->
@@ -32,50 +32,54 @@ $this->title = 'My Yii Application';
                            <button type="button" class="btn btn-danger btn-sm">Выход</button>
                        </div>
                        <!-- END SIDEBAR BUTTONS -->
-                       <!-- SIDEBAR MENU -->
-                       <div class="profile-usermenu">
-                           <ul class="nav">
-                               <li class="active">
-                                   <a href="#">menu1</a>
-                               </li>
-                               <li>
-                                   <a href="#">menu2</a>
-                               </li>
-                               <li>
-                                   <a href="#">menu3</a>
-                               </li>
-                               <li>
-                                   <a href="#">menu4</a>
-                               </li>
-                           </ul>
-                       </div>
-                       <!-- END MENU -->
                    </div>
-               </div>
+                   <!-- SIDEBAR MENU -->
+                   <div class="sidebar-menu">
+                       <ul class="nav">
+                           <li class="active">
+                               <a href="#">menu1</a>
+                           </li>
+                           <li>
+                               <a href="#">menu2</a>
+                           </li>
+                           <li>
+                               <a href="#">menu3</a>
+                           </li>
+                           <li>
+                               <a href="#">menu4</a>
+                           </li>
+                       </ul>
+                   </div>
+                   <!-- END MENU -->
+
+           </div>
 
            <div class="col-md-10 index-video">
-                <div class="video-blok">
-                    <h2>Топ видео</h2>
-                       <div class="col-md-4" >
-                           <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
-                           <a href="">link on video + video name</a>
-                           <p>name user</p>
-                           <p>prosmotreno | data dobavlenia</p>
-                       </div>
-                       <div class="col-md-4" >
-                           <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
-                           <a href="">link on video + video name</a>
-                           <p>name user</p>
-                           <p>prosmotreno | data dobavlenia</p>
-                       </div>
-                       <div class="col-md-4" >
-                           <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
-                           <a href="">link on video + video name</a>
-                           <p>name user</p>
-                           <p>prosmotreno | data dobavlenia</p>
-                       </div>
-                </div>
 
+               <div class="video-blok">
+
+                   <h2>Топ видео</h2>
+
+                       <div class="col-md-4" >
+                           <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
+                           <a href="">link on video + video name</a>
+                           <p>name user</p>
+                           <p>prosmotreno | data dobavlenia</p>
+                       </div>
+                       <div class="col-md-4" >
+                           <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
+                           <a href="">link on video + video name</a>
+                           <p>name user</p>
+                           <p>prosmotreno | data dobavlenia</p>
+                       </div>
+                       <div class="col-md-4" >
+                           <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
+                           <a href="">link on video + video name</a>
+                           <p>name user</p>
+                           <p>prosmotreno | data dobavlenia</p>
+                       </div>
+               </div>
+               
                <div class="video-blok">
                    <h2>Недавно загруженные</h2>
                    <div class="col-md-3" >
@@ -139,4 +143,4 @@ $this->title = 'My Yii Application';
        </div>
 
     </div>
-</div>
+<div class="clearfix"></div>

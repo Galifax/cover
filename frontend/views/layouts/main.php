@@ -28,7 +28,7 @@ AppAsset::register($this);
 <div class="wrap">
 
     <!-- Second navbar for sign in -->
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" style="margin-bottom: 0px">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -50,12 +50,6 @@ AppAsset::register($this);
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Works</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Contact</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
@@ -63,7 +57,7 @@ AppAsset::register($this);
 
 
 
-    <div class="container-fluid">
+    <div class="">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
