@@ -4,50 +4,139 @@
 
 $this->title = 'My Yii Application';
 ?>
-<div class="site-index">
-
-    <div class="jumbotron">
-        <h1>Разработка портала</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
     <div class="body-content">
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+       <div class="container-fluid">
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+           <div class="col-md-2">
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+                   <div class="profile-sidebar">
+                       <!-- SIDEBAR USERPIC -->
+                       <div class="profile-userpic">
+                           <img src="https://i.ytimg.com/vi/0Rs-XCrxUpY/maxresdefault.jpg" class="img-responsive" alt="">
+                       </div>
+                       <!-- END SIDEBAR USERPIC -->
+                       <!-- SIDEBAR USER TITLE -->
+                       <div class="profile-usertitle">
+                           <div class="profile-usertitle-name">
+                               name
+                           </div>
+                           <div class="profile-usertitle-job">
+                               status
+                           </div>
+                       </div>
+                       <!-- END SIDEBAR USER TITLE -->
+                       <!-- SIDEBAR BUTTONS -->
+                       <div class="profile-userbuttons">
+                           <button type="button" class="btn btn-success btn-sm">Мой профиль</button>
+                           <button type="button" class="btn btn-danger btn-sm">Выход</button>
+                       </div>
+                       <!-- END SIDEBAR BUTTONS -->
+                       <!-- SIDEBAR MENU -->
+                       <div class="profile-usermenu">
+                           <ul class="nav">
+                               <li class="active">
+                                   <a href="#">menu1</a>
+                               </li>
+                               <li>
+                                   <a href="#">menu2</a>
+                               </li>
+                               <li>
+                                   <a href="#">menu3</a>
+                               </li>
+                               <li>
+                                   <a href="#">menu4</a>
+                               </li>
+                           </ul>
+                       </div>
+                       <!-- END MENU -->
+                   </div>
+               </div>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+           <div class="col-md-10 index-video">
+                <div class="video-blok">
+                    <h2>Топ видео</h2>
+                       <div class="col-md-4" >
+                           <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
+                           <a href="">link on video + video name</a>
+                           <p>name user</p>
+                           <p>prosmotreno | data dobavlenia</p>
+                       </div>
+                       <div class="col-md-4" >
+                           <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
+                           <a href="">link on video + video name</a>
+                           <p>name user</p>
+                           <p>prosmotreno | data dobavlenia</p>
+                       </div>
+                       <div class="col-md-4" >
+                           <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
+                           <a href="">link on video + video name</a>
+                           <p>name user</p>
+                           <p>prosmotreno | data dobavlenia</p>
+                       </div>
+                </div>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+               <div class="video-blok">
+                   <h2>Недавно загруженные</h2>
+                   <div class="col-md-3" >
+                       <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
+                       <a href="">link on video + video name</a>
+                       <p>name user</p>
+                       <p>prosmotreno | data dobavlenia</p>
+                   </div>
+                   <div class="col-md-3" >
+                       <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
+                       <a href="">link on video + video name</a>
+                       <p>name user</p>
+                       <p>prosmotreno | data dobavlenia</p>
+                   </div>
+                   <div class="col-md-3" >
+                       <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
+                       <a href="">link on video + video name</a>
+                       <p>name user</p>
+                       <p>prosmotreno | data dobavlenia</p>
+                   </div>
+                   <div class="col-md-3" >
+                       <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
+                       <a href="">link on video + video name</a>
+                       <p>name user</p>
+                       <p>prosmotreno | data dobavlenia</p>
+                   </div>
+               </div>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+               <div class="video-blok">
+                   <h2>Топ просмотров</h2>
+                       <div class="col-md-3" >
+                           <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
+                           <a href="">link on video + video name</a>
+                           <p>name user</p>
+                           <p>prosmotreno | data dobavlenia</p>
+                       </div>
+                       <div class="col-md-3" >
+                           <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
+                           <a href="">link on video + video name</a>
+                           <p>name user</p>
+                           <p>prosmotreno | data dobavlenia</p>
+                       </div>
+                       <div class="col-md-3" >
+                           <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
+                           <a href="">link on video + video name</a>
+                           <p>name user</p>
+                           <p>prosmotreno | data dobavlenia</p>
+                       </div>
+                       <div class="col-md-3" >
+                           <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;padding: 10px">
+                           <a href="">link on video + video name</a>
+                           <p>name user</p>
+                           <p>prosmotreno | data dobavlenia</p>
+                       </div>
+               </div>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
+
+           </div>
+
+
+       </div>
 
     </div>
 </div>
