@@ -69,7 +69,7 @@ class Video extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getProfile0()
+    public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'profile_id']);
     }

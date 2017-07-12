@@ -74,7 +74,8 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $model = Video::find()->limit(3)->all();
-        return $this->render('index', compact('model'));
+        $recently = Video::find()->all();
+        return $this->render('index', compact('model', 'recently'));
     }
 
     /**
