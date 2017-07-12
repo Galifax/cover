@@ -10,29 +10,29 @@ $this->title = 'My Yii Application';
 
            <div class="col-md-2" style="padding-left: 0px; height: 100%">
 
-                   <div class="profile-sidebar">
-                       <!-- SIDEBAR USERPIC -->
-                       <div class="profile-userpic">
-                           <img src="https://i.ytimg.com/vi/0Rs-XCrxUpY/maxresdefault.jpg" class="img-responsive" alt="">
-                       </div>
-                       <!-- END SIDEBAR USERPIC -->
-                       <!-- SIDEBAR USER TITLE -->
-                       <div class="profile-usertitle">
-                           <div class="profile-usertitle-name">
-                               Валера89
-                           </div>
-                           <div class="profile-usertitle-job">
-                               Нуб \ Донатер
-                           </div>
-                       </div>
-                       <!-- END SIDEBAR USER TITLE -->
-                       <!-- SIDEBAR BUTTONS -->
-                       <div class="profile-userbuttons">
-                           <button type="button" class="btn btn-success btn-sm">Мой профиль</button>
-                           <button type="button" class="btn btn-danger btn-sm">Выход</button>
-                       </div>
-                       <!-- END SIDEBAR BUTTONS -->
+               <div class="profile-sidebar">
+                   <!-- SIDEBAR USERPIC -->
+                   <div class="profile-userpic">
+                       <img src="https://i.ytimg.com/vi/0Rs-XCrxUpY/maxresdefault.jpg" class="img-responsive" alt="">
                    </div>
+                   <!-- END SIDEBAR USERPIC -->
+                   <!-- SIDEBAR USER TITLE -->
+                   <div class="profile-usertitle">
+                       <div class="profile-usertitle-name">
+                           Валера89
+                       </div>
+                       <div class="profile-usertitle-job">
+                           Нуб \ Донатер
+                       </div>
+                   </div>
+                   <!-- END SIDEBAR USER TITLE -->
+                   <!-- SIDEBAR BUTTONS -->
+                   <div class="profile-userbuttons">
+                       <button type="button" class="btn btn-success btn-sm">Мой профиль</button>
+                       <button type="button" class="btn btn-danger btn-sm">Выход</button>
+                   </div>
+                   <!-- END SIDEBAR BUTTONS -->
+               </div>
                    <!-- SIDEBAR MENU -->
                    <div class="sidebar-menu">
                        <ul class="nav">
@@ -79,7 +79,7 @@ $this->title = 'My Yii Application';
                            <p>prosmotreno | data dobavlenia</p>
                        </div>
                </div>
-               
+
                <div class="video-blok">
                    <h2>Недавно загруженные</h2>
                    <div class="col-md-3" >

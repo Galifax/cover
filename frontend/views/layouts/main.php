@@ -50,6 +50,7 @@ AppAsset::register($this);
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form>
+                    <li><a href="">Войди в меня</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
