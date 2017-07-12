@@ -2,7 +2,7 @@
 
         <div class="row profile">
 
-            <div class="my-video">
+            <div class="my-video background-gray">
 
                 <div class="profile-content">
                     <div style="text-align: center">
@@ -15,7 +15,7 @@
                         </form>
                     </div>
 
-                    <div class="my-video-blok">
+                    <div class="my-video-blok ">
 
                         <h2>Мои видео</h2>
 

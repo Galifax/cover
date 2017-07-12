@@ -59,7 +59,7 @@ AppAsset::register($this);
 
 
     <div class="">
-            <div class="col-md-2" style="padding-left: 0px; height: 100%">
+            <div class="col-md-2" style="padding: 0px;">
 
                 <div class="profile-sidebar">
                     <!-- SIDEBAR USERPIC -->
@@ -90,7 +90,7 @@ AppAsset::register($this);
                         <li class="active">
                             <a href="#">
                                 <i class="glyphicon glyphicon-home"></i>
-                                Мой профиль </a>
+                                Мои видео </a>
                         </li>
                         <li>
                             <a href="#">
