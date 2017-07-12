@@ -51,7 +51,7 @@
 
                     <div class="col-md-10">
 
-                         <textarea class="form-control" style="height: 75px"></textarea>
+                         <textarea class="form-control" style="height: 100px"></textarea>
 
                         <p>
                             <button type="submit" class="btn btn-default">Отмена</button>
