@@ -64,4 +64,8 @@ class Profile extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
+    public function getVideo()
+    {
+        return $this->hasOne(Video::className(), ['profile_id' => 'id']);
+    }
 }
