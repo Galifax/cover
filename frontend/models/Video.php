@@ -86,6 +86,6 @@ class Video extends \yii\db\ActiveRecord
 
       public function getComments()
     {
-        return $this->hasOne(Comments::className(), ['video_id' => 'id']);
+        return $this->hasMany(Comments::className(), ['video_id' => 'id']);
     }
 }

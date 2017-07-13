@@ -11,7 +11,7 @@ use frontend\models\Video;
 use frontend\models\Profile;
 use frontend\models\View;
 use frontend\models\likes;
-
+use yii\db\ActiveQuery;
 
 /**
  * Site controller
@@ -79,7 +79,9 @@ class VideoController extends Controller
         $view = View::findOne($id);
         $view->views += 1;
         $view->save();
-        $model = Video::find()->with('profile', 'view', 'likes')->where(['id' => $id])->one();
+        $model = Video::find()->with('profile', 'view', 'likes', 'comments.profile')->with(['profile.comments'=>function(ActiveQuery $query){
+            $query->where(['parent_id' => 0]);
+        }])->where(['id' => $id])->one();
         return $this->render('view', compact('model'));
     }
 

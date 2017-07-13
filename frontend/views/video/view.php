@@ -71,6 +71,9 @@ $this->title = $model->name;
 
                 <ul class="media-list">
                     <!-- Комментарий (уровень 1) -->
+                    <?php
+                        foreach($model->comments as $comments): 
+                    ?>
                     <li class="media">
                         <div class="media-left">
                             <a href="#">
@@ -79,12 +82,12 @@ $this->title = $model->name;
                         </div>
                         <div class="media-body">
                             <div class="media-heading">
-                                <div class="author">Дима</div>
+                                <div class="author"><?= $comments->profile->nickname?></div>
                                 <div class="metadata">
-                                    <span class="date">16 ноября 2015, 13:43</span>
+                                    <span class="date"><?= $comments->date?></span>
                                 </div>
                             </div>
-                            <div class="media-text text-justify">Lorem ipsum dolor sit amet. Blanditiis praesentium voluptatum deleniti atque. Autem vel illum, qui blanditiis praesentium voluptatum deleniti atque corrupti. Dolor repellendus cum soluta nobis. Corporis suscipit laboriosam, nisi ut enim. Debitis aut perferendis doloribus asperiores repellat. sint, obcaecati cupiditate non numquam eius. Itaque earum rerum facilis. Similique sunt in ea commodi. Dolor repellendus numquam eius modi. Quam nihil molestiae consequatur, vel illum, qui ratione voluptatem accusantium doloremque.</div>
+                            <div class="media-text text-justify"><?= $comments->content?></div>
                             <div class="footer-comment">
 
         <span class="vote plus" title="Нравится">
@@ -101,9 +104,10 @@ $this->title = $model->name;
          <a href="#" class="reply">ответить</a>
         </span>
                             </div>
-
+                    </li>
+                        <?php endforeach; ?>
                             <!-- Вложенный медиа-компонент (уровень 2) -->
-                            <div class="media">
+                            <!-- <div class="media">
                                 <div class="media-left">
                                     <a href="#">
                                         <img class="media-object img-rounded img1" src="http://cdn.newsapi.com.au/image/v1/5f0545ecda27bbf03078d36b8b721f6e" alt="">
@@ -133,79 +137,11 @@ $this->title = $model->name;
             </span>
                                     </div>
                                 </div>
-                            </div>
+                            </div>  -->
                             <!-- Конец вложенного комментария (уровень 2) -->
 
                             <!-- Ещё один вложенный медиа-компонент (уровень 2) -->
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#">
-                                        <img class="media-object img-rounded img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNX-xxZ3amxzP0p9Yc7hCDZnw-bWtjyVk4WSHmKB-L0d2ORPGb" alt="">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <div class="media-heading">
-                                        <div class="author">Сергей</div>
-                                        <div class="metadata">
-                                            <span class="date">20 ноября 2015, 17:45</span>
-                                        </div>
-                                    </div>
-                                    <div class="media-text text-justify">Ex ea voluptate velit esse, quam nihil impedit, quo minus id quod. Totam rem aperiam eaque ipsa, quae ab illo. Minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid. Iste natus error sit voluptatem. Sunt, explicabo deleniti atque corrupti, quos dolores et expedita.</div>
-                                    <div class="footer-comment">
-            <span class="vote plus" title="Нравится">
-              <i class="fa fa-thumbs-up"></i>
-            </span>
-                                        <span class="rating">
-              +1
-            </span>
-
-                                        <span class="devide">
-              |
-            </span>
-                                        <span class="comment-reply">
-              <a href="#" class="reply">ответить</a>
-            </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Конец ещё одного вложенного комментария (уровень 2) -->
-
-                        </div>
-                    </li>
-                    <!-- Конец комментария (уровень 1) -->
-
-                    <!-- Комментарий (уровень 1) -->
-                    <li class="media">
-                        <div class="media-left">
-                            <a href="#">
-                                <img class="media-object img-rounded img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKqonfAYoCimbErSsS8nLSRsViLjtQ8RRxLYFhbp7504TiBnYe" alt="">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <div class="media-heading">
-                                <div class="author">Иван</div>
-                                <div class="metadata">
-                                    <span class="date">Вчера в 17:34</span>
-                                </div>
-                            </div>
-                            <div class="media-text text-justify">Eum iure reprehenderit, qui dolorem eum fugiat. Sint et expedita distinctio velit. Architecto beatae vitae dicta sunt, explicabo unde omnis. Qui aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto. Nemo enim ipsam voluptatem quia. Eos, qui ratione voluptatem sequi nesciunt, neque porro. A sapiente delectus, ut enim ipsam voluptatem, quia non recusandae architecto beatae.</div>
-                            <div class="footer-comment">
-        <span class="vote plus" title="Нравится">
-          <i class="fa fa-thumbs-up"></i>
-        </span>
-                                <span class="rating">
-          +2
-        </span>
-
-                                <span class="devide">
-          |
-        </span>
-                                <span class="comment-reply">
-          <a href="#" class="reply">ответить</a>
-        </span>
-                            </div>
-                        </div>
-                    </li>
+                            
                     <!-- Конец комментария (уровень 1) -->
 
                 </ul>

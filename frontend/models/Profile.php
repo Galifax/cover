@@ -71,6 +71,6 @@ class Profile extends \yii\db\ActiveRecord
 
     public function getComments()
     {
-        return $this->hasOne(Comments::className(), ['provile_id' => 'id']);
+        return $this->hasOne(Comments::className(), ['profile_id' => 'id']);
     }
 }
