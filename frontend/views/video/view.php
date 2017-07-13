@@ -6,19 +6,18 @@ use yii\widgets\ActiveForm;
 
 $this->title = $model->name;
 ?>
-<div class="container-fluid">
+<div class="container-fluid nopadding background-gray "   style=" padding: 60;margin-right: 60px;margin-left: 60px" >
 
-    <div class="col-md-8">
+    <div class="col-md-8 padding-30 " style="margin: 0px" >
 
-        <div class="padding-30 nopadding">
-          <video src="/<?=$model->src?>" width="100%" height="400" controls="controls"></video>
-
+        <div class=" ">
+          <video src="/<?=$model->src?>" width="100%" height="100%" controls="controls"></video>
          </div>
-         <form method="POST">
-             <input type="submit" name="like" value="like">
-         </form>
-        <div class="about-video  background-gray" style="padding: 15px">
-            <h1><?=$model->name?></h1>
+<!--         <form method="POST">-->
+<!--             <input type="submit" name="like" value="like">-->
+<!--         </form>-->
+        <div class="about-video " style="padding-top: -15px">
+            <h1 style="margin: 0px"><?=$model->name?></h1>
             <h2><p><?=$model->profile->nickname?></p></h2>
             <p><?=$model->date?></p>
             <p><?=$model->description?></p>
@@ -27,13 +26,12 @@ $this->title = $model->name;
             <span class="vote plus" title="Нравится"><i class="fa fa-thumbs-up"></i></span>
         </div>
 
-            <div class="comments padding-30 background-gray">
+            <div class="comments  background-gray padding-30" ">
 
-                <h4>Оставить комментарий</h4>
+                <h4 style="margin: 0px" ">Оставить комментарий</h4>
 
                 <div class="clearfix">
-                    <div class="col-md-2">
-
+                    <div class="col-md-2" >
                         <div class="profile-sidebar">
                             <!-- SIDEBAR USERPIC -->
                             <div class="profile-userpic">
@@ -54,7 +52,7 @@ $this->title = $model->name;
 
                     </div>
 
-                    <div class="col-md-10">
+                    <div class="col-md-10 ">
 
                          <textarea class="form-control" style="height: 100px"></textarea>
 
@@ -157,8 +155,8 @@ $this->title = $model->name;
         </div>
 
 
-    <div class="col-md-4 background-gray padding-30">
-        <div class="padding-30"></div>
+    <div class="col-md-4 padding-30" style="margin: 0px">
+        <div class=" background-gray">
             <div class="clearfix" >
                 <div class="col-md-6 nopadding">
                   <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;">
@@ -209,6 +207,77 @@ $this->title = $model->name;
                     <p>prosmotreno | data dobavlenia</p>
                 </div>
             </div>
+    <div class="clearfix" >
+        <div class="col-md-6 nopadding">
+            <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;">
+        </div>
+        <div class="col-md-6 ">
+            <a href="">link on video + video name</a>
+            <p>name user</p>
+            <p>prosmotreno | data dobavlenia</p>
+        </div>
+    </div>
+    <div class="clearfix" >
+        <div class="col-md-6 nopadding">
+            <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;">
+        </div>
+        <div class="col-md-6 ">
+            <a href="">link on video + video name</a>
+            <p>name user</p>
+            <p>prosmotreno | data dobavlenia</p>
+        </div>
+    </div>
+    <div class="clearfix" >
+        <div class="col-md-6 nopadding">
+            <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;">
+        </div>
+        <div class="col-md-6 ">
+            <a href="">link on video + video name</a>
+            <p>name user</p>
+            <p>prosmotreno | data dobavlenia</p>
+        </div>
+    </div>
+    <div class="clearfix" >
+        <div class="col-md-6 nopadding">
+            <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;">
+        </div>
+        <div class="col-md-6 ">
+            <a href="">link on video + video name</a>
+            <p>name user</p>
+            <p>prosmotreno | data dobavlenia</p>
+        </div>
+    </div>
+            <div class="clearfix" >
+                <div class="col-md-6 nopadding">
+                    <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;">
+                </div>
+                <div class="col-md-6 ">
+                    <a href="">link on video + video name</a>
+                    <p>name user</p>
+                    <p>prosmotreno | data dobavlenia</p>
+                </div>
+            </div>
+            <div class="clearfix" >
+                <div class="col-md-6 nopadding">
+                    <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;">
+                </div>
+                <div class="col-md-6 ">
+                    <a href="">link on video + video name</a>
+                    <p>name user</p>
+                    <p>prosmotreno | data dobavlenia</p>
+                </div>
+            </div>
+            <div class="clearfix" >
+                <div class="col-md-6 nopadding">
+                    <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;">
+                </div>
+                <div class="col-md-6 ">
+                    <a href="">link on video + video name</a>
+                    <p>name user</p>
+                    <p>prosmotreno | data dobavlenia</p>
+                </div>
+            </div>
+            
 
     </div>
 

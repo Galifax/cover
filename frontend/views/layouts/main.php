@@ -158,7 +158,7 @@ AppAsset::register($this);
 
         <div class="clearfix" style="background-color: white"></div>
 
-        <div class="col-md-12 container-fluid" style="background-color: #f99500">
+        <div class="container-fluid nopadding background-gray "   style=" padding: 60;margin-right: 60px;margin-left: 60px; margin-bottom: 60px" >
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>

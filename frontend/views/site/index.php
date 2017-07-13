@@ -2,14 +2,12 @@
 use yii\helpers\Url;
 $this->title = 'My Yii Application';
 ?>
-<div class="body-content" style="padding-right: 60px;padding-left: 60px">
-
-        <div class="index-video ">
+<div class="container-fluid nopadding background-gray "   style=";margin-right: 15px;margin-left: 15px" >
 
             <div class="video-blok row bg-img-1">
                 <h2 class="index-h2">Топ видео</h2>
                 <?php foreach($model as $video):?>
-                    <div class="col-md-4 ">
+                    <div class="col-md-3 ">
                         <?=$this->render('../_video', compact('video'));?>
                     </div>
                 <?php endforeach;?>
@@ -20,7 +18,7 @@ $this->title = 'My Yii Application';
             <div class="video-blok row  bg-img-1" >
                 <h2 class="index-h2" >Недавно загруженные</h2>
                 <?php foreach($recently as $video):?>
-                    <div class="col-md-3 " >
+                    <div class="col-md-2 " >
                         <?=$this->render('../_video', compact('video'));?>
                     </div>
                 <?php endforeach;?>
@@ -31,15 +29,11 @@ $this->title = 'My Yii Application';
             <div class="video-blok row  bg-img-1">
                 <h2 class="index-h2">Топ просмотров</h2>
                 <?php foreach($recently as $video):?>
-                    <div class="col-md-3" >
+                    <div class="col-md-2" >
                         <?=$this->render('../_video', compact('video'));?>
                     </div>
                 <?php endforeach;?>
             </div>
-
-
-            
-        </div>
 
 </div>
 
