@@ -95,6 +95,8 @@ a.desc:after {
     margin: 0 0 15px 0;
 }
 
+
+
 .padding-30{margin-top: 30px; padding: 10px}
 
 .background-gray{background-color: #F8F8F8}
@@ -103,7 +105,12 @@ a.desc:after {
 
 .nopadding{padding: 0;}
 
-.index-h2{border-radius: 35px 35px 35px 35px;}
+.index-h2{padding-left: 25px;}
+
+.bg-img-1{background-image: url("../img/img-bg-1.jpg");
+    background-size: 100% 100%;
+
+    }
 
 /* align the logout "link" (button in form) of the navbar */
 /*navbar*/
