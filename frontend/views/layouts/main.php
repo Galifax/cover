@@ -25,7 +25,7 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<div class="wrap">
+<div class="wrap" style="padding-bottom: 0px">
 
     <!-- Second navbar for sign in -->
     <nav class="navbar navbar-default" style="margin-bottom: 0px">
@@ -59,7 +59,7 @@ AppAsset::register($this);
 
 
     <div class="">
-            <div class="col-md-2" style="padding: 0px;">
+            <div class="col-md-2 background-gray" style="padding: 0px;">
 
                 <div class="profile-sidebar">
                     <!-- SIDEBAR USERPIC -->
