@@ -68,4 +68,9 @@ class Profile extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Video::className(), ['profile_id' => 'id']);
     }
+
+    public function getComments()
+    {
+        return $this->hasOne(Comments::className(), ['provile_id' => 'id']);
+    }
 }

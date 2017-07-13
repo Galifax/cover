@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Час створення: Лип 12 2017 р., 22:59
+-- Час створення: Лип 13 2017 р., 12:23
 -- Версія сервера: 5.7.16
 -- Версія PHP: 7.1.0
 
@@ -19,6 +19,21 @@ SET time_zone = "+00:00";
 --
 -- База даних: `video`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблиці `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
+  `parent_id` int(11) NOT NULL,
+  `video_id` int(11) NOT NULL,
+  `profile_id` int(11) NOT NULL,
+  `content` varchar(1000) NOT NULL,
+  `date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -148,13 +163,22 @@ CREATE TABLE `view` (
 --
 
 INSERT INTO `view` (`id`, `video_id`, `views`) VALUES
-(1, 1, 74),
-(2, 3, 9),
-(3, 3, 10);
+(1, 1, 96),
+(2, 3, 10),
+(3, 3, 17);
 
 --
 -- Індекси збережених таблиць
 --
+
+--
+-- Індекси таблиці `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `video_id` (`video_id`),
+  ADD KEY `profile_id` (`profile_id`),
+  ADD KEY `parent_id` (`parent_id`);
 
 --
 -- Індекси таблиці `likes`
@@ -206,6 +230,11 @@ ALTER TABLE `view`
 --
 
 --
+-- AUTO_INCREMENT для таблиці `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT для таблиці `likes`
 --
 ALTER TABLE `likes`
@@ -233,6 +262,14 @@ ALTER TABLE `view`
 --
 -- Обмеження зовнішнього ключа збережених таблиць
 --
+
+--
+-- Обмеження зовнішнього ключа таблиці `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `comments` (`id`),
+  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`video_id`) REFERENCES `video` (`id`),
+  ADD CONSTRAINT `comments_ibfk_3` FOREIGN KEY (`profile_id`) REFERENCES `profile` (`id`);
 
 --
 -- Обмеження зовнішнього ключа таблиці `likes`
