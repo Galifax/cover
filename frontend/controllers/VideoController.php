@@ -77,12 +77,12 @@ class VideoController extends Controller
     public function actionView($id)
     {
         
-        $model = Video::find($id)->with('profile.videos', 'comments.comments.profile')->with(['comments' => function (ActiveQuery $query){
+        $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'view', 'comments.comments.profile', 'likes', 'comments' => function (ActiveQuery $query){
                 $query->where(['parent_id' => 0])->with('profile');
             }])->one();
        
         // echo "<pre>";
-        // print_r($model->comments);
+        // print_r($model->likes);
         // echo "</pre>";
         return $this->render('view', compact('model'));
     }

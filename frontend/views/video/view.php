@@ -12,29 +12,79 @@ $this->title = $model->name;
         <div class=" ">
           <video src="/<?=$model->src?>" width="100%" height="100%" controls="controls"></video>
          </div>
-<!--         <form method="POST">-->
-<!--             <input type="submit" name="like" value="like">-->
-<!--         </form>-->
+
         <div class="about-video " style="padding-top: -15px">
             <h1 style="margin: 0px"></h1>
             <h2><p><?=$model->name?></p></h2>
 
             <p><?=$model->profile->nickname?></p>
             <p><?=$model->date?></p>
-           
-            <span class="vote plus" title="Нравится"><i class="fa fa-thumbs-up"></i></span>
+            <p>Просмотры <?=$model->view->views?></p>
+            <span class="vote plus" title="Нравится"><i class="fa fa-thumbs-up"></i> <?=count($model->likes)?></span>
         </div>
     <h2>Комментарии</h2>
-    <ul>
+    <style type="text/css">
+        .comments li{
+            list-style-type: none;
+        }
+    </style>
+    <ul class="comments">
            <?php foreach($model->comments as $com):?>
-                <li><?=$com->profile->nickname?> <?=$com->content?> <?=$com->date?></li>
-                <ul>
+            <li>
+                       <div class="media">
+                                  <div class="media-left">
+                                      <a href="#">
+                                          <img class="media-object img-rounded img1" src="http://cdn.newsapi.com.au/image/v1/5f0545ecda27bbf03078d36b8b721f6e" alt="">
+                                      </a>
+                                  </div>
+                                  <div class="media-body">
+                                      <div class="media-heading">
+                                         <div class="author"><?=$com->profile->nickname?></div>
+                                          <div class="metadata">
+                                           <span class="date"><?=$com->date?></span>
+                                          </div>
+                                      </div>
+                                   <div class="media-text text-justify"><?=$com->content?></div>
+                                    <div class="footer-comment">
+                                      <span class="vote plus" title="Нравится">
+                                        <i class="fa fa-thumbs-up"></i>
+                                      </span>
+                                      </div>
+                                  </div>
+                            </div>  
+                         
+                    </li>                <ul>
                     <?php foreach($com->comments as $comments):?>
-                        <li><?=$comments->profile->nickname?> <?=$comments->content?> <?=$comments->date?></li>
-                    <?php endforeach;?>
+                        <li>
+                       <div class="media">
+                                  <div class="media-left">
+                                      <a href="#">
+                                          <img class="media-object img-rounded img1" src="http://cdn.newsapi.com.au/image/v1/5f0545ecda27bbf03078d36b8b721f6e" alt="">
+                                      </a>
+                                  </div>
+                                  <div class="media-body">
+                                      <div class="media-heading">
+                                         <div class="author"><?=$comments->profile->nickname?></div>
+                                          <div class="metadata">
+                                            <span class="date"><?=$comments->date?></span>
+                                          </div>
+                                      </div>
+                            
+                                   <div class="media-text text-justify"><?=$comments->content?></div>
+                                      <div class="footer-comment">
+                                          <span class="vote plus" title="Нравится">
+                                            <i class="fa fa-thumbs-up"></i>
+                                          </span>
+                                      </div>
+                                  </div>
+                            </div>  
+                         
+                    </li>                    
+                <?php endforeach;?>
                 </ul>
            <?php endforeach;?>
     </ul>
+
     </div>
 
 
