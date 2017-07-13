@@ -105,9 +105,11 @@ $this->title = $model->name;
         </span>
                             </div>
                     </li>
-                        <?php endforeach; ?>
-                            <!-- Вложенный медиа-компонент (уровень 2) -->
-                            <!-- <div class="media">
+                     <!-- Вложенный медиа-компонент (уровень 2) -->
+                     <ul>
+                     <?php foreach($comments->comments as $com):?>
+                     <li>
+                            <div class="media">
                                 <div class="media-left">
                                     <a href="#">
                                         <img class="media-object img-rounded img1" src="http://cdn.newsapi.com.au/image/v1/5f0545ecda27bbf03078d36b8b721f6e" alt="">
@@ -115,12 +117,12 @@ $this->title = $model->name;
                                 </div>
                                 <div class="media-body">
                                     <div class="media-heading">
-                                        <div class="author">Пётр</div>
+                                        <div class="author"><?=$com->profile->nickname?></div>
                                         <div class="metadata">
-                                            <span class="date">19 ноября 2015, 10:28</span>
+                                            <span class="date"><?=$com->date?></span>
                                         </div>
                                     </div>
-                                    <div class="media-text text-justify">Dolor sit, amet, consectetur, adipisci velit. Aperiam eaque ipsa, quae. Amet, consectetur, adipisci velit, sed quia consequuntur magni dolores. Ab illo inventore veritatis et quasi architecto. Quisquam est, omnis voluptas nulla. Obcaecati cupiditate non numquam eius modi tempora. Corporis suscipit laboriosam, nisi ut labore et aut reiciendis.</div>
+                                    <div class="media-text text-justify"><?=$com->content?></div>
                                     <div class="footer-comment">
             <span class="vote plus" title="Нравится">
               <i class="fa fa-thumbs-up"></i>
@@ -137,13 +139,17 @@ $this->title = $model->name;
             </span>
                                     </div>
                                 </div>
-                            </div>  -->
+                            </div> 
                             <!-- Конец вложенного комментария (уровень 2) -->
 
                             <!-- Ещё один вложенный медиа-компонент (уровень 2) -->
                             
                     <!-- Конец комментария (уровень 1) -->
-
+                    </li>
+                <?php endforeach;?>
+                    </ul>
+                        <?php endforeach; ?>
+                           
                 </ul>
 
             </div>
