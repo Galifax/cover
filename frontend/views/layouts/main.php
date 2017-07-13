@@ -25,10 +25,10 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<div class="wrap" style="padding-bottom: 0px">
+<div class="wrap" style="padding-bottom: 0px; background-color: #f99500 ">
 
     <!-- Second navbar for sign in -->
-    <nav class="navbar navbar-default" style="margin-bottom: 0px">
+    <nav class="navbar navbar-default" style="margin-bottom: 60px">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -59,14 +59,19 @@ AppAsset::register($this);
 
 
     <div class="">
-            <div class="col-md-2 background-gray" style="padding: 0px;">
+            <div class="container-fluid background-gray" style="margin-left: 60px;margin-right: 60px;">
 
-                <div class="profile-sidebar">
+                <div class="profile-sidebar col-md-2">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic">
-                        <img src="" alt="">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPmJvUzzdHlQyir_4qt2L1EiKju-YHbgtq8_Q12evXA3p1yKK" class="img-responsive"  alt="">
                     </div>
                     <!-- END SIDEBAR USERPIC -->
+
+                </div>
+                <!-- SIDEBAR MENU -->
+                <div id="proffile-menu" class="profile-usermenu col-md-3" >
+
                     <!-- SIDEBAR USER TITLE -->
                     <div class="profile-usertitle">
                         <div class="profile-usertitle-name">
@@ -78,14 +83,6 @@ AppAsset::register($this);
                     </div>
                     <!-- END SIDEBAR USER TITLE -->
                     <!-- SIDEBAR BUTTONS -->
-                    <div class="profile-userbuttons">
-                        <button type="button" class="btn btn-success btn-sm" data-toggle="collapse"  data-target="#proffile-menu">Мой профиль</button>
-                        <button type="button" class="btn btn-danger btn-sm">Выход</button>
-                    </div>
-                    <!-- END SIDEBAR BUTTONS -->
-                </div>
-                <!-- SIDEBAR MENU -->
-                <div id="proffile-menu" class="profile-usermenu collapse">
                     <ul class="nav">
                         <li class="active">
                             <a href="#">
@@ -103,16 +100,17 @@ AppAsset::register($this);
                                 Загрузить видео </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="glyphicon glyphicon-flag"></i>
-                                Помощь </a>
+                            <a href="#" target="_blank">
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                Выход</a>
                         </li>
                     </ul>
                 </div>
                 <!-- END MENU -->
                 <!-- index SIDEBAR MENU -->
-                <div class="sidebar-menu">
-                    <ul class="nav">
+                <div style="border-left: 1px solid black" class="sidebar-menu col-md-7">
+                    <h3 class="h-nav-music">Жанры музыки</h3>
+                    <ul class="nav col-md-4">
                         <li class="active">
                             <a href="#">menu1</a>
                         </li>
@@ -120,17 +118,47 @@ AppAsset::register($this);
                             <a href="#">menu2</a>
                         </li>
                         <li>
-                            <a href="#">menu3</a>
+                            <a href="#">menu2</a>
                         </li>
                         <li>
-                            <a href="#">menu4</a>
+                            <a href="#">menu2</a>
+                        </li>
+                    </ul>
+                    <ul class="nav  col-md-4">
+                        <li>
+                            <a href="#">menu1</a>
+                        </li>
+                        <li>
+                            <a href="#">menu2</a>
+                        </li>
+                        <li>
+                            <a href="#">menu2</a>
+                        </li>
+                        <li>
+                            <a href="#">menu2</a>
+                        </li>
+                    </ul>
+                    <ul class="nav  col-md-4">
+                        <li>
+                            <a href="#">menu1</a>
+                        </li>
+                        <li>
+                            <a href="#">menu2</a>
+                        </li>
+                        <li>
+                            <a href="#">menu2</a>
+                        </li>
+                        <li>
+                            <a href="#">menu2</a>
                         </li>
                     </ul>
                 </div>
                 <!--index END MENU -->
         </div>
 
-        <div class="col-md-10 container-fluid">
+        <div class="clearfix" style="background-color: white"></div>
+
+        <div class="col-md-12 container-fluid" style="background-color: #f99500">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
@@ -139,7 +167,6 @@ AppAsset::register($this);
         </div>
 </div>
 
-    <div class="clearfix"></div>
 
 <footer class="footer">
     <div class="container">
@@ -147,7 +174,7 @@ AppAsset::register($this);
 
 
 
-
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cum dicta et laboriosam voluptas! Asperiores, quam quia! Aspernatur consequuntur fuga ipsa nemo, nisi rerum veritatis! Delectus error rem saepe totam?</p>
 
 
 

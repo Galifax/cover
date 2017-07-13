@@ -2,7 +2,7 @@
 use yii\helpers\Url;
 $this->title = 'My Yii Application';
 ?>
-<div class="body-content container padding-30 ">
+<div class="body-content" style="padding-right: 60px;padding-left: 60px">
 
         <div class="index-video ">
 
