@@ -47,12 +47,14 @@ AppAsset::register($this);
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">Brand</a>
+                            <a class="navbar-brand" href="/" style="padding:0px  0px   0px 20px">
+                                <img src="/img/logo.png"style="height: 100%; width:100%">
+                            </a>
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="navbar-collapse-2">
-                            <div class="col-md-8 col-md-push-3">
+                            <div class="col-md-8 col-md-push-2">
                             <form class="navbar-form navbar-left">
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Найти видео" size="45">
@@ -95,12 +97,12 @@ AppAsset::register($this);
                                 Мой профиль </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="<?=Url::to(['profile/message'])?>">
                                 <i class="fa fa-cog" aria-hidden="true"></i>
-                                Настройки профиля </a>
+                                Сообщения (601)</a>
                         </li>
                         <li>
-                            <a href="#" target="_blank">
+                            <a href="<?=Url::to(['profile/upload'])?>" target="_blank">
                                 <i class="fa fa-upload" aria-hidden="true"></i>
                                 Загрузить видео </a>
                         </li>

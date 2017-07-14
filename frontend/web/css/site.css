@@ -76,6 +76,8 @@ a.desc:after {  content: "\e152";  }
 
 .my-video-video{border: solid 1px #CCCCCC; border-radius: 45px  0px 45px 0px; padding: 5px;margin:10px;width: 20%;float: left;overflow: hidden;}
 
+.profile-img{border: solid 1px #CCCCCC; border-radius: 45px  0px 45px 0px; padding: 5px;margin:10px;width:100%;overflow: hidden;}
+
 .h-nav-music{
     font-size: 26px;
     color:#6d6d6d ;
