@@ -73,10 +73,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $date = date('H:i:s');
-        $model = Video::find()->limit(3)->with('profile')->all();
-        $recently = Video::find()->all();
-        return $this->render('index', compact('model', 'recently', 'date'));
+        $model = Video::find()->limit(4)->with('profile')->all();
+        $recently = Video::find()->limit(6)->all();
+        return $this->render('index', compact('model', 'recently'));
     }
 
     /**
