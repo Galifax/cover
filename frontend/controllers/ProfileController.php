@@ -69,9 +69,9 @@ class ProfileController extends Controller
     {
         return $this->render('index');
     }
-     public function actionSettings()
+     public function actionMessage()
     {
-        return $this->render('settings');
+        return $this->render('message');
     }
      public function actionUpload()
     {

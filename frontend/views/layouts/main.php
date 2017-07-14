@@ -165,7 +165,7 @@ AppAsset::register($this);
 
         <div class="clearfix"></div>
 
-        <div class="container-fluid nopadding bg-img-3" style=" padding: 60;margin-right: 60px;margin-left: 60px; margin-bottom: 60px" >
+        <div class="container-fluid nopadding bg-img-3" style=" padding: 60;margin-right: 60px;margin-left: 60px; margin-bottom: 60px; min-height: 100vh" >
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
