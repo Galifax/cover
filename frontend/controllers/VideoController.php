@@ -76,13 +76,14 @@ class VideoController extends Controller
     }
     public function actionView($id)
     {
-        $view = View::findOne($id);
-        $view->views += 1;
-        $view->save();
-        $model = Video::find()->with('profile', 'view', 'likes', 'comments.profile', 'comments.comments', 'comments.comments.profile')->with(['comments' => 
-            function(ActiveQuery $query){
-                $query->where(['parent_id' => 0]);
-            }])->where(['id' => $id])->one();
+        
+        $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'view', 'comments.comments.profile', 'likes', 'comments' => function (ActiveQuery $query){
+                $query->where(['parent_id' => 0])->with('profile');
+            }])->one();
+       
+        // echo "<pre>";
+        // print_r($model->likes);
+        // echo "</pre>";
         return $this->render('view', compact('model'));
     }
 
