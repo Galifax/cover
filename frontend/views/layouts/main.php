@@ -10,6 +10,7 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 use yii\helpers\Url;
+use yii\widgets\Pjax;
 
 AppAsset::register($this);
 ?>
@@ -166,8 +167,11 @@ AppAsset::register($this);
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
+
             <?= Alert::widget() ?>
+            <?php Pjax::begin();?>
             <?= $content ?>
+            <?php Pjax::end();?>
         </div>
 </div>
 
