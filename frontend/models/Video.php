@@ -88,4 +88,9 @@ class Video extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Comments::className(), ['video_id' => 'id']);
     }
+
+     public function getFavorites()
+    {
+        return $this->hasMany(Favorites::className(), ['video_id' => 'id']);
+    }
 }

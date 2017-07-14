@@ -20,6 +20,12 @@ $this->title = $model->name;
             <p><?=$model->profile->nickname?></p>
             <p><?=$model->date?></p>
             <p>Просмотры <?=$model->view->views?></p>
+               <?php Pjax::begin(); ?>
+              <?= Html::beginForm(['video/view', 'id' => $id, 'favorites' => 'favorites'], 'post', ['data-pjax' => '', 'class' => 'form-inline']); ?>
+                <input type="submit" name="favorites">
+              <?= Html::endForm() ?>
+              <h3><?=count($model->favorites)?></h3>
+              <?php Pjax::end(); ?>
             <?php Pjax::begin(); ?>
               <?= Html::beginForm(['video/view', 'id' => $id, 'like' => 'like'], 'post', ['data-pjax' => '', 'class' => 'form-inline']); ?>
                 <input type="submit" name="like">

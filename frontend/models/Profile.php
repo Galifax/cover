@@ -79,4 +79,9 @@ class Profile extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Comments::className(), ['profile_id' => 'id']);
     }
+
+    public function getFavorites()
+    {
+        return $this->hasMany(Favorites::className(), ['profile_id' => 'id']);
+    }
 }

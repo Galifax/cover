@@ -11,6 +11,7 @@ use frontend\models\Video;
 use frontend\models\Profile;
 use frontend\models\View;
 use frontend\models\likes;
+use frontend\models\Favorites;
 use yii\db\ActiveQuery;
 
 /**
@@ -88,8 +89,22 @@ class VideoController extends Controller
             $likes->delete();
            }
         }
+
+        if(isset($_GET['favorites'])){
+        $favorites = Favorites::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->count();
+        if($favorites == 0){
+        $model1 = new Favorites();
+        $model1->profile_id = Yii::$app->user->identity->id;
+        $model1->video_id = $id;
+        $model1->save();
+           }else{
+            $favorites = Favorites::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->one();
+            $favorites->delete();
+           }
+        }
+
         
-        $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'view', 'comments.comments.profile', 'likes', 'comments' => function (ActiveQuery $query){
+        $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'favorites', 'view', 'comments.comments.profile', 'likes', 'comments' => function (ActiveQuery $query){
                 $query->where(['parent_id' => 0])->with('profile');
             }])->one();
        
