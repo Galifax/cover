@@ -9,7 +9,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
-
+use yii\widgets\Pjax;
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -165,8 +165,11 @@ AppAsset::register($this);
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
+
             <?= Alert::widget() ?>
+            <?php Pjax::begin();?>
             <?= $content ?>
+            <?php Pjax::end();?>
         </div>
 </div>
 
