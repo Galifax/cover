@@ -9,7 +9,9 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use yii\helpers\Url;
 use yii\widgets\Pjax;
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -88,18 +90,18 @@ AppAsset::register($this);
                     <!-- SIDEBAR BUTTONS -->
                     <ul class="nav">
                         <li class="active">
-                            <a href="#">
-                                <i class="glyphicon glyphicon-home"></i>
-                                Мои видео </a>
+                            <a href="<?=Url::to(['profile/index'])?>">
+                                <i class="glyphicon glyphicon-user"></i>
+                                Мой профиль </a>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="glyphicon glyphicon-user"></i>
+                                <i class="fa fa-cog" aria-hidden="true"></i>
                                 Настройки профиля </a>
                         </li>
                         <li>
                             <a href="#" target="_blank">
-                                <i class="glyphicon glyphicon-ok"></i>
+                                <i class="fa fa-upload" aria-hidden="true"></i>
                                 Загрузить видео </a>
                         </li>
                         <li>
