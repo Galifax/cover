@@ -13,7 +13,7 @@ $this->title = $model->name;
           <video src="/<?=$model->src?>" width="100%" height="100%" controls="controls"></video>
          </div>
 
-        <div class="about-video " style="padding-top: -15px">
+        <div class="about-video my-video-video" style="padding-top: -15px; width: 100%">
             <h1 style="margin: 0px"></h1>
             <h2><p><?=$model->name?></p></h2>
 
@@ -22,16 +22,16 @@ $this->title = $model->name;
             <p>Просмотры <?=$model->view->views?></p>
             <span class="vote plus" title="Нравится"><i class="fa fa-thumbs-up"></i> <?=count($model->likes)?></span>
         </div>
-    <h2>Комментарии</h2>
+    <h2 style="color: #3a2222">Комментарии</h2>
     <style type="text/css">
         .comments li{
             list-style-type: none;
         }
     </style>
-    <ul class="comments">
+    <ul class="comments my-video-video" style="width: 100%">
            <?php foreach($model->comments as $com):?>
             <li>
-                       <div class="media">
+                       <div class="media" style="margin-bottom: 5px; background-color: #6695C1">
                                   <div class="media-left">
                                       <a href="#">
                                           <img class="media-object img-rounded img1" src="http://cdn.newsapi.com.au/image/v1/5f0545ecda27bbf03078d36b8b721f6e" alt="">
@@ -56,8 +56,8 @@ $this->title = $model->name;
                     </li>                <ul>
                     <?php foreach($com->comments as $comments):?>
                         <li>
-                       <div class="media">
-                                  <div class="media-left">
+                       <div class="media " style="margin-bottom: 5px; background-color: #46ABA5">
+                                  <div class="media-left" >
                                       <a href="#">
                                           <img class="media-object img-rounded img1" src="http://cdn.newsapi.com.au/image/v1/5f0545ecda27bbf03078d36b8b721f6e" alt="">
                                       </a>
@@ -89,20 +89,21 @@ $this->title = $model->name;
 
 
     <div class="col-md-4 padding-30" style="margin: 0px">
-        <div class=" background-gray">
+        <div class=" ">
         <?php foreach($model->profile->videos as $video):?>
+
                 <div class="col-md-6 nopadding">
                   <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;">
                 </div>
-                <div class="col-md-6 ">
+                <div class="col-md-6">
                     <a href=""></a>
                     <p><?=$video->name?></p>
                     <p>prosmotreno | <?=$video->date?></p>
                 </div>
+
             <div class="clearfix"></div>
         <?php endforeach;?>
+        </div>
     </div>
-
-</div>
 
 </div>
