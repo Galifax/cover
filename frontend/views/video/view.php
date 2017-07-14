@@ -277,7 +277,7 @@ $this->title = $model->name;
                     <p>prosmotreno | data dobavlenia</p>
                 </div>
             </div>
-            
+
 
     </div>
 
