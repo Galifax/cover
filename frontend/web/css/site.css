@@ -62,6 +62,13 @@ a.desc:after {  content: "\e152";  }
     background-size: 50% 100%;
     background-repeat: repeat-x;  }
 
+.bg-img-2{background-image: url("../img/img-bg-2 (2).jpg");
+    background-size: 50% 50%;
+}
+.bg-img-3{background-image: url("../img/img-bg-2 (2).jpg");
+    background-size: 50% 20%;
+}
+
 .video-font{color: #f99500; font-size: 20px; font-weight: 800; text-decoration: none;
 
 }
@@ -82,10 +89,11 @@ a.desc:after {  content: "\e152";  }
 .color-1{background-color: #99DFD5}
 .color-2{background-color: #6695C1}
 .color-3{background-color: #46ABA5}
+.background-gray{background-color: #F8F8F8}
 
 /*Colors*/
 
-.background-gray{background-color: #F8F8F8}
+
 /*Other stiels*/
 
 
@@ -139,7 +147,7 @@ a.desc:after {  content: "\e152";  }
 
 /*sidebar menu*/
 
-.profile-content {  padding: 20px;  background: #fff;  min-height: 460px;  }
+
 /*sidebar index*/
 
 
@@ -167,8 +175,7 @@ a.desc:after {  content: "\e152";  }
 
 
 /* Profile Content */
-.profile-content {  padding: 20px;  background: #F8F8F8;  min-height: 460px;
-}
+
 /*PROFILE*/
 
 /*VIEW VIDEO*/
@@ -197,6 +204,10 @@ a.desc:after {  content: "\e152";  }
 .title-comments {  font-size: 1.4rem;  font-weight: bold;  line-height: 1.5rem;  color: rgba(0,0,0,.87);  margin-bottom: 1rem;  padding-bottom: .25rem;  border-bottom: 1px solid rgba(34,36,38,.15);
 }
 .media{padding: 10px}
+
+.my-comments{border: solid 1px #CCCCCC; border-radius: 45px  45px  45px 45px; padding: 5px;margin-bottom:10px;width: 99%;float: left;overflow: hidden;background-color:
+        #e7f7fc;}
+
 /*coments*/
 
 /*VIEW VIDEO*/

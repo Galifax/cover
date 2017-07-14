@@ -1,10 +1,10 @@
-    <div class="container-fluid">
+    <div class="container-fluid ">
 
         <div class="row profile">
 
-            <div class="my-video background-gray">
+            <div class="my-video ">
 
-                <div class="profile-content container-fluid">
+                <div class="profile-content container-fluid bg-img-3 ">
                     <div class="col-md-8 col-md-push-4 clearfix">
                         <form class="navbar-form navbar-left">
                             <div class="form-group">
