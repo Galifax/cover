@@ -3,7 +3,7 @@ use yii\helpers\Url;
 use yii\widgets\Pjax;
 $this->title = 'My Yii Application';
 ?>
-<div class="container-fluid nopadding background-gray "   style=";margin-right: 15px;margin-left: 15px" >
+<div class=""   style=";margin-right: 15px;margin-left: 15px" >
 
 
 
