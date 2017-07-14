@@ -5,7 +5,7 @@ use yii\widgets\Pjax;
 use yii\widgets\ActiveForm;
 $this->title = $model->name;
 ?>
-<div class="container-fluid nopadding bg-img-3 "   style=" padding: 60;margin-right: 60px;margin-left: 60px" >
+<div class="container-fluid nopadding "   style=" padding: 60;margin-right: 60px;margin-left: 60px;background-color: none" >
 
     <div class="col-md-8 padding-30 " style="margin: 0px" >
 

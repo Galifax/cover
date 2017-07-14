@@ -114,7 +114,7 @@ AppAsset::register($this);
                 <div style="border-left: 1px solid black" class="sidebar-menu col-md-7">
                     <h3 class="h-nav-music">Жанры музыки</h3>
                     <ul class="nav col-md-4">
-                        <li class="active">
+                        <li class="">
                             <a href="#">menu1</a>
                         </li>
                         <li>

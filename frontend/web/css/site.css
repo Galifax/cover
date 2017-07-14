@@ -112,13 +112,13 @@ a.desc:after {  content: "\e152";  }
 /* Profile sidebar */
 .profile-sidebar {  padding: 20px 0 10px 0;  background: #46ABA5;  }
 
-.profile-userpic img {  float: none;  margin: 0 auto;  width: 100%;  height: 100%;  -webkit-border-radius: 50% !important;  -moz-border-radius: 50% !important;  border-radius: 50% !important;  }
+.profile-userpic img {  float: none;  margin: 0 auto;  width: 75%;  height: 75%;  -webkit-border-radius: 50% !important;  -moz-border-radius: 50% !important;  border-radius: 50% !important;  }
 
 .profile-usertitle {  text-align: center;  margin-top: 0px;  }
 
-.profile-usertitle-name {  color: #96DCD4;  font-size: 28px;  font-weight: 600;  margin-bottom: 7px;  }
+.profile-usertitle-name {  color: white;  font-size: 28px;  font-weight: 600;  margin-bottom: 7px;  }
 
-.profile-usertitle-job {  text-transform: uppercase;  color: #96DCD4;  font-size: 12px;  font-weight: 600;  margin-bottom: 15px; border-bottom: 1px solid black; margin-left: 20px; margin-right: 20px  }
+.profile-usertitle-job {  text-transform: uppercase;  color: white;  font-size: 12px;  font-weight: 600;  margin-bottom: 15px; border-bottom: 1px solid black; margin-left: 20px; margin-right: 20px  }
 
 .profile-userbuttons {  text-align: center;  margin-top: 10px;  }
 
