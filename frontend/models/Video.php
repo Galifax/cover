@@ -81,7 +81,7 @@ class Video extends \yii\db\ActiveRecord
 
       public function getLikes()
     {
-        return $this->hasOne(Likes::className(), ['video_id' => 'id']);
+        return $this->hasMany(Likes::className(), ['video_id' => 'id']);
     }
 
       public function getComments()
