@@ -76,6 +76,18 @@ class VideoController extends Controller
     }
     public function actionView($id)
     {
+        if(isset($_GET['like'])){
+        $likes = Likes::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->count();
+        if($likes == 0){
+        $model1 = new Likes();
+        $model1->profile_id = Yii::$app->user->identity->id;
+        $model1->video_id = $id;
+        $model1->save();
+           }else{
+            $likes = Likes::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->one();
+            $likes->delete();
+           }
+        }
         
         $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'view', 'comments.comments.profile', 'likes', 'comments' => function (ActiveQuery $query){
                 $query->where(['parent_id' => 0])->with('profile');
@@ -84,7 +96,8 @@ class VideoController extends Controller
         // echo "<pre>";
         // print_r($model->likes);
         // echo "</pre>";
-        return $this->render('view', compact('model'));
+        return $this->render('view', compact('model', 'id'));
     }
+
 
 }

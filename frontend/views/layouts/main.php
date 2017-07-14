@@ -31,9 +31,6 @@ AppAsset::register($this);
 <!--    background-color: #f99500-->
     <!-- Second navbar for sign in -->
 
-
-
-
     <div class="">
             <div class="container-fluid color-3" style="margin-left: 60px;margin-right: 60px;margin-top: 60px">
 
@@ -169,30 +166,10 @@ AppAsset::register($this);
             ]) ?>
 
             <?= Alert::widget() ?>
-            <?php Pjax::begin();?>
             <?= $content ?>
-            <?php Pjax::end();?>
         </div>
 </div>
-
-
-<footer class="footer">
-    <div class="container">
-
-
-
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cum dicta et laboriosam voluptas! Asperiores, quam quia! Aspernatur consequuntur fuga ipsa nemo, nisi rerum veritatis! Delectus error rem saepe totam?</p>
-
-
-
-
-
-
-
-    </div>
-</footer>
-
+</div>
 <?php $this->endBody() ?>
 </body>
 </html>

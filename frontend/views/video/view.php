@@ -20,7 +20,16 @@ $this->title = $model->name;
             <p><?=$model->profile->nickname?></p>
             <p><?=$model->date?></p>
             <p>Просмотры <?=$model->view->views?></p>
-            <span class="vote plus" title="Нравится"><i class="fa fa-thumbs-up"></i> <?=count($model->likes)?></span>
+            <?php Pjax::begin(); ?>
+              <?= Html::beginForm(['video/view', 'id' => $id, 'like' => 'like'], 'post', ['data-pjax' => '', 'class' => 'form-inline']); ?>
+                <input type="submit" name="like">
+              <?= Html::endForm() ?>
+              <h3><?=count($model->likes)?></h3>
+              <?php Pjax::end(); ?>
+            <?php Pjax::begin();?>
+            <span class="vote plus" title="Нравится"><a href="<?=Url::to(['video/like', 'id' => $id])?>"><i class="fa fa-thumbs-up"></i></a> <?=count($model->likes)?></span>
+            <?php Pjax::end();?>
+
         </div>
     <h2 style="color: #3a2222">Комментарии</h2>
     <style type="text/css">
@@ -28,6 +37,8 @@ $this->title = $model->name;
             list-style-type: none;
         }
     </style>
+
+
     <ul class="comments my-video-video background-gray" style="width: 100%">
            <?php foreach($model->comments as $com):?>
             <li>
@@ -87,17 +98,15 @@ $this->title = $model->name;
 
     </div>
 
-
     <div class="col-md-4 padding-30 background-gray" style="margin: 0px">
         <div class=" ">
         <?php foreach($model->profile->videos as $video):?>
 
                 <div class="col-md-6 nopadding">
-                  <img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;">
+                 <a href="<?=Url::to(['video/view', 'id' => $video->id])?>"><img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;"></a>
                 </div>
                 <div class="col-md-6">
-                    <a href=""></a>
-                    <p><?=$video->name?></p>
+                    <a href="<?=Url::to(['video/view', 'id' => $video->id])?>"><p><?=$video->name?></p></a>
                     <p>prosmotreno | <?=$video->date?></p>
                 </div>
 
