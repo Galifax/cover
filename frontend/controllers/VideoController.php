@@ -111,7 +111,7 @@ class VideoController extends Controller
         // echo "<pre>";
         // print_r($model->likes);
         // echo "</pre>";
-        return $this->render('view', compact('model', 'id'));
+        return $this->render('view', compact('model', 'id', 'favorites', 'likes'));
     }
 
 

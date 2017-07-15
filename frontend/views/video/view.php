@@ -20,20 +20,21 @@ $this->title = $model->name;
             <p><?=$model->profile->nickname?></p>
             <p><?=$model->date?></p>
             <p>Просмотры <?=$model->view->views?></p>
-               <?php Pjax::begin(); ?>
-              <?= Html::beginForm(['video/view', 'id' => $id, 'favorites' => 'favorites'], 'post', ['data-pjax' => '', 'class' => 'form-inline']); ?>
-                <input type="submit" name="favorites">
-              <?= Html::endForm() ?>
-              <h3><?=count($model->favorites)?></h3>
-              <?php Pjax::end(); ?>
-            <?php Pjax::begin(); ?>
-              <?= Html::beginForm(['video/view', 'id' => $id, 'like' => 'like'], 'post', ['data-pjax' => '', 'class' => 'form-inline']); ?>
-                <input type="submit" name="like">
-              <?= Html::endForm() ?>
-              <h3><?=count($model->likes)?></h3>
-              <?php Pjax::end(); ?>
+      
+
             <?php Pjax::begin();?>
-            <span class="vote plus" title="Нравится"><a href="<?=Url::to(['video/like', 'id' => $id])?>"><i class="fa fa-thumbs-up"></i></a> <?=count($model->likes)?></span>
+            <?php if($favorites == 0):?>
+            <span class="vote plus" title="Нравится"><a href="<?=Url::to(['video/view', 'id' => $id, 'favorites' => 'favorites'])?>"><i class="fa fa-heart-o"></i></a></span>
+            <?php else:?>
+            <span class="vote plus" title="Нравится"><a href="<?=Url::to(['video/view', 'id' => $id, 'favorites' => 'favorites'])?>"><i class="fa fa-heart"></i></a></span>
+            <?php endif;?>
+            <?php Pjax::end();?>
+            <?php Pjax::begin();?>
+            <?php if($likes == 0):?>
+          <span class="vote plus" title="Нравится"><a href="<?=Url::to(['video/view', 'id' => $id, 'like' => 'like'])?>"><i class="fa fa-thumbs-up"></i></a> <?=count($model->likes)?></span>
+            <?php elseif($likes == 1):?>
+          <span class="vote plus" title="Нравится"><a href="<?=Url::to(['video/view', 'id' => $id, 'like' => 'like'])?>"><i class="fa fa-thumbs-o-up"></i></a> <?=count($model->likes)?></span>
+          <?php endif;?>
             <?php Pjax::end();?>
 
         </div>

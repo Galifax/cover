@@ -44,14 +44,12 @@ AppAsset::register($this);
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="/" style="padding:0px  0px   0px 20px">
-                                <img src="/img/logo.png"style="height: 100%; width:100%">
-                            </a>
+                            <a class="navbar-brand" href="#">Brand</a>
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="navbar-collapse-2">
-                            <div class="col-md-8 col-md-push-2">
+                            <div class="col-md-8 col-md-push-3">
                             <form class="navbar-form navbar-left">
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Найти видео" size="45">
@@ -94,12 +92,12 @@ AppAsset::register($this);
                                 Мой профиль </a>
                         </li>
                         <li>
-                            <a href="<?=Url::to(['profile/message'])?>">
+                            <a href="#">
                                 <i class="fa fa-cog" aria-hidden="true"></i>
-                                Сообщения (601)</a>
+                                Настройки профиля </a>
                         </li>
                         <li>
-                            <a href="<?=Url::to(['profile/upload'])?>" target="_blank">
+                            <a href="#" target="_blank">
                                 <i class="fa fa-upload" aria-hidden="true"></i>
                                 Загрузить видео </a>
                         </li>
@@ -162,7 +160,7 @@ AppAsset::register($this);
 
         <div class="clearfix"></div>
 
-        <div class="container-fluid nopadding bg-img-3" style=" padding: 60;margin-right: 60px;margin-left: 60px; margin-bottom: 60px; min-height: 100vh" >
+        <div class="container-fluid nopadding bg-img-3" style=" padding: 60;margin-right: 60px;margin-left: 60px; margin-bottom: 60px" >
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
