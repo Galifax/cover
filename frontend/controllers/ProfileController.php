@@ -54,10 +54,9 @@ class ProfileController extends Controller
      *
      * @return mixed
      */
-    public function actionIndex($id)
+    public function actionIndex()
     {
-        $model = Profile::find()->where(['user_id' => $id])->with('user')->one();
-        return $this->render('index', compact('model'));
+        return $this->render('index');
     }
      public function actionMessage()
     {
@@ -71,7 +70,15 @@ class ProfileController extends Controller
     public function actionMyVideos()
     {
         $model = Video::find()->where(['profile_id' =>Yii::$app->user->id])->all();
+     
         return $this->render('my-videos', compact('model'));
     }
+
+    public function actionFavorites()
+    {   
+        echo '123';
+        return $this->renderAjax('favorites');
+    }
+
 
 }

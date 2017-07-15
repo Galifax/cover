@@ -62,7 +62,7 @@ AppAsset::register($this);
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container -->
                 </nav><!-- /.navbar -->
-
+                <?php if(Yii::$app->user->id):?>
                 <div class="profile-sidebar col-md-2">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic">
@@ -109,7 +109,13 @@ AppAsset::register($this);
                     </ul>
                 </div>
                 <!-- END MENU -->
-                <!-- index SIDEBAR MENU -->
+                 <?php else:?>
+                 <div class="col-md-5">
+                 <a class="btn btn-default" href="<?=Url::to(['/site/login'])?>">Войти</a>
+                 <a class="btn btn-default" href="<?=Url::to(['/site/signup'])?>">Зарегистрироваться</a>
+                 </div>
+                 <?php endif;?>
+               <!-- index SIDEBAR MENU -->
                 <div style="border-left: 1px solid black" class="sidebar-menu col-md-7">
                     <h3 class="h-nav-music">Жанры музыки</h3>
                     <ul class="nav col-md-4">
