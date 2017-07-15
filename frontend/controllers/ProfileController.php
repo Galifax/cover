@@ -7,6 +7,9 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use frontend\models\Profile;
+use frontend\models\User;
+use frontend\models\Video;
 
 /**
  * Site controller
@@ -16,33 +19,19 @@ class ProfileController extends Controller
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout', 'signup'],
-                'rules' => [
-                    [
-                        'actions' => ['signup'],
-                        'allow' => true,
-                        'roles' => ['?'],
-                    ],
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
-        ];
-    }
+    public function behaviors(){
+   return [
+  'access' => [
+   'class' => AccessControl::className(),
+   'rules' => [
+    [
+    'allow' => true,
+    'roles' => ['@']
+    ]
+   ]
+  ]
+ ];
+ }
 
     /**
      * @inheritdoc
@@ -65,9 +54,10 @@ class ProfileController extends Controller
      *
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($id)
     {
-        return $this->render('index');
+        $model = Profile::find()->where(['user_id' => $id])->with('user')->one();
+        return $this->render('index', compact('model'));
     }
      public function actionMessage()
     {
@@ -76,6 +66,12 @@ class ProfileController extends Controller
      public function actionUpload()
     {
         return $this->render('upload');
+    }
+
+    public function actionMyVideos()
+    {
+        $model = Video::find()->where(['profile_id' =>Yii::$app->user->id])->all();
+        return $this->render('my-videos', compact('model'));
     }
 
 }
