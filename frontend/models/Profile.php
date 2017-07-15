@@ -33,10 +33,10 @@ class Profile extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'nickname', 'name', 'surname', 'age', 'date_registerated'], 'required'],
-            [['user_id', 'age'], 'integer'],
+            [['user_id', 'nickname', 'name', 'surname', 'avatar', 'age', 'favorites', 'about_myself', 'contact', 'date_registerated'], 'required'],
+            [['user_id', 'age', 'favorites'], 'integer'],
             [['date_registerated'], 'safe'],
-            [['nickname', 'name', 'surname'], 'string', 'max' => 255],
+            [['nickname', 'name', 'surname', 'avatar', 'about_myself', 'contact' ], 'string', 'max' => 255],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
@@ -52,7 +52,11 @@ class Profile extends \yii\db\ActiveRecord
             'nickname' => 'Nickname',
             'name' => 'Name',
             'surname' => 'Surname',
+            'avatar' => 'Avatar',
             'age' => 'Age',
+            'favorites' => 'Favorites',
+            'about_myself' => 'About_myself',
+            'contact' => 'Contact',
             'date_registerated' => 'Date Registerated',
         ];
     }
