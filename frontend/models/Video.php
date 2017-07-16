@@ -93,4 +93,5 @@ class Video extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Favorites::className(), ['video_id' => 'id']);
     }
+    
 }

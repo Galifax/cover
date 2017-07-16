@@ -11,6 +11,9 @@ use frontend\assets\AppAsset;
 use common\widgets\Alert;
 use yii\helpers\Url;
 use yii\widgets\Pjax;
+use frontend\models\Profile;
+use frontend\models\Category;
+
 
 AppAsset::register($this);
 ?>
@@ -23,6 +26,8 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <?php $profile = Profile::find()->where(['user_id' =>Yii::$app->user->id])->one();?>
+    <?php $category = Category::find()->where(['parent_id' =>0])->all();?>
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -66,8 +71,8 @@ AppAsset::register($this);
                 <div class="profile-sidebar col-md-2">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBPmJvUzzdHlQyir_4qt2L1EiKju-YHbgtq8_Q12evXA3p1yKK" class="img-responsive"  alt="">
-                    </div>
+                        <img class="profile-img" src="<?= $profile->avatar ?>">
+                        </div>
                     <!-- END SIDEBAR USERPIC -->
 
                 </div>
@@ -77,10 +82,7 @@ AppAsset::register($this);
                     <!-- SIDEBAR USER TITLE -->
                     <div class="profile-usertitle">
                         <div class="profile-usertitle-name">
-                            Валера89
-                        </div>
-                        <div class="profile-usertitle-job">
-                            Нуб \ Донатер
+                            <P><?= $profile->nickname ?></P>
                         </div>
                     </div>
                     <!-- END SIDEBAR USER TITLE -->
@@ -102,6 +104,16 @@ AppAsset::register($this);
                                 Загрузить видео </a>
                         </li>
                         <li>
+                            <a href="<?= Url::to(['my-videos'])?>" target="_blank">
+                                <i class="fa fa-upload" aria-hidden="true"></i>
+                                Мои видео </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class="fa fa-upload" aria-hidden="true"></i>
+                                Понравившиеся </a>
+                        </li>
+                        <li>
                             <a href="#" target="_blank">
                                 <i class="fa fa-sign-out" aria-hidden="true"></i>
                                 Выход</a>
@@ -118,48 +130,10 @@ AppAsset::register($this);
                <!-- index SIDEBAR MENU -->
                 <div style="border-left: 1px solid black" class="sidebar-menu col-md-7">
                     <h3 class="h-nav-music">Жанры музыки</h3>
-                    <ul class="nav col-md-4">
-                        <li class="">
-                            <a href="#">menu1</a>
-                        </li>
-                        <li>
-                            <a href="#">menu2</a>
-                        </li>
-                        <li>
-                            <a href="#">menu2</a>
-                        </li>
-                        <li>
-                            <a href="#">menu2</a>
-                        </li>
-                    </ul>
-                    <ul class="nav  col-md-4">
-                        <li>
-                            <a href="#">menu1</a>
-                        </li>
-                        <li>
-                            <a href="#">menu2</a>
-                        </li>
-                        <li>
-                            <a href="#">menu2</a>
-                        </li>
-                        <li>
-                            <a href="#">menu2</a>
-                        </li>
-                    </ul>
-                    <ul class="nav  col-md-4">
-                        <li>
-                            <a href="#">menu1</a>
-                        </li>
-                        <li>
-                            <a href="#">menu2</a>
-                        </li>
-                        <li>
-                            <a href="#">menu2</a>
-                        </li>
-                        <li>
-                            <a href="#">menu2</a>
-                        </li>
-                    </ul>
+                    <?php foreach($category as $cat): ?>
+                                       
+                    <a href='#' class='btn btn-default'><?= $cat->name?></a>
+                   <?php endforeach; ?>
                 </div>
                 <!--index END MENU -->
         </div>
