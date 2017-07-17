@@ -1,6 +1,8 @@
     <?php
     use yii\widgets\Pjax;
     use yii\helpers\Url;
+    use yii\helpers\Html;
+    use yii\widgets\ActiveForm;
     ?>
 
     <div class="container">
@@ -42,6 +44,26 @@
                         <h3>дата рождения</h3>
                         <p><?= $model->born ?></p>
                         <a href="#" class="">редактировать</a>
+                        <ul>
+                        <li>
+                            <?php Pjax::begin();?>
+    <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]]); ?>
+    <?= $form->field($model, 'user_id')->hiddenInput(['value' => Yii::$app->user->id])->label(false); ?>  
+    <?= $form->field($model, 'nickname')->textArea()->label('nickname')  ?>
+    <?= $form->field($model, 'name')->textArea()->label('name')  ?>
+    <?= $form->field($model, 'surname')->textArea()->label('Фамилия') ?>
+    <?= $form->field($model, 'floor')->textArea()->label('Пол')  ?>
+    <?= $form->field($model, 'born')->textArea()->label('Год призыва')  ?>
+    <?= $form->field($model, 'avatar')->textArea()->label('Аватар')  ?>
+    <?= $form->field($model, 'favorites')->textArea()->label('Любимая музыка') ?>
+    <?= $form->field($model, 'about_myself')->textArea()->label('О себе')  ?>
+    <?= $form->field($model, 'contact')->textArea()->label('Контакты')  ?>   
+    
+    <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
+    <?php ActiveForm::end(); ?>
+     <?php Pjax::end();?>
+                        </li>
+                        </ul>
                         <h3>Пол</h3>
                         <p><?= $model->floor ?></p>
                         <a href="#" class="">редактировать</a>

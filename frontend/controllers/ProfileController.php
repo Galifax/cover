@@ -57,8 +57,20 @@ class ProfileController extends Controller
     public function actionIndex()
     {
         $model = Profile::find()->where(['user_id' =>Yii::$app->user->id])->with('user')->one();
-        return $this->render('index', compact('model'));
+        if (isset($model)){
+            $model->load(Yii::$app->request->post());
+            $model->save();
+        }
+        else{
+            $model = new Profile();
+            $model->load(Yii::$app->request->post());
+            $model->save();
+
+        }
+       
+        return $this->render('index', compact('model' ));
     }
+    
      public function actionMessage()
     {
         return $this->render('message');
