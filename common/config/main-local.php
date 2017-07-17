@@ -3,11 +3,11 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=video',
+            'dsn' => 'mysql:host=127.0.0.1;dbname=video',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
-            'enableSchemaCache' => false,
+            'enableSchemaCache' => true,
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',

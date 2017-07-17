@@ -39,7 +39,6 @@ class Comments extends \yii\db\ActiveRecord
             [['parent_id', 'video_id', 'profile_id'], 'integer'],
             [['date'], 'safe'],
             [['content'], 'string', 'max' => 1000],
-            [['parent_id'], 'exist', 'skipOnError' => true, 'targetClass' => Comments::className(), 'targetAttribute' => ['parent_id' => 'id']],
             [['video_id'], 'exist', 'skipOnError' => true, 'targetClass' => Video::className(), 'targetAttribute' => ['video_id' => 'id']],
             [['profile_id'], 'exist', 'skipOnError' => true, 'targetClass' => Profile::className(), 'targetAttribute' => ['profile_id' => 'id']],
         ];

@@ -44,8 +44,15 @@ $this->title = $model->name;
             list-style-type: none;
         }
     </style>
-
-
+    <?php Pjax::begin();?>
+    <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]]); ?>
+    <?= $form->field($comments, 'parent_id')->hiddenInput(['value' => 0])->label(false); ?>
+    <?= $form->field($comments, 'video_id')->hiddenInput(['value' => $model->id])->label(false); ?>
+    <?= $form->field($comments, 'profile_id')->hiddenInput(['value' => Yii::$app->user->id])->label(false); ?>
+    <?= $form->field($comments, 'date')->hiddenInput(['value' => date('Y:m:d H:i:s')])->label(false);?>
+    <?= $form->field($comments, 'content')->textArea()->label('Текст') ?>
+    <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
+    <?php ActiveForm::end(); ?>
     <ul class="comments my-video-video background-gray" style="width: 100%">
            <?php foreach($model->comments as $com):?>
             <li>
@@ -70,8 +77,21 @@ $this->title = $model->name;
                                       </div>
                                   </div>
                             </div>  
-                         
-                    </li>                <ul>
+                          <ul>
+                            <li>
+                      <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]]); ?>
+                      <?= $form->field($comments, 'parent_id')->hiddenInput(['value' => $com->id])->label(false); ?>
+                      <?= $form->field($comments, 'video_id')->hiddenInput(['value' => $model->id])->label(false); ?>
+                      <?= $form->field($comments, 'profile_id')->hiddenInput(['value' => Yii::$app->user->id])->label(false); ?>
+                      <?= $form->field($comments, 'date')->hiddenInput(['value' => date('Y:m:d H:i:s')])->label(false);?>
+                      <?= $form->field($comments, 'content')->textArea()->label('Текст') ?>
+                      <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
+                      <?php ActiveForm::end(); ?>  
+                            </li>
+                          </ul>
+                    </li>              
+                   
+                    <ul>
                     <?php foreach($com->comments as $comments):?>
                         <li>
                        <div class="media my-comments">
@@ -97,12 +117,24 @@ $this->title = $model->name;
                                   </div>
                             </div>  
                          
-                    </li>                    
+                    </li>       
+                         <ul>
+                            <li>
+                      <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]]); ?>
+                      <?= $form->field($comments, 'parent_id')->hiddenInput(['value' => $com->id])->label(false); ?>
+                      <?= $form->field($comments, 'video_id')->hiddenInput(['value' => $model->id])->label(false); ?>
+                      <?= $form->field($comments, 'profile_id')->hiddenInput(['value' => Yii::$app->user->id])->label(false); ?>
+                      <?= $form->field($comments, 'date')->hiddenInput(['value' => date('Y:m:d H:i:s')])->label(false);?>
+                      <?= $form->field($comments, 'content')->textArea()->label('Текст') ?>
+                      <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
+                      <?php ActiveForm::end(); ?>  
+                            </li>
+                          </ul>             
                 <?php endforeach;?>
                 </ul>
            <?php endforeach;?>
     </ul>
-
+    <?php Pjax::end();?>
     </div>
 
     <div class="col-md-4 padding-30 background-gray" style="margin: 0px">

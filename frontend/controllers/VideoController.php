@@ -11,6 +11,7 @@ use frontend\models\Video;
 use frontend\models\Profile;
 use frontend\models\View;
 use frontend\models\likes;
+use frontend\models\Comments;
 use frontend\models\Favorites;
 use yii\db\ActiveQuery;
 
@@ -103,7 +104,12 @@ class VideoController extends Controller
            }
         }
 
-        
+
+        $comments = new Comments();
+        if($comments->load(Yii::$app->request->post()) && $comments->save()){
+
+        }
+
         $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'favorites', 'view', 'comments.comments.profile', 'likes', 'comments' => function (ActiveQuery $query){
                 $query->where(['parent_id' => 0])->with('profile');
             }])->one();
@@ -111,7 +117,7 @@ class VideoController extends Controller
         // echo "<pre>";
         // print_r($model->likes);
         // echo "</pre>";
-        return $this->render('view', compact('model', 'id', 'favorites', 'likes'));
+        return $this->render('view', compact('model', 'id', 'favorites', 'likes', 'comments'));
     }
 
 

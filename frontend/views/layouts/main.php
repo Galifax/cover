@@ -103,8 +103,8 @@ AppAsset::register($this);
                         </li>
                         <li>
                             <a href="#" target="_blank">
-                                <i class="fa fa-sign-out" aria-hidden="true"></i>
-                                Выход</a>
+                                <a href="<?=Url::to(['/site/logout'])?>"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                                Выход</a></a>
                         </li>
                     </ul>
                 </div>

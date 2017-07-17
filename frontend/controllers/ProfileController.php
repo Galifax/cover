@@ -77,8 +77,22 @@ class ProfileController extends Controller
     public function actionFavorites()
     {   
         echo '123';
-        return $this->renderAjax('favorites');
+        return $this->render('favorites');
     }
+    public function actionTest()
+    {   
+         if (!Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
 
+        $model = new LoginForm();
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            return $this->goBack();
+        } else {
+            return $this->render('test', [
+                'model' => $model,
+            ]);
+        }
+    }
 
 }
