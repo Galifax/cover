@@ -27,15 +27,16 @@ class Profile extends \yii\db\ActiveRecord
         return 'profile';
     }
 
+
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['user_id', 'nickname', 'name', 'surname', 'avatar', 'born', 'favorites', 'about_myself', 'contact', 'date_registerated', 'floor'], 'required'],
+
             [['user_id',], 'integer'],
-            [['date_registerated', 'born'],  'safe'],
+            [['born'],  'safe'],
             [['nickname', 'name', 'surname', 'avatar', 'about_myself', 'contact', 'favorites', 'floor' ], 'string', 'max' => 255],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
@@ -58,7 +59,6 @@ class Profile extends \yii\db\ActiveRecord
             'floor' => 'Floor',
             'about_myself' => 'About_myself',
             'contact' => 'Contact',
-            'date_registerated' => 'Date Registerated',
         ];
     }
 

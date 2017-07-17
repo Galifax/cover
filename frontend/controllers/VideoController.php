@@ -106,8 +106,8 @@ class VideoController extends Controller
 
 
         $comments = new Comments();
-        if($comments->load(Yii::$app->request->post()) && $comments->save()){
-
+        if($comments->load(Yii::$app->request->post())){
+        $comments->save();
         }
 
         $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'favorites', 'view', 'comments.comments.profile', 'likes', 'comments' => function (ActiveQuery $query){

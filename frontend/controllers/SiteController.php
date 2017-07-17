@@ -13,6 +13,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use frontend\models\Video;
+use frontend\models\Profile;
 
 /**
  * Site controller
@@ -155,6 +156,9 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
+                    $profile = new Profile();
+                    $profile->user_id = $user->id;
+                    $profile->save();
                     return $this->goHome();
                 }
             }

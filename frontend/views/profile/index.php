@@ -3,8 +3,8 @@
     use yii\helpers\Url;
     use yii\helpers\Html;
     use yii\widgets\ActiveForm;
+    use yii\jui\DatePicker;
     ?>
-
     <div class="container">
 
         <div class="row profile container">
@@ -47,14 +47,18 @@
                         <ul>
                         <li>
                             <?php Pjax::begin();?>
-    <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]]); ?>
+                           
+    <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true, 'enctype' => 'multipart/form-data']]); ?>
     <?= $form->field($model, 'user_id')->hiddenInput(['value' => Yii::$app->user->id])->label(false); ?>  
     <?= $form->field($model, 'nickname')->textArea()->label('nickname')  ?>
     <?= $form->field($model, 'name')->textArea()->label('name')  ?>
     <?= $form->field($model, 'surname')->textArea()->label('Фамилия') ?>
     <?= $form->field($model, 'floor')->textArea()->label('Пол')  ?>
     <?= $form->field($model, 'born')->textArea()->label('Год призыва')  ?>
-    <?= $form->field($model, 'avatar')->textArea()->label('Аватар')  ?>
+    <?= $form->field($model, 'avatar')->textInput() ?>
+    <?php if($model->avatar != null):?>
+    <img src="/uploads/<?=$model->avatar?>" width="100px;">
+    <?php endif;?>
     <?= $form->field($model, 'favorites')->textArea()->label('Любимая музыка') ?>
     <?= $form->field($model, 'about_myself')->textArea()->label('О себе')  ?>
     <?= $form->field($model, 'contact')->textArea()->label('Контакты')  ?>   

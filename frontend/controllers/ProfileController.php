@@ -10,6 +10,9 @@ use yii\filters\AccessControl;
 use frontend\models\Profile;
 use frontend\models\User;
 use frontend\models\Video;
+use frontend\models\UploadForm;
+use yii\web\UploadedFile;
+
 
 /**
  * Site controller
@@ -56,19 +59,11 @@ class ProfileController extends Controller
      */
     public function actionIndex()
     {
-        $model = Profile::find()->where(['user_id' =>Yii::$app->user->id])->with('user')->one();
-        if (isset($model)){
-            $model->load(Yii::$app->request->post());
-            $model->save();
-        }
-        else{
-            $model = new Profile();
-            $model->load(Yii::$app->request->post());
-            $model->save();
 
-        }
-       
-        return $this->render('index', compact('model' ));
+        $model = Profile::find()->where(['user_id' =>Yii::$app->user->id])->with('user')->one();
+        if($model->load(Yii::$app->request->post())) $model->save();
+  
+         return $this->render('index', compact('model'));
     }
     
      public function actionMessage()
