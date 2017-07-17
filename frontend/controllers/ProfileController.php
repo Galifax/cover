@@ -56,7 +56,8 @@ class ProfileController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = Profile::find()->where(['user_id' =>Yii::$app->user->id])->with('user')->one();
+        return $this->render('index', compact('model'));
     }
      public function actionMessage()
     {

@@ -6,13 +6,6 @@
     <div class="container">
 
         <div class="row profile container">
-            <?php Pjax::begin(); ?>
-            <ul class="nav nav-tabs ">
-                <li class="active"><a data-toggle="tab" href="#home">Мой профиль</a></li>
-                <li><a href="<?= Url::to(['my-videos'])?>">Мои видео</a></li>
-                <li><a data-toggle="tab" href="#menu2">Понравившиеся</a></li>
-
-            </ul>
 
             <div class="tab-content">
 
@@ -50,7 +43,7 @@
                         <p><?= $model->born ?></p>
                         <a href="#" class="">редактировать</a>
                         <h3>Пол</h3>
-                        <p>Деревянный</p>
+                        <p><?= $model->floor ?></p>
                         <a href="#" class="">редактировать</a>
                         <h3>любимая музыка</h3>
                         <P><?= $model->favorites ?></P>
@@ -210,6 +203,5 @@
                 </div>
 
             </div>
-            <?php Pjax::end(); ?>
         </div>
     </div>
