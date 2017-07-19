@@ -109,7 +109,7 @@ AppAsset::register($this);
                                 Мои видео </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank">
+                            <a href="<?= Url::to(['/profile/favorites'])?>">
                                 <i class="fa fa-upload" aria-hidden="true"></i>
                                 Понравившиеся </a>
                         </li>

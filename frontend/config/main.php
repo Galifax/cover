@@ -43,7 +43,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '/profile/<name:\w+>' => '/profile',
+               
                 '/video/view/<name:\w+>/<id:\w+>' => '/video/view',
             ],
         ],

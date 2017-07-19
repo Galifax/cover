@@ -12,6 +12,7 @@ use frontend\models\User;
 use frontend\models\Video;
 use frontend\models\UploadForm;
 use yii\web\UploadedFile;
+use yii\db\ActiveQuery;
 
 
 /**
@@ -84,7 +85,10 @@ class ProfileController extends Controller
 
     public function actionFavorites()
     {   
-        echo '123';
+        $model = Video::find()->join(['favorites'=>function(yii\db\ActiveQuery $query){
+            $query->where(['profile_id'=>Yii::$app->user->id]);
+        }])->all();
+        debug($model);
         return $this->render('favorites');
     }
     public function actionTest()
