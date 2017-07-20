@@ -37,23 +37,22 @@ AppAsset::register($this);
     <!-- Second navbar for sign in -->
 
     <div class="">
-            <div class="container-fluid color-3" style="margin-left: 60px;margin-right: 60px;margin-top: 60px">
+            <div class="container color-3" >
 
                 <nav class="navbar navbar-default" style="margin-top: 10px">
                     <div class="container">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
+
                             <a class="navbar-brand" href="#">Brand</a>
+                            <a type="button" class="btn btn-primary  collapsed" data-toggle="collapse" data-target="#d1">
+                                Профиль
+                            </a>
+                            <a type="button" class="btn btn-primary collapsed" data-toggle="collapse" data-target="#d2">
+                                Тег поиска
+                            </a>
                         </div>
 
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="navbar-collapse-2">
                             <div class="col-md-8 col-md-push-3">
                             <form class="navbar-form navbar-left">
                                     <div class="form-group">
@@ -64,83 +63,87 @@ AppAsset::register($this);
                                     Найти</button>
                             </form>
                         </div>
-                        </div><!-- /.navbar-collapse -->
+
                     </div><!-- /.container -->
                 </nav><!-- /.navbar -->
-                <?php if(Yii::$app->user->id):?>
-                <div class="profile-sidebar col-md-2">
-                    <!-- SIDEBAR USERPIC -->
-                    <div class="profile-userpic">
-                        <img class="profile-img" src="<?= $profile->avatar ?>">
+                <div id="d1" class="collapse col-md-4 bg-img-3" style="position: absolute; z-index: 100">
+                    <?php if(Yii::$app->user->id):?>
+                    <div class="profile-sidebar col-md-6">
+                        <!-- SIDEBAR USERPIC -->
+                        <div class="profile-userpic text-center">
+                            <img class="profile-img" src="<?= $profile->avatar ?>">
+                            </div>
+                        <!-- END SIDEBAR USERPIC -->
+                        <!-- SIDEBAR USER TITLE -->
+                        <div class="profile-usertitle">
+                            <div class="profile-usertitle-name">
+                                <P><?= $profile->nickname ?></P>
+                            </div>
                         </div>
-                    <!-- END SIDEBAR USERPIC -->
-
-                </div>
-                <!-- SIDEBAR MENU -->
-                <div id="proffile-menu" class="profile-usermenu col-md-3" >
-
-                    <!-- SIDEBAR USER TITLE -->
-                    <div class="profile-usertitle">
-                        <div class="profile-usertitle-name">
-                            <P><?= $profile->nickname ?></P>
-                        </div>
+                        <!-- END SIDEBAR USER TITLE -->
                     </div>
-                    <!-- END SIDEBAR USER TITLE -->
-                    <!-- SIDEBAR BUTTONS -->
-                    <ul class="nav">
-                        <li class="active">
-                            <a href="<?=Url::to(['/profile', 'name' => $profile->nickname ? $profile->nickname : $profile->user_id])?>">
-                                <i class="glyphicon glyphicon-user"></i>
-                                Мой профиль </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-cog" aria-hidden="true"></i>
-                                Настройки профиля </a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">
-                                <i class="fa fa-upload" aria-hidden="true"></i>
-                                Загрузить видео </a>
-                        </li>
-                        <li>
-                            <a href="<?= Url::to(['my-videos'])?>" target="_blank">
-                                <i class="fa fa-upload" aria-hidden="true"></i>
-                                Мои видео </a>
-                        </li>
-                        <li>
-                            <a href="<?= Url::to(['/profile/favorites'])?>">
-                                <i class="fa fa-upload" aria-hidden="true"></i>
-                                Понравившиеся </a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">
-                                <a href="<?=Url::to(['/site/logout'])?>"><i class="fa fa-sign-out" aria-hidden="true"></i>
-                                Выход</a></a>
-                        </li>
-                    </ul>
+                    <!-- SIDEBAR MENU -->
+                    <div id="proffile-menu" class="profile-usermenu col-md-6" >
+
+
+                        <!-- SIDEBAR BUTTONS -->
+                        <ul class="nav">
+                            <li class="active">
+                                <a href="<?=Url::to(['/profile', 'name' => $profile->nickname ? $profile->nickname : $profile->user_id])?>">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    Мой профиль </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                    Настройки профиля </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-upload" aria-hidden="true"></i>
+                                    Загрузить видео </a>
+                            </li>
+                            <li>
+                                <a href="<?= Url::to(['my-videos'])?>" target="_blank">
+                                    <i class="fa fa-upload" aria-hidden="true"></i>
+                                    Мои видео </a>
+                            </li>
+                            <li>
+                                <a href="<?= Url::to(['/profile/favorites'])?>">
+                                    <i class="fa fa-upload" aria-hidden="true"></i>
+                                    Понравившиеся </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <a href="<?=Url::to(['/site/logout'])?>"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                                    Выход</a></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END MENU -->
+                     <?php else:?>
+                     <div class="col-md-4">
+                     <a class="btn btn-default" href="<?=Url::to(['/site/login'])?>">Войти</a>
+                     <a class="btn btn-default" href="<?=Url::to(['/site/signup'])?>">Зарегистрироваться</a>
+                     </div>
+                     <?php endif;?>
+                   <!-- index SIDEBAR MENU -->
                 </div>
-                <!-- END MENU -->
-                 <?php else:?>
-                 <div class="col-md-5">
-                 <a class="btn btn-default" href="<?=Url::to(['/site/login'])?>">Войти</a>
-                 <a class="btn btn-default" href="<?=Url::to(['/site/signup'])?>">Зарегистрироваться</a>
-                 </div>
-                 <?php endif;?>
-               <!-- index SIDEBAR MENU -->
-                <div style="border-left: 1px solid black" class="sidebar-menu col-md-7">
-                    <h3 class="h-nav-music">Жанры музыки</h3>
-                    <?php foreach($category as $cat): ?>
-                                       
-                    <a href='#' class='btn btn-default'><?= $cat->name?></a>
-                   <?php endforeach; ?>
+                <div id="d2" class="collapse col-md-4 col-md-push-6 bg-img-3" style="position: absolute; z-index: 100">
+                    <div class="sidebar-menu">
+                        <h3 class="h-nav-music">Жанры музыки</h3>
+                        <?php foreach($category as $cat): ?>
+
+                        <a href='#' class='btn btn-default'><?= $cat->name?></a>
+                       <?php endforeach; ?>
+                    </div>
+                    <!--index END MENU -->
                 </div>
-                <!--index END MENU -->
         </div>
 
         <div class="clearfix"></div>
 
-        <div class="container-fluid nopadding bg-img-3" style=" padding: 60;margin-right: 60px;margin-left: 60px; margin-bottom: 60px" >
+        <div class="container nopadding bg-img-3">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>

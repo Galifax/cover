@@ -112,9 +112,9 @@ a.desc:after {  content: "\e152";  }
 .profile {  margin: 20px 0;  }
 
 /* Profile sidebar */
-.profile-sidebar {  padding: 20px 0 10px 0;  background: #46ABA5;  }
+.profile-sidebar {  padding: 20px 0 10px 0; }
 
-.profile-userpic img {  float: none;  margin: 0 auto;  width: 75%;  height: 75%;  -webkit-border-radius: 50% !important;  -moz-border-radius: 50% !important;  border-radius: 50% !important;  }
+.profile-userpic img {  float: none;  margin: 0 auto;  width: 60%;  height: 60%;  -webkit-border-radius: 50% !important;  -moz-border-radius: 50% !important;  border-radius: 50% !important;  }
 
 .profile-usertitle {  text-align: center;  margin-top: 0px;  }
 
@@ -131,7 +131,7 @@ a.desc:after {  content: "\e152";  }
 
 /*sidebar menu*/
 .sidebar-menu {  padding-top: 30px; height: 100%;
-    background: #46ABA5; }
+     }
 
 .sidebar-menu ul li {  border-bottom: 1px solid #f0f4f7;  }
 
