@@ -13,6 +13,7 @@ use yii\helpers\Url;
 use yii\widgets\Pjax;
 use frontend\models\Profile;
 use frontend\models\Category;
+use yii\bootstrap\Modal;
 
 
 AppAsset::register($this);
@@ -23,6 +24,10 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -32,11 +37,13 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
+
 <div class="wrap color-1" style="padding-bottom: 0px;  ">
 <!--    background-color: #f99500-->
     <!-- Second navbar for sign in -->
 
     <div class="">
+            <?php Pjax::begin();?>
             <div class="container color-3" >
 
                 <nav class="navbar navbar-default" style="margin-top: 10px">
@@ -52,11 +59,10 @@ AppAsset::register($this);
                         </div>
 
                             <div class="navbar-middle">
-
+                            <?php if(!Yii::$app->user->isGuest):?>
                                 <a type="button" class="btn btn-primary  collapsed" data-toggle="collapse" data-target="#d1" style="margin-left:6%">
                                     Профиль
                                 </a>
-                                <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
 
                                     <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                         <div class="modal-dialog">
@@ -85,7 +91,21 @@ AppAsset::register($this);
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                     Найти</button>
                             </form>
+                            <?php else:?>
+                                  <p>
+                                    <?= Html::button('Войти', ['value' => Url::to(['/site/login']) , 'class' => 'btn btn-success' , 'id' => 'modalButton']) ?>
+                                        </p>
 
+                                        <?php
+                                        Modal::begin([
+                                        'id' => 'modal',
+                                        'header' => false,
+                                        ]);
+                                        echo "<div id='modalContent'></div>";
+
+                                        Modal::end();
+                                        ?>
+                            <?php endif;?>
                         </div>
 
                     </div><!-- /.container -->
@@ -95,7 +115,7 @@ AppAsset::register($this);
                     <div class="profile-sidebar col-md-6">
                         <!-- SIDEBAR USERPIC -->
                         <div class="profile-userpic text-center">
-                            <img class="profile-img" src="<?= $profile->avatar ?>">
+                            <img class="profile-img" src="/img/<?= $profile->avatar ?>">
                             </div>
                         <!-- END SIDEBAR USERPIC -->
                         <!-- SIDEBAR USER TITLE -->
@@ -113,7 +133,7 @@ AppAsset::register($this);
                         <!-- SIDEBAR BUTTONS -->
                         <ul class="nav">
                             <li class="active">
-                                <a href="<?=Url::to(['/profile', 'name' => $profile->nickname ? $profile->nickname : $profile->user_id])?>">
+                                <a href="<?=Url::to(['/profile'])?>">
                                     <i class="glyphicon glyphicon-user"></i>
                                     Мой профиль </a>
                             </li>
@@ -150,19 +170,19 @@ AppAsset::register($this);
                 <div id="d2" class="collapse col-xs-11 col-md-4 col-md-push-6 bg-img-3" style="position: absolute; z-index: 100">
                     <div class="sidebar-menu">
                         <h3 class="h-nav-music">Жанры музыки</h3>
-                        <ul class="nav col-md-4">
+                        <ul class="nav">
                         <?php foreach($category as $cat): ?>
-                            <li class="active " >
+                            <li  class="col-md-4" style="padding:0">
                                 <a href='#' class=''><?= $cat->name?></a></li>
                        <?php endforeach; ?>
-
+                       </ul>
                     </div>
                     <!--index END MENU -->
                 </div>
         </div>
 
 
-
+        <?php Pjax::begin();?>
         <div class="clearfix"></div>
 
         <div class="container nopadding bg-img-3">
