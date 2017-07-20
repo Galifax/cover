@@ -1,8 +1,5 @@
   <?php  use yii\helpers\Url; ?>
 
-   <li><a href="<?= Url::to(['/profile'])?>">Мой профиль</a></li>
-                <li><a href="<?= Url::to(['/profile/my-videos'])?>">Мои видео</a></li>
-                <li><a href="<?= Url::to(['/profile/favorites'])?>">Понравившиеся</a></li>
       <div class="profile-content container-fluid" style="background-color: none">
                         <div class="col-md-8 col-md-push-4 clearfix">
                             <form class="navbar-form navbar-left">

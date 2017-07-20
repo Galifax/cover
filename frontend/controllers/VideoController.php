@@ -120,5 +120,7 @@ class VideoController extends Controller
         return $this->render('view', compact('model', 'id', 'favorites', 'likes', 'comments'));
     }
 
-
+    public function actionSearch(){
+            return $this->render('search');
+    }
 }

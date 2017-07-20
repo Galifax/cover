@@ -44,29 +44,53 @@ AppAsset::register($this);
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
 
-                            <a class="navbar-brand" href="#">Brand</a>
-                            <a type="button" class="btn btn-primary  collapsed" data-toggle="collapse" data-target="#d1">
-                                Профиль
+                            <a class="navbar-brand" href="/">
+                                <img src="/img/logo.png" style=";height: 150%">
                             </a>
-                            <a type="button" class="btn btn-primary collapsed" data-toggle="collapse" data-target="#d2">
-                                Тег поиска
-                            </a>
+
+
                         </div>
 
-                            <div class="col-md-8 col-md-push-3">
-                            <form class="navbar-form navbar-left">
+                            <div class="navbar-middle">
+
+                                <a type="button" class="btn btn-primary  collapsed" data-toggle="collapse" data-target="#d1" style="margin-left:6%">
+                                    Профиль
+                                </a>
+                                <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+
+                                    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                        <div class="modal-dialog">
+                                            <div class="loginmodal-container">
+                                                <h1>Login to Your Account</h1><br>
+                                                <form>
+                                                    <input type="text" name="user" placeholder="Username">
+                                                    <input type="password" name="pass" placeholder="Password">
+                                                    <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                                                </form>
+
+                                                <div class="login-help">
+                                                    <a href="#">Register</a> - <a href="#">Forgot Password</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <button type="button" class="btn btn-primary collapsed" data-toggle="collapse" data-target="#d2">
+                                    Жанры музыки
+                                </button>
+                            <form class="navbar-form navbar-right" style="margin-right: 5%">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Найти видео" size="45">
+                                        <input type="text" class="form-control" placeholder="Найти видео" size="40">
                                     </div>
                                 <button type="submit" class="btn btn-default">
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                     Найти</button>
                             </form>
+
                         </div>
 
                     </div><!-- /.container -->
                 </nav><!-- /.navbar -->
-                <div id="d1" class="collapse col-md-4 bg-img-3" style="position: absolute; z-index: 100">
+                <div id="d1" class="collapse col-xs-11 col-md-4 bg-img-3" style="position: absolute; z-index: 100">
                     <?php if(Yii::$app->user->id):?>
                     <div class="profile-sidebar col-md-6">
                         <!-- SIDEBAR USERPIC -->
@@ -94,12 +118,7 @@ AppAsset::register($this);
                                     Мой профиль </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <i class="fa fa-cog" aria-hidden="true"></i>
-                                    Настройки профиля </a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">
+                                <a href="<?= Url::to(['/profile/upload'])?>" target="_blank">
                                     <i class="fa fa-upload" aria-hidden="true"></i>
                                     Загрузить видео </a>
                             </li>
@@ -114,9 +133,8 @@ AppAsset::register($this);
                                     Понравившиеся </a>
                             </li>
                             <li>
-                                <a href="#" target="_blank">
-                                    <a href="<?=Url::to(['/site/logout'])?>"><i class="fa fa-sign-out" aria-hidden="true"></i>
-                                    Выход</a></a>
+                                <a href="<?=Url::to(['/site/logout'])?>"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                                    Выход</a>
                             </li>
                         </ul>
                     </div>
@@ -129,17 +147,21 @@ AppAsset::register($this);
                      <?php endif;?>
                    <!-- index SIDEBAR MENU -->
                 </div>
-                <div id="d2" class="collapse col-md-4 col-md-push-6 bg-img-3" style="position: absolute; z-index: 100">
+                <div id="d2" class="collapse col-xs-11 col-md-4 col-md-push-6 bg-img-3" style="position: absolute; z-index: 100">
                     <div class="sidebar-menu">
                         <h3 class="h-nav-music">Жанры музыки</h3>
+                        <ul class="nav col-md-4">
                         <?php foreach($category as $cat): ?>
-
-                        <a href='#' class='btn btn-default'><?= $cat->name?></a>
+                            <li class="active " >
+                                <a href='#' class=''><?= $cat->name?></a></li>
                        <?php endforeach; ?>
+
                     </div>
                     <!--index END MENU -->
                 </div>
         </div>
+
+
 
         <div class="clearfix"></div>
 
