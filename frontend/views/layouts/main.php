@@ -39,134 +39,112 @@ AppAsset::register($this);
 
 
 <div class="wrap color-1" style="padding-bottom: 0px;  ">
-<!--    background-color: #f99500-->
+
     <!-- Second navbar for sign in -->
 
-    <div class="">
-            <?php Pjax::begin();?>
-            <div class="container color-3" >
-
-                <nav class="navbar navbar-default" style="margin-top: 10px">
-                    <div class="container">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
-
-                            <a class="navbar-brand" href="/">
-                                <img src="/img/logo.png" style=";height: 150%">
-                            </a>
-
-
-                        </div>
-
-                            <div class="navbar-middle">
-                            <?php if(!Yii::$app->user->isGuest):?>
-                                <a type="button" class="btn btn-primary  collapsed" data-toggle="collapse" data-target="#d1" style="margin-left:6%">
-                                    Профиль
-                                </a>
-
-                                    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                                        <div class="modal-dialog">
-                                            <div class="loginmodal-container">
-                                                <h1>Login to Your Account</h1><br>
-                                                <form>
-                                                    <input type="text" name="user" placeholder="Username">
-                                                    <input type="password" name="pass" placeholder="Password">
-                                                    <input type="submit" name="login" class="login loginmodal-submit" value="Login">
-                                                </form>
-
-                                                <div class="login-help">
-                                                    <a href="#">Register</a> - <a href="#">Forgot Password</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <button type="button" class="btn btn-primary collapsed" data-toggle="collapse" data-target="#d2">
-                                    Жанры музыки
-                                </button>
-                            <form class="navbar-form navbar-right" style="margin-right: 5%">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Найти видео" size="40">
-                                    </div>
-                                <button type="submit" class="btn btn-default">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                    Найти</button>
-                            </form>
-                            <?php else:?>
-                                  <p>
-                                    <?= Html::button('Войти', ['value' => Url::to(['/site/login']) , 'class' => 'btn btn-success' , 'id' => 'modalButton']) ?>
-                                        </p>
-
-                                        <?php
-                                        Modal::begin([
-                                        'id' => 'modal',
-                                        'header' => false,
-                                        ]);
-                                        echo "<div id='modalContent'></div>";
-
-                                        Modal::end();
-                                        ?>
-                            <?php endif;?>
-                        </div>
-
-                    </div><!-- /.container -->
-                </nav><!-- /.navbar -->
-                <div id="d1" class="collapse col-xs-11 col-md-4 bg-img-3" style="position: absolute; z-index: 100">
-                    <?php if(Yii::$app->user->id):?>
-                    <div class="profile-sidebar col-md-6">
-                        <!-- SIDEBAR USERPIC -->
-                        <div class="profile-userpic text-center">
-                            <img class="profile-img" src="/img/<?= $profile->avatar ?>">
-                            </div>
-                        <!-- END SIDEBAR USERPIC -->
-                        <!-- SIDEBAR USER TITLE -->
-                        <div class="profile-usertitle">
-                            <div class="profile-usertitle-name">
-                                <P><?= $profile->nickname ?></P>
-                            </div>
-                        </div>
-                        <!-- END SIDEBAR USER TITLE -->
-                    </div>
-                    <!-- SIDEBAR MENU -->
-                    <div id="proffile-menu" class="profile-usermenu col-md-6" >
-
-
-                        <!-- SIDEBAR BUTTONS -->
-                        <ul class="nav">
-                            <li class="active">
-                                <a href="<?=Url::to(['/profile'])?>">
-                                    <i class="glyphicon glyphicon-user"></i>
-                                    Мой профиль </a>
-                            </li>
-                            <li>
-                                <a href="<?= Url::to(['/profile/upload'])?>" target="_blank">
-                                    <i class="fa fa-upload" aria-hidden="true"></i>
-                                    Загрузить видео </a>
-                            </li>
-                            <li>
-                                <a href="<?= Url::to(['my-videos'])?>" target="_blank">
-                                    <i class="fa fa-upload" aria-hidden="true"></i>
-                                    Мои видео </a>
-                            </li>
-                            <li>
-                                <a href="<?= Url::to(['/profile/favorites'])?>">
-                                    <i class="fa fa-upload" aria-hidden="true"></i>
-                                    Понравившиеся </a>
-                            </li>
-                            <li>
-                                <a href="<?=Url::to(['/site/logout'])?>"><i class="fa fa-sign-out" aria-hidden="true"></i>
-                                    Выход</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- END MENU -->
-                     <?php else:?>
-                     <div class="col-md-4">
-                     <a class="btn btn-default" href="<?=Url::to(['/site/login'])?>">Войти</a>
-                     <a class="btn btn-default" href="<?=Url::to(['/site/signup'])?>">Зарегистрироваться</a>
-                     </div>
-                     <?php endif;?>
-                   <!-- index SIDEBAR MENU -->
+    <div id="navbar">
+        <div class="container">
+            <div class="row row1">
+                <div class="col-sm-2">
+                    <h1 style="margin:0px;"><span class="largenav">Brand</span></h1>
                 </div>
+                <div class="navbar-search smallsearch col-sm-8 col-xs-11">
+                    <div class="row">
+                        <input class="navbar-input col-xs-11" type="" placeholder="Search for Products, Brands and more" name="">
+                        <button class="navbar-button-1 col-xs-1">
+                            <svg width="15px" height="15px">
+                                <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
+                            </svg>
+                        </button>
+<!--                        <button class="navbar-button-2 col-xs-1 collapsed" data-toggle="collapse" data-target="#d2">-->
+<!--                            Жанры музыки-->
+<!--                        </button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div id="primary-navigation">
+        <a href="#">
+            <span class="glyphicon glyphicon-user"></span> 
+            <strong>Профиль</strong>
+            <span class="glyphicon glyphicon-chevron-down"></span>
+        </a>
+    </div>
+    <div id="secondary-navigation">
+
+            <?php if(Yii::$app->user->id):?>
+                <div class="profile-sidebar ">
+                    <!-- SIDEBAR USERPIC -->
+                    <div class="profile-userpic text-center">
+                        <img class="profile-img" src="/img/<?= $profile->avatar ?>">
+                    </div>
+                    <!-- END SIDEBAR USERPIC -->
+                    <!-- SIDEBAR USER TITLE -->
+                    <div class="profile-usertitle">
+                        <div class="profile-usertitle-name">
+                            <P><?= $profile->nickname ?></P>
+                        </div>
+                    </div>
+                    <!-- END SIDEBAR USER TITLE -->
+                </div>
+                <!-- SIDEBAR MENU -->
+                <div id="proffile-menu" class="profile-usermenu " >
+
+
+                    <!-- SIDEBAR BUTTONS -->
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="<?=Url::to(['/profile'])?>">
+                                <i class="glyphicon glyphicon-user"></i>
+                                Мой профиль </a>
+                        </li>
+                        <li>
+                            <a href="<?= Url::to(['/profile/upload'])?>" target="_blank">
+                                <i class="fa fa-upload" aria-hidden="true"></i>
+                                Загрузить видео </a>
+                        </li>
+                        <li>
+                            <a href="<?= Url::to(['my-videos'])?>" target="_blank">
+                                <i class="fa fa-upload" aria-hidden="true"></i>
+                                Мои видео </a>
+                        </li>
+                        <li>
+                            <a href="<?= Url::to(['/profile/favorites'])?>">
+                                <i class="fa fa-upload" aria-hidden="true"></i>
+                                Понравившиеся </a>
+                        </li>
+                        <li>
+                            <a href="<?=Url::to(['/site/logout'])?>"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                                Выход</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END MENU -->
+            <?php else:?>
+                <div class="">
+                    <a class="btn btn-default" href="<?=Url::to(['/site/login'])?>">Войти</a>
+                    <a class="btn btn-default" href="<?=Url::to(['/site/signup'])?>">Зарегистрироваться</a>
+                </div>
+            <?php endif;?>
+            <!-- index SIDEBAR MENU -->
+        </div>
+    <main id="main">
+
+
+
+
+
+
+
                 <div id="d2" class="collapse col-xs-11 col-md-4 col-md-push-6 bg-img-3" style="position: absolute; z-index: 100">
                     <div class="sidebar-menu">
                         <h3 class="h-nav-music">Жанры музыки</h3>
@@ -179,11 +157,11 @@ AppAsset::register($this);
                     </div>
                     <!--index END MENU -->
                 </div>
-        </div>
+
 
 
         <?php Pjax::begin();?>
-        <div class="clearfix"></div>
+
 
         <div class="container nopadding bg-img-3" style="min-height: 92vh">
             <?= Breadcrumbs::widget([
@@ -193,7 +171,17 @@ AppAsset::register($this);
             <?= Alert::widget() ?>
             <?= $content ?>
         </div>
+    </main>
 </div>
+<script>
+    $(document).ready(function(){
+    $("#primary-navigation").click(function(){
+    $("#secondary-navigation").toggleClass('opened');
+    $("#main").toggleClass('slide-left');
+    $("#main").toggleClass('animate');
+    });
+    });
+</script>
 </div>
 <?php $this->endBody() ?>
 </body>

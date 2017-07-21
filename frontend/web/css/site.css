@@ -105,6 +105,136 @@ a.desc:after {  content: "\e152";  }
 
 
 /*navbar*/
+#primary-navigation {
+    background:#000;
+    color:#fff;
+    display:inline-block;
+    /*position:fixed;*/
+    top:0;
+    left:0;
+    z-index:9999;
+}
+#primary-navigation a {
+    color:#fff;
+    padding:15px 10px;
+    display:block;
+}
+#secondary-navigation {
+    position:fixed;
+    top:50px;
+    left:0px;
+    width:200px;
+    height: 100%;
+    background:#43ACA5;
+    color:#fff;
+    transition:all 0.4s ease-out;
+    transform:translateX(-200px);
+}
+#secondary-navigation.opened {
+    transform:translateX(0px);
+    transition:all 0.4s ease-out;
+}
+body{
+    perspective: 600px;
+    perspective-origin: 100% 50%;
+}
+#main {
+    width:100%;
+    height:100%px;
+    transition:all 0.4s ease-out;
+}
+.animate {
+    transition:all 0.4s ease-out;
+    transform: rotateY(0deg) translate(200px,0px);
+}
+.slide-left {
+    /*transform:translateX(200px);*/
+}
+
+
+
+#navbar {
+    background-color: #46AAA5;
+    color: #FFFFFF;
+}
+
+.row1 {
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.navbar-input {
+    padding: 11px 16px;
+    border-radius: 2px 0 0 2px;
+    border: 0 none;
+    outline: 0 none;
+    font-size: 15px;
+    color: #000;
+}
+
+.navbar-button-1 {
+    background-color: #ffe11b;
+    border: 1px solid #ffe11b;
+    border-radius: 0 2px 2px 0;
+    color: #565656;
+    padding: 10px 0;
+    height: 43px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .largenav {
+        display: block;
+    }
+    .smallnav{
+        display: none;
+    }
+    .smallsearch{
+        margin: 0px;
+    }
+}
+
+/*Sidenav*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    box-shadow: 0 4px 8px -3px #555454;
+    padding-top: 0px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #fff;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav a {font-size: 18px;}
+}
+
+.sidenav-heading{
+    font-size: 36px;
+    color: #fff;
+}
 
 /*navbar*/
 
