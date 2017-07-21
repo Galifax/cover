@@ -46,19 +46,32 @@ AppAsset::register($this);
         <div class="container">
             <div class="row row1">
                 <div class="col-sm-2">
-                    <h1 style="margin:0px;"><span class="largenav">Brand</span></h1>
+                    <div class="primary-navigation" id="nav1">
+                        <a class="navbar-button-2 text-center" href="#">
+                            <span class="glyphicon glyphicon-chevron-down"></span> 
+                            <strong>Профиль</strong>
+                            <span class="glyphicon glyphicon-user"></span>
+                        </a>
+                    </div>
                 </div>
                 <div class="navbar-search smallsearch col-sm-8 col-xs-11">
                     <div class="row">
-                        <input class="navbar-input col-xs-11" type="" placeholder="Search for Products, Brands and more" name="">
+                        <input class="navbar-input col-xs-11" type="" placeholder="Поиск" name="">
                         <button class="navbar-button-1 col-xs-1">
                             <svg width="15px" height="15px">
                                 <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
                             </svg>
                         </button>
-<!--                        <button class="navbar-button-2 col-xs-1 collapsed" data-toggle="collapse" data-target="#d2">-->
-<!--                            Жанры музыки-->
-<!--                        </button>-->
+                    </div>
+<!--                    <img  src="img/logo.png" style="display: block; margin: 0 auto; ">-->
+                </div>
+                <div class="col-sm-2">
+                    <div class="primary-navigation" id="nav2">
+                        <a class="navbar-button-2 text-center" href="#">
+                            <span class="glyphicon glyphicon-music"></span> 
+                            <strong>Жанры музыки</strong>
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -72,14 +85,8 @@ AppAsset::register($this);
 
 
 
-    <div id="primary-navigation">
-        <a href="#">
-            <span class="glyphicon glyphicon-user"></span> 
-            <strong>Профиль</strong>
-            <span class="glyphicon glyphicon-chevron-down"></span>
-        </a>
-    </div>
-    <div id="secondary-navigation">
+
+    <div class="secondary-navigation-a" id="nav1-2">
 
             <?php if(Yii::$app->user->id):?>
                 <div class="profile-sidebar ">
@@ -137,26 +144,19 @@ AppAsset::register($this);
             <?php endif;?>
             <!-- index SIDEBAR MENU -->
         </div>
+    <div class="secondary-navigation-b" id="nav2-2">
+        <div class="sidebar-menu">
+            <h3 class="h-nav-music">Жанры музыки</h3>
+            <ul class="nav">
+                <?php foreach($category as $cat): ?>
+                    <li  class="" style="padding:0">
+                        <a href='#' class=''><?= $cat->name?></a></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
     <main id="main">
 
-
-
-
-
-
-
-                <div id="d2" class="collapse col-xs-11 col-md-4 col-md-push-6 bg-img-3" style="position: absolute; z-index: 100">
-                    <div class="sidebar-menu">
-                        <h3 class="h-nav-music">Жанры музыки</h3>
-                        <ul class="nav">
-                        <?php foreach($category as $cat): ?>
-                            <li  class="col-md-4" style="padding:0">
-                                <a href='#' class=''><?= $cat->name?></a></li>
-                       <?php endforeach; ?>
-                       </ul>
-                    </div>
-                    <!--index END MENU -->
-                </div>
 
 
 
@@ -175,11 +175,16 @@ AppAsset::register($this);
 </div>
 <script>
     $(document).ready(function(){
-    $("#primary-navigation").click(function(){
-    $("#secondary-navigation").toggleClass('opened');
-    $("#main").toggleClass('slide-left');
-    $("#main").toggleClass('animate');
+        $("#nav1").click(function(){
+            $("#nav1-2").toggleClass('opened');
+            $("#main").toggleClass('slide-left');
+            $("#main").toggleClass('animate-right');
     });
+        $("#nav2").click(function(){
+            $("#nav2-2").toggleClass('opened');
+            $("#main").toggleClass('slide-left');
+            $("#main").toggleClass('animate-left');
+        });
     });
 </script>
 </div>
