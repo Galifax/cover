@@ -14,30 +14,45 @@ $this->title = $model->name;
          </div>
 
         <div class="about-video my-video-video background-gray" style="padding-top: -15px; width: 100%">
-            <h1 style="margin: 0px"></h1>
-            <h2><p><?=$model->name?></p></h2>
+            <h2 class="nopadding" style="border-bottom: solid 1px #cccccc;margin: 0 "><?=$model->name?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h2>
+                 <div class="profile-sidebar col-md-4">
+                    <!-- SIDEBAR USERPIC -->
+                    <div class="profile-userpic text-center">
+                        <img class="profile-img" src="https://i.ytimg.com/vi/P_zOxS2hYOw/maxresdefault.jpg">
+                    </div>
+                    <!-- END SIDEBAR USERPIC -->
+                    <!-- SIDEBAR USER TITLE -->
+                    <div class="profile-usertitle ">
+                        <div class="profile-usertitle-name">
+                            <a href="#"><?=$model->profile->nickname?></a>
+                        </div>
+                    </div>
+                    <!-- END SIDEBAR USER TITLE -->
+                </div>
 
-            <p><?=$model->profile->nickname?></p>
-            <p><?=$model->date?></p>
-            <p>Просмотры <?=$model->view->views?></p>
-      
+                <?php Pjax::begin();?>
+                <?php if($favorites == 0):?>
+                    <span class="vote plus" title="В понравившиеся видео"><a href="<?=Url::to(['video/view', 'id' => $id, 'favorites' => 'favorites'])?>"><i class="fa fa-heart-o"></i></a></span>
+                <?php else:?>
+                    <span class="vote plus" title="Убрть из понравившиеся видео"><a href="<?=Url::to(['video/view', 'id' => $id, 'favorites' => 'favorites'])?>"><i class="fa fa-heart"></i></a></span>
+                <?php endif;?>
+                <?php Pjax::end();?>
 
-            <?php Pjax::begin();?>
-            <?php if($favorites == 0):?>
-            <span class="vote plus" title="Нравится"><a href="<?=Url::to(['video/view', 'id' => $id, 'favorites' => 'favorites'])?>"><i class="fa fa-heart-o"></i></a></span>
-            <?php else:?>
-            <span class="vote plus" title="Нравится"><a href="<?=Url::to(['video/view', 'id' => $id, 'favorites' => 'favorites'])?>"><i class="fa fa-heart"></i></a></span>
-            <?php endif;?>
-            <?php Pjax::end();?>
-            <?php Pjax::begin();?>
-            <?php if($likes == 0):?>
-          <span class="vote plus" title="Нравится"><a href="<?=Url::to(['video/view', 'id' => $id, 'like' => 'like'])?>"><i class="fa fa-thumbs-up"></i></a> <?=count($model->likes)?></span>
-            <?php elseif($likes == 1):?>
-          <span class="vote plus" title="Нравится"><a href="<?=Url::to(['video/view', 'id' => $id, 'like' => 'like'])?>"><i class="fa fa-thumbs-o-up"></i></a> <?=count($model->likes)?></span>
-          <?php endif;?>
-            <?php Pjax::end();?>
+                <p class="col-md-6">
+                <?php Pjax::begin();?>
+                <?php if($likes == 0):?>
+                    <span class="vote plus" title="Поставить лайк"><a href="<?=Url::to(['video/view', 'id' => $id, 'like' => 'like'])?>"><i class="fa fa-thumbs-up"></i></a> <?=count($model->likes)?></span>
+                <?php elseif($likes == 1):?>
+                    <span class="vote plus" title="Убрать лайк"><a href="<?=Url::to(['video/view', 'id' => $id, 'like' => 'like'])?>"><i class="fa fa-thumbs-o-up"></i></a> <?=count($model->likes)?></span>
+                <?php endif;?>
+                <?php Pjax::end();?>
+
+                <p><?=$model->date?>(формат даты 21.11.1999)</p>
+                <p>Просмотры <?=$model->view->views?></p>
 
         </div>
+
+
     <h2 style="color: #3a2222">Комментарии</h2>
     <style type="text/css">
         .comments li{
@@ -137,20 +152,82 @@ $this->title = $model->name;
     <?php Pjax::end();?>
     </div>
 
-    <div class="col-md-4 padding-30 background-gray" style="margin: 0px">
-        <div class=" ">
-        <?php foreach($model->profile->videos as $video):?>
+    <div class="col-md-4 padding-30" style="margin: 0px">
+            <ul class="list-unstyled video-list-thumbs row">
+                <li class="col-xs-12">
+                    <a class="video-list-thumbs-a" href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
+                        <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
+                        <span class="glyphicon glyphicon-play-circle"></span>
+                        <span class="duration">03:15</span>
+                        <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
+                    </a>
+                    <div class="video-text">
+                        <a class="username-video" href="#">Username</a>
+                        <p>Просмотры | date</p>
+                    </div>
+                </li>
+                <li class="col-xs-12">
+                    <a class="video-list-thumbs-a" href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
+                        <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
+                        <span class="glyphicon glyphicon-play-circle"></span>
+                        <span class="duration">03:15</span>
+                        <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
+                    </a>
+                    <div class="video-text">
+                        <a class="username-video" href="#">Username</a>
+                        <p>Просмотры | date</p>
+                    </div>
+                </li>
+                <li class="col-xs-12">
+                    <a class="video-list-thumbs-a" href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
+                        <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
+                        <span class="glyphicon glyphicon-play-circle"></span>
+                        <span class="duration">03:15</span>
+                        <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
+                    </a>
+                    <div class="video-text">
+                        <a class="username-video" href="#">Username</a>
+                        <p>Просмотры | date</p>
+                    </div>
+                </li>
+                <li class="col-xs-12">
+                    <a class="video-list-thumbs-a" href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
+                        <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
+                        <span class="glyphicon glyphicon-play-circle"></span>
+                        <span class="duration">03:15</span>
+                        <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
+                    </a>
+                    <div class="video-text">
+                        <a class="username-video" href="#">Username</a>
+                        <p>Просмотры | date</p>
+                    </div>
+                </li>
+                <li class="col-xs-12">
+                    <a class="video-list-thumbs-a" href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
+                        <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
+                        <span class="glyphicon glyphicon-play-circle"></span>
+                        <span class="duration">03:15</span>
+                        <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
+                    </a>
+                    <div class="video-text">
+                        <a class="username-video" href="#">Username</a>
+                        <p>Просмотры | date</p>
+                    </div>
+                </li>
+                <li class="col-xs-12">
+                    <a class="video-list-thumbs-a" href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
+                        <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
+                        <span class="glyphicon glyphicon-play-circle"></span>
+                        <span class="duration">03:15</span>
+                        <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
+                    </a>
+                    <div class="video-text">
+                        <a class="username-video" href="#">Username</a>
+                        <p>Просмотры | date</p>
+                    </div>
+                </li>
 
-                <div class="col-md-6 nopadding">
-                 <a href="<?=Url::to(['video/view', 'id' => $video->id])?>"><img src="https://cdn.kyivstar.ua/sites/default/files/divan-video.jpg" style="width: 100%;"></a>
-                </div>
-                <div class="col-md-6">
-                    <a href="<?=Url::to(['video/view', 'id' => $video->id])?>"><p><?=$video->name?></p></a>
-                    <p>prosmotreno | <?=$video->date?></p>
-                </div>
-
-            <div class="clearfix"></div>
-        <?php endforeach;?>
+            </ul>
         </div>
     </div>
 
