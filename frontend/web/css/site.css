@@ -78,7 +78,9 @@ a.desc:after {  content: "\e152";  }
 
 .profile-img{border: solid 1px #CCCCCC; border-radius: 45px  0px 45px 0px; padding: 5px;margin:10px;width:100%;overflow: hidden;}
 
-.border-radius{border: solid 1px #CCCCCC; border-radius: 45px  0px 45px 0px; padding: 5px;}
+.border-radius{border: solid 1px #CCCCCC; border-radius: 40px  0px 40px 0px; padding: 5px;}
+
+.border{border: solid 1px #CCCCCC; padding: 0px; margin: 0px;background-color: white}
 
 .h-nav-music{
     font-size: 26px;
@@ -272,7 +274,7 @@ a.desc:after {  content: "\e152";  }
 .video-list-thumbs > li > a:hover .duration{
     background-color:#000;
 }
-@media (min-width:320px) and (max-width: 480px) { 
+@media (min-width:320px) and (max-width: 480px) {
     .video-list-thumbs .glyphicon-play-circle{
     font-size: 35px;
     right: 36%;

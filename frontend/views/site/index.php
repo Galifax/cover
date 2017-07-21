@@ -7,7 +7,7 @@ $this->title = 'My Yii Application';
 <div class="bg-img-1 container">
     <h2>Top viedo</h2>
     <ul class="list-unstyled video-list-thumbs row">
-        <li class="col-lg-4 col-sm-4 col-xs-12">
+        <li class="col-lg-4 col-sm-4 col-xs-12 border">
             <a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
                 <img src="http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg" alt="Barca" class="img-responsive" height="130px" />
                 <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
@@ -15,7 +15,7 @@ $this->title = 'My Yii Application';
                 <span class="duration">03:15</span>
             </a>
         </li>
-        <li class="col-lg-4 col-sm-4 col-xs-12">
+        <li class="col-lg-4 col-sm-4 col-xs-12 border">
             <a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
                 <img src="http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg" alt="Barca" class="img-responsive" height="130px" />
                 <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
@@ -23,7 +23,15 @@ $this->title = 'My Yii Application';
                 <span class="duration">03:15</span>
             </a>
         </li>
-        <li class="col-lg-4 col-sm-4 col-xs-12">
+        <li class="col-lg-4 col-sm-4 col-xs-12 border">
+            <a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga ">
+                <img src="http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg" alt="Barca" class="img-responsive" height="130px" />
+                <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
+                <span class="glyphicon glyphicon-play-circle"></span>
+                <span class="duration">03:15</span>
+            </a>
+        </li>
+        <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12 border">
             <a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
                 <img src="http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg" alt="Barca" class="img-responsive" height="130px" />
                 <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
@@ -31,7 +39,7 @@ $this->title = 'My Yii Application';
                 <span class="duration">03:15</span>
             </a>
         </li>
-        <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12 border">
             <a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
                 <img src="http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg" alt="Barca" class="img-responsive" height="130px" />
                 <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
@@ -39,15 +47,7 @@ $this->title = 'My Yii Application';
                 <span class="duration">03:15</span>
             </a>
         </li>
-        <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
-                <img src="http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg" alt="Barca" class="img-responsive" height="130px" />
-                <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
-                <span class="glyphicon glyphicon-play-circle"></span>
-                <span class="duration">03:15</span>
-            </a>
-        </li>
-        <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12 border">
             <a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
                 <img src="http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg" alt="Barca" class="img-responsive" height="130px" />
                 <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
@@ -68,6 +68,8 @@ $this->title = 'My Yii Application';
             <a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
                 <img src="http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg" alt="Barca" class="img-responsive" height="130px" />
                 <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
+                <p href="#">Username</p>
+                <p>Просмотры | date</p>
                 <span class="glyphicon glyphicon-play-circle"></span>
                 <span class="duration">03:15</span>
             </a>
@@ -79,6 +81,8 @@ $this->title = 'My Yii Application';
                 <span class="glyphicon glyphicon-play-circle"></span>
                 <span class="duration">03:15</span>
             </a>
+            <a>Username</a>
+            <p>Просмотры | date</p>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
             <a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
@@ -87,22 +91,18 @@ $this->title = 'My Yii Application';
                 <span class="glyphicon glyphicon-play-circle"></span>
                 <span class="duration">03:15</span>
             </a>
+            <h2>Username</h2>
+            <p>Просмотры | date</p>
         </li>
-        <li class="col-lg-3 col-md-4 col-sm-4 col-sm-4 col-xs-12">
+        <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12 ">
             <a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
                 <img src="http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg" alt="Barca" class="img-responsive" height="130px" />
                 <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
                 <span class="glyphicon glyphicon-play-circle"></span>
                 <span class="duration">03:15</span>
             </a>
-        </li>
-        <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-            <a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
-                <img src="http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg" alt="Barca" class="img-responsive" height="130px" />
-                <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
-                <span class="glyphicon glyphicon-play-circle"></span>
-                <span class="duration">03:15</span>
-            </a>
+            <h2>Username</h2>
+            <p>Просмотры | date</p>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
             <a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
@@ -111,6 +111,8 @@ $this->title = 'My Yii Application';
                 <span class="glyphicon glyphicon-play-circle"></span>
                 <span class="duration">03:15</span>
             </a>
+            <h2>Username</h2>
+            <p>Просмотры | date</p>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
             <a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
@@ -119,14 +121,28 @@ $this->title = 'My Yii Application';
                 <span class="glyphicon glyphicon-play-circle"></span>
                 <span class="duration">03:15</span>
             </a>
+            <h2>Username</h2>
+            <p>Просмотры | date</p>
         </li>
-        <li class="col-lg-3 col-md-4 col-sm-4 col-sm-4 col-xs-12">
+        <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
             <a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
                 <img src="http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg" alt="Barca" class="img-responsive" height="130px" />
                 <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
                 <span class="glyphicon glyphicon-play-circle"></span>
                 <span class="duration">03:15</span>
             </a>
+            <h2>Username</h2>
+            <p>Просмотры | date</p>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <a href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
+                <img src="http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg" alt="Barca" class="img-responsive" height="130px" />
+                <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
+                <span class="glyphicon glyphicon-play-circle"></span>
+                <span class="duration">03:15</span>
+            </a>
+            <h2>Username</h2>
+            <p>Просмотры | date</p>
         </li>
     </ul>
 </div>
