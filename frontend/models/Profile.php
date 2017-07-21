@@ -89,4 +89,8 @@ class Profile extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Favorites::className(), ['profile_id' => 'id']);
     }
+      public function getView()
+    {
+        return $this->hasOne(View::className(), ['user_id' => 'id']);
+    }
 }

@@ -71,7 +71,7 @@ $this->title = $model->name;
             <?= $form->field($comments, 'video_id')->hiddenInput(['value' => $model->id])->label(false); ?>
             <?= $form->field($comments, 'profile_id')->hiddenInput(['value' => Yii::$app->user->id])->label(false); ?>
             <?= $form->field($comments, 'date')->hiddenInput(['value' => date('Y:m:d H:i:s')])->label(false);?>
-            <?= $form->field($comments, 'content')->textArea()->label('Текст') ?>
+            <?= $form->field($comments, 'content')->textArea()->label('') ?>
             <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
             <?php ActiveForm::end(); ?>
             <ul class="comments my-video-video" style="width: 100%;background-color: white">
@@ -97,18 +97,26 @@ $this->title = $model->name;
                                               </span>
                                               </div>
                                           </div>
+                                          <a class="collapsed" data-toggle="collapse" data-target="#d1" style="padding-left:25px";>
+                           Ответить
+                        </a>
                                     </div>
+
                                   <ul>
                                     <li>
+
+                                      <div id="d1" class="collapse">
                               <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]]); ?>
                               <?= $form->field($comments, 'parent_id')->hiddenInput(['value' => $com->id])->label(false); ?>
                               <?= $form->field($comments, 'video_id')->hiddenInput(['value' => $model->id])->label(false); ?>
                               <?= $form->field($comments, 'profile_id')->hiddenInput(['value' => Yii::$app->user->id])->label(false); ?>
                               <?= $form->field($comments, 'date')->hiddenInput(['value' => date('Y:m:d H:i:s')])->label(false);?>
-                              <?= $form->field($comments, 'content')->textArea()->label('Текст') ?>
+                              <?= $form->field($comments, 'content')->textArea()->label('') ?>
                               <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
                               <?php ActiveForm::end(); ?>
+                                      </div>
                                     </li>
+
                                   </ul>
                             </li>
 
@@ -146,7 +154,7 @@ $this->title = $model->name;
                               <?= $form->field($comments, 'video_id')->hiddenInput(['value' => $model->id])->label(false); ?>
                               <?= $form->field($comments, 'profile_id')->hiddenInput(['value' => Yii::$app->user->id])->label(false); ?>
                               <?= $form->field($comments, 'date')->hiddenInput(['value' => date('Y:m:d H:i:s')])->label(false);?>
-                              <?= $form->field($comments, 'content')->textArea()->label('Текст') ?>
+                              <?= $form->field($comments, 'content')->textArea()->label('') ?>
                               <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
                               <?php ActiveForm::end(); ?>
                                     </li>

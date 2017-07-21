@@ -10,6 +10,7 @@ use yii\filters\AccessControl;
 use frontend\models\Profile;
 use frontend\models\User;
 use frontend\models\Video;
+use frontend\models\View;
 use frontend\models\UploadForm;
 use yii\web\UploadedFile;
 use yii\db\ActiveQuery;
@@ -78,7 +79,9 @@ class ProfileController extends Controller
 
     public function actionMyVideos()
     {
-        $model = Video::find()->where(['profile_id' =>Yii::$app->user->id])->all();
+        $model = Video::find()->with('view')->innerjoinWith(['profile'=> function(ActiveQuery $query){
+            $query->where(['user_id'=>Yii::$app->user->id]);
+        }])->all();
      
         return $this->render('my-videos', compact('model'));
     }
