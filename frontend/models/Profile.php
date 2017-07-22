@@ -37,7 +37,7 @@ class Profile extends \yii\db\ActiveRecord
 
             [['user_id',], 'integer'],
             [['born'],  'safe'],
-            [['nickname', 'name', 'surname', 'avatar', 'about_myself', 'contact', 'favorites', 'floor' ], 'string', 'max' => 255],
+            [['nickname', 'name', 'surname', 'avatar', 'about_myself', 'country', 'contact', 'favorites', 'floor' ], 'string', 'max' => 255],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
@@ -54,7 +54,7 @@ class Profile extends \yii\db\ActiveRecord
             'name' => 'Name',
             'surname' => 'Surname',
             'avatar' => 'Avatar',
-            'born' => 'Born',
+            'country' => 'Country',
             'favorites' => 'Favorites',
             'floor' => 'Floor',
             'about_myself' => 'About_myself',
@@ -88,9 +88,5 @@ class Profile extends \yii\db\ActiveRecord
     public function getFavorites()
     {
         return $this->hasMany(Favorites::className(), ['profile_id' => 'id']);
-    }
-      public function getView()
-    {
-        return $this->hasOne(View::className(), ['user_id' => 'id']);
     }
 }

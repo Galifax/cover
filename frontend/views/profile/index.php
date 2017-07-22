@@ -26,31 +26,31 @@
                                     <tbody>
                                     <tr>
                                         <td>nickname</td>
-                                        <td>valira</td>
+                                        <td><?= $model->nickname?></td>
                                     </tr>
                                     <tr>
                                         <td>name</td>
-                                        <td>sered</td>
+                                        <td><?= $model->name?></td>
                                     </tr>
                                     <tr>
                                         <td>Пол</td>
-                                        <td>???</td>
+                                        <td><?= $model->floor?></td>
                                     </tr>
                                     <tr>
                                         <td>Страна</td>
-                                        <td>2017-07-31</td>
+                                        <td><?= $model->country?></td>
                                     </tr>
                                     <tr>
                                         <td>Контакты</td>
-                                        <td>2017-07-31</td>
+                                        <td><?= $model->contact?></td>
                                     </tr>
                                     <tr>
                                         <td>Любимая музыка</td>
-                                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis fugit laborum perspiciatis quae quia ullam! Adipisci deleniti, explicabo hic impedit, maxime, numquam obcaecati odit quas quod sequi velit vero.</td>
+                                        <td><?= $model->favorites?></td>
                                     </tr>
                                     <tr>
                                          <td>О себе</td>
-                                         <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto dignissimos distinctio maxime numquam optio placeat possimus quisquam repudiandae ut? Adipisci amet error laudantium molestiae, quae quia quos tempora tenetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci alias, aspernatur consequuntur debitis dolorum enim hic id impedit itaque, laboriosam molestias neque numquam, officiis perspiciatis quae qui totam voluptatum.</td>
+                                         <td><?= $model->about_myself?></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -68,7 +68,7 @@
                             <?= $form->field($model, 'name')->textinput()->label('name')  ?>
                             <?= $form->field($model, 'surname')->textinput()->label('Фамилия') ?>
                             <?= $form->field($model, 'floor')->textinput()->label('Пол')  ?>
-                            <?= $form->field($model, 'born')->textinput()->label('Страна')  ?>
+                            <?= $form->field($model, 'country')->textinput()->label('Страна')  ?>
                             <?= $form->field($model, 'favorites')->textArea()->label('Любимая музыка') ?>
                             <?= $form->field($model, 'about_myself')->textArea()->label('О себе')  ?>
                             <?= $form->field($model, 'contact')->textArea()->label('Контакты')  ?>   
