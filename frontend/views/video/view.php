@@ -14,7 +14,7 @@ $this->title = $model->name;
         </div>
 
         <div class="about-video my-video-video background-gray" style="padding-top: -15px; width: 100%">
-            <h2 class="nopadding" style="border-bottom: solid 1px #cccccc;margin: 0 "><?=$model->name?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h2>
+            <h2 class="nopadding" style="border-bottom: solid 1px #cccccc;margin: 0 "><?=$model->name?></h2>
                  <div class="profile-sidebar col-md-4">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic text-center">
