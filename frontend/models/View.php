@@ -54,8 +54,4 @@ class View extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Video::className(), ['id' => 'video_id']);
     }
-    public function getProfile()
-    {
-        return $this->hasOne(Video::className(), ['id' => 'user_id']);
-    }
 }

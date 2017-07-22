@@ -1,5 +1,11 @@
-  <?php  use yii\helpers\Url; ?>
+  <?php  
+  use yii\helpers\Url;
+  use yii\helpers\Html;
+  use yii\widgets\Pjax;
+  use yii\bootstrap\Modal;
+   ?>
 
+<?php Pjax::begin()?>
 <div class="profile-content container-fluid" style="background-color: none">
           <div class="container">
               <h2>Мои Видео</h2>
@@ -15,10 +21,23 @@
                       <div class="video-text">
                           <a class="username-video" href="#"><?= $video->profile->nickname?></a>
                           <p><i class="fa fa-eye" aria-hidden="true"></i><?= $video->view->views?> | <?= $video->date?></p>
-                          <p><a href="">Edit</a> | <a href="#">Delete</a> </p>
+                          <p>
+        <?= Html::button('Редактировать', ['value' => Url::to(['update', 'id'=>$video->id]) , 'class' => 'btn btn-success' , 'id' => 'modalButton']) ?>
+     <a href="<?= Url::to(['profile/my-videos', 'del'=>$video->id])?>" class='btn btn-danger'>Delete</a> </p>
                       </div>
                   </li>
                 <?php endforeach;?>  
               </ul>
           </div>
 </div>
+<?php
+       Modal::begin([
+    'header' => '<h2>Редактировать видео</h2>',
+    'id' => 'modal',
+    'size' => 'modal-lg',
+    ]);
+    echo "<div id='modalContent'></div>";
+
+    Modal::end();
+    ?>
+<?php Pjax::end()?>

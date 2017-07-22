@@ -76,13 +76,30 @@ class ProfileController extends Controller
     {
         return $this->render('upload');
     }
-
+    public function actionUpdate($id)
+    {
+        $this->layout=false;
+        $model = Video::findOne($id);
+        if ($model->load(Yii::$app->request->post())){
+            $model->save();
+            $this->redirect(['/profile/my-videos']);
+        }
+        return $this->renderAjax('update', compact('model'));
+    }
     public function actionMyVideos()
     {
+        $del = Yii::$app->request->get('del');
+        if ($del){
+            $delete = Video::findOne($del);
+            if ($delete){ 
+              $delete->delete();  
+            }
+            
+        }
         $model = Video::find()->with('view')->innerjoinWith(['profile'=> function(ActiveQuery $query){
             $query->where(['user_id'=>Yii::$app->user->id]);
         }])->all();
-     
+        
         return $this->render('my-videos', compact('model'));
     }
 

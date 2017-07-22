@@ -110,8 +110,10 @@ class VideoController extends Controller
         $comments->save();
         }
 
-        $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'favorites', 'view', 'comments.comments.profile', 'likes', 'comments' => function (ActiveQuery $query){
-                $query->where(['parent_id' => 0])->with('profile');
+        $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'favorites', 'view', 'likes', 'comments' => function (ActiveQuery $query){
+                $query->where(['parent_id' => 0])->with('profile')->orderBy(['id' => SORT_ASC]);
+            }])->with(['comments.comments'=> function (ActiveQuery $query){
+                $query->with('profile')->orderBy(['comments.id' => SORT_DESC]);
             }])->one();
        
         // echo "<pre>";
