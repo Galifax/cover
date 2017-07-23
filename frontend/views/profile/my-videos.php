@@ -30,14 +30,5 @@
               </ul>
           </div>
 </div>
-<?php
-       Modal::begin([
-    'header' => '<h2>Редактировать видео</h2>',
-    'id' => 'modal',
-    'size' => 'modal-lg',
-    ]);
-    echo "<div id='modalContent'></div>";
 
-    Modal::end();
-    ?>
 <?php Pjax::end()?>

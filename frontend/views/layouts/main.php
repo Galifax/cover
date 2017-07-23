@@ -130,8 +130,8 @@ AppAsset::register($this);
                 <!-- END MENU -->
             <?php else:?>
                 <div class="">
-                    <a class="btn btn-default" href="<?=Url::to(['/site/login'])?>">Войти</a>
-                    <a class="btn btn-default" href="<?=Url::to(['/site/signup'])?>">Зарегистрироваться</a>
+                    <?= Html::button('Войти', ['value' => Url::to(['/site/login']) , 'class' => 'btn btn-success' , 'id' => 'modalButton']) ?>
+                   <?= Html::button('Регистрация', ['value' => Url::to(['/site/signup']) , 'class' => 'btn btn-success' , 'id' => 'modalButton1']) ?>
                 </div>
             <?php endif;?>
             <!-- index SIDEBAR MENU -->
@@ -223,6 +223,15 @@ AppAsset::register($this);
         </div>
     </main>
 </div>
+
+<?php
+       Modal::begin([
+    'id' => 'modal',
+    ]);
+    echo "<div id='modalContent'></div>";
+
+    Modal::end();
+    ?>
 <script>
     $(document).ready(function(){
         $("#nav1").click(function(){
