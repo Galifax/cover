@@ -200,7 +200,7 @@ a.desc:after {  content: "\e152";  }
 
 #navbar {
     background-color: #46AAA5;
-    color: #FFFFFF;
+    color: #1a1a1a;
 }
 
 .row1 {
@@ -218,19 +218,19 @@ a.desc:after {  content: "\e152";  }
 }
 
 .navbar-button-1 {
-    background-color: #ffe11b;
-    border: 1px solid #ffe11b;
+    background-color: #ffad1e;
+    border: 1px solid #ffad1e;
     border-radius: 0 2px 2px 0;
-    color: #565656;
+    color: #1a1a1a;
     padding: 10px 0;
     height: 43px;
     cursor: pointer;
 }
 .navbar-button-2 {
-    background-color: #ffe11b;
-    border: 1px solid #ffe11b;
+    background-color: #ffad1e;
+    border: 1px solid #ffad1e;
     border-radius: 0 2px 2px 0;
-    color: #565656;
+    color: #1a1a1a;
     padding: 10px 0;
     height: 43px;
     cursor: pointer;

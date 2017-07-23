@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июл 17 2017 г., 17:20
+-- Время создания: Июл 23 2017 г., 14:45
 -- Версия сервера: 5.7.16
 -- Версия PHP: 7.1.0
 
@@ -67,7 +67,20 @@ INSERT INTO `comments` (`id`, `parent_id`, `video_id`, `profile_id`, `content`, 
 (3, 0, 1, 1, 'Лучший ковер', '2017-07-16 00:00:00'),
 (4, 0, 1, 1, 'Да да да', '2017-07-17 00:00:00'),
 (5, 1, 1, 1, 'Галифак Бог', '2017-07-27 00:00:00'),
-(6, 1, 1, 2, 'ыаыаыа', '2017-07-17 13:11:22');
+(6, 1, 1, 2, 'ыаыаыа', '2017-07-17 13:11:22'),
+(7, 1, 1, 2, 'sfsf', '2017-07-21 20:49:06'),
+(8, 1, 1, 2, 'God', '2017-07-21 20:49:15'),
+(9, 0, 2, 2, 'Смурфы супер', '2017-07-22 12:09:32'),
+(10, 9, 2, 2, 'Смурфы супер пупер', '2017-07-22 12:11:10'),
+(11, 9, 2, 2, 'дуберпупер', '2017-07-22 12:11:24'),
+(12, 9, 2, 2, 'ахахлаймахалай\r\n', '2017-07-22 12:16:45'),
+(13, 9, 2, 2, 'Помогите', '2017-07-22 12:20:35'),
+(14, 9, 2, 2, 'фффф', '2017-07-22 12:25:58'),
+(15, 0, 2, 2, 'Лалала', '2017-07-22 12:26:11'),
+(16, 9, 2, 2, 'Лалалав', '2017-07-22 12:26:22'),
+(17, 9, 2, 2, 'Смурфы супер пуперв', '2017-07-22 12:28:31'),
+(18, 9, 2, 2, 'Смурфы супер пупервввввв', '2017-07-22 12:28:42'),
+(19, 9, 2, 2, 'sfsf', '2017-07-22 12:57:04');
 
 -- --------------------------------------------------------
 
@@ -86,10 +99,10 @@ CREATE TABLE `favorites` (
 --
 
 INSERT INTO `favorites` (`id`, `profile_id`, `video_id`) VALUES
-(5, 2, 1),
-(7, 2, 2),
 (8, 2, 4),
-(10, 2, 3);
+(10, 2, 3),
+(16, 2, 1),
+(28, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -145,7 +158,7 @@ CREATE TABLE `profile` (
   `name` varchar(255) NOT NULL,
   `surname` varchar(255) NOT NULL,
   `floor` varchar(255) NOT NULL,
-  `born` date NOT NULL,
+  `country` varchar(255) NOT NULL,
   `avatar` varchar(255) NOT NULL,
   `favorites` varchar(255) NOT NULL,
   `about_myself` varchar(255) NOT NULL,
@@ -157,9 +170,9 @@ CREATE TABLE `profile` (
 -- Дамп данных таблицы `profile`
 --
 
-INSERT INTO `profile` (`id`, `user_id`, `nickname`, `name`, `surname`, `floor`, `born`, `avatar`, `favorites`, `about_myself`, `contact`, `date_registerated`) VALUES
+INSERT INTO `profile` (`id`, `user_id`, `nickname`, `name`, `surname`, `floor`, `country`, `avatar`, `favorites`, `about_myself`, `contact`, `date_registerated`) VALUES
 (1, 1, 'Galifax', 'Андрей', 'Середюк', '', '0000-00-00', '', '0', '', '0', '2017-07-11 21:00:00'),
-(2, 2, 'dddddadadwadadad', 'adadassssssssssssssssssssssssssssssss', 'dsadsadad', 'ad', '2017-07-31', '/img/img-logo.jpg\r\n\r\n', '2017-07-31\r\n\r\n', '2017-07-31\r\n2017-07-31\r\n', '2017-07-31\r\n\r\n', '2017-07-30 21:00:00');
+(2, 2, 'АС', 'Андрей', 'Сисёмка', 'Мужской', 'Украина', '/img/img-logo.jpg', 'Limp Bizkit, Bring Me The Horizon, Accept\r\n\r\n', 'Господи, какой человечище\r\n', '0931178544\r\n', '2017-07-30 21:00:00');
 
 -- --------------------------------------------------------
 
@@ -200,7 +213,7 @@ CREATE TABLE `video` (
   `src` varchar(55) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` varchar(1000) NOT NULL,
-  `date` datetime NOT NULL
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -208,21 +221,17 @@ CREATE TABLE `video` (
 --
 
 INSERT INTO `video` (`id`, `profile_id`, `src`, `name`, `description`, `date`) VALUES
-(1, 1, 'uploads/1.mp4', 'qqq', 'qqqq', '2017-07-12 00:00:00'),
-(2, 1, 'uploads/1.mp4', '222', '2222', '2017-07-14 00:00:00'),
-(3, 1, 'uploads/1.mp4', '33333', 'qweqwqeq', '2017-07-14 00:00:00'),
-(4, 1, 'uploads/1.mp4', 'qwewqqwrewr', 'rwerewrewr', '2017-07-25 00:00:00'),
-(5, 1, 'uploads/1.mp4', 'Galifaks', 'way way', '2017-07-23 00:00:00'),
-(6, 1, 'uploads/1.mp4', 'adasd', 'adad', '2017-07-20 00:00:00'),
-(7, 1, 'uploads/1.mp4', 'adasd', 'adad', '2017-07-20 00:00:00'),
-(8, 1, 'uploads/1.mp4', 'adasd', 'adad', '2017-07-20 00:00:00'),
-(9, 1, 'uploads/1.mp4', 'adasd', 'adad', '2017-07-20 00:00:00'),
-(10, 1, 'uploads/1.mp4', 'adasd', 'adad', '2017-07-20 00:00:00'),
-(11, 1, 'uploads/1.mp4', 'adasd', 'adad', '2017-07-20 00:00:00'),
-(12, 1, 'uploads/1.mp4', 'adasd', 'adad', '2017-07-20 00:00:00'),
-(13, 2, 'uploads/1.mp4', 'adasd', 'adad', '2017-07-20 00:00:00'),
-(14, 2, 'uploads/1.mp4', 'adasd', 'adad', '2017-07-20 00:00:00'),
-(15, 1, 'uploads/1.mp4', 'adasd', 'adad', '2017-07-20 00:00:00');
+(2, 1, 'uploads/1.mp4', 'Смурфы 1 сезон 5 серия', '2222', '2017-07-01'),
+(3, 2, 'uploads/1.mp4', 'Смурфы 2 сезон 11 серия', 'qweqwqeq', '2017-07-03'),
+(5, 1, 'uploads/1.mp4', 'Смурфы 3 сезон 1 серия', 'way way', '2017-07-02'),
+(6, 1, 'uploads/1.mp4', 'Смурфы 6 сезон 8 серия', 'adad', '2017-07-04'),
+(7, 2, 'uploads/1.mp4', 'Смурфы 7 сезон 7 серия', 'adad', '2017-07-05'),
+(8, 2, 'uploads/1.mp4', 'Смурфы 8 сезон 6 серия', 'adad', '2017-07-07'),
+(9, 2, 'uploads/1.mp4', 'Смурфы 9 сезон 9 серия', 'adad', '2017-07-06'),
+(10, 2, 'uploads/1.mp4', 'Смурфы 10 сезон 5 серия', 'adad', '2017-07-08'),
+(11, 2, 'uploads/1.mp4', 'Смурфы 11 сезон 11 серия', 'adad', '2017-07-09'),
+(12, 1, 'uploads/1.mp4', 'Смурфы 12 сезон 12 серия', 'adad', '2017-07-11'),
+(15, 1, 'uploads/1.mp4', 'Смурфы 15 сезон 15 серия', 'adad', '2017-07-10');
 
 -- --------------------------------------------------------
 
@@ -242,8 +251,16 @@ CREATE TABLE `view` (
 
 INSERT INTO `view` (`id`, `video_id`, `views`) VALUES
 (1, 1, 118),
-(2, 3, 10),
-(3, 3, 17);
+(2, 2, 10),
+(3, 3, 17),
+(4, 4, 54),
+(5, 5, 118),
+(6, 6, 10),
+(7, 7, 17),
+(8, 8, 54),
+(9, 9, 118),
+(10, 10, 10),
+(11, 11, 17);
 
 --
 -- Индексы сохранённых таблиц
@@ -331,12 +348,12 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT для таблицы `favorites`
 --
 ALTER TABLE `favorites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT для таблицы `likes`
 --
@@ -346,7 +363,7 @@ ALTER TABLE `likes`
 -- AUTO_INCREMENT для таблицы `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `user`
 --
@@ -361,7 +378,7 @@ ALTER TABLE `video`
 -- AUTO_INCREMENT для таблицы `view`
 --
 ALTER TABLE `view`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
@@ -370,40 +387,25 @@ ALTER TABLE `view`
 -- Ограничения внешнего ключа таблицы `comments`
 --
 ALTER TABLE `comments`
-  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`video_id`) REFERENCES `video` (`id`),
   ADD CONSTRAINT `comments_ibfk_3` FOREIGN KEY (`profile_id`) REFERENCES `profile` (`id`);
 
 --
 -- Ограничения внешнего ключа таблицы `favorites`
 --
 ALTER TABLE `favorites`
-  ADD CONSTRAINT `favorites_ibfk_1` FOREIGN KEY (`profile_id`) REFERENCES `profile` (`id`),
-  ADD CONSTRAINT `favorites_ibfk_2` FOREIGN KEY (`video_id`) REFERENCES `video` (`id`);
+  ADD CONSTRAINT `favorites_ibfk_1` FOREIGN KEY (`profile_id`) REFERENCES `profile` (`id`);
 
 --
 -- Ограничения внешнего ключа таблицы `likes`
 --
 ALTER TABLE `likes`
-  ADD CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`profile_id`) REFERENCES `profile` (`id`),
-  ADD CONSTRAINT `likes_ibfk_2` FOREIGN KEY (`video_id`) REFERENCES `video` (`id`);
+  ADD CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`profile_id`) REFERENCES `profile` (`id`);
 
 --
 -- Ограничения внешнего ключа таблицы `profile`
 --
 ALTER TABLE `profile`
   ADD CONSTRAINT `profile_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
-
---
--- Ограничения внешнего ключа таблицы `video`
---
-ALTER TABLE `video`
-  ADD CONSTRAINT `video_ibfk_1` FOREIGN KEY (`profile_id`) REFERENCES `user` (`id`);
-
---
--- Ограничения внешнего ключа таблицы `view`
---
-ALTER TABLE `view`
-  ADD CONSTRAINT `view_ibfk_1` FOREIGN KEY (`video_id`) REFERENCES `video` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
