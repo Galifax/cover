@@ -75,9 +75,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $model = Video::find()->orderBy('profile_id')->limit(2)->with('profile')->all();
+        $model = Video::find()->where(['profile_id'=> 1])->orderBy(['rand()' => SORT_DESC])->limit(2)->with('profile')->all();
         $recently = Video::find()->orderBy(['date'=>SORT_DESC])->limit(6)->with('profile')->all();
-        return $this->render('index', compact('model', 'recently'));
+        $random = Video::find()->where(['profile_id'=> 1])->orderBy(['rand()' => SORT_DESC])->limit(6)->with('profile')->all();
+        return $this->render('index', compact('model', 'recently','random'));
     }
 
     /**
