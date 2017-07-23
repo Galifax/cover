@@ -112,7 +112,7 @@ AppAsset::register($this);
 <!--                                Загрузить видео </a>-->
                         </li>
                         <li>
-                            <a href="<?= Url::to(['/profile/my-videos'])?>" target="_blank">
+                            <a href="<?= Url::to(['/profile/my-videos'])?>">
                                 <i class="fa fa-upload" aria-hidden="true"></i>
                                 Мои видео </a>
                         </li>

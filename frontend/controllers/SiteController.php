@@ -13,6 +13,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use frontend\models\Video;
+use frontend\models\View;
 use frontend\models\Profile;
 
 /**
@@ -74,8 +75,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $model = Video::find()->with('profile')->all();
-        return $this->render('index', compact('model'));
+        $model = Video::find()->orderBy('profile_id')->limit(2)->with('profile')->all();
+        $recently = Video::find()->orderBy(['date'=>SORT_DESC])->limit(6)->with('profile')->all();
+        return $this->render('index', compact('model', 'recently'));
     }
 
     /**

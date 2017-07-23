@@ -13,10 +13,11 @@
             <div class="tab-content">
     
                 <div class="col-md-4">
-                
-                     <img src="http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg" style="width: 100%">
-                    <a href="#" class="btn btn-default"> редактировать</a>
-                    <a href="#" class="btn btn-default"> удалить</a>
+                    <?php if($model->avatar != null):?>
+                    <img src="http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg" style="width: 100%">
+                    <?php endif;?>
+                    <a href="#" class="btn btn-default"> Аватар</a>
+                    <a href="#" class="btn btn-default"> Удалить</a>
 
                     <div class="">
 
