@@ -78,14 +78,6 @@ AppAsset::register($this);
         </div>
     </div>
 
-
-
-
-
-
-
-
-
     <div class="secondary-navigation-a" id="nav1-2">
 
             <?php if(Yii::$app->user->id):?>
@@ -115,12 +107,12 @@ AppAsset::register($this);
                                 Мой профиль </a>
                         </li>
                         <li>
-                            <a href="<?= Url::to(['/profile/upload'])?>" target="_blank">
-                                <i class="fa fa-upload" aria-hidden="true"></i>
-                                Загрузить видео </a>
+                            <a data-toggle="modal" data-target="#squarespaceModal" class="center-block"><i class="fa fa-upload" aria-hidden="true"></i>Click Me</a>
+<!--                            <a href="--><?//= Url::to(['/profile/upload'])?><!--" target="_blank">-->
+<!--                                Загрузить видео </a>-->
                         </li>
                         <li>
-                            <a href="<?= Url::to(['my-videos'])?>" target="_blank">
+                            <a href="<?= Url::to(['/profile/my-videos'])?>" target="_blank">
                                 <i class="fa fa-upload" aria-hidden="true"></i>
                                 Мои видео </a>
                         </li>
@@ -155,6 +147,64 @@ AppAsset::register($this);
             </ul>
         </div>
     </div>
+
+
+    <!-- line modal -->
+    <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title" id="lineModalLabel">My Modal</h3>
+                </div>
+                <div class="modal-body">
+
+                    <!-- content goes here -->
+                    <form>
+                        <div class="form-group">
+                            <label for="videoName">video name</label>
+                            <input type="email" class="form-control" id="videoName" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="musicType">music type</label>
+                            <input type="password" class="form-control" id="musicType" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputFile">File input</label>
+                            <input type="file" id="exampleInputFile">
+                            <p class="help-block">Требования:<br>
+                                Видео в формате<br>
+                                Размеры не более 1 тб<br>
+                                Видил не должно содержать материалы порно графического характера, пропаганду, призыв к насилию и суицидальных наклоностей.<br>
+                                Видио не должно нарушать авторские права.</p>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Check me out
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-group btn-group-justified" role="group" aria-label="group button">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
+                        </div>
+                        <div class="btn-group btn-delete hidden" role="group">
+                            <button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <main id="main">
 
 
