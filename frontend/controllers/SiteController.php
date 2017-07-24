@@ -15,7 +15,9 @@ use frontend\models\ContactForm;
 use frontend\models\Video;
 use frontend\models\View;
 use frontend\models\Profile;
-
+use frontend\models\Likes;
+use yii\db\AccessQuery;
+use yii\db\ActiveQuery;
 /**
  * Site controller
  */
@@ -76,7 +78,12 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
-        $model = Video::find()->orderBy('rand()')->limit(3)->with('profile','view')->all();
+
+    
+        $model = Video::find()->with('likes')->orderBy('rand()')->limit(3)->with('profile','view')->all();
+        $mod = Video::find()->innerJoinWith(['likes' => function(ActiveQuery $query){
+        }])->all();
+        // debug($mod);
         $recently = Video::find()->orderBy(['date'=>SORT_DESC])->limit(6)->with('profile','view')->all();
         $random = Video::find()->orderBy('rand()')->limit(3)->with('profile','view')->all();
         return $this->render('index', compact('model', 'recently','random'));

@@ -3,6 +3,7 @@
 namespace frontend\models;
 
 use Yii;
+use frontend\models\Likes;
 
 /**
  * This is the model class for table "video".
@@ -82,6 +83,11 @@ class Video extends \yii\db\ActiveRecord
       public function getLikes()
     {
         return $this->hasMany(Likes::className(), ['video_id' => 'id']);
+    }
+
+        public function getLikesCount()
+    {
+         return $this->getLikes()->count();
     }
 
       public function getComments()
