@@ -75,7 +75,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        
+
         $model = Video::find()->orderBy('rand()')->limit(3)->with('profile','view')->all();
         $recently = Video::find()->orderBy(['date'=>SORT_DESC])->limit(6)->with('profile','view')->all();
         $random = Video::find()->orderBy('rand()')->limit(3)->with('profile','view')->all();

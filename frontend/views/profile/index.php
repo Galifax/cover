@@ -16,8 +16,10 @@
                     <?php if($model->avatar != null):?>
                     <img src="http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg" style="width: 100%">
                     <?php endif;?>
+                    
+                    <?= Html::button('Редактировать', ['value' => Url::to(['edit', 'id'=>$model->id]) , 'class' => 'btn btn-success' , 'id' => 'modalButton2']) ?>
                     <a href="#" class="btn btn-default"> Аватар</a>
-                    <a href="#" class="btn btn-default"> Удалить</a>
+                    <a href="<?= Url::to(['del'=>$model->avatar])?>" class='btn btn-danger'>Delete</a>
 
                     <div class="">
 

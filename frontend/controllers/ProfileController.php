@@ -12,6 +12,7 @@ use frontend\models\User;
 use frontend\models\Video;
 use frontend\models\View;
 use frontend\models\UploadForm;
+use frontend\models\UploadFile;
 use yii\web\UploadedFile;
 use yii\db\ActiveQuery;
 
@@ -63,7 +64,7 @@ class ProfileController extends Controller
     {
 
         $model = Profile::find()->where(['user_id' =>Yii::$app->user->id])->with('user')->one();
-        if($model->load(Yii::$app->request->post())) $model->save();
+     
   
          return $this->render('index', compact('model'));
     }
@@ -75,6 +76,26 @@ class ProfileController extends Controller
      public function actionUpload()
     {
         return $this->render('upload');
+    }
+     public function actionEdit()
+     {
+      $this->layout=false;
+      $model = Profile::find()->where(['user_id' =>Yii::$app->user->id])->with('user')->one();
+        if($model->load(Yii::$app->request->post())){
+          $model->save();
+          return $this->redirect(['/profile']);
+        } 
+        return $this->renderAjax('edit', compact('model'));
+      }
+    public function actionUploadFile()
+    {
+      $this->layout=false;
+        $model = Profile::findOne($id);
+        if ($model->load(Yii::$app->request->post())){
+            $model->save();
+            $this->redirect();
+        }
+        return $this->render('uploadfile');
     }
     public function actionUpdate($id)
     {
