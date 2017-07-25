@@ -4,7 +4,7 @@ use yii\widgets\ActiveForm;
 use yii\widgets\Pjax;
 
 $form = ActiveForm::begin([
-    'options' => ['data-pjax' => true, 'enctype' =>'multipart/form-data']
+    'options' => ['enctype' =>'multipart/form-data']
 ]) ?>
     <?= $form->field($model, 'nickname')->textInput() ?>
     <?= $form->field($model, 'name')->textInput() ?>
