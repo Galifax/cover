@@ -31,11 +31,13 @@ class Profile extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    public $file;
     public function rules()
     {
         return [
 
             [['user_id',], 'integer'],
+            [['file',], 'file'],
             [['nickname', 'name', 'surname', 'avatar', 'about_myself', 'country', 'contact', 'favorites', 'floor' ], 'string', 'max' => 255],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];

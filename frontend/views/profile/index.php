@@ -13,9 +13,7 @@
             <div class="tab-content">
     
                 <div class="col-md-4">
-                    <?php if($model->avatar != null):?>
-                    <img src="http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg" style="width: 100%">
-                    <?php endif;?>
+                    <img width='100%' src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : '/'.$model->avatar?>" alt="">
                     
                     <?= Html::button('Редактировать', ['value' => Url::to(['edit', 'id'=>$model->id]) , 'class' => 'btn btn-success' , 'id' => 'modalButton2']) ?>
                     <a href="#" class="btn btn-default"> Аватар</a>

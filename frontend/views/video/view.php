@@ -106,18 +106,18 @@ $this->title = $model->name;
                         <div class="media"><!-- Первый уровень коментов-->
 
                             <div class="media-heading">
-                                 <span class="label label-info">Валера89</span> Ответил 12 часов назад
+                                 <span class="label label-info"><?= $comments->profile->nickname?></span> <?= $comments->date?>
                             </div>
 
                                 <div class="media-left">
-                                   <img class="media-object img-rounded img1" src="http://cdn.newsapi.com.au/image/v1/5f0545ecda27bbf03078d36b8b721f6e" alt="">
+                                   <img class="media-object img-rounded img1" src="<?=empty($comments->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : '/'.$comments->profile->avatar?>" alt="">
                                 </div>
                                 <!-- media-left -->
 
 
                                 <div class="media-body"> <!-- комментарий пользователя не имеет ответа -->
 
-                                    <p> 1yazmayın artık amk, görmeyeyim sol framede. insan bi meraklanıyor, ümitleniyor. sonra yine özlem dolu yazıları görüp hayal kırıklığıyla okuyorum.</p>
+                                    <p><?= $comments->content?></p>
                                     <div class="comment-meta">
                                         <span><a href="#">Удалить</a></span>
                                         <span><a href="#">Редактировать</a></span>
