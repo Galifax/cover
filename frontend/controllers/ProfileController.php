@@ -76,7 +76,7 @@ class ProfileController extends Controller
     {
         return $this->render('upload');
     }
-     public function actionEdit()
+      public function actionEdit()
      {
       $this->layout=false;
       $model = Profile::find()->where(['user_id' =>Yii::$app->user->id])->with('user')->one();
@@ -84,10 +84,11 @@ class ProfileController extends Controller
     
       $model->file = UploadedFile::getInstance($model, 'file'); 
       if($model->file){
-      $model->file->saveAs('avatars/'.$model->file->baseName . '.' .$model->file->extension);
-      if(!empty($model->avatar)){
+          if (file_exists(substr($model->avatar, 1))){
         unlink(substr($model->avatar, 1));
       }
+      $model->file->saveAs('avatars/'.$model->file->baseName . '.' .$model->file->extension);
+      
       $model->avatar = '/avatars/' .$model->file->baseName . '.' .$model->file->extension;
      }
       $model->save();

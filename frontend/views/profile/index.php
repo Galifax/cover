@@ -90,7 +90,7 @@
                             <div class="media"><!-- Первый уровень коментов-->
 
                                 <div class="media-heading">
-                                    <span class="label label-info">Валера89</span> Ответил 12 часов назад
+                                    <span class="label label-info"><?= $video->profile->nickname?></span> Ответил 12 часов назад
                                 </div>
 
                                 <div class="media-left">
