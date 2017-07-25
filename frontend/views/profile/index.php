@@ -68,7 +68,7 @@
                     <h2 class="text-center">Коментариев нет (если коментов нет)</h2>
 
                     <ul style="padding: 10px" class="list-unstyled video-list-thumbs row">
-
+                        <?php foreach($random as $video):?>
                         <li >
 
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -76,11 +76,11 @@
                                         <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
                                         <span class="glyphicon glyphicon-play-circle"></span>
                                         <span class="duration">03:15</span>
-                                        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+                                        <h2><?= $video->name?></h2>
                                     </a>
                                     <div class="video-text">
-                                        <a class="username-video" href="#">Name</a>
-                                        <p>view 1000 <i class="fa fa-eye" aria-hidden="true"></i> | Загружено date </p>
+                                        <a class="username-video" href="#"><?= $video->profile->nickname?></a>
+                                        <p><?= $video->view->views?> <i class="fa fa-eye" aria-hidden="true"></i> | <?= $video->date?> </p>
                                     </div>
                         </div>
 
@@ -126,122 +126,7 @@
                         </div>
                             <div class="clearfix"
                         </li>
-
-                        <li >
-
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <a class="video-list-thumbs-a" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="Claudio Bravo, antes su debut con el Barça en la Liga">
-                                    <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
-                                    <span class="glyphicon glyphicon-play-circle"></span>
-                                    <span class="duration">03:15</span>
-                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-                                </a>
-                                <div class="video-text">
-                                    <a class="username-video" href="#">Name</a>
-                                    <p>view 1000 <i class="fa fa-eye" aria-hidden="true"></i> | Загружено date </p>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" >
-                                <div class="row"><!-- Ров1-->
-
-                                    <div class="media"><!-- Первый уровень коментов-->
-
-                                        <div class="media-heading">
-                                            <span class="label label-info">Валера89</span> Ответил 12 часов назад
-                                        </div>
-
-                                        <div class="media-left">
-                                            <img class="media-object img-rounded img1" src="http://cdn.newsapi.com.au/image/v1/5f0545ecda27bbf03078d36b8b721f6e" alt="">
-                                        </div>
-                                        <!-- media-left -->
-
-
-                                        <div class="media-body"> <!-- комментарий пользователя не имеет ответа -->
-
-                                            <p> 1yazmayın artık amk, görmeyeyim sol framede. insan bi meraklanıyor, ümitleniyor. sonra yine özlem dolu yazıları görüp hayal kırıklığıyla okuyorum.</p>
-                                            <div class="comment-meta">
-                                                <span ><a href="#" style="float: right">Лайк!</a></span>
-                                                <a class="" role="button" data-toggle="collapse" href="#replyComment2" aria-expanded="false" aria-controls="collapseExample">Ответить</a>
-                                                </span>
-
-                                                <div class="collapse" id="replyComment2">
-                                                    <form>
-                                                        <div class="form-group">
-                                                            <label for="comment">Your Comment</label>
-                                                            <textarea name="comment" class="form-control" rows="3"></textarea>
-                                                        </div>
-                                                        <button type="submit" class="btn btn-default">Send</button>
-                                                    </form>
-                                                </div>
-
-                                            </div>
-
-                                        </div><!-- медиа боди-->
-
-                                    </div><!-- Первый уровень коментов \/ вставлять ниже-->
-                                </div>
-                            </div>
-                            <div class="clearfix"
-                        </li>
-
-                        <li >
-
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <a class="video-list-thumbs-a" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="Claudio Bravo, antes su debut con el Barça en la Liga">
-                                    <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
-                                    <span class="glyphicon glyphicon-play-circle"></span>
-                                    <span class="duration">03:15</span>
-                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-                                </a>
-                                <div class="video-text">
-                                    <a class="username-video" href="#">Name</a>
-                                    <p>view 1000 <i class="fa fa-eye" aria-hidden="true"></i> | Загружено date </p>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" >
-                                <div class="row"><!-- Ров1-->
-
-                                    <div class="media"><!-- Первый уровень коментов-->
-
-                                        <div class="media-heading">
-                                            <span class="label label-info">Валера89</span> Ответил 12 часов назад
-                                        </div>
-
-                                        <div class="media-left">
-                                            <img class="media-object img-rounded img1" src="http://cdn.newsapi.com.au/image/v1/5f0545ecda27bbf03078d36b8b721f6e" alt="">
-                                        </div>
-                                        <!-- media-left -->
-
-
-                                        <div class="media-body"> <!-- комментарий пользователя не имеет ответа -->
-
-                                            <p> 1yazmayın artık amk, görmeyeyim sol framede. insan bi meraklanıyor, ümitleniyor. sonra yine özlem dolu yazıları görüp hayal kırıklığıyla okuyorum.</p>
-                                            <div class="comment-meta">
-                                                <span ><a href="#" style="float: right">Лайк!</a></span>
-                                                <a class="" role="button" data-toggle="collapse" href="#replyComment2" aria-expanded="false" aria-controls="collapseExample">Ответить</a>
-                                                </span>
-
-                                                <div class="collapse" id="replyComment2">
-                                                    <form>
-                                                        <div class="form-group">
-                                                            <label for="comment">Your Comment</label>
-                                                            <textarea name="comment" class="form-control" rows="3"></textarea>
-                                                        </div>
-                                                        <button type="submit" class="btn btn-default">Send</button>
-                                                    </form>
-                                                </div>
-
-                                            </div>
-
-                                        </div><!-- медиа боди-->
-
-                                    </div><!-- Первый уровень коментов \/ вставлять ниже-->
-                                </div>
-                            </div>
-                            <div class="clearfix"
-                        </li>
+                            <?php endforeach;?>
                     </ul>
 
 <!--                            --><?php //Pjax::begin();?>
