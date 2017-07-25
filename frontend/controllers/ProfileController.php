@@ -62,11 +62,10 @@ class ProfileController extends Controller
      */
     public function actionIndex()
     {
-
+        $random = Video::find()->orderBy('rand()')->limit(3)->with('profile','view')->all();
         $model = Profile::find()->where(['user_id' =>Yii::$app->user->id])->with('user')->one();
      
-  
-         return $this->render('index', compact('model'));
+        return $this->render('index', compact('model','random'));
     }
     
      public function actionMessage()
@@ -77,7 +76,7 @@ class ProfileController extends Controller
     {
         return $this->render('upload');
     }
-     public function actionEdit()
+      public function actionEdit()
      {
       $this->layout=false;
       $model = Profile::find()->where(['user_id' =>Yii::$app->user->id])->with('user')->one();
