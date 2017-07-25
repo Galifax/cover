@@ -25,7 +25,7 @@ $this->title = $model->name;
             <div class="btn-group btn-group-justified text-center" style="font-size: 18px; ">
                 <div class="btn-group border" >
                     <p>
-                        <?php Pjax::begin();?>
+                        <?php Pjax::begin(['enablePushState' => false]);?>
                         <?php if($favorites == 0):?>
                             <span class="vote plus" title="В понравившиеся видео"><a href="<?=Url::to(['video/view', 'id' => $id, 'favorites' => 'favorites'])?>">Добавить в избранное <i class="fa fa-plus" aria-hidden="true"></i></i></a></span>
                         <?php else:?>
@@ -36,7 +36,7 @@ $this->title = $model->name;
                 </div>
                 <div class="btn-group border">
                     <p>
-                    <?php Pjax::begin();?>
+                    <?php Pjax::begin(['enablePushState' => false]);?>
                     <?php if($likes == 0):?>
                         <span class="vote plus" title="Поставить лайк"><a href="<?=Url::to(['video/view', 'id' => $id, 'like' => 'like'])?>"><i class="fa fa-thumbs-up"></i></a> <?=count($model->likes)?></span>
                     <?php elseif($likes == 1):?>

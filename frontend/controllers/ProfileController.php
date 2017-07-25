@@ -74,7 +74,6 @@ class ProfileController extends Controller
     }
      public function actionUpload()
     {
-        $this->layout=false;
       $model = new Video();
 
       if($model->load(Yii::$app->request->post())){
@@ -84,7 +83,12 @@ class ProfileController extends Controller
       $model->save();
         return $this->redirect(['/video/view', 'id' => $model->id]);
         } 
+       if(Yii::$app->request->isAjax){
+        $this->layout=false;
         return $this->renderAjax('upload', compact('model'));
+        }else{
+          return $this->render('upload', compact('model'));
+        }
       }
 
       public function actionEdit()

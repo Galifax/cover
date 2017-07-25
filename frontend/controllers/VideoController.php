@@ -80,18 +80,6 @@ class VideoController extends Controller
 
     public function actionView($id)
     {
-        if(isset($_GET['like'])){
-        $likes = Likes::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->count();
-        if($likes == 0){
-        $model1 = new Likes();
-        $model1->profile_id = Yii::$app->user->identity->id;
-        $model1->video_id = $id;
-        $model1->save();
-           }else{
-            $likes = Likes::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->one();
-            $likes->delete();
-           }
-        }
 
         if(isset($_GET['favorites'])){
         $favorites = Favorites::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->count();
@@ -105,6 +93,21 @@ class VideoController extends Controller
             $favorites->delete();
            }
         }
+
+        if(isset($_GET['like'])){
+        $likes = Likes::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->count();
+        if($likes == 0){
+        $model1 = new Likes();
+        $model1->profile_id = Yii::$app->user->identity->id;
+        $model1->video_id = $id;
+        $model1->save();
+           }else{
+            $likes = Likes::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->one();
+            $likes->delete();
+           }
+        }
+
+        
         $comments = new Comments();
         if($comments->load(Yii::$app->request->post())){
         $comments->save();
