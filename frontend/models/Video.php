@@ -27,7 +27,7 @@ class Video extends \yii\db\ActiveRecord
     {
         return 'video';
     }
-
+    public $file;
     /**
      * @inheritdoc
      */
@@ -37,6 +37,7 @@ class Video extends \yii\db\ActiveRecord
             [['profile_id', 'src', 'name', 'description', 'date'], 'required'],
             [['profile_id'], 'integer'],
             [['date'], 'safe'],
+            [['file',], 'file'],
             [['src'], 'string', 'max' => 55],
             [['name'], 'string', 'max' => 255],
             [['description'], 'string', 'max' => 1000],

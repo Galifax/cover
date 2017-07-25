@@ -10,11 +10,17 @@ $this->title = $model->name;
     <div class="col-md-8 padding-30 " style="margin: 0px" >
 
         <div class=" ">
-             <video src="/<?=$model->src?>" width="100%" height="100%" controls="controls"></video>
+                <img src="web/<?=$model->src?>" width="100%" >
+
+           <!--   <video src="/<?=$model->src?>" width="100%" height="100%" controls="controls" preload="<?=$model->src?>">
+                         <img src="<?=$model->src?>" width="100%" >
+ -->
+             </video>
+
         </div>
 
         <div class="about-video my-video-video border" style="padding-top: -15px; width: 100%">
-            <h2 style="margin: 0;padding: 10px;font-size: 23px "><?=$model->name?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consequuntur debitis distinctio incidunt iste iure mollitia, non numquam officia officiis, pariatur porro quam quis repellat reprehenderit totam ut. Doloribus, fugiat.</h2>
+            <h2 style="margin: 0;padding: 10px;font-size: 23px "><?=$model->name?></h2>
             <p style="padding-left: 10px;">Добавленно <?=$model->date?></p>
             <div class="btn-group btn-group-justified text-center" style="font-size: 18px; ">
                 <div class="btn-group border" >
@@ -67,7 +73,7 @@ $this->title = $model->name;
 <!--                <h3 class="text-center">Описание</h3>-->
 
             </div>
-            <p style="padding: 5px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolores eveniet modi odio omnis rem repellendus sint unde. Cum debitis doloribus illum itaque nobis nulla quas quibusdam quidem unde veniam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci dignissimos dolorem eius eligendi enim eos fugit ipsam magnam molestiae nam, quasi vel voluptatem. Aliquam ipsa molestiae odio placeat sed? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid et harum illum ipsam neque. A architecto aut cupiditate debitis enim, error explicabo illum incidunt, ipsa laudantium obcaecati quasi, quisquam quo? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto autem distinctio error fugiat illum odit optio, rem repellat sint totam? Amet consequuntur eveniet laudantium minima nemo quas quidem quod voluptas.</lore></p>
+            <p style="padding: 5px"><?=$model->description?></lore></p>
         </div>
 
         <div class="my-video-video background-gray" style="width: 100%">

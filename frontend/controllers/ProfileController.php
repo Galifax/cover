@@ -74,8 +74,19 @@ class ProfileController extends Controller
     }
      public function actionUpload()
     {
-        return $this->render('upload');
-    }
+        $this->layout=false;
+      $model = new Video();
+
+      if($model->load(Yii::$app->request->post())){
+      $model->file = UploadedFile::getInstance($model, 'file');
+      $model->file->saveAs('uploads/ '. $model->file->baseName . '.' .$model->file->extension);
+      $model->src = 'uploads/' .$model->file->baseName . '.' .$model->file->extension;
+      $model->save();
+        return $this->redirect(['/video/view', 'id' => $model->id]);
+        } 
+        return $this->renderAjax('upload', compact('model'));
+      }
+
       public function actionEdit()
      {
       $this->layout=false;

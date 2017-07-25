@@ -107,7 +107,7 @@ AppAsset::register($this);
                                 Мой профиль </a>
                         </li>
                         <li>
-                            <a data-toggle="modal" data-target="#squarespaceModal" class="center-block"><i class="fa fa-upload" aria-hidden="true"></i>Click Me</a>
+                           <?= Html::button('Загрузить видео', ['value' => Url::to(['/profile/upload']) , 'class' => 'btn btn-success' , 'id' => 'upload']) ?>
 <!--                            <a href="--><?//= Url::to(['/profile/upload'])?><!--" target="_blank">-->
 <!--                                Загрузить видео </a>-->
                         </li>
