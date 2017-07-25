@@ -76,6 +76,8 @@ class VideoController extends Controller
     {
         return $this->render('index');
     }
+
+
     public function actionView($id)
     {
         if(isset($_GET['like'])){
@@ -103,17 +105,13 @@ class VideoController extends Controller
             $favorites->delete();
            }
         }
-
-
         $comments = new Comments();
         if($comments->load(Yii::$app->request->post())){
         $comments->save();
         }
 
         $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'favorites', 'view', 'likes', 'comments' => function (ActiveQuery $query){
-                $query->where(['parent_id' => 0])->with('profile')->orderBy(['id' => SORT_ASC]);
-            }])->with(['comments.comments'=> function (ActiveQuery $query){
-                $query->with('profile')->orderBy(['comments.id' => SORT_DESC]);
+                $query->where(['parent_id' => 0])->with('profile')->orderBy(['id' => SORT_ASC])->with('profile');
             }])->one();
        
         // echo "<pre>";
