@@ -81,11 +81,11 @@ class ProfileController extends Controller
      {
       $this->layout=false;
       $model = Profile::find()->where(['user_id' =>Yii::$app->user->id])->with('user')->one();
-        if($model->load(Yii::$app->request->post())){
-          $model->save();
+      if($model->load(Yii::$app->request->post())){
       $model->file = UploadedFile::getInstance($model, 'file');    
-      $model->file->saveAs('/uploads/'. $model->file->baseName . '.' .$model->file->extension);
-      $model->avatar = '/uploads/' .$model->file->baseName . '.' .$model->file->extension;
+      $model->file->saveAs('avatars/'.$model->file->baseName . '.' .$model->file->extension);
+      $model->avatar = '/avatars/' .$model->file->baseName . '.' .$model->file->extension;
+      $model->save();
           return $this->redirect(['/profile']);
         } 
         return $this->renderAjax('edit', compact('model'));
