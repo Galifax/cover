@@ -13,9 +13,10 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="media">
-                                    <div align="center">
-                                        <img class="thumbnail img-responsive" src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>" width="300px" height="300px">
+                                    <div class="profile-userpic" align="center">
+                                        <img class="thumbnail" src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>" width="300px" height="300px">
                                     </div>
+                                    <hr>
                                     <div class="text-center">
 
                                         <?= Html::button('Редактировать', ['value' => Url::to(['edit', 'id'=>$model->id]) , 'class' => 'btn btn-success' , 'id' => 'modalButton2']) ?>
