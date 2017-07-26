@@ -106,7 +106,7 @@ class VideoController extends Controller
             $likes->delete();
            }
         }
-
+        $profile = Profile::find()->where(['user_id' => Yii::$app->user->id])->one();
         
         $comments = new Comments();
         if($comments->load(Yii::$app->request->post())){
@@ -114,15 +114,14 @@ class VideoController extends Controller
         }
 
         $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'favorites', 'view', 'likes', 'comments' => function (ActiveQuery $query){
-                $query->where(['parent_id' => 0])->with('profile')->orderBy(['id' => SORT_ASC])->with('profile');
+                $query->where(['parent_id' => 0])->with('comments.profile');
             }])->one();
        
         // echo "<pre>";
         // print_r($model->likes);
         // echo "</pre>";
-        return $this->render('view', compact('model', 'id', 'favorites', 'likes', 'comments'));
+        return $this->render('view', compact('model', 'id', 'favorites', 'likes', 'comments', 'profile'));
     }
-
     public function actionSearch(){
             return $this->render('search');
     }
