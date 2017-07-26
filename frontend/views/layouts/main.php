@@ -46,13 +46,7 @@ AppAsset::register($this);
         <div class="container">
             <div class="row row1">
                 <div class="col-sm-2">
-                    <div class="primary-navigation" id="nav1">
-                        <a class="navbar-button-2 text-center" href="#">
-                            <span class="glyphicon glyphicon-chevron-down"></span> 
-                            <strong>Профиль</strong>
-                            <span class="glyphicon glyphicon-user"></span>
-                        </a>
-                    </div>
+
                 </div>
                 <div class="navbar-search smallsearch col-sm-8 col-xs-11">
                     <div class="row">
@@ -65,19 +59,27 @@ AppAsset::register($this);
                     </div>
 <!--                    <img  src="img/logo.png" style="display: block; margin: 0 auto; ">-->
                 </div>
-                <div class="col-sm-2">
-                    <div class="primary-navigation" id="nav2">
-                        <a class="navbar-button-2 text-center" href="#">
-                            <span class="glyphicon glyphicon-music"></span> 
-                            <strong>Жанры музыки</strong>
-                            <span class="glyphicon glyphicon-chevron-down"></span>
-                        </a>
-                    </div>
-                </div>
+<!--                <div class="col-sm-2">-->
+<!--                    <div class="primary-navigation" id="nav2">-->
+<!--                        <a class="navbar-button-2 text-center" href="#">-->
+<!--                            <span class="glyphicon glyphicon-music"></span> -->
+<!--                            <strong>Жанры музыки</strong>-->
+<!--                            <span class="glyphicon glyphicon-chevron-down"></span>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
     </div>
 
+
+    <div class="primary-navigation" id="nav1">
+        <a  class="navbar-button-2 text-center" href="#">
+            <span class="glyphicon glyphicon-chevron-right"></span> 
+            <strong>Профиль</strong>
+            <span class="glyphicon glyphicon-user"></span>
+        </a>
+    </div>
     <div class="secondary-navigation-a" id="nav1-2">
 
             <?php if(Yii::$app->user->id):?>
@@ -136,17 +138,17 @@ AppAsset::register($this);
             <?php endif;?>
             <!-- index SIDEBAR MENU -->
         </div>
-    <div class="secondary-navigation-b" id="nav2-2">
-        <div class="sidebar-menu">
-            <h3 class="h-nav-music">Жанры музыки</h3>
-            <ul class="nav">
-                <?php foreach($category as $cat): ?>
-                    <li  class="" style="padding:0">
-                        <a href='#' class=''><?= $cat->name?></a></li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-    </div>
+<!--    <div class="secondary-navigation-b" id="nav2-2">-->
+<!--        <div class="sidebar-menu">-->
+<!--            <h3 class="h-nav-music">Жанры музыки</h3>-->
+<!--            <ul class="nav">-->
+<!--                --><?php //foreach($category as $cat): ?>
+<!--                    <li  class="" style="padding:0">-->
+<!--                        <a href='#' class=''>--><?//= $cat->name?><!--</a></li>-->
+<!--                --><?php //endforeach; ?>
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
 
 
     <!-- line modal -->
@@ -236,14 +238,15 @@ AppAsset::register($this);
     $(document).ready(function(){
         $("#nav1").click(function(){
             $("#nav1-2").toggleClass('opened');
+            $("#nav1").toggleClass('opened');
             $("#main").toggleClass('slide-left');
             $("#main").toggleClass('animate-right');
     });
-        $("#nav2").click(function(){
-            $("#nav2-2").toggleClass('opened');
-            $("#main").toggleClass('slide-left');
-            $("#main").toggleClass('animate-left');
-        });
+//        $("#nav2").click(function(){
+//            $("#nav2-2").toggleClass('opened');
+//            $("#main").toggleClass('slide-left');
+//            $("#main").toggleClass('animate-left');
+//        });
     });
 </script>
 </div>

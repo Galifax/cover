@@ -76,8 +76,6 @@ a.desc:after {  content: "\e152";  }
 
 .my-video-video{border: solid 1px #CCCCCC; padding: 5px; margin:10px 0px 10px 0px ;width: 20%;float: left;overflow: hidden;}
 
-.profile-img{border: solid 1px #CCCCCC; border-radius: 45px  0px 45px 0px; padding: 5px;margin:10px;width:100%;overflow: hidden;}
-
 .border-radius{border: solid 1px #CCCCCC; border-radius: 40px  0px 40px 0px; padding: 5px;}
 
 .border{border: solid 1px #CCCCCC; padding: 0px; margin: 0px;background-color: white}
@@ -129,12 +127,21 @@ a.desc:after {  content: "\e152";  }
 .primary-navigation {
     display:inline-block;
     position:fixed;
-
+    transition:all 0.4s ease-out;
+    transform:translateX(0px);
     z-index:9999;
 }
-#nav1{  top:0;  left:0;}
 
-#nav2{  top:0;  right:0;}
+#nav1{  top:250px;  left:-40px;}
+
+#nav1.opened {
+
+    transform:translateX(200px) ;
+    transition:all 0.4s ease-out;
+
+}
+
+
 
 .primary-navigation a {
     color:#fff;
@@ -153,30 +160,16 @@ a.desc:after {  content: "\e152";  }
     transition:all 0.4s ease-out;
     transform:translateX(-200px);
 
-}
-.secondary-navigation-b {
-    top:60px;
-    right:0px;
-    position:fixed;
-    width:200px;
-    height: 100%;
-    background:#43ACA5;
-    color:#fff;
-    transition:all 0.4s ease-out;
-    transform:translateX(200px);
 
 }
+
 
 .secondary-navigation-a.opened {
 
-    transform:translateX(0px);
-    transition:all 0.4s ease-out;
+    transform: translateX(0px);
+    transition: all 0.4s ease-out;
 }
-.secondary-navigation-b.opened {
 
-    transform:translateX(0px);
-    transition:all 0.4s ease-out;
-}
 
 #main {
 
@@ -188,10 +181,7 @@ a.desc:after {  content: "\e152";  }
     transition:all 0.4s ease-out;
     transform: rotateY(0deg) translate(200px,0px);
 }
-.animate-left {
-    transition:all 0.4s ease-out;
-    transform: rotateY(10deg) translate(-200px,0px);
-}
+
 .slide-left {
     /*transform:translateX(200px);*/
 }
@@ -235,6 +225,7 @@ a.desc:after {  content: "\e152";  }
     height: 43px;
     cursor: pointer;
     width: auto;
+    -webkit-transform: rotate(90deg); transform: rotate(90deg);
 }
 
 @media screen and (min-width: 768px) {
@@ -262,8 +253,13 @@ a.desc:after {  content: "\e152";  }
 /* Profile sidebar */
 .profile-sidebar {  padding: 20px 0 10px 0; }
 
-.profile-userpic img {  float: none;  margin: 0 auto;  width: 60%;  height: 60%;  -webkit-border-radius: 50% !important;  -moz-border-radius: 50% !important;  border-radius: 50% !important;  }
-
+.profile-userpic img {
+    float: none;
+    margin: 0 auto;
+    width: 60%;
+    height: 60%;
+    -webkit-border-radius: 50% !important;  -moz-border-radius: 50% !important;  border-radius: 50% !important;
+}
 .profile-usertitle {  text-align: center;  margin-top: 0px;  }
 
 .profile-usertitle-name { font-size: 28px;  font-weight: 600;  margin-bottom: 7px;  }
