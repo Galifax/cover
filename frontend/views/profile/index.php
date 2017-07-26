@@ -6,6 +6,7 @@
     use yii\jui\DatePicker;
     $this->title = 'Профиль | '. $model->nickname ? $model->nickname : 1;
     ?>
+    <?php Pjax::begin()?>
     <div class="container">
 
         <div class="row profile container">
@@ -17,7 +18,7 @@
                     
                     <?= Html::button('Редактировать', ['value' => Url::to(['edit', 'id'=>$model->id]) , 'class' => 'btn btn-success' , 'id' => 'modalButton2']) ?>
                     <a href="#" class="btn btn-default"> Аватар</a>
-                    <a href="<?= Url::to(['del'=>$model->avatar])?>" class='btn btn-danger'>Delete</a>
+                    <a href="<?= Url::to(['/profile', 'ava'=>$model->id])?>" class='btn btn-danger'>Delete</a>
 
                     <div class="">
 
@@ -152,7 +153,7 @@
             
         </div>
     </div>
-
+<?php Pjax::end()?>
     
 
 

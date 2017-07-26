@@ -62,9 +62,18 @@ class ProfileController extends Controller
      */
     public function actionIndex()
     {
+        $ava = Yii::$app->request->get('ava');
+        if ($ava){
+            $delete = Profile::findOne($ava);
+            if ($delete){ 
+              $delete->avatar='';
+              $delete->save();  
+            }
+            
+        }
         $random = Video::find()->orderBy('rand()')->limit(3)->with('profile','view')->all();
         $model = Profile::find()->where(['user_id' =>Yii::$app->user->id])->with('user')->one();
-     
+        
         return $this->render('index', compact('model','random'));
     }
     
