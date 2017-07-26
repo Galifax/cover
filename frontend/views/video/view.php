@@ -5,7 +5,7 @@ use yii\widgets\Pjax;
 use yii\widgets\ActiveForm;
 $this->title = $model->name;
 ?>
-<?php Pjax::begin();?>
+<?php Pjax::begin(['enablePushState' => false]);?>
 <div style=" padding: 60;margin-right: 60px;margin-left: 60px;background-color: none" >
 
     <div class="col-md-8 padding-30 " style="margin: 0px" >

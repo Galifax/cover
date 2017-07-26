@@ -210,16 +210,17 @@ AppAsset::register($this);
 
 
 
-        <?php Pjax::begin();?>
 
 
         <div class="container nopadding bg-img-3" style="min-height: 92vh">
+            <?php Pjax::begin();?>
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
 
             <?= Alert::widget() ?>
             <?= $content ?>
+            <?php Pjax::end();?>
         </div>
     </main>
 </div>
