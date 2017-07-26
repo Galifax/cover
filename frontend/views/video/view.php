@@ -5,6 +5,7 @@ use yii\widgets\Pjax;
 use yii\widgets\ActiveForm;
 $this->title = $model->name;
 ?>
+<?php Pjax::begin();?>
 <div style=" padding: 60;margin-right: 60px;margin-left: 60px;background-color: none" >
 
     <div class="col-md-8 padding-30 " style="margin: 0px" >
@@ -25,24 +26,20 @@ $this->title = $model->name;
             <div class="btn-group btn-group-justified text-center" style="font-size: 18px; ">
                 <div class="btn-group border" >
                     <p>
-                        <?php Pjax::begin(['enablePushState' => false]);?>
                         <?php if($favorites == 0):?>
                             <span class="vote plus" title="В понравившиеся видео"><a href="<?=Url::to(['video/view', 'id' => $id, 'favorites' => 'favorites'])?>">Добавить в избранное <i class="fa fa-plus" aria-hidden="true"></i></i></a></span>
                         <?php else:?>
                             <span  class="vote plus" title="Убрть из понравившиеся видео"><a href="<?=Url::to(['video/view', 'id' => $id, 'favorites' => 'favorites'])?>">Убрать из избранного <i  class="fa fa-minus" aria-hidden="true"></i></a></span>
                         <?php endif;?>
-                        <?php Pjax::end();?>
                     </p>
                 </div>
                 <div class="btn-group border">
                     <p>
-                    <?php Pjax::begin(['enablePushState' => false]);?>
                     <?php if($likes == 0):?>
                         <span class="vote plus" title="Поставить лайк"><a href="<?=Url::to(['video/view', 'id' => $id, 'like' => 'like'])?>"><i class="fa fa-thumbs-up"></i></a> <?=count($model->likes)?></span>
                     <?php elseif($likes == 1):?>
                         <span class="vote plus" title="Убрать лайк"><a href="<?=Url::to(['video/view', 'id' => $id, 'like' => 'like'])?>"><i class="fa fa-thumbs-o-up"></i></a> <?=count($model->likes)?></span>
                     <?php endif;?>
-                    <?php Pjax::end();?>
                     </p>
                 </div>
                 <div class="btn-group border">
@@ -72,31 +69,32 @@ $this->title = $model->name;
 
 <!--                <h3 class="text-center">Описание</h3>-->
 
-            </div>
-            <p style="padding: 5px"><?=$model->description?></lore></p>
+            </div
+                        <p style="padding: 5px"><?=$model->description?></lore></p>
         </div>
 
         <div class="my-video-video background-gray" style="width: 100%">
 
 
 
-
             <div class="" style="padding: 15px"><!-- стиль-->
                 <div class="post-comments"><!-- Начало ковентов-->
-
-                    <form>
-                        <div class="form-group">
-                            <label for="comment">Оставить ваш комментарий</label>
-                            <textarea name="comment" class="form-control" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-default">Отправить</button>
-                    </form>
+                <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]]); ?>
+                <?= $form->field($comments, 'parent_id')->hiddenInput(['value' => 0])->label(false) ?>
+                <?= $form->field($comments, 'video_id')->hiddenInput(['value' => $model->id])->label(false) ?>
+                <?= $form->field($comments, 'profile_id')->hiddenInput(['value' => $profile->id])->label(false) ?>
+                <?= $form->field($comments, 'date')->hiddenInput(['value' => date('Y-m-d H:i:s')])->label(false) ?>
+                <?= $form->field($comments, 'content')->textArea()->label('Текст') ?>
+                <div class="form-group">
+                    <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
+                </div>
+                <?php ActiveForm::end(); ?>
 
                     <div class="comments-nav">
                         <ul class="nav nav-pills">
                             <li role="presentation" class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    Всего 3 комментария <span class="caret"></span>
+                                    Всего <?=count($model->comments)?> комментария <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Best</a></li>
@@ -105,9 +103,51 @@ $this->title = $model->name;
                             </li>
                         </ul>
                     </div>
-                    <?php function comments($model){?>
+
+
                        <div class="row"><!-- Ров1-->
-                       <?php foreach($model as $comments):?>
+                       <?php foreach($model->comments as $comments):?>
+
+                        <div class="media"><!-- Первый уровень коментов-->
+
+                            <div class="media-heading">
+                                 <span class="label label-info"><?= $comments->profile->nickname?></span> <?= $comments->date?>
+                            </div>
+
+                                <div class="media-left">
+                                   <img class="media-object img-rounded img1" src="http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg" alt="">
+                                </div>
+                                <!-- media-left -->
+
+
+                                <div class="media-body"> <!-- комментарий пользователя не имеет ответа -->
+
+                                    <p><?= $comments->content?></p>
+                                    <div class="comment-meta">
+                                          <span>
+                                        <a class="" role="button" data-toggle="collapse" href="#collapse1<?=$comments->id?>" aria-expanded="false" aria-controls="collapseExample">Ответить</a>
+                                        </span>
+                                        <span><a href="#">Удалить</a></span>
+                                        <span><a href="#">Редактировать</a></span>
+                                        <a data-toggle="collapse" data-target="#collapse<?=$comments->id?>" aria-expanded="false" aria-controls="collapseExample">Показать коментарии (<?=count($comments->comments)?>)</a>
+                                        <span style="float:right"><a href="#">Лайк!</a></span>
+                                        
+                                      <div class="collapse" id="collapse1<?=$comments->id?>">
+                <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]]); ?>
+                <?= $form->field($comments, 'parent_id')->hiddenInput(['value' => $comments->id])->label(false) ?>
+                <?= $form->field($comments, 'video_id')->hiddenInput(['value' => $model->id])->label(false) ?>
+                <?= $form->field($comments, 'profile_id')->hiddenInput(['value' => $profile->id])->label(false) ?>
+                <?= $form->field($comments, 'date')->hiddenInput(['value' => date('Y-m-d H:i:s')])->label(false) ?>
+                <?= $form->field($comments, 'content')->textArea()->label('Текст') ?>
+                <div class="form-group">
+                    <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
+                </div>
+                <?php ActiveForm::end(); ?>
+                                      </div>
+                                        <div class="panel-collapse collapse" id="collapse<?=$comments->id?>">
+
+                       <div class="row"><!-- Ров1-->
+                       <?php foreach($comments->comments as $comments):?>
 
                         <div class="media"><!-- Первый уровень коментов-->
 
@@ -125,17 +165,37 @@ $this->title = $model->name;
 
                                     <p><?= $comments->content?></p>
                                     <div class="comment-meta">
+                                              <span>
+                                        <a class="" role="button" data-toggle="collapse" href="#collapse<?=$comments->id?>" aria-expanded="false" aria-controls="collapseExample">Ответить</a>
+                                        </span>
                                         <span><a href="#">Удалить</a></span>
                                         <span><a href="#">Редактировать</a></span>
-                                        <span style="float:right"><a href="#">Лайк!</a></span>
-                                        <span>
-
-                                    <!-- comment-meta -->
-
                                         <a data-toggle="collapse" data-target="#collapse<?=$comments->id?>" aria-expanded="false" aria-controls="collapseExample">Показать коментарии (<?=count($comments->comments)?>)</a>
-                                        <div class="panel-collapse collapse" id="collapse<?=$comments->id?>">
-                                         <?php if(is_array($comments->comments)) comments($comments->comments)?>
+                                        <span style="float:right"><a href="#">Лайк!</a></span>
+                                        
+                                      <div class="collapse" id="collapse<?=$comments->id?>">
+                 <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]]); ?>
+                <?= $form->field($comments, 'parent_id')->hiddenInput(['value' => $comments->parent_id])->label(false) ?>
+                <?= $form->field($comments, 'video_id')->hiddenInput(['value' => $model->id])->label(false) ?>
+                <?= $form->field($comments, 'profile_id')->hiddenInput(['value' => $profile->id])->label(false) ?>
+                <?= $form->field($comments, 'date')->hiddenInput(['value' => date('Y-m-d H:i:s')])->label(false) ?>
+                <?= $form->field($comments, 'content')->textArea()->label('Текст') ?>
+                <div class="form-group">
+                    <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
+                </div>
+                <?php ActiveForm::end(); ?>
+                                      </div>
+                                                            <!-- comment-meta -->
 
+                                     
+                                      
+                                    </div>
+
+                                </div><!-- медиа боди-->
+
+                        </div><!-- Первый уровень коментов \/ вставлять ниже-->
+                    <?php endforeach;?>
+                    </div><!-- Ров1-->
                                         </div>
 
                                     </div>
@@ -145,9 +205,8 @@ $this->title = $model->name;
                         </div><!-- Первый уровень коментов \/ вставлять ниже-->
                     <?php endforeach;?>
                     </div><!-- Ров1-->
-                    <?php };?>
+            
 
-                    <?php comments($model->comments);?>
                 
                 </div><!-- Начало ковентов-->
             </div><!-- стиль-->
@@ -253,3 +312,4 @@ $this->title = $model->name;
             </ul>
         </div>
 </div>
+<?php Pjax::end();?>
