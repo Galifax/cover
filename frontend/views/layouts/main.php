@@ -86,7 +86,7 @@ AppAsset::register($this);
                 <div class="profile-sidebar ">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic text-center">
-                        <img class="profile-img" src="<?=$profile->avatar?>">
+                        <img width='100%' src="<?=empty($profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $profile->avatar?>" alt="">                    
                     </div>
                     <!-- END SIDEBAR USERPIC -->
                     <!-- SIDEBAR USER TITLE -->

@@ -14,10 +14,8 @@
     
                 <div class="col-md-4">
                     <img width='100%' src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>" alt="">
-                    
                     <?= Html::button('Редактировать', ['value' => Url::to(['edit', 'id'=>$model->id]) , 'class' => 'btn btn-success' , 'id' => 'modalButton2']) ?>
-                    <a href="#" class="btn btn-default"> Аватар</a>
-                    <a href="<?= Url::to(['del'=>$model->avatar])?>" class='btn btn-danger'>Delete</a>
+                    <a href="<?= Url::to(['/profile',  'ava'=>$model->id])?>" class='btn btn-danger'>Delete</a>
 
                     <div class="">
 
