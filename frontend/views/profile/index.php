@@ -54,10 +54,7 @@
                                     </div>
                                 </div>
 
-                    <img width='100%' src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>" alt="">
-                    <?= Html::button('Редактировать', ['value' => Url::to(['edit', 'id'=>$model->id]) , 'class' => 'btn btn-success' , 'id' => 'modalButton2']) ?>
-                    <a href="<?= Url::to(['/profile',  'ava'=>$model->id])?>" class='btn btn-danger'>Delete</a>
-
+         
                     <div class="">
 
 
@@ -98,7 +95,8 @@
                         </div>
 
 
-
+                    </div>
+                </div>
                 </div>
                 <div class="col-md-8" style="background-color: #f5f5f5">
 
@@ -106,8 +104,9 @@
 
                     <h2 class="text-center">Коментариев нет (если коментов нет)</h2>
 
-                    
-    
+                    <?php foreach($comments as $comment):?>
+                    <li><?=$comment->video->profile->nickname?> : <?=$comment->content?> : <?=$comment->video->name?></li>
+                    <?php endforeach;?>
               </div>
                     
             </div>
