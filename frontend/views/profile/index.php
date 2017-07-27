@@ -70,20 +70,14 @@
                     <span>
                         <h1 class="panel-title pull-left" style="font-size:30px;"><?=$comment->video->name?></h1>
                     </span>
-                            <br><br>
                             <br>
-                            <p>Пользователь <?=$comment->video->profile->nickname?> написал: <?=$comment->content?></p>
                             <hr>
-                            <span class="pull-left">
-                        <a href="#" class="btn btn-link" style="text-decoration:none;">text <i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i></a>
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"> text <i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i></a>
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"> text <i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i></a>
-                    </span>
-                            <span class="pull-right">
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i> text</a>
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i> text</a>
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i> text</a>
-                    </span>
+                            <p>Последние сообщение <?=$comment->video->profile->nickname?>: <?=$comment->date?></p>
+                            <hr>
+                            <p><?=$comment->content?></p>
+                            <hr>
+                            <span><a href="#">Ответить</a> <a href="#">Скрыть</a></span>
+                                        
                         </div>
                     </div>
                     <?php endforeach;?>
