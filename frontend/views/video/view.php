@@ -5,7 +5,6 @@ use yii\widgets\Pjax;
 use yii\widgets\ActiveForm;
 $this->title = $model->name;
 ?>
-<?php Pjax::begin(['enablePushState' => false]);?>
 <div style=" padding: 60;margin-right: 60px;margin-left: 60px;background-color: none" >
 
     <div class="col-md-8 padding-30 " style="margin: 0px" >
@@ -26,20 +25,26 @@ $this->title = $model->name;
             <div class="btn-group btn-group-justified text-center" style="font-size: 18px; ">
                 <div class="btn-group border" >
                     <p>
+                    <?php Pjax::begin(['enablePushState' => false]);?>
                         <?php if($favorites == 0):?>
                             <span class="vote plus" title="В понравившиеся видео"><a href="<?=Url::to(['video/view', 'id' => $id, 'favorites' => 'favorites'])?>">Добавить в избранное <i class="fa fa-plus" aria-hidden="true"></i></i></a></span>
                         <?php else:?>
                             <span  class="vote plus" title="Убрть из понравившиеся видео"><a href="<?=Url::to(['video/view', 'id' => $id, 'favorites' => 'favorites'])?>">Убрать из избранного <i  class="fa fa-minus" aria-hidden="true"></i></a></span>
                         <?php endif;?>
+                    <?php Pjax::end();?>
                     </p>
                 </div>
                 <div class="btn-group border">
                     <p>
+                    <?php Pjax::begin(['enablePushState' => false]);?>
+
                     <?php if($likes == 0):?>
                         <span class="vote plus" title="Поставить лайк"><a href="<?=Url::to(['video/view', 'id' => $id, 'like' => 'like'])?>"><i class="fa fa-thumbs-up"></i></a> <?=count($model->likes)?></span>
                     <?php elseif($likes == 1):?>
                         <span class="vote plus" title="Убрать лайк"><a href="<?=Url::to(['video/view', 'id' => $id, 'like' => 'like'])?>"><i class="fa fa-thumbs-o-up"></i></a> <?=count($model->likes)?></span>
                     <?php endif;?>
+                    <?php Pjax::end();?>
+
                     </p>
                 </div>
                 <div class="btn-group border">
@@ -312,4 +317,3 @@ $this->title = $model->name;
             </ul>
         </div>
 </div>
-<?php Pjax::end();?>
