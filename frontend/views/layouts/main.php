@@ -109,8 +109,6 @@ AppAsset::register($this);
                                 Мой профиль </a>
                         </li>
                         <li>
-
-
                           <a  value="/profile/upload" id="upload">Загрузить видео</a>
                         </li>
                         <li>
