@@ -15,6 +15,7 @@
                 <div class="col-md-4">
 
 
+
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="media">
@@ -54,7 +55,6 @@
                                     </div>
                                 </div>
 
-         
                     <div class="">
 
 
@@ -107,6 +107,9 @@
                     <?php foreach($comments as $comment):?>
                     <li><?=$comment->video->profile->nickname?> : <?=$comment->content?> : <?=$comment->video->name?></li>
                     <?php endforeach;?>
+                    
+                    
+    
               </div>
                     
             </div>
