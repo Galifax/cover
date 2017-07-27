@@ -80,6 +80,8 @@ class VideoController extends Controller
 
     public function actionView($id)
     {
+         $comments = new Comments();
+        if($comments->load(Yii::$app->request->post()) && $comments->save());
 
         if(isset($_GET['favorites'])){
         $favorites = Favorites::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->count();
@@ -108,10 +110,7 @@ class VideoController extends Controller
         }
         $profile = Profile::find()->where(['user_id' => Yii::$app->user->id])->one();
         
-        $comments = new Comments();
-        if($comments->load(Yii::$app->request->post())){
-        $comments->save();
-        }
+    
 
         $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'favorites', 'view', 'likes', 'comments' => function (ActiveQuery $query){
                 $query->where(['parent_id' => 0])->with('comments.profile');

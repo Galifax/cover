@@ -55,59 +55,38 @@
                                     </div>
                                 </div>
 
-                    <div class="">
-
-
-                            <div class="row ">
-                                <table style="border: solid 1px black">
-                                    <tbody>
-                                    <tr>
-                                        <td>nickname</td>
-                                        <td><?= $model->nickname?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>name</td>
-                                        <td><?= $model->name?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Пол</td>
-                                        <td><?= $model->floor?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Страна</td>
-                                        <td><?= $model->country?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Контакты</td>
-                                        <td><?= $model->contact?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Любимая музыка</td>
-                                        <td><?= $model->favorites?></td>
-                                    </tr>
-                                    <tr>
-                                         <td>О себе</td>
-                                         <td><?= $model->about_myself?></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-
+                    </div> 
+                    </div>     
                     </div>
-                </div>
-                </div>
+              
                 <div class="col-md-8" style="background-color: #f5f5f5">
 
                     <h2 class="text-center">Коментарии к моим видео</h2>
 
                     <h2 class="text-center">Коментариев нет (если коментов нет)</h2>
-
                     <?php foreach($comments as $comment):?>
-                    <li><?=$comment->video->profile->nickname?> : <?=$comment->content?> : <?=$comment->video->name?></li>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                    <span>
+                        <h1 class="panel-title pull-left" style="font-size:30px;"><?=$comment->video->name?></h1>
+                    </span>
+                            <br><br>
+                            <br>
+                            <p>Пользователь <?=$comment->video->profile->nickname?> написал: <?=$comment->content?></p>
+                            <hr>
+                            <span class="pull-left">
+                        <a href="#" class="btn btn-link" style="text-decoration:none;">text <i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i></a>
+                        <a href="#" class="btn btn-link" style="text-decoration:none;"> text <i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i></a>
+                        <a href="#" class="btn btn-link" style="text-decoration:none;"> text <i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i></a>
+                    </span>
+                            <span class="pull-right">
+                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i> text</a>
+                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i> text</a>
+                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i> text</a>
+                    </span>
+                        </div>
+                    </div>
                     <?php endforeach;?>
-                    
                     
     
               </div>
