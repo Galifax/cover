@@ -109,14 +109,9 @@ AppAsset::register($this);
                                 Мой профиль </a>
                         </li>
                         <li>
-<<<<<<< HEAD
-                            <a><?= Html::button('Загрузить видео', ['value' => Url::to(['/profile/upload']) , 'class' => 'btn btn-success' , 'id' => 'upload']) ?>
-=======
+
+
                           <a  value="/profile/upload" id="upload">Загрузить видео</a>
->>>>>>> 329899ff024e7875a2d5429201955086a7a42eae
-<!--                            <a href="--><?//= Url::to(['/profile/upload'])?><!--" target="_blank">-->
-<!--                                Загрузить видео </a>-->
-                            </a>
                         </li>
                         <li>
                             <a href="<?= Url::to(['/profile/my-videos'])?>">
