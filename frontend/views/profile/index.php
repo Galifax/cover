@@ -55,9 +55,6 @@
                                     </div>
                                 </div>
 
-<<<<<<< HEAD
-
-=======
                     <div class="">
 
 
@@ -94,7 +91,6 @@
                                     </tr>
                                     </tbody>
                                 </table>
->>>>>>> 329899ff024e7875a2d5429201955086a7a42eae
                             </div>
                         </div>
 
@@ -102,7 +98,11 @@
                     </div>
                 </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8" style="background-color: #f5f5f5">
+
+                    <h2 class="text-center">Коментарии к моим видео</h2>
+
+                    <h2 class="text-center">Коментариев нет (если коментов нет)</h2>
 
                     <?php foreach($comments as $comment):?>
                     <li><?=$comment->video->profile->nickname?> : <?=$comment->content?> : <?=$comment->video->name?></li>
