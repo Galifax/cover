@@ -11,6 +11,7 @@ use frontend\models\Profile;
 use frontend\models\User;
 use frontend\models\Video;
 use frontend\models\View;
+use frontend\models\Comments;
 use frontend\models\UploadForm;
 use frontend\models\UploadFile;
 use yii\web\UploadedFile;
@@ -71,10 +72,14 @@ class ProfileController extends Controller
             }
             
         }
-        $random = Video::find()->orderBy('rand()')->limit(3)->with('profile','view')->all();
         $model = Profile::find()->where(['user_id' =>Yii::$app->user->id])->with('user')->one();
+        $comments = Comments::find()->innerJoinWith(['video.profile' =>
+          function (ActiveQuery $query){
+            $query->where(['user_id' => Yii::$app->user->id]);
+          }])->orderBy(['id' => SORT_DESC])->all();
+        // debug($comments);
         
-        return $this->render('index', compact('model','random'));
+        return $this->render('index', compact('model', 'comments'));
     }
     
      public function actionMessage()

@@ -42,64 +42,35 @@ AppAsset::register($this);
 
     <!-- Second navbar for sign in -->
 
-                    <div id="navbar">
-                        <div class="container">
-                            <div class="row row1">
-                                <div class="col-md-2"></div>
-                                <div class="navbar-search smallsearch col-sm-8 col-xs-11">
-                                    <div class="row">
-                                        <input class="navbar-input col-xs-11" type="" placeholder="Поиск" name="">
-                                        <button class="navbar-button-1 col-xs-1">
-                                            <svg width="15px" height="15px">
-                                                <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
-                                            </svg>
-                                        </button>
-                                    </div>
+    <div id="navbar">
+        <div class="container">
+            <div class="row row1">
+                <div class="col-sm-2">
 
-                                    <a class=" collapsed text-center" data-toggle="collapse" data-target="#t2" style="position: absolute;width: 95%
-; background-color: #FFAD1E">
-                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                    </a>
-
-
-
-                                 </div>
-                            </div>
-                        </div>
+                </div>
+                <div class="navbar-search smallsearch col-sm-8 col-xs-11">
+                    <div class="row">
+                        <input class="navbar-input col-xs-11" type="" placeholder="Поиск" name="">
+                        <button class="navbar-button-1 col-xs-1">
+                            <svg width="15px" height="15px">
+                                <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
+                            </svg>
+                        </button>
                     </div>
-
-    <div id="t2" class="collapse sidebar-menu clearfix container" style="padding-top: 0px; background-color: white">
-        <h2 class="text-center">Жанры музыки</h2>
-        <ul class="nav col-md-3">
-            <?php foreach($category as $cat): ?>
-                <li  class="" style="padding:0">
-                    <a href='#' class=''><?= $cat->name?></a></li>
-            <?php endforeach; ?>
-        </ul>
-        <ul class="nav col-md-3">
-            <?php foreach($category as $cat): ?>
-                <li  class="" style="padding:0">
-                    <a href='#' class=''><?= $cat->name?></a></li>
-            <?php endforeach; ?>
-        </ul>
-        <ul class="nav col-md-3">
-            <?php foreach($category as $cat): ?>
-                <li  class="" style="padding:0">
-                    <a href='#' class=''><?= $cat->name?></a></li>
-            <?php endforeach; ?>
-        </ul>
-        <ul class="nav col-md-3">
-            <?php foreach($category as $cat): ?>
-                <li  class="" style="padding:0">
-                    <a href='#' class=''><?= $cat->name?></a></li>
-            <?php endforeach; ?>
-        </ul>
+<!--                    <img  src="img/logo.png" style="display: block; margin: 0 auto; ">-->
+                </div>
+<!--                <div class="col-sm-2">-->
+<!--                    <div class="primary-navigation" id="nav2">-->
+<!--                        <a class="navbar-button-2 text-center" href="#">-->
+<!--                            <span class="glyphicon glyphicon-music"></span> -->
+<!--                            <strong>Жанры музыки</strong>-->
+<!--                            <span class="glyphicon glyphicon-chevron-down"></span>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+        </div>
     </div>
-
-
-
-
-
 
 
     <div class="primary-navigation" id="nav1">
@@ -115,7 +86,7 @@ AppAsset::register($this);
                 <div class="profile-sidebar ">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic text-center">
-                        <img width='100%' src="<?=empty($profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $profile->avatar?>" alt="">                    
+                        <img width='100%' src="<?=empty($profile->avatar)? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $profile->avatar?>" alt="">
                     </div>
                     <!-- END SIDEBAR USERPIC -->
                     <!-- SIDEBAR USER TITLE -->
@@ -138,7 +109,11 @@ AppAsset::register($this);
                                 Мой профиль </a>
                         </li>
                         <li>
+<<<<<<< HEAD
                             <a><?= Html::button('Загрузить видео', ['value' => Url::to(['/profile/upload']) , 'class' => 'btn btn-success' , 'id' => 'upload']) ?>
+=======
+                          <a  value="/profile/upload" id="upload">Загрузить видео</a>
+>>>>>>> 329899ff024e7875a2d5429201955086a7a42eae
 <!--                            <a href="--><?//= Url::to(['/profile/upload'])?><!--" target="_blank">-->
 <!--                                Загрузить видео </a>-->
                             </a>
@@ -169,7 +144,15 @@ AppAsset::register($this);
             <!-- index SIDEBAR MENU -->
         </div>
 <!--    <div class="secondary-navigation-b" id="nav2-2">-->
-
+<!--        <div class="sidebar-menu">-->
+<!--            <h3 class="h-nav-music">Жанры музыки</h3>-->
+<!--            <ul class="nav">-->
+<!--                --><?php //foreach($category as $cat): ?>
+<!--                    <li  class="" style="padding:0">-->
+<!--                        <a href='#' class=''>--><?//= $cat->name?><!--</a></li>-->
+<!--                --><?php //endforeach; ?>
+<!--            </ul>-->
+<!--        </div>-->
 <!--    </div>-->
 
 
@@ -247,7 +230,7 @@ AppAsset::register($this);
             <?php Pjax::end();?>
         </div>
     </main>
-
+</div>
 
 <?php
        Modal::begin([
@@ -264,7 +247,12 @@ AppAsset::register($this);
             $("#nav1").toggleClass('opened');
             $("#main").toggleClass('slide-left');
             $("#main").toggleClass('animate-right');
-         });
+    });
+//        $("#nav2").click(function(){
+//            $("#nav2-2").toggleClass('opened');
+//            $("#main").toggleClass('slide-left');
+//            $("#main").toggleClass('animate-left');
+//        });
     });
 </script>
 </div>
