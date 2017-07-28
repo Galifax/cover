@@ -27,7 +27,6 @@
                                 <?php Pjax::begin();?>
                                     <div class="text-center">
                                         <?= Html::button('Редактировать', ['value' => Url::to(['/profile/edit', 'id'=>$model->id]) , 'class' => 'btn btn-success' , 'id' => 'modalButton2']) ?>
-                                        <a href="#" class="btn btn-default"> Аватар</a>
                                     </div>
                                     <div class="media-body">
                                         <hr>

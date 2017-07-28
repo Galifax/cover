@@ -32,11 +32,10 @@ class Category extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parent_id', 'video_id', 'name'], 'required'],
-            [['parent_id', 'video_id'], 'integer'],
+            [['parent_id', 'name'], 'required'],
+            [['parent_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
             [['parent_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['parent_id' => 'id']],
-            [['video_id'], 'exist', 'skipOnError' => true, 'targetClass' => Video::className(), 'targetAttribute' => ['video_id' => 'id']],
         ];
     }
 
@@ -48,7 +47,6 @@ class Category extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'parent_id' => 'Parent ID',
-            'video_id' => 'Video ID',
             'name' => 'Name',
         ];
     }
@@ -74,6 +72,6 @@ class Category extends \yii\db\ActiveRecord
      */
     public function getVideo()
     {
-        return $this->hasOne(Video::className(), ['id' => 'video_id']);
+        return $this->hasMany(Video::className(), ['category_id' => 'id']);
     }
 }
