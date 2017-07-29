@@ -109,7 +109,15 @@ AppAsset::register($this);
                                 Мой профиль </a>
                         </li>
                         <li>
+<<<<<<< HEAD
                           <a  value="/profile/upload" id="upload">Загрузить видео</a>
+=======
+
+
+                          <a  value="/profile/upload" id="upload">Загрузить видео</a>
+
+                            </a>
+>>>>>>> 0d40376a9c667c33de2d949697feee7338015596
                         </li>
                         <li>
                             <a href="<?= Url::to(['/profile/my-videos'])?>">

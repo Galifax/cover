@@ -15,20 +15,19 @@
                 <div class="col-md-4">
 
 
-
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="media">
+                                <?php Pjax::begin(['enablePushState' => false]);?>
                                     <div class="profile-userpic" align="center">
                                         <img class="thumbnail" src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>" width="300px" height="300px">
+                                      <a href="<?= Url::to(['/profile', 'ava' => $model->id])?>" class='btn btn-danger'>Delete</a>
                                     </div>
-                                    <hr>
+                                <?php Pjax::end();?>
+                                <?php Pjax::begin();?>
                                     <div class="text-center">
-
-                                        <?= Html::button('Редактировать', ['value' => Url::to(['edit', 'id'=>$model->id]) , 'class' => 'btn btn-success' , 'id' => 'modalButton2']) ?>
+                                        <?= Html::button('Редактировать', ['value' => Url::to(['/profile/edit', 'id'=>$model->id]) , 'class' => 'btn btn-success' , 'id' => 'modalButton2']) ?>
                                         <a href="#" class="btn btn-default"> Аватар</a>
-                                        <a href="<?= Url::to(['del'=>$model->avatar])?>" class='btn btn-danger'>Delete</a>
-
                                     </div>
                                     <div class="media-body">
                                         <hr>
@@ -53,37 +52,19 @@
                                         <h3><strong>О себе</strong></h3>
                                         <p><?= $model->about_myself?></p>
                                     </div>
+                                <?php Pjax::end();?>
+
                                 </div>
 
+                              </div>
+                      </div>
+                 </div>
+                <div class="col-md-8" style="background-color: #f5f5f5">
 
-                    </div>
-                </div>
-                </div>
-                <div class="col-md-8">
+                    <h2 class="text-center">Коментарии к моим видео</h2>
 
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                    <span>
-                        <h1 class="panel-title pull-left" style="font-size:30px;">Text Вот шаблон</h1>
-                    </span>
-                            <br><br>
-                            <br>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut consequatur dolorum ea eaque eligendi enim ex iure laudantium, molestiae necessitatibus omnis quisquam quos, saepe sed ullam unde veniam voluptate?</p>
-                            <hr>
-                            <span class="pull-left">
-                        <a href="#" class="btn btn-link" style="text-decoration:none;">text <i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i></a>
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"> text <i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i></a>
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"> text <i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i></a>
-                    </span>
-                            <span class="pull-right">
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i> text</a>
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i> text</a>
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i> text</a>
-                    </span>
-                        </div>
-                    </div>
-                    
-    
+                    <h2 class="text-center">Коментариев нет (если коментов нет)</h2>
+
               </div>
                     
             </div>
