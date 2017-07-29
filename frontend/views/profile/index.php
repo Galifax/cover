@@ -63,8 +63,55 @@
                     <h2 class="text-center">Коментарии к моим видео</h2>
 
                     <h2 class="text-center">Коментариев нет (если коментов нет)</h2>
+                      
+                       <div class="row"><!-- Ров1-->
+                       <?php foreach($comments as $comment):?>
 
-              </div>
+                        <div class="media"><!-- Первый уровень коментов-->
+
+                            <div class="media-heading">
+                                 <span class="label label-info"><?= $comment->video->profile->nickname?></span> <?= $comment->date?>
+                            </div>
+
+                                <div class="media-left">
+                                   <img class="media-object img-rounded img1" src="http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg" alt="">
+                                </div>
+                                <!-- media-left -->
+
+
+                                <div class="media-body"> <!-- комментарий пользователя не имеет ответа -->
+
+                                    <p><?= $comment->content?></p>
+                                    <div class="comment-meta">
+                                          <span>
+                                        <a class="" role="button" data-toggle="collapse" href="#collapse1<?=$comment->id?>" aria-expanded="false" aria-controls="collapseExample">Ответить</a>
+                                        </span>
+                                        <span><a href="#">Удалить</a></span>
+                                        <span><a href="#">Редактировать</a></span>
+                                  
+                                        <span style="float:right"><a href="#">Лайк!</a></span>
+                                        
+                                      <div class="collapse" id="collapse1<?=$comment->id?>">
+                <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]]); ?>
+                <?= $form->field($com, 'parent_id')->hiddenInput(['value' => $comment->id])->label(false) ?>
+                <?= $form->field($com, 'video_id')->hiddenInput(['value' => $model->id])->label(false) ?>
+                <?= $form->field($com, 'profile_id')->hiddenInput(['value' => $comment->video->profile->id])->label(false) ?>
+                <?= $form->field($com, 'date')->hiddenInput(['value' => date('Y-m-d H:i:s')])->label(false) ?>
+                <?= $form->field($com, 'content')->textArea()->label('Текст') ?>
+                <div class="form-group">
+                    <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
+                </div>
+                <?php ActiveForm::end(); ?>
+                                      </div>
+                                        
+
+                                    </div>
+
+                                </div><!-- медиа боди-->
+
+                        </div><!-- Первый уровень коментов \/ вставлять ниже-->
+                    <?php endforeach;?>
+                    </div><!-- Ров1-->
                     
             </div>
             
