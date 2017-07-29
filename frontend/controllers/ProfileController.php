@@ -72,14 +72,17 @@ class ProfileController extends Controller
             }
             
         }
+
+         $com = new Comments();
+        if($com->load(Yii::$app->request->post()) && $com->save());
+
         $model = Profile::find()->where(['user_id' =>Yii::$app->user->id])->with('user')->one();
         $comments = Comments::find()->innerJoinWith(['video.profile' =>
           function (ActiveQuery $query){
             $query->where(['user_id' => Yii::$app->user->id]);
           }])->orderBy(['id' => SORT_DESC])->all();
         // debug($comments);
-        
-        return $this->render('index', compact('model', 'comments'));
+        return $this->render('index', compact('model', 'comments', 'com'));
     }
     
      public function actionMessage()

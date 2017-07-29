@@ -100,5 +100,10 @@ class Video extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Favorites::className(), ['video_id' => 'id']);
     }
-    
+
+    public function getCategory()
+    {
+        return $this->hasOne(Category::className(), ['id' => 'category_id']);
+    }
+
 }

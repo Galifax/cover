@@ -21,6 +21,7 @@ $this->title = $model->name;
 
         <div class="about-video my-video-video border" style="padding-top: -15px; width: 100%">
             <h2 style="margin: 0;padding: 10px;font-size: 23px "><?=$model->name?></h2>
+            <h2 style="margin: 0;padding: 10px;font-size: 23px ">Категория: <?= $model->category->name?></h2>
             <p style="padding-left: 10px;">Добавленно <?=$model->date?></p>
             <div class="btn-group btn-group-justified text-center" style="font-size: 18px; ">
                 <div class="btn-group border" >
@@ -241,79 +242,20 @@ $this->title = $model->name;
 
     <div class="col-md-4 padding-30" style="margin: 0px">
             <ul class="list-unstyled video-list-thumbs row">
+                <?php foreach($model->category->video as $video):?>
                 <li class="col-xs-12">
-                    <a class="video-list-thumbs-a" href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
+                    <a class="video-list-thumbs-a" href="<?= Url::to(['/video/view', 'id'=>$video->id])?>">
                         <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
                         <span class="glyphicon glyphicon-play-circle"></span>
                         <span class="duration">03:15</span>
-                        <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
+                        <h2><?= $video->name?></h2>
                     </a>
                     <div class="video-text">
-                        <a class="username-video" href="#">Username</a>
-                        <p>Просмотры | date</p>
+                        <a class="username-video" href="#"><?= $video->profile->nickname?></a>
+                        <p><?= $video->date?></p>
                     </div>
                 </li>
-                <li class="col-xs-12">
-                    <a class="video-list-thumbs-a" href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
-                        <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
-                        <span class="glyphicon glyphicon-play-circle"></span>
-                        <span class="duration">03:15</span>
-                        <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
-                    </a>
-                    <div class="video-text">
-                        <a class="username-video" href="#">Username</a>
-                        <p>Просмотры | date</p>
-                    </div>
-                </li>
-                <li class="col-xs-12">
-                    <a class="video-list-thumbs-a" href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
-                        <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
-                        <span class="glyphicon glyphicon-play-circle"></span>
-                        <span class="duration">03:15</span>
-                        <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
-                    </a>
-                    <div class="video-text">
-                        <a class="username-video" href="#">Username</a>
-                        <p>Просмотры | date</p>
-                    </div>
-                </li>
-                <li class="col-xs-12">
-                    <a class="video-list-thumbs-a" href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
-                        <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
-                        <span class="glyphicon glyphicon-play-circle"></span>
-                        <span class="duration">03:15</span>
-                        <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
-                    </a>
-                    <div class="video-text">
-                        <a class="username-video" href="#">Username</a>
-                        <p>Просмотры | date</p>
-                    </div>
-                </li>
-                <li class="col-xs-12">
-                    <a class="video-list-thumbs-a" href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
-                        <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
-                        <span class="glyphicon glyphicon-play-circle"></span>
-                        <span class="duration">03:15</span>
-                        <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
-                    </a>
-                    <div class="video-text">
-                        <a class="username-video" href="#">Username</a>
-                        <p>Просмотры | date</p>
-                    </div>
-                </li>
-                <li class="col-xs-12">
-                    <a class="video-list-thumbs-a" href="#" title="Claudio Bravo, antes su debut con el Barça en la Liga">
-                        <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
-                        <span class="glyphicon glyphicon-play-circle"></span>
-                        <span class="duration">03:15</span>
-                        <h2>Claudio Bravo, antes su debut con el Barça en la Liga</h2>
-                    </a>
-                    <div class="video-text">
-                        <a class="username-video" href="#">Username</a>
-                        <p>Просмотры | date</p>
-                    </div>
-                </li>
-
+            <?php endforeach;?>
             </ul>
         </div>
 </div>
