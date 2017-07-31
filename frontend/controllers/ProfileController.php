@@ -76,11 +76,11 @@ class ProfileController extends Controller
          $com = new Comments();
         if($com->load(Yii::$app->request->post()) && $com->save());
 
-        $model = Profile::find()->where(['user_id' =>Yii::$app->user->id])->with('user')->one();
+        $model = Profile::find()->where(['id' =>Yii::$app->user->id])->with('user')->one();
         $comments = Comments::find()->innerJoinWith(['video.profile' =>
           function (ActiveQuery $query){
-            $query->where(['user_id' => Yii::$app->user->id]);
-          }])->orderBy(['id' => SORT_DESC])->all();
+            $query->where(['profile.id' => Yii::$app->user->id]);
+          }])->orderBy(['comments.id' => SORT_DESC])->all();
         // debug($comments);
         return $this->render('index', compact('model', 'comments', 'com'));
     }
@@ -92,11 +92,11 @@ class ProfileController extends Controller
      public function actionUpload()
     {
       $model = new Video();
-
+      $substr = substr(md5(uniqid()), 0, 20);
       if($model->load(Yii::$app->request->post())){
       $model->file = UploadedFile::getInstance($model, 'file');
-      $model->file->saveAs('uploads/ '. $model->file->baseName . '.' .$model->file->extension);
-      $model->src = 'uploads/' .$model->file->baseName . '.' .$model->file->extension;
+      $model->file->saveAs('uploads/ '. $substr. '.jpg');
+      $model->src = '/uploads/' .$substr . '.jpg';
       $model->save();
         return $this->redirect(['/video/view', 'id' => $model->id]);
         } 
@@ -111,7 +111,7 @@ class ProfileController extends Controller
       public function actionEdit()
      {
       $this->layout=false;
-      $model = Profile::find()->where(['user_id' =>Yii::$app->user->id])->with('user')->one();
+      $model = Profile::find()->where(['id' =>Yii::$app->user->id])->with('user')->one();
       if($model->load(Yii::$app->request->post())){
     
       $model->file = UploadedFile::getInstance($model, 'file'); 
@@ -159,7 +159,7 @@ class ProfileController extends Controller
             
         }
         $model = Video::find()->with('view')->innerjoinWith(['profile'=> function(ActiveQuery $query){
-            $query->where(['user_id'=>Yii::$app->user->id]);
+            $query->where(['profile.id'=>Yii::$app->user->id]);
         }])->all();
         
         return $this->render('my-videos', compact('model'));
@@ -169,7 +169,7 @@ class ProfileController extends Controller
     {   
         $model = Video::find()->with('profile')->joinWith(['favorites.profile' =>
             function (ActiveQuery $query){
-            $query->where(['user_id'=>Yii::$app->user->id]);
+            $query->where(['id'=>Yii::$app->user->id]);
       }])->all();
       
         return $this->render('favorites', compact('model'));

@@ -4,18 +4,15 @@ use yii\helpers\Html;
 use yii\widgets\Pjax;
 use yii\widgets\ActiveForm;
 $this->title = $model->name;
+echo substr(md5(uniqid()), 0, 20);
 ?>
+
 <div style=" padding: 60;margin-right: 60px;margin-left: 60px;background-color: none" >
 
     <div class="col-md-8 padding-30 " style="margin: 0px" >
 
         <div class=" ">
-                <img src="web/<?=$model->src?>" width="100%" >
-
-           <!--   <video src="/<?=$model->src?>" width="100%" height="100%" controls="controls" preload="<?=$model->src?>">
-                         <img src="<?=$model->src?>" width="100%" >
- -->
-             </video>
+          <img src="<?=$model->src?>" width="100%">
 
         </div>
 

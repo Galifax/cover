@@ -31,12 +31,11 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <?php $profile = Profile::find()->where(['user_id' =>Yii::$app->user->id])->one();?>
+    <?php $profile = Profile::find()->where(['id' =>Yii::$app->user->id])->one();?>
     <?php $category = Category::find()->where(['parent_id' =>0])->all();?>
 </head>
 <body>
 <?php $this->beginBody() ?>
-
 
 <div class="wrap color-1" style="padding-bottom: 0px;  ">
 

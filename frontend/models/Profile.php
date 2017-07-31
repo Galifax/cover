@@ -36,10 +36,9 @@ class Profile extends \yii\db\ActiveRecord
     {
         return [
 
-            [['user_id',], 'integer'],
+            [['id',], 'integer'],
             [['file',], 'file'],
             [['nickname', 'name', 'surname', 'avatar', 'about_myself', 'country', 'contact', 'favorites', 'floor' ], 'string', 'max' => 255],
-            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 
@@ -50,7 +49,6 @@ class Profile extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'user_id' => 'User ID',
             'nickname' => 'Nickname',
             'name' => 'Name',
             'surname' => 'Surname',
@@ -68,7 +66,7 @@ class Profile extends \yii\db\ActiveRecord
      */
     public function getUser()
     {
-        return $this->hasOne(User::className(), ['id' => 'user_id']);
+        return $this->hasOne(User::className(), ['id' => 'id']);
     }
     public function getVideo()
     {

@@ -80,13 +80,9 @@ class SiteController extends Controller
 
 
     
-        $model = Video::find()->with('likes')->orderBy('rand()')->limit(3)->with('profile','view')->all();
-        $mod = Video::find()->innerJoinWith(['likes' => function(ActiveQuery $query){
-        }])->all();
-        // debug($mod);
-        $recently = Video::find()->orderBy(['date'=>SORT_DESC])->limit(6)->with('profile','view')->all();
-        $random = Video::find()->orderBy('rand()')->limit(3)->with('profile','view')->all();
-        return $this->render('index', compact('model', 'recently','random'));
+        $model = Video::find()->limit(3)->with('likes','profile','view')->all();
+   
+        return $this->render('index', compact('model'));
     }
 
     /**
