@@ -74,7 +74,7 @@
                             </div>
 
                                 <div class="media-left">
-                                   <img class="media-object img-rounded img1" src="http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg" alt="">
+                                   <img class="media-object img-rounded img1" src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>" alt="">
                                 </div>
                                 <!-- media-left -->
 
