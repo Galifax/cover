@@ -9,21 +9,23 @@ use yii\widgets\Pjax;
     <?= $this->render('../_video', compact('model'));?>
 </div>
 <div class="col-md-2">
-Категории
-<form data-pjax="true">
-   <p><input data-pjax="true" class="navbar-input col-md-10" type="" placeholder="Поиск" name="s"></p>
-                      
-   
-   	<div class="clearfix"></div>
-	<?php foreach($category as $cat):?>
-    <p><input data-pjax="true" name="id" type="radio" value="<?=$cat->id?>" onclick="$('#subcar').trigger('click')"
-    <?php if($_GET['id'] == $cat->id){
-    	echo 'checked';
-    }?>
-    ><?=$cat->name?></p>
-	<?php endforeach;?>
-    <p><input id="subcat" type="submit" value="Выбрать" name="category"></p>
-<form>
+<ul class="list-group">
+  <a href="<?=Url::to(['video/search', 's' => $_GET["s"]])?>">
+  <li class="list-group-item justify-content-between">
+   Все категории
+    <span class="badge badge-default badge-pill"><?=$video?></span>
+  </li>
+  </a>
+  	<?php foreach($category as $cat):?>
+  <a href="<?=Url::to(['video/search', 'id' => $cat->id, 'name' => $cat->name, 's' => $_GET["s"]])?>">
+  <li class="list-group-item justify-content-between">
+     <?=$cat->name?>
+    <span class="badge badge-default badge-pill"><?=count($cat->video)?></span>
+  </li>
+  </a>
+<?php endforeach;?>
+ 
+</ul>
 </div>
 </div>
 <?php Pjax::end();?>

@@ -7,7 +7,7 @@ $this->title = $model->name;
 echo substr(md5(uniqid()), 0, 20);
 ?>
 
-<div style=" padding: 60;margin-right: 60px;margin-left: 60px;background-color: none" >
+<div style=" background-color: none" >
 
     <div class="col-md-8 padding-30 " style="margin: 0px" >
 

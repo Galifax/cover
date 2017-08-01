@@ -43,7 +43,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '/video/search/<name:\w+>/<id:\w+>' => '/video/search',
+                '/video/search/<name:\w+>/<id:\w+>/<s:\w+>' => '/video/search',
                 '/video/view/<name:\w+>/<id:\w+>' => '/video/view',
             ],
         ],

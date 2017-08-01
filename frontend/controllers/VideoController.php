@@ -121,16 +121,13 @@ class VideoController extends Controller
         // echo "</pre>";
         return $this->render('view', compact('model', 'id', 'favorites', 'likes', 'comments', 'profile'));
     }
-    public function actionSearch($id = Null, $s = Null){
-            if(isset($id) or isset($s)){
-
-               $model = Video::find()->with('profile')->joinWith(['category' => function(ActiveQuery $query) use($id){
-                    $query->where(['category.id' => $id]);
+    public function actionSearch($id = Null, $s = Null, $name = Nill){
+               $model = Video::find()->with('profile')->andFilterWhere(['like', 'video.name', $s])->joinWith(['category' => function(ActiveQuery $query) use($id){
+                    $query->andFilterwhere(['category.id' => $id]);
                }])->all();
-            }else{
-               $model = Video::find()->with('profile')->all();
-            }
-            $category = Category::find()->all();
-            return $this->render('search', compact('model', 'category'));
+               $video =  Video::find()->count();
+           
+            $category = Category::find()->with('video')->all();
+            return $this->render('search', compact('model', 'category', 'video'));
     }
 }

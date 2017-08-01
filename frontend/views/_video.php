@@ -12,7 +12,7 @@
             </a>
             <div class="video-text">
                 <a class="username-video" href="#"><?= $video->profile->nickname?></a>
-                <p><?= $video->view->views?> <i class="fa fa-eye" aria-hidden="true"></i> | Загружено <?= $video->date?></p>
+                <p><i class="fa fa-eye" aria-hidden="true"></i> | Загружено <?= $video->date?></p>
             </div>
         </li>
         <?php endforeach;?>
