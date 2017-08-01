@@ -133,7 +133,7 @@ a.desc:after {  content: "\e152";  }
     z-index:9999;
 }
 
-#nav1{  top:250px;  left:-40px;}
+#nav1{  top:0px;  left:0px;}
 
 #nav1.opened {
 
@@ -228,7 +228,7 @@ a.desc:after {  content: "\e152";  }
     height: 43px;
     cursor: pointer;
     width: auto;
-    -webkit-transform: rotate(90deg); transform: rotate(90deg);
+    /*-webkit-transform: rotate(90deg); transform: rotate(90deg);*/
 }
 
 @media screen and (min-width: 768px) {
