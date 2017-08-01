@@ -65,7 +65,6 @@
                     <h2 class="text-center">Коментариев нет (если коментов нет)</h2>
                       
                        <div class="row"><!-- Ров1-->
-                        <?php Pjax::begin();?>
                        <?php foreach($comments as $comment):?>
 
                         <div class="media"><!-- Первый уровень коментов-->
@@ -112,7 +111,6 @@
 
                         </div><!-- Первый уровень коментов \/ вставлять ниже-->
                     <?php endforeach;?>
-                    <?php Pjax::end();?>
                     </div><!-- Ров1-->
                     
             </div>
