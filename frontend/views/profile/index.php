@@ -6,7 +6,7 @@
     use yii\jui\DatePicker;
     $this->title = 'Профиль | '. $model->nickname ? $model->nickname : 1;
     ?>
-    <div class="container">
+
 
         <div class="row profile container">
 
