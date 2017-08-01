@@ -12,6 +12,7 @@ use frontend\models\Profile;
 use frontend\models\View;
 use frontend\models\likes;
 use frontend\models\Comments;
+use frontend\models\Category;
 use frontend\models\Favorites;
 use yii\db\ActiveQuery;
 
@@ -120,7 +121,16 @@ class VideoController extends Controller
         // echo "</pre>";
         return $this->render('view', compact('model', 'id', 'favorites', 'likes', 'comments', 'profile'));
     }
-    public function actionSearch(){
-            return $this->render('search');
+    public function actionSearch($id = Null, $s = Null){
+            if(isset($id) or isset($s)){
+
+               $model = Video::find()->with('profile')->joinWith(['category' => function(ActiveQuery $query) use($id){
+                    $query->where(['category.id' => $id]);
+               }])->all();
+            }else{
+               $model = Video::find()->with('profile')->all();
+            }
+            $category = Category::find()->all();
+            return $this->render('search', compact('model', 'category'));
     }
 }
