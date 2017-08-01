@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Url;
 use yii\widgets\Pjax;
+$this->title = $name ? $name : 'Все категории';
 ?>
 <?php Pjax::begin();?>
   <div class="row">
@@ -17,7 +18,7 @@ use yii\widgets\Pjax;
   </li>
   </a>
   	<?php foreach($category as $cat):?>
-  <a href="<?=Url::to(['video/search', 'id' => $cat->id, 'name' => $cat->name, 's' => $_GET["s"]])?>">
+  <a href="<?=Url::to(['video/search', 'id' => $cat->id, 'name' => str_replace('-', '_', $cat->name), 's' => $_GET["s"]])?>">
   <li class="list-group-item justify-content-between">
      <?=$cat->name?>
     <span class="badge badge-default badge-pill"><?=count($cat->video)?></span>
