@@ -69,7 +69,7 @@ class User extends \yii\db\ActiveRecord
      */
     public function getProfiles()
     {
-        return $this->hasMany(Profile::className(), ['user_id' => 'id']);
+        return $this->hasMany(Profile::className(), ['id' => 'id']);
     }
 
     /**

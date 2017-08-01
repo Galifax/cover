@@ -80,13 +80,9 @@ class SiteController extends Controller
 
 
     
-        $model = Video::find()->with('likes')->orderBy('rand()')->limit(3)->with('profile','view')->all();
-        $mod = Video::find()->innerJoinWith(['likes' => function(ActiveQuery $query){
-        }])->all();
-        // debug($mod);
-        $recently = Video::find()->orderBy(['date'=>SORT_DESC])->limit(6)->with('profile','view')->all();
-        $random = Video::find()->orderBy('rand()')->limit(3)->with('profile','view')->all();
-        return $this->render('index', compact('model', 'recently','random'));
+        $model = Video::find()->limit(3)->with('likes','profile','view')->all();
+   
+        return $this->render('index', compact('model'));
     }
 
     /**
@@ -99,14 +95,19 @@ class SiteController extends Controller
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-        $this->layout = false;
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         } else {
+            if(Yii::$app->request->isAjax){
             return $this->renderAjax('login', [
                 'model' => $model,
             ]);
+         }else{
+            return $this->render('login', [
+                'model' => $model,
+            ]);
+         }
         }
     }
 
@@ -162,23 +163,28 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
-        $this->layout = false;
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
                     $profile = new Profile();
-                    $profile->user_id = $user->id;
+                    $profile->id = $user->id;
                     $profile->date_registerated = date('Y-m-d H:i:s');
                     $profile->save();
                     return $this->goHome();
                 }
             }
         }
-
+        if(Yii::$app->request->isAjax){
         return $this->renderAjax('signup', [
             'model' => $model,
         ]);
+         }else{
+        return $this->render('signup', [
+            'model' => $model,
+        ]);
+         }
+
     }
 
     /**

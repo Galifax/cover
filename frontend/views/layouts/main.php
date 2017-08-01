@@ -31,12 +31,11 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <?php $profile = Profile::find()->where(['user_id' =>Yii::$app->user->id])->one();?>
+    <?php $profile = Profile::find()->where(['id' =>Yii::$app->user->id])->one();?>
     <?php $category = Category::find()->where(['parent_id' =>0])->all();?>
 </head>
 <body>
 <?php $this->beginBody() ?>
-
 
 <div class="wrap color-1" style="padding-bottom: 0px;  ">
 
@@ -109,7 +108,15 @@ AppAsset::register($this);
                                 Мой профиль </a>
                         </li>
                         <li>
+<<<<<<< HEAD
                           <a  value="/profile/upload" id="upload">Загрузить видео</a>
+=======
+
+
+                          <a  value="/profile/upload" id="upload">Загрузить видео</a>
+
+                            
+>>>>>>> f4b5699ea15f75686a567584d1b1f6ad16d4b3a7
                         </li>
                         <li>
                             <a href="<?= Url::to(['/profile/my-videos'])?>">

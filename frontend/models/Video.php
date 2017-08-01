@@ -34,8 +34,8 @@ class Video extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['profile_id', 'src', 'name', 'description', 'date'], 'required'],
-            [['profile_id'], 'integer'],
+            [['profile_id', 'src', 'name', 'description', 'date', 'category_id'], 'required'],
+            [['profile_id', 'category_id'], 'integer'],
             [['date'], 'safe'],
             [['file',], 'file'],
             [['src'], 'string', 'max' => 55],
@@ -85,12 +85,12 @@ class Video extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Likes::className(), ['video_id' => 'id']);
     }
-
-        public function getLikesCount()
+        public function getCount()
     {
-         return $this->getLikes()->count();
+        return $this->getLikes()->count(); 
     }
 
+    
       public function getComments()
     {
         return $this->hasMany(Comments::className(), ['video_id' => 'id']);

@@ -9,7 +9,10 @@ $form = ActiveForm::begin([
     <?= $form->field($model, 'nickname')->textInput() ?>
     <?= $form->field($model, 'name')->textInput() ?>
     <?= $form->field($model, 'surname')->textInput() ?>
-    <?= $form->field($model, 'floor')->textInput() ?>
+    <?= $form->field($model, 'floor')->dropDownList([
+    'Мужской' => 'Мужской',
+    'Женский' => 'Женский',
+    ])->label('Пол') ?>
     <?= $form->field($model, 'country')->textInput() ?>
     <?= $form->field($model, 'file')->fileInput() ?>
     <?= $form->field($model, 'favorites')->textInput() ?>

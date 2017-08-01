@@ -108,7 +108,7 @@ class VideoController extends Controller
             $likes->delete();
            }
         }
-        $profile = Profile::find()->where(['user_id' => Yii::$app->user->id])->one();
+        $profile = Profile::find()->where(['id' => Yii::$app->user->id])->one();
         
     
 
