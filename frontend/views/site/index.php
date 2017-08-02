@@ -4,18 +4,15 @@ use yii\widgets\Pjax;
 $this->title = 'My Yii Application';
 ?>
 
-<div id="first-slider">
+<!-- <div id="first-slider">
     <div id="carousel-example-generic" class="carousel slide carousel-fade">
-        <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
             <li data-target="#carousel-example-generic" data-slide-to="3"></li>
         </ol>
-        <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <!-- Item 1 -->
             <div class="item active slide1">
                 <div class="row"><div class="container">
                         <div class="col-md-3 text-right">
@@ -27,7 +24,6 @@ $this->title = 'My Yii Application';
                         </div>
                     </div></div>
             </div>
-            <!-- Item 2 -->
             <div class="item slide2">
                 <div class="row"><div class="container">
                         <div class="col-md-7 text-left">
@@ -39,7 +35,6 @@ $this->title = 'My Yii Application';
                         </div>
                     </div></div>
             </div>
-            <!-- Item 3 -->
             <div class="item slide3">
                 <div class="row"><div class="container">
                         <div class="col-md-7 text-left">
@@ -51,7 +46,6 @@ $this->title = 'My Yii Application';
                         </div>
                     </div></div>
             </div>
-            <!-- Item 4 -->
             <div class="item slide4">
                 <div class="row"><div class="container">
                         <div class="col-md-7 text-left">
@@ -63,10 +57,8 @@ $this->title = 'My Yii Application';
                         </div>
                     </div></div>
             </div>
-            <!-- End Item 4 -->
 
         </div>
-        <!-- End Wrapper for slides-->
         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
             <i class="fa fa-angle-left"></i><span class="sr-only">Previous</span>
         </a>
@@ -74,7 +66,7 @@ $this->title = 'My Yii Application';
             <i class="fa fa-angle-right"></i><span class="sr-only">Next</span>
         </a>
     </div>
-</div>
+</div> -->
 
 <!--slider-end-->
 

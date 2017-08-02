@@ -47,19 +47,21 @@ AppAsset::register($this);
                 <div class="col-sm-2">
 
                 </div>
-                <div class="navbar-search smallsearch col-sm-8 col-xs-11">
+                <div class="navbar-search smallsearch col-sm-8 col-xs-11 hidden-xs">
+                <form action="<?=Url::to(['/video/search'])?>">
                     <div class="row">
-                    <form action="/video/search">
-                        <input type="hidden" name="name" value="<?php $_GET['name']?>">
-                        <input type="hidden" name="id" value="<?php $_GET['id']?>">
-                        <input id="inps" class="navbar-input col-xs-11" type="" placeholder="Поиск" name="s" value="<?=$_GET['s']?>">
-                        <button class="navbar-button-1 col-xs-1" type="submit">
-                            <svg width="15px" height="15px">
-                                <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
-                            </svg>
-                        </button>
-                     </form>
+                           <div id="custom-search-input">
+                                            <div class="input-group col-md-12">
+                                                <input type="text" class="search-query form-control" placeholder="Поиск" value="<?=$_GET['s']?>" name="s"/>
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-danger" type="submit">
+                                                        <span class=" glyphicon glyphicon-search"></span>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
                     </div>
+                    </form>
 <!--                    <img  src="img/logo.png" style="display: block; margin: 0 auto; ">-->
                 </div>
 <!--                <div class="col-sm-2">-->
@@ -77,14 +79,22 @@ AppAsset::register($this);
 
 
     <div class="primary-navigation" id="nav1">
-        <a  class="navbar-button-2 text-center" href="#">
-            <span class="glyphicon glyphicon-chevron-right"></span> 
-            <strong>Профиль</strong>
-            <span class="glyphicon glyphicon-user"></span>
+        <a style="font-size: 30px; color: black" class="btn fa fa-bars" href="#">
         </a>
     </div>
     <div class="secondary-navigation-a" id="nav1-2">
-
+             <form action="<?=Url::to(['/video/search'])?>" class="visible-xs">
+                           <div id="custom-search-input">
+                                            <div class="input-group col-md-12">
+                                                <input type="text" class="search-query form-control" placeholder="Поиск" value="<?=$_GET['s']?>" name="s"/>
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-danger" type="submit">
+                                                        <span class=" glyphicon glyphicon-search"></span>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                    </form>
             <?php if(Yii::$app->user->id):?>
                 <div class="profile-sidebar ">
                     <!-- SIDEBAR USERPIC -->
@@ -215,7 +225,7 @@ AppAsset::register($this);
 
 
 
-        <div class="container nopadding bg-img-3" style="min-height: 92vh">
+        <div class="container content" style="min-height: 94.5vh">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>

@@ -9,7 +9,7 @@ $this->title = $name ? $name : 'Все категории';
   <div class="col-md-10">
     <?= $this->render('../_video', compact('model'));?>
 </div>
-<div class="col-md-2">
+<div class="col-md-2" style="padding: 0">
 <ul class="list-group">
   <a href="<?=Url::to(['video/search', 's' => $_GET["s"]])?>">
   <li class="list-group-item justify-content-between">
