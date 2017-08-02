@@ -2,9 +2,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\widgets\Pjax;
-
 $form = ActiveForm::begin([
-    
     'options' => ['data-pjax' => true],
 ]) ?>
     <?= $form->field($model, 'name')->textInput() ?>

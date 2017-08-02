@@ -140,13 +140,14 @@ class ProfileController extends Controller
     }
     public function actionUpdate($id)
     {
-        $this->layout=false;
         $model = Video::findOne($id);
         if ($model->load(Yii::$app->request->post())){
             $model->save();
             $this->redirect(['/profile/my-videos']);
         }
+        if(Yii::$app->request->isAjax){
         return $this->renderAjax('update', compact('model'));
+        }
     }
     public function actionMyVideos()
     {

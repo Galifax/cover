@@ -34,6 +34,7 @@ AppAsset::register($this);
     <?php $profile = Profile::find()->where(['id' =>Yii::$app->user->id])->one();?>
     <?php $category = Category::find()->where(['parent_id' =>0])->all();?>
 </head>
+
 <body>
 <?php $this->beginBody() ?>
 
