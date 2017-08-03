@@ -128,12 +128,14 @@ a.desc:after {  content: "\e152";  }
     z-index:9999;
 }
 
-#nav1{  top:0px;  left:0px;}
+#nav1{  top:0px;  left:0px;
+    }
 
 #nav1.opened {
 
-    transform:translateX(200px) ;
+    transform:translateX(0px) rotateX(0deg) rotateY(180deg) ;
     transition:all 0.4s ease-out;
+
 
 }
 
@@ -174,7 +176,8 @@ a.desc:after {  content: "\e152";  }
 }
 .animate-right {
     transition:all 0.4s ease-out;
-    transform: rotateY(0deg) translate(200px,0px);
+    transform: rotateY(0deg) rotateX(0deg)
+    translate(200px,0px);
 }
 
 .slide-left {
@@ -185,6 +188,7 @@ a.desc:after {  content: "\e152";  }
 
 #navbar {
     background: white;
+    height: 53px;
 }
 
 .row1 {
@@ -202,7 +206,7 @@ a.desc:after {  content: "\e152";  }
     border: 1.1px solid black;
 }
 
-.nav{padding: 10px}
+.nav{padding: 10px; margin-top: -30px;}
 
 .navbar-button-1 {
     background-color: #ffad1e;
@@ -248,14 +252,14 @@ a.desc:after {  content: "\e152";  }
 .profile {  margin: 20px 0;  }
 
 /* Profile sidebar */
-.profile-sidebar {  padding: 20px 0 10px 0; }
+.profile-sidebar {  padding: 10px 0 10px 0; }
 
 .profile-userpic img {
     float: none;
     margin: 0 auto;
-    width: 70%;
+    width: 90%;
     height: 70%;
-    -webkit-border-radius: 50% !important;  -moz-border-radius: 50% !important;  border-radius: 50% !important;
+    -webkit-border-radius: 5px!important;  -moz-border-radius: 5px !important;  border-radius:5px !important;
 }
 .profile-usertitle {  text-align: center;  margin-top: 0px;  }
 
@@ -301,13 +305,12 @@ a.desc:after {  content: "\e152";  }
 
 /* Profile sidebar */
 
-.profile-usermenu {  margin-top: 20px;  }
 
 .profile-usermenu ul li {  border-bottom: 1px solid #f0f4f7;  }
 
 .profile-usermenu ul li:last-child {  border-bottom: none;  }
 
-.profile-usermenu ul li a {  color: #46ABA5; background-color: #96DCD4;  font-size: 14px;  font-weight: 400;  }
+/*.profile-usermenu ul li a {  color: #46ABA5; background-color: #96DCD4;  font-size: 14px;  font-weight: 400;  }*/
 
 .profile-usermenu ul li a i {  margin-right: 8px;  font-size: 14px;  }
 
@@ -315,7 +318,7 @@ a.desc:after {  content: "\e152";  }
 
 .profile-usermenu ul li.active {  border-bottom: none;  }
 
-.profile-usermenu ul li.active a {   background-color: #E4F2F3;  color: #46ABA5; border-left: 4px solid #6695C1;  margin-left: 0px; }
+/*.profile-usermenu ul li.active a {   background-color: #E4F2F3;  color: #46ABA5; border-left: 4px solid #6695C1;  margin-left: 0px; }*/
 
 
 /* Profile Content */

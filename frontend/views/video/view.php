@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\Pjax;
 use yii\widgets\ActiveForm;
 $this->title = $model->name;
-echo substr(md5(uniqid()), 0, 20);
+// echo substr(md5(uniqid()), 0, 20);
 ?>
 
 <div style=" background-color: none" >
@@ -12,7 +12,16 @@ echo substr(md5(uniqid()), 0, 20);
     <div class="col-md-8 padding-30 " style="margin: 0px" >
 
         <div class=" ">
-          <img src="<?=$model->src?>" width="100%">
+          
+            <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
+                   poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+                <source src="MY_VIDEO.mp4" type='video/mp4'>
+                <source src="MY_VIDEO.webm" type='video/webm'>
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a web browser that
+                    <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+            </video>
 
         </div>
 
@@ -75,7 +84,7 @@ echo substr(md5(uniqid()), 0, 20);
             </div
                         <p style="padding: 5px"><?=$model->description?></lore></p>
         </div>
-
+        <?php Pjax::begin();?>
         <div class="my-video-video background-gray" style="width: 100%">
 
 
@@ -215,6 +224,7 @@ echo substr(md5(uniqid()), 0, 20);
             </div><!-- стиль-->
 
         </div> <!-- мои видео задник-->
+        <?php Pjax::end();?>
    </div> <!-- col-md-8-->
 
 <script>
