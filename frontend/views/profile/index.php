@@ -177,7 +177,6 @@
                 <h2><?= $video->name?></h2>
             </a>
             <div class="video-text">
-                <a class="username-video" href="#"><?= $model->nickname?></a>
                 <p><?= $video->date?></p>
             </div>
         </li>

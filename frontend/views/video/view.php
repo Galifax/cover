@@ -56,16 +56,15 @@ $this->title = $model->name;
                 </div>
                 <div class="btn-group border">
                     <p>Просмотры
-                        <i class="fa fa-eye" aria-hidden="true"></i> <?=$model->view->views?>
+                        <i class="fa fa-eye" aria-hidden="true"></i> <?= $model->view->views?>
                     </p>
                 </div>
             </div>
 
-                <?= $model->profile->id?>
                  <div class="profile-sidebar col-md-4">
                     <!-- SIDEBAR USERPIC -->
-                    <div class="profile-userpic text-center">
-                        <img class="profile-img" src="https://s1.1zoom.ru/prev2/518/Big_cats_Lions_Canine_tooth_fangs_Closeup_Painting_517994_189x225.jpg">
+                    <div class="profile-userpic">
+                        <img class="media-object img-rounded img1" src="<?=empty($model->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->profile->avatar?>" alt="">
                     </div>
                     <!-- END SIDEBAR USERPIC -->
                     <!-- SIDEBAR USER TITLE -->

@@ -11,7 +11,7 @@
                 <h2><?= $video->name?></h2>
             </a>
             <div class="video-text">
-                <a class="username-video" href="#"><?= $video->profile->nickname?></a>
+                <a class="username-video" href="<?=Url::to(['/profile', 'id' => $video->profile->id, 'name' => $video->profile->nickname])?>"><?= $video->profile->nickname?></a>
                 <p><?= $video->date?></p>
             </div>
         </li>
