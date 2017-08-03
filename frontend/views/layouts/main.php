@@ -79,13 +79,13 @@ AppAsset::register($this);
         </div>
     </div>
 </nav>
+    <a class="primary-navigation" id="nav2" href="/"><img src="/img/logo.png" height="30px" style="margin-top: -10px;"/></a>
     <div class="primary-navigation" id="nav1">
         <a style="font-size: 30px; color: black" class="btn fa fa-bars" href="#">
-        <img src="/img/logo.png" height="30px" style="margin-top: -10px;"/>
         </a>
-
     </div>
     <div class="secondary-navigation-a" id="nav1-2">
+
              <form action="<?=Url::to(['/video/search'])?>" class="visible-xs">
                            <div id="custom-search-input">
                                             <div class="input-group col-md-12">
