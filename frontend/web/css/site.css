@@ -128,12 +128,14 @@ a.desc:after {  content: "\e152";  }
     z-index:9999;
 }
 
-#nav1{  top:0px;  left:0px;}
+#nav1{  top:0px;  left:0px;
+    }
 
 #nav1.opened {
 
-    transform:translateX(200px) ;
+    transform:translateX(0px) rotateX(0deg) rotateY(180deg) ;
     transition:all 0.4s ease-out;
+
 
 }
 
@@ -174,7 +176,8 @@ a.desc:after {  content: "\e152";  }
 }
 .animate-right {
     transition:all 0.4s ease-out;
-    transform: rotateY(0deg) translate(200px,0px);
+    transform: rotateY(0deg) rotateX(0deg)
+    translate(200px,0px);
 }
 
 .slide-left {
