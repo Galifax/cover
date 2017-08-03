@@ -118,7 +118,7 @@ AppAsset::register($this);
                     <!-- SIDEBAR BUTTONS -->
                     <ul class="nav">
                         <li class="active">
-                            <a href="<?=Url::to(['/profile'])?>">
+                            <a href="<?=Url::to(['/profile', 'id'=>Yii::$app->user->id, 'name'=>$profile->nickname])?>">
                                 <i class="glyphicon glyphicon-user"></i>
                                 Мой профиль </a>
                         </li>

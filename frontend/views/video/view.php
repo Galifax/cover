@@ -52,7 +52,7 @@ echo substr(md5(uniqid()), 0, 20);
                 </div>
             </div>
 
-
+                <?= $model->profile->id?>
                  <div class="profile-sidebar col-md-4">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic text-center">
@@ -62,7 +62,7 @@ echo substr(md5(uniqid()), 0, 20);
                     <!-- SIDEBAR USER TITLE -->
                     <div class="profile-usertitle ">
                         <div class="profile-usertitle-name">
-                            <a href="#"><?=$model->profile->nickname?></a>
+                            <a href="<?=Url::to(['/profile', 'id' => $model->profile->id, 'name' => $model->profile->nickname])?>"><?=$model->profile->nickname?></a>
                         </div>
                     </div>
                     <!-- END SIDEBAR USER TITLE -->

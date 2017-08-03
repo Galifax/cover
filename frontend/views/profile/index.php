@@ -6,7 +6,7 @@
     use yii\jui\DatePicker;
     $this->title = 'Профиль | '. $model->nickname ? $model->nickname : 1;
     ?>
-
+    <?php if ($id==Yii::$app->user->id):?>
 
         <div class="row profile container">
 
@@ -120,3 +120,71 @@
             
         </div>
     </div>
+    <?php else:?>
+    <div class="row profile container">
+
+            <div class="tab-content">
+    
+                <div class="col-md-4">
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="media">
+                                    <div class="profile-userpic" align="center">
+                                        <img class="thumbnail" src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>" width="300px" height="300px">
+                                    </div>
+                                    <div class="media-body">
+                                        <hr>
+                                        <h3><strong>nickname</strong></h3>
+                                        <p><?= $model->nickname?></p>
+                                        <hr>
+                                        <h3><strong>name</strong></h3>
+                                        <p><?= $model->name?></p>
+                                        <hr>
+                                        <h3><strong>Gender</strong></h3>
+                                        <p><?= $model->floor?></p>
+                                        <hr>
+                                        <h3><strong>Страна</strong></h3>
+                                        <p><?= $model->country?></p>
+                                        <hr>
+                                        <h3><strong>Контакты</strong></h3>
+                                        <p><?= $model->contact?></p>
+                                        <hr>
+                                        <h3><strong>Любимая музыка</strong></h3>
+                                        <p><?= $model->favorites?></p>
+                                        <hr>
+                                        <h3><strong>О себе</strong></h3>
+                                        <p><?= $model->about_myself?></p>
+                                    </div>
+
+                                </div>
+
+                              </div>
+                      </div>
+                 </div>
+                <div class="col-md-8" style="background-color: #f5f5f5">
+                    <h2 class="text-center">Видео пользователя</h2>
+ <ul class="list-unstyled video-list-thumbs row">
+         <?php foreach($model->videos as $video):?>
+        <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+    
+            <a data-pjax="0" class="video-list-thumbs-a" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="Claudio Bravo, antes su debut con el Barça en la Liga">
+
+                <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
+                <span class="glyphicon glyphicon-play-circle"></span>
+                <span class="duration">03:15</span>
+                <h2><?= $video->name?></h2>
+            </a>
+            <div class="video-text">
+                <a class="username-video" href="#"><?= $model->nickname?></a>
+                <p><?= $video->date?></p>
+            </div>
+        </li>
+        <?php endforeach;?>
+</ul>   
+            </div>
+            
+        </div>
+    </div>
+    <?php endif;?>

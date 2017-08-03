@@ -61,7 +61,7 @@ class ProfileController extends Controller
      *
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($id=Null, $name=Null)
     {
         $ava = Yii::$app->request->get('ava');
         if ($ava){
@@ -76,13 +76,13 @@ class ProfileController extends Controller
          $com = new Comments();
         if($com->load(Yii::$app->request->post()) && $com->save());
 
-        $model = Profile::find()->where(['id' =>Yii::$app->user->id])->with('user')->one();
+        $model = Profile::find()->where(['id' =>$id])->with('user', 'videos')->one();
         $comments = Comments::find()->innerJoinWith(['video.profile' =>
           function (ActiveQuery $query){
-            $query->where(['profile.id' => Yii::$app->user->id]);
+            $query->where(['profile.id' =>$id]);
           }])->orderBy(['comments.id' => SORT_DESC])->all();
         // debug($comments);
-        return $this->render('index', compact('model', 'comments', 'com'));
+        return $this->render('index', compact('model', 'comments', 'com', 'id', 'name'));
     }
     
      public function actionMessage()
