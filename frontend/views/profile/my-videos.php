@@ -20,7 +20,7 @@
                       </a>
                       <div class="video-text">
                           <a class="username-video" href="#"><?= $video->profile->nickname?></a>
-                          <p><?= $video->view->views?> <i class="fa fa-eye" aria-hidden="true"></i> | Загружено <?= $video->date?></p>
+                          <p><?= $video->views?> <i class="fa fa-eye" aria-hidden="true"></i> | Загружено <?= $video->date?></p>
                           <p>
         <?= Html::button('Редактировать', ['value' => Url::to(['update', 'id'=>$video->id]) , 'class' => 'btn btn-success' , 'id' => 'modalButton']) ?>
      <a href="<?= Url::to(['profile/my-videos', 'del'=>$video->id])?>" class='btn btn-danger'>Delete</a> </p>

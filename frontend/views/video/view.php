@@ -55,9 +55,7 @@ $this->title = $model->name;
                     </p>
                 </div>
                 <div class="btn-group border">
-                    <p>Просмотры
-                        <i class="fa fa-eye" aria-hidden="true"></i> <?= $model->view->views?>
-                    </p>
+                    <p><i class="fa fa-eye" aria-hidden="true"></i> <?= $model->views?></p>
                 </div>
             </div>
 
