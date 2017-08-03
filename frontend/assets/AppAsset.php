@@ -14,12 +14,18 @@ class AppAsset extends AssetBundle
     public $css = [
         'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
         'css/site.css',
-        'https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet'
+        'https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet',
+        'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css',
+        'http://vjs.zencdn.net/6.2.4/video-js.css',
+
 
     ];
     public $js = [
         'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',
         'js/main.js',
+        'http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js',
+        'http://vjs.zencdn.net/6.2.4/video.js',
+
     ];
     public $depends = [
         'yii\web\YiiAsset',
