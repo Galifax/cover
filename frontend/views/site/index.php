@@ -4,7 +4,7 @@ use yii\widgets\Pjax;
 $this->title = 'My Yii Application';
 ?>
 
-<!-- <div id="first-slider">
+<div id="first-slider">
     <div id="carousel-example-generic" class="carousel slide carousel-fade">
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -66,7 +66,7 @@ $this->title = 'My Yii Application';
             <i class="fa fa-angle-right"></i><span class="sr-only">Next</span>
         </a>
     </div>
-</div> -->
+</div>
 
 <!--slider-end-->
 

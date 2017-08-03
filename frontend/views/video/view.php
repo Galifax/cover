@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\Pjax;
 use yii\widgets\ActiveForm;
 $this->title = $model->name;
-echo substr(md5(uniqid()), 0, 20);
+// echo substr(md5(uniqid()), 0, 20);
 ?>
 
 <div style=" background-color: none" >
@@ -84,7 +84,7 @@ echo substr(md5(uniqid()), 0, 20);
             </div
                         <p style="padding: 5px"><?=$model->description?></lore></p>
         </div>
-
+        <?php Pjax::begin();?>
         <div class="my-video-video background-gray" style="width: 100%">
 
 
@@ -224,6 +224,7 @@ echo substr(md5(uniqid()), 0, 20);
             </div><!-- стиль-->
 
         </div> <!-- мои видео задник-->
+        <?php Pjax::end();?>
    </div> <!-- col-md-8-->
 
 <script>

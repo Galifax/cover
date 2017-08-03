@@ -78,10 +78,11 @@ AppAsset::register($this);
         </div>
     </div>
 
-
     <div class="primary-navigation" id="nav1">
         <a style="font-size: 30px; color: black" class="btn fa fa-bars" href="#">
+        <img src="/img/logo.png" height="30px" style="margin-top: -10px;"/>
         </a>
+
     </div>
     <div class="secondary-navigation-a" id="nav1-2">
              <form action="<?=Url::to(['/video/search'])?>" class="visible-xs">
@@ -106,7 +107,7 @@ AppAsset::register($this);
                     <!-- SIDEBAR USER TITLE -->
                     <div class="profile-usertitle">
                         <div class="profile-usertitle-name">
-                            <P><?= $profile->nickname ?></P>
+                            <p style="color: black"><?= $profile->nickname ?></p>
                         </div>
                     </div>
                     <!-- END SIDEBAR USER TITLE -->
@@ -123,7 +124,7 @@ AppAsset::register($this);
                                 Мой профиль </a>
                         </li>
                         <li>
-                          <a  value="/profile/upload" id="upload">Загрузить видео</a>
+                          <a  href="#" value="/profile/upload" id="upload"><i class="fa fa-upload" aria-hidden="true"></i>Загрузить видео</a>
                         </li>
                         <li>
                             <a href="<?= Url::to(['/profile/my-videos'])?>">
@@ -143,9 +144,17 @@ AppAsset::register($this);
                 </div>
                 <!-- END MENU -->
             <?php else:?>
-                <div class="">
-                    <?= Html::button('Войти', ['value' => Url::to(['/site/login']) , 'class' => 'btn btn-success' , 'id' => 'modalButton']) ?>
-                   <?= Html::button('Регистрация', ['value' => Url::to(['/site/signup']) , 'class' => 'btn btn-success' , 'id' => 'modalButton1']) ?>
+             <div id="proffile-menu" class="profile-usermenu " >
+
+                 <ul class="nav" style="margin-top:0px;">
+                        <li>
+                          <a  href="#" value="/site/login" id="modalButton"><i class="fa fa-upload" aria-hidden="true"></i>Войти</a>
+                        </li>
+                           <li>
+                          <a  href="#" value="/site/signup" id="modalButton1"><i class="fa fa-upload" aria-hidden="true"></i>Регистрация</a>
+                        </li>
+                        
+                    </ul>
                 </div>
             <?php endif;?>
             <!-- index SIDEBAR MENU -->
@@ -164,59 +173,6 @@ AppAsset::register($this);
 
 
     <!-- line modal -->
-    <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                    <h3 class="modal-title" id="lineModalLabel">My Modal</h3>
-                </div>
-                <div class="modal-body">
-
-                    <!-- content goes here -->
-                    <form>
-                        <div class="form-group">
-                            <label for="videoName">video name</label>
-                            <input type="email" class="form-control" id="videoName" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="musicType">music type</label>
-                            <input type="password" class="form-control" id="musicType" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputFile">File input</label>
-                            <input type="file" id="exampleInputFile">
-                            <p class="help-block">Требования:<br>
-                                Видео в формате<br>
-                                Размеры не более 1 тб<br>
-                                Видил не должно содержать материалы порно графического характера, пропаганду, призыв к насилию и суицидальных наклоностей.<br>
-                                Видио не должно нарушать авторские права.</p>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Check me out
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-
-                </div>
-                <div class="modal-footer">
-                    <div class="btn-group btn-group-justified" role="group" aria-label="group button">
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
-                        </div>
-                        <div class="btn-group btn-delete hidden" role="group">
-                            <button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
-                        </div>
-                        <div class="btn-group" role="group">
-                            <button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
     <main id="main">
