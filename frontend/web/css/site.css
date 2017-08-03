@@ -163,7 +163,7 @@ a.desc:after {  content: "\e152";  }
 
 .secondary-navigation-a.opened {
 
-    transform: translateX(0px);
+    transform: translateY(50px);
     transition: all 0.4s ease-out;
 }
 

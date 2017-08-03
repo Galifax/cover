@@ -42,6 +42,7 @@ AppAsset::register($this);
 
     <!-- Second navbar for sign in -->
 
+    <nav class="navbar navbar-default navbar-fixed-top">
     <div id="navbar">
         <div class="container">
             <div class="row row1">
@@ -77,7 +78,7 @@ AppAsset::register($this);
             </div>
         </div>
     </div>
-
+</nav>
     <div class="primary-navigation" id="nav1">
         <a style="font-size: 30px; color: black" class="btn fa fa-bars" href="#">
         <img src="/img/logo.png" height="30px" style="margin-top: -10px;"/>
@@ -182,7 +183,7 @@ AppAsset::register($this);
 
 
 
-        <div class="container content" style="min-height: 94.5vh">
+        <div class="container content" style="margin-top:50px; min-height: 94.5vh">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
