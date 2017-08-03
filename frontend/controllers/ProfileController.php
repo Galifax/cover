@@ -95,13 +95,12 @@ class ProfileController extends Controller
       $substr = substr(md5(uniqid()), 0, 20);
       if($model->load(Yii::$app->request->post())){
       $model->file = UploadedFile::getInstance($model, 'file');
-      $model->file->saveAs('uploads/ '. $substr. '.jpg');
-      $model->src = '/uploads/' .$substr . '.jpg';
+      $model->file->saveAs('uploads/'. $substr . '.mp4');
+      $model->src = '/uploads/'. $substr . '.mp4';
       $model->save();
         return $this->redirect(['/video/view', 'id' => $model->id]);
         } 
        if(Yii::$app->request->isAjax){
-        $this->layout=false;
         return $this->renderAjax('upload', compact('model'));
         }else{
           return $this->render('upload', compact('model'));

@@ -35,7 +35,7 @@ class Video extends \yii\db\ActiveRecord
     {
         return [
             [['profile_id', 'src', 'name', 'description', 'date', 'category_id'], 'required'],
-            [['profile_id', 'category_id'], 'integer'],
+            [['profile_id', 'category_id', 'views'], 'integer'],
             [['date'], 'safe'],
             [['file',], 'file'],
             [['src'], 'string', 'max' => 55],
