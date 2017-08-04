@@ -40,7 +40,7 @@
                                     </div>
                                     <ul class="list-group">
                                         <hr>
-                                        <li class="list-group-item text-right"><span class="pull-left">Имя пользовтеля</span> <?= $model->name?></li>
+                                        <li class="list-group-item text-right"><span class="pull-left">Имя</span> <?= $model->name?></li>
                                         <hr>
                                         <li class="list-group-item text-right"><span class="pull-left">Пол</span> <?= $model->floor?></li>
                                         <hr>
@@ -118,53 +118,54 @@
                   
                     
             </div>
-            
-        </div>
-    </div>
+
     <?php else:?>
-    <div class="row profile container">
+    <div class="row profile">
 
-            <div class="tab-content">
-    
-                <div class="col-md-4">
+        <div class="fb-profile">
+            <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
+            <img align="left" class="fb-image-profile thumbnail"  src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>" alt="Profile image example"/>
+            <div class="fb-profile-text">
+                <h1>Профиль: <?= $model->nickname?></h1>
+            </div>
+        </div>
+        <hr>
+        <div class="clearfix"></div>
+
+                <div class="col-md-3">
 
 
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div class="media">
-                                    <div class="profile-userpic" align="center">
-                                        <img class="thumbnail" src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>" width="300px" height="300px">
-                                    </div>
-                                    <div class="media-body">
-                                        <hr>
-                                        <h3><strong>nickname</strong></h3>
-                                        <p><?= $model->nickname?></p>
-                                        <hr>
-                                        <h3><strong>name</strong></h3>
-                                        <p><?= $model->name?></p>
-                                        <hr>
-                                        <h3><strong>Gender</strong></h3>
-                                        <p><?= $model->floor?></p>
-                                        <hr>
-                                        <h3><strong>Страна</strong></h3>
-                                        <p><?= $model->country?></p>
-                                        <hr>
-                                        <h3><strong>Контакты</strong></h3>
-                                        <p><?= $model->contact?></p>
-                                        <hr>
-                                        <h3><strong>Любимая музыка</strong></h3>
-                                        <p><?= $model->favorites?></p>
-                                        <hr>
-                                        <h3><strong>О себе</strong></h3>
-                                        <p><?= $model->about_myself?></p>
-                                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="media">
+                                <?php Pjax::begin(['enablePushState' => false]);?>
 
-                                </div>
+                                <?php Pjax::end();?>
+                                <?php Pjax::begin();?>
 
-                              </div>
-                      </div>
-                 </div>
-                <div class="col-md-8" style="background-color: #f5f5f5">
+                                <ul class="list-group">
+                                    <hr>
+                                    <li class="list-group-item text-right"><span class="pull-left">Имя</span> <?= $model->name?></li>
+                                    <hr>
+                                    <li class="list-group-item text-right"><span class="pull-left">Пол</span> <?= $model->floor?></li>
+                                    <hr>
+                                    <li class="list-group-item text-right"><span class="pull-left">Страна</span> <?= $model->country?></li>
+                                    <hr>
+                                    <li class="list-group-item text-right"><span class="pull-left">Контакты</span> <?= $model->contact?></li>
+                                    <hr>
+                                    <li class="list-group-item"><span class="">Любимая музыка</span><br><?= $model->favorites?> </li>
+                                    <hr>
+                                    <li class="list-group-item"><span class="pull-left">О себе</span><br> <?= $model->about_myself?></li>
+                                    <hr>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+
+                <div class="col-md-9">
                     <h2 class="text-center">Видео пользователя</h2>
  <ul class="list-unstyled video-list-thumbs row">
          <?php foreach($model->videos as $video):?>
