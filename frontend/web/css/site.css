@@ -2,7 +2,7 @@ html {background-color: #99DFD5}
 
 *{font-family: 'Droid Serif', serif; }
 
-body {  height: 100%;  overflow-x: hidden}
+body {  height: 100%;  overflow-x: hidden; word-wrap: break-word; }
 
 .wrap {  min-height: 100%;  height: auto;  margin: 0 auto -60px;  padding: 0 0 60px;  }
 
@@ -352,7 +352,7 @@ a.desc:after {  content: "\e152";  }
 }
 
 .post-comments .comment-meta {
-    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
     margin-bottom: 5px;
 }
 
@@ -411,7 +411,9 @@ a.desc:after {  content: "\e152";  }
 /*coments*/
 
 /*VIEW VIDEO*/
-.video-text{background-color: #F8F8F8;padding:1px 10px 1px 10px}
+.video-text{
+    /*background-color: #F8F8F8;*/
+    padding:1px 10px 1px 10px}
 
 .video-list-thumbs{p}
 .video-list-thumbs > li{
@@ -421,7 +423,7 @@ a.desc:after {  content: "\e152";  }
 .video-list-thumbs-a{
     display:block;
     position:relative;
-    background-color: #F8F8F8;
+    /*background-color: #F8F8F8;*/
     color: black;
     padding:8px 8px 0px 8px;
     /*border-radius:3px*/
