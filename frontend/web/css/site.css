@@ -259,6 +259,40 @@ a.desc:after {  content: "\e152";  }
 /*sidebar index*/
 
 /* Profile container */
+.list-group hr{
+    margin: 10px;
+}
+
+.fb-profile img.fb-image-lg{
+    z-index: 0;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.fb-image-profile
+{
+    margin: -90px 10px 0px 44px;
+    z-index: 9;
+    max-width: 200px;
+
+}
+
+@media (max-width:768px)
+{
+
+    .fb-profile-text>h1{
+        font-weight: 700;
+        font-size:16px;
+    }
+
+    .fb-image-profile
+    {
+        margin: -45px 10px 0px 25px;
+        z-index: 9;
+        width: 20%;
+    }
+}
+
 .profile {  margin: 20px 0;  }
 
 /* Profile sidebar */

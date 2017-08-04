@@ -8,57 +8,58 @@
     ?>
     <?php if ($id==Yii::$app->user->id):?>
 
-        <div class="row profile container">
+        <div class="row profile ">
 
-            <div class="tab-content">
+            <div class="fb-profile">
+                <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
+                <img align="left" class="fb-image-profile thumbnail"  src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>" alt="Profile image example"/>
+                 <div class="fb-profile-text">
+                    <h1>Профиль: <?= $model->nickname?></h1>
+                </div>
+            </div>
+            <hr>
+            <div class="clearfix"></div>
     
-                <div class="col-md-4">
+                <div class="col-md-3">
 
 
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="media">
                                 <?php Pjax::begin(['enablePushState' => false]);?>
-                                    <div class="profile-userpic" align="center">
-                                        <img style="max-width:300px; max-height:300px" class="thumbnail" src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>">
-                                      <a href="<?= Url::to(['/profile', 'ava' => $model->id])?>" class='btn btn-danger'>Delete</a>
-                                    </div>
+
                                 <?php Pjax::end();?>
                                 <?php Pjax::begin();?>
-                                    <div class="text-center">
-                                        <?= Html::button('Редактировать', ['value' => Url::to(['/profile/edit', 'id'=>$model->id]) , 'class' => 'btn btn-success' , 'id' => 'modalButton2']) ?>
+                                    <div style="height: 30px">
+                                        <div style="float: right">
+                                            <?= Html::button('Редактировать', ['value' => Url::to(['/profile/edit', 'id'=>$model->id]) , 'class' => 'btn btn-success' , 'id' => 'modalButton2']) ?>
+                                        </div>
+                                        <div  style="float:left">
+                                        <a href="<?= Url::to(['/profile', 'ava' => $model->id])?>" class='btn btn-danger'>Delete</a>
+                                        </div>
                                     </div>
-                                    <div class="media-body">
+                                    <ul class="list-group">
                                         <hr>
-                                        <h3><strong>nickname</strong></h3>
-                                        <p><?= $model->nickname?></p>
+                                        <li class="list-group-item text-right"><span class="pull-left">Имя пользовтеля</span> <?= $model->name?></li>
                                         <hr>
-                                        <h3><strong>name</strong></h3>
-                                        <p><?= $model->name?></p>
+                                        <li class="list-group-item text-right"><span class="pull-left">Пол</span> <?= $model->floor?></li>
                                         <hr>
-                                        <h3><strong>Gender</strong></h3>
-                                        <p><?= $model->floor?></p>
+                                        <li class="list-group-item text-right"><span class="pull-left">Страна</span> <?= $model->country?></li>
                                         <hr>
-                                        <h3><strong>Страна</strong></h3>
-                                        <p><?= $model->country?></p>
+                                        <li class="list-group-item text-right"><span class="pull-left">Контакты</span> <?= $model->contact?></li>
                                         <hr>
-                                        <h3><strong>Контакты</strong></h3>
-                                        <p><?= $model->contact?></p>
+                                        <li class="list-group-item"><span class="">Любимая музыка</span><br><?= $model->favorites?> </li>
                                         <hr>
-                                        <h3><strong>Любимая музыка</strong></h3>
-                                        <p><?= $model->favorites?></p>
+                                        <li class="list-group-item"><span class="pull-left">О себе</span><br> <?= $model->about_myself?></li>
                                         <hr>
-                                        <h3><strong>О себе</strong></h3>
-                                        <p><?= $model->about_myself?></p>
-                                    </div>
-                                <?php Pjax::end();?>
-
-                                </div>
+                                    </ul>
 
                               </div>
-                      </div>
-                 </div>
-                <div class="col-md-8" style="background-color: #f5f5f5">
+                       </div>
+                    </div>
+                </div>
+        </div>
+                <div class="col-md-9" style="background-color: #f5f5f5">
 
                     <h2 class="text-center">Коментарии к моим видео</h2>
 
