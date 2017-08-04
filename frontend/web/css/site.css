@@ -434,8 +434,8 @@ a.desc:after {  content: "\e152";  }
 }
 .video-list-thumbs h2{
     bottom: 0;
-    font-size: 14px;
-    height: 33px;
+    font-size: 17px;
+    height: 18px;
     margin: 8px 0 0;
 }
 .video-list-thumbs .glyphicon-play-circle{
