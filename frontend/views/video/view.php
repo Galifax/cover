@@ -11,9 +11,9 @@ $this->title = $model->name;
 
     <div class="col-md-8 padding-30 " style="margin: 0px" >
 
-        <div class=" ">
+        <div style="width: 100%; height: 350px" >
           
-            <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
+            <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="100%" height="350px" style="width:100% "
                    poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
                 <source src="<?= $model->src?>" type='video/mp4'>
                 <source src="<?= $model->src?>" type='video/webm'>
@@ -54,7 +54,7 @@ $this->title = $model->name;
 
                     </p>
                 </div>
-                <div class="btn-group border">
+                <div class="btn-group border" style="padding-top: 10px">
                     <p><i class="fa fa-eye" aria-hidden="true"></i> <?= $model->views?></p>
                 </div>
             </div>
@@ -93,7 +93,7 @@ $this->title = $model->name;
                 <?= $form->field($comments, 'video_id')->hiddenInput(['value' => $model->id])->label(false) ?>
                 <?= $form->field($comments, 'profile_id')->hiddenInput(['value' => $profile->id])->label(false) ?>
                 <?= $form->field($comments, 'date')->hiddenInput(['value' => date('Y-m-d H:i:s')])->label(false) ?>
-                <?= $form->field($comments, 'content')->textArea()->label('Текст') ?>
+                <?= $form->field($comments, 'content')->textArea()->label('Оставить комментарий') ?>
                 <div class="form-group">
                     <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
                 </div>
@@ -102,9 +102,9 @@ $this->title = $model->name;
                     <div class="comments-nav">
                         <ul class="nav nav-pills">
                             <li role="presentation" class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <p style="padding-top: 10px">
                                     Всего <?=count($model->comments)?> комментария <span class="caret"></span>
-                                </a>
+                                </p>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Best</a></li>
                                     <li><a href="#">Hot</a></li>
@@ -139,7 +139,7 @@ $this->title = $model->name;
                                         <span><a href="#">Удалить</a></span>
                                         <span><a href="#">Редактировать</a></span>
                                         <a data-toggle="collapse" data-target="#collapse<?=$comments->id?>" aria-expanded="false" aria-controls="collapseExample">Показать коментарии (<?=count($comments->comments)?>)</a>
-                                        <span style="float:right"><a href="#">Лайк!</a></span>
+                                        <span class="vote plus" title="Поставить лайк" style="float: right"><a href="#"><i class="fa fa-thumbs-up"></i> 100500</a></span>
                                         
                                       <div class="collapse" id="collapse1<?=$comments->id?>">
                 <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]]); ?>

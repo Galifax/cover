@@ -2,7 +2,7 @@ html {background-color: #99DFD5}
 
 *{font-family: 'Droid Serif', serif; }
 
-body {  height: 100%;  overflow-x: hidden}
+body {  height: 100%;  overflow-x: hidden; word-wrap: break-word; }
 
 .wrap {  min-height: 100%;  height: auto;  margin: 0 auto -60px;  padding: 0 0 60px;  }
 
@@ -259,6 +259,40 @@ a.desc:after {  content: "\e152";  }
 /*sidebar index*/
 
 /* Profile container */
+.list-group hr{
+    margin: 10px;
+}
+
+.fb-profile img.fb-image-lg{
+    z-index: 0;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.fb-image-profile
+{
+    margin: -90px 10px 0px 44px;
+    z-index: 9;
+    max-width: 200px;
+
+}
+
+@media (max-width:768px)
+{
+
+    .fb-profile-text>h1{
+        font-weight: 700;
+        font-size:16px;
+    }
+
+    .fb-image-profile
+    {
+        margin: -45px 10px 0px 25px;
+        z-index: 9;
+        width: 20%;
+    }
+}
+
 .profile {  margin: 20px 0;  }
 
 /* Profile sidebar */
@@ -352,7 +386,7 @@ a.desc:after {  content: "\e152";  }
 }
 
 .post-comments .comment-meta {
-    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
     margin-bottom: 5px;
 }
 
@@ -411,7 +445,9 @@ a.desc:after {  content: "\e152";  }
 /*coments*/
 
 /*VIEW VIDEO*/
-.video-text{background-color: #F8F8F8;padding:1px 10px 1px 10px}
+.video-text{
+    /*background-color: #F8F8F8;*/
+    padding:1px 10px 1px 10px}
 
 .video-list-thumbs{p}
 .video-list-thumbs > li{
@@ -421,7 +457,7 @@ a.desc:after {  content: "\e152";  }
 .video-list-thumbs-a{
     display:block;
     position:relative;
-    background-color: #F8F8F8;
+    /*background-color: #F8F8F8;*/
     color: black;
     padding:8px 8px 0px 8px;
     /*border-radius:3px*/
@@ -434,8 +470,8 @@ a.desc:after {  content: "\e152";  }
 }
 .video-list-thumbs h2{
     bottom: 0;
-    font-size: 14px;
-    height: 33px;
+    font-size: 17px;
+    height: 18px;
     margin: 8px 0 0;
 }
 .video-list-thumbs .glyphicon-play-circle{
@@ -823,3 +859,4 @@ body {
 .list-group-item{
     border: none;
 }
+
