@@ -11,9 +11,9 @@ $this->title = $model->name;
 
     <div class="col-md-8 padding-30 " style="margin: 0px" >
 
-        <div class=" ">
+        <div style="width: 100%; height: 350px" >
           
-            <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
+            <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="100%" height="350px" style="width:100% "
                    poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
                 <source src="<?= $model->src?>" type='video/mp4'>
                 <source src="<?= $model->src?>" type='video/webm'>

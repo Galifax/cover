@@ -20,7 +20,7 @@
                                 <div class="media">
                                 <?php Pjax::begin(['enablePushState' => false]);?>
                                     <div class="profile-userpic" align="center">
-                                        <img class="thumbnail" src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>" width="300px" height="300px">
+                                        <img style="max-width:300px; max-height:300px" class="thumbnail" src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>">
                                       <a href="<?= Url::to(['/profile', 'ava' => $model->id])?>" class='btn btn-danger'>Delete</a>
                                     </div>
                                 <?php Pjax::end();?>
