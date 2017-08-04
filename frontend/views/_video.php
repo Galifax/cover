@@ -1,4 +1,5 @@
 <?php use yii\helpers\Url;?>
+<?php $months = array( 1 => 'Января' , 'Февраля' , 'Марта' , 'Апреля' , 'Мая' , 'Июня' , 'Июля' , 'Августа' , 'Сентября' , 'Октября' , 'Ноября' , 'Декабря' );?>
  <ul class="list-unstyled video-list-thumbs row">
          <?php foreach($model as $video):?>
         <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -12,7 +13,7 @@
             </a>
             <div class="video-text">
                 <a class="username-video" href="<?=Url::to(['/profile', 'id' => $video->profile->id, 'name' => $video->profile->nickname])?>"><?= $video->profile->nickname?></a>
-                <p><?= $video->date?></p>
+              <p><i class="fa fa-eye" aria-hidden="true"> <?= $video->views?></i> | <?= date("d " . $months[date( 'n' )], mktime($video->date))?></p>
             </div>
         </li>
         <?php endforeach;?>

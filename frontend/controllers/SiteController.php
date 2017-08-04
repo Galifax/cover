@@ -77,11 +77,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-
-
     
-        $model = Video::find()->limit(3)->with('likes','profile','view')->all();
-   
+        $model = Video::find()->limit(4)->with('likes','profile')->orderBy(['views' => SORT_DESC])->all();
         return $this->render('index', compact('model'));
     }
 
