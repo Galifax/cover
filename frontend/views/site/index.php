@@ -70,7 +70,7 @@ $this->title = 'My Yii Application';
 
 <!--slider-end-->
 
-<div class="bg-img-1 container">
+<div class="bg-img-1">
 
     <h2>Top viedo</h2>     
    <?= $this->render('../_video', compact('model'));?>
