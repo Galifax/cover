@@ -1,4 +1,4 @@
-html {background-color: #99DFD5}
+html {}
 
 *{font-family: 'Droid Serif', serif; }
 
@@ -70,7 +70,7 @@ a.desc:after {  content: "\e152";  }
 }
 .video-font:hover {color: #f99500; }
 
-.my-video-video{border: solid 1px #CCCCCC; padding: 5px; margin:10px 0px 10px 0px ;width: 20%;float: left;overflow: hidden;}
+.my-video-video{padding: 5px; margin:10px 0px 10px 0px ;width: 20%;float: left;overflow: hidden;}
 
 .border-radius{border: solid 1px #CCCCCC; border-radius: 40px  0px 40px 0px; padding: 5px;}
 
@@ -83,6 +83,12 @@ a.desc:after {  content: "\e152";  }
     margin-bottom: 10px;
     margin-top: -7px;
 
+}
+
+.text-transfer{
+    white-space: nowrap; /* Отменяем перенос текста */
+    overflow: hidden; /* Обрезаем содержимое */
+    text-overflow: ellipsis; /* Многоточие */
 }
 /*Colors*/
 
@@ -126,7 +132,7 @@ a.desc:after {  content: "\e152";  }
     position:fixed;
     transition:all 0.4s ease-out;
     transform:translateX(0px);
-    z-index:9999;
+    z-index:3000;
 }
 
 #nav1{  top:0px;  left:0px;
@@ -166,6 +172,7 @@ a.desc:after {  content: "\e152";  }
     color:#fff;
     transition:all 0.4s ease-out;
     transform:translateX(-200px);
+    z-index:10;
 
 
 }
@@ -187,7 +194,7 @@ a.desc:after {  content: "\e152";  }
 .animate-right {
     transition:all 0.4s ease-out;
     transform: rotateY(0deg) rotateX(0deg)
-    translate(200px,0px);
+    translate(0px,0px);
 }
 
 .slide-left {
@@ -391,7 +398,6 @@ a.desc:after {  content: "\e152";  }
 }
 
 .post-comments .media {
-    border-left: 1px solid #000;
     background-color: white;
     margin-bottom: 5px;
     padding-left: 10px;
@@ -860,3 +866,6 @@ body {
     border: none;
 }
 
+#modal{
+    z-index: 3110;
+}

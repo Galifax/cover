@@ -46,14 +46,11 @@ AppAsset::register($this);
     <div id="navbar">
         <div class="container">
             <div class="row row1">
-                <div class="col-sm-2">
-
-                </div>
-                <div class="navbar-search smallsearch col-sm-8 col-xs-11 hidden-xs">
+                <div class="navbar-search smallsearch col-sm-9 col-sm-push-2 col-md-7 hidden-xs">
                 <form action="<?=Url::to(['/video/search'])?>">
                     <div class="row">
                            <div id="custom-search-input">
-                                            <div class="input-group col-md-12">
+                                            <div class="input-group ">
                                                 <input type="text" class="search-query form-control" placeholder="Поиск" value="<?=$_GET['s']?>" name="s"/>
                                                 <span class="input-group-btn">
                                                     <button class="btn btn-danger" type="submit">
@@ -177,11 +174,6 @@ AppAsset::register($this);
 
 
     <main id="main">
-
-
-
-
-
 
         <div class="container content" style="margin-top:50px; min-height: 94.5vh">
             <?= Breadcrumbs::widget([

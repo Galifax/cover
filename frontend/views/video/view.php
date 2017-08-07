@@ -6,15 +6,12 @@ use yii\widgets\ActiveForm;
 $this->title = $model->name;
 // echo substr(md5(uniqid()), 0, 20);
 ?>
-
-<div style=" background-color: none" >
-
-    <div class="col-md-8 padding-30 " style="margin: 0px" >
+<div class="col-sm-8 padding-30 " style="margin: 0px" >
 
         <div style="width: 100%; height: 350px" >
           
             <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="100%" height="350px" style="width:100% "
-                   poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+                   poster="https://i.mycdn.me/image?id=837226100079&t=35&plc=WEB&tkn=*WR6s1oFVyQxmIiVMHSiuEbODFTU" data-setup="{}">
                 <source src="<?= $model->src?>" type='video/mp4'>
                 <source src="<?= $model->src?>" type='video/webm'>
                 <p class="vjs-no-js">
@@ -74,15 +71,15 @@ $this->title = $model->name;
                     <!-- END SIDEBAR USER TITLE -->
                 </div>
 
-            <div class="col-md-8" style="font-size: 16px;margin-top: 20px">
+            <div class="" style="padding:5px;font-size: 16px">
 
-<!--                <h3 class="text-center">Описание</h3>-->
+                <p><?=$model->description?></lore></p>
 
             </div
-                        <p style="padding: 5px"><?=$model->description?></lore></p>
+
         </div>
         <?php Pjax::begin();?>
-        <div class="my-video-video background-gray" style="width: 100%">
+        <div class="my-video-video " style="width: 100%">
 
 
 
@@ -224,6 +221,27 @@ $this->title = $model->name;
         <?php Pjax::end();?>
    </div> <!-- col-md-8-->
 
+</div>
+
+    <div class="col-sm-4 padding-30" style="margin: 0px">
+            <ul class="list-unstyled video-list-thumbs">
+                <?php foreach($model->category->video as $video):?>
+                <li class="col-xs-12">
+                    <a class="video-list-thumbs-a" href="<?= Url::to(['/video/view', 'id'=>$video->id])?>" title="<?= $video->name?>">
+                        <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
+                        <span class="duration">03:15</span>
+                        <h2 class="text-transfer"><?= $video->name?></h2>
+                    </a>
+                    <div class="video-text">
+                        <a class="username-video" href="#"><?= $video->profile->nickname?></a>
+                        <p><?= $video->date?></p>
+                    </div>
+                </li>
+            <?php endforeach;?>
+            </ul>
+    </div>
+
+
 <script>
     $('[data-toggle="collapse"]').on('click', function() {
         var $this = $(this),
@@ -241,25 +259,3 @@ $this->title = $model->name;
     });
 
 </script>
-
-
-
-    <div class="col-md-4 padding-30" style="margin: 0px">
-            <ul class="list-unstyled video-list-thumbs row">
-                <?php foreach($model->category->video as $video):?>
-                <li class="col-xs-12">
-                    <a class="video-list-thumbs-a" href="<?= Url::to(['/video/view', 'id'=>$video->id])?>">
-                        <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
-                        <span class="glyphicon glyphicon-play-circle"></span>
-                        <span class="duration">03:15</span>
-                        <h2><?= $video->name?></h2>
-                    </a>
-                    <div class="video-text">
-                        <a class="username-video" href="#"><?= $video->profile->nickname?></a>
-                        <p><?= $video->date?></p>
-                    </div>
-                </li>
-            <?php endforeach;?>
-            </ul>
-        </div>
-</div>
