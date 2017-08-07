@@ -46,7 +46,8 @@ AppAsset::register($this);
     <div id="navbar">
         <div class="container">
             <div class="row row1">
-                <div class="navbar-search smallsearch col-sm-9 col-sm-push-2 col-md-7 hidden-xs">
+                <div class="col-sm-3"></div>
+                <div class="navbar-search smallsearch col-sm-9 col-md-6 hidden-xs">
                 <form action="<?=Url::to(['/video/search'])?>">
                     <div class="row">
                            <div id="custom-search-input">
