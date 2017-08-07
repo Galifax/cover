@@ -2,11 +2,11 @@
 <?php $months = array( 1 => 'Января' , 'Февраля' , 'Марта' , 'Апреля' , 'Мая' , 'Июня' , 'Июля' , 'Августа' , 'Сентября' , 'Октября' , 'Ноября' , 'Декабря' );?>
  <ul class="list-unstyled video-list-thumbs row">
          <?php foreach($model as $video):?>
-        <li class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+        <li class="col-lg-<?=$lg?> col-md-<?=$lg?> col-sm-<?=$lg?> col-xs-<?=$lg?>">
     
             <a data-pjax="0" class="video-list-thumbs-a" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="<?= $video->name?>">
 
-                <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
+                <img src="<?=$video->preloader?>" width="100%" />
                 <span class="duration">03:15</span>
                 <h2 class="text-transfer"><?= $video->name?></h2>
             </a>

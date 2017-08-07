@@ -19,15 +19,17 @@ $this->title = $model->name;
                     <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
                 </p>
             </video>
-
         </div>
+
+     
         <script type="text/javascript">
-             $(document).ready(function(){
+     $(document).ready(function(){
         $('.video-js').height($('.video-js').width() * 0.6 + 'px');
     });
     $(window).resize(function(){
         $('.video-js').height($('.video-js').width() * 0.6 + 'px');
     });
+    
         </script>
 
         <div class="about-video my-video-video border" style="padding-top: -15px; width: 100%">
@@ -232,21 +234,13 @@ $this->title = $model->name;
 </div>
 
     <div class="col-sm-4 padding-30" style="margin: 0px">
-            <ul class="list-unstyled video-list-thumbs">
-                <?php foreach($model->category->video as $video):?>
-                <li class="col-xs-12">
-                    <a class="video-list-thumbs-a" href="<?= Url::to(['/video/view', 'id'=>$video->id])?>" title="<?= $video->name?>">
-                        <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
-                        <span class="duration">03:15</span>
-                        <h2 class="text-transfer"><?= $video->name?></h2>
-                    </a>
-                    <div class="video-text">
-                        <a class="username-video" href="#"><?= $video->profile->nickname?></a>
-                        <p><?= $video->date?></p>
-                    </div>
-                </li>
-            <?php endforeach;?>
-            </ul>
+              <?= $this->render('../_video', [
+        'model' => $model->category->video,
+        'lg' => 12,
+        'md' => 12,
+        'sm' => 12,
+         'xs' => 12,
+   ]);?>
     </div>
 
 
