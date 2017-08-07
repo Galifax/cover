@@ -94,9 +94,15 @@ class ProfileController extends Controller
       $model = new Video();
       $substr = substr(md5(uniqid()), 0, 20);
       if($model->load(Yii::$app->request->post())){
+
       $model->file = UploadedFile::getInstance($model, 'file');
       $model->file->saveAs('uploads/'. $substr . '.mp4');
       $model->src = '/uploads/'. $substr . '.mp4';
+
+      $model->file2 = UploadedFile::getInstance($model, 'file2');
+      $model->file2->saveAs('preloader/'. $substr . '.jpg');
+      $model->preloader = '/preloader/'. $substr . '.jpg';
+
       $model->save();
         return $this->redirect(['/video/view', 'id' => $model->id]);
         } 

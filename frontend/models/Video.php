@@ -28,16 +28,18 @@ class Video extends \yii\db\ActiveRecord
         return 'video';
     }
     public $file;
+    public $file2;
+
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['profile_id', 'src', 'name', 'description', 'date', 'category_id'], 'required'],
+            [['profile_id', 'src', 'name', 'description', 'date', 'category_id', 'preloader'], 'required'],
             [['profile_id', 'category_id', 'views'], 'integer'],
             [['date'], 'safe'],
-            [['file',], 'file'],
+            [['file', 'file2' ], 'file'],
             [['src'], 'string', 'max' => 55],
             [['name'], 'string', 'max' => 255],
             [['description'], 'string', 'max' => 1000],

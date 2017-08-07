@@ -14,8 +14,9 @@ $form = ActiveForm::begin([
 ]) ?>
     <?= $form->field($model, 'profile_id')->hiddenInput(['value' => Yii::$app->user->id])->label(false) ?>
     <?= $form->field($model, 'file')->fileInput()->label('Загрузить видео')?>
+    <?= $form->field($model, 'file2')->fileInput()->label('Прелоадер')?>
     <?= $form->field($model, 'name')->textInput()->label('Название')?>
-    <?= $form->field($model, 'description')->textInput()->label('Описание') ?>
+    <?= $form->field($model, 'description')->textArea(['rows' => 6])->label('Описание') ?>
     <?= $form->field($model, 'category_id')->dropDownList($items,$params)->label('Категория') ?>
     <?= $form->field($model, 'date')->hiddenInput(['value' => date('Y-m-d H:i:s')])->label(false) ?>
 

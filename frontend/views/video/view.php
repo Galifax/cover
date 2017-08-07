@@ -8,12 +8,12 @@ $this->title = $model->name;
 ?>
 <div class="col-sm-8 padding-30 " style="margin: 0px" >
 
-        <div style="width: 100%; height: 350px" >
+        <div style="width: 100%;" >
           
-            <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="100%" height="350px" style="width:100% "
-                   poster="https://i.mycdn.me/image?id=837226100079&t=35&plc=WEB&tkn=*WR6s1oFVyQxmIiVMHSiuEbODFTU" data-setup="{}">
+            <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto"
+                   poster="<?= $model->preloader?>" data-setup="{}"
+                   style="width: 100%">
                 <source src="<?= $model->src?>" type='video/mp4'>
-                <source src="<?= $model->src?>" type='video/webm'>
                 <p class="vjs-no-js">
                     To view this video please enable JavaScript, and consider upgrading to a web browser that
                     <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
@@ -21,6 +21,14 @@ $this->title = $model->name;
             </video>
 
         </div>
+        <script type="text/javascript">
+             $(document).ready(function(){
+        $('.video-js').height($('.video-js').width() * 0.6 + 'px');
+    });
+    $(window).resize(function(){
+        $('.video-js').height($('.video-js').width() * 0.6 + 'px');
+    });
+        </script>
 
         <div class="about-video my-video-video border" style="padding-top: -15px; width: 100%">
             <h2 style="margin: 0;padding: 10px;font-size: 23px "><?=$model->name?></h2>
@@ -243,6 +251,7 @@ $this->title = $model->name;
 
 
 <script>
+   
     $('[data-toggle="collapse"]').on('click', function() {
         var $this = $(this),
             $parent = typeof $this.data('parent')!== 'undefined' ? $($this.data('parent')) : undefined;
@@ -257,5 +266,6 @@ $this->title = $model->name;
         $parent.find('.glyphicon').not(currentIcon).removeClass('glyphicon-minus').addClass('glyphicon-plus');
 
     });
+
 
 </script>
