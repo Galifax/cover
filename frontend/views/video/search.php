@@ -7,7 +7,13 @@ $this->title = $name ? $name : 'Все категории';
   <div class="row">
 
   <div class="col-md-10">
-    <?= $this->render('../_video', compact('model'));?>
+    <?= $this->render('../_video', [
+        'model' => $model,
+        'lg' => 3,
+        'md' => 3,
+        'sm' => 4,
+         'xs' => 12,
+   ]);?>
 </div>
 <div class="col-md-2" style="padding: 0">
 <ul class="list-group">

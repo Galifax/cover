@@ -73,7 +73,13 @@ $this->title = 'My Yii Application';
 <div class="bg-img-1">
 
     <h2>Top viedo</h2>     
-   <?= $this->render('../_video', compact('model'));?>
+   <?= $this->render('../_video', [
+        'model' => $model,
+        'lg' => 3,
+        'md' => 3,
+        'sm' => 4,
+         'xs' => 12,
+   ]);?>
 </div>
 
 <script>
