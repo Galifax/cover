@@ -34,8 +34,8 @@ $this->title = $model->name;
             <h2 style="margin: 0;padding: 10px;font-size: 23px "><?=$model->name?></h2>
             <h2 style="margin: 0;padding: 10px;font-size: 23px ">Категория: <?= $model->category->name?></h2>
             <p style="padding-left: 10px;">Добавленно <?=$model->date?></p>
-            <div class="btn-group btn-group-justified text-center" style="font-size: 18px; ">
-                <div class="btn-group border" >
+            <ul class="btn-group btn-group-justified text-center" style="font-size: 18px; ">
+                <li class="btn-group border" >
                     <p>
                     <?php Pjax::begin(['enablePushState' => false]);?>
                         <?php if($favorites == 0):?>
@@ -45,7 +45,7 @@ $this->title = $model->name;
                         <?php endif;?>
                     <?php Pjax::end();?>
                     </p>
-                </div>
+                </li>
                 <div class="btn-group border">
                     <p>
                     <?php Pjax::begin(['enablePushState' => false]);?>
@@ -62,7 +62,7 @@ $this->title = $model->name;
                 <div class="btn-group border" style="padding-top: 10px">
                     <p><i class="fa fa-eye" aria-hidden="true"></i> <?= $model->views?></p>
                 </div>
-            </div>
+            </ul>
 
                  <div class="profile-sidebar col-md-4">
                     <!-- SIDEBAR USERPIC -->
