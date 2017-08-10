@@ -63,16 +63,16 @@ class ProfileController extends Controller
      */
     public function actionIndex($id=Null, $name=Null)
     {
-        $ava = Yii::$app->request->get('ava');
+       $ava = Yii::$app->request->get('ava');
         if ($ava){
             $delete = Profile::findOne($ava);
             if ($delete){ 
               $delete->avatar='';
-              $delete->save();  
+              $delete->save();
             }
             
         }
-
+        
          $com = new Comments();
         if($com->load(Yii::$app->request->post()) && $com->save());
 
@@ -115,7 +115,17 @@ class ProfileController extends Controller
 
       public function actionEdit()
      {
-      $this->layout=false;
+      $ava = Yii::$app->request->get('ava');
+        if ($ava){
+            $delete = Profile::findOne($ava);
+            if ($delete){ 
+              $delete->avatar='';
+              $delete->save();  
+              return $this->redirect(['/profile/index', 'id' => $ava]);
+
+            }
+            
+        }
       $model = Profile::find()->where(['id' =>Yii::$app->user->id])->with('user')->one();
       if($model->load(Yii::$app->request->post())){
     
@@ -129,9 +139,13 @@ class ProfileController extends Controller
       $model->avatar = '/avatars/' .$model->file->baseName . '.' .$model->file->extension;
      }
       $model->save();
-          return $this->redirect(['/profile']);
+          return $this->redirect(['/profile', 'id' => $model->id, 'name' => $model->nickname]);
         } 
+        if(Yii::$app->request->isAjax){
         return $this->renderAjax('edit', compact('model'));
+        }else{
+        return $this->render('edit', compact('model'));
+        }
       }
     public function actionUploadFile()
     {

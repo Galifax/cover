@@ -18,25 +18,19 @@
                 </div>
             </div>
             <hr>
+         
             <div class="clearfix"></div>
-    
+            
                 <div class="col-md-3">
-
 
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="media">
-                                <?php Pjax::begin(['enablePushState' => false]);?>
 
-                                <?php Pjax::end();?>
-                                <?php Pjax::begin();?>
                                     <div style="height: 30px">
-                                        <div style="float: right">
-                                            <?= Html::button('Редактировать', ['value' => Url::to(['/profile/edit', 'id'=>$model->id]) , 'class' => 'btn btn-success' , 'id' => 'modalButton2']) ?>
-                                        </div>
-                                        <div  style="float:left">
-                                        <a href="<?= Url::to(['/profile', 'ava' => $model->id])?>" class='btn btn-danger'>Delete</a>
-                                        </div>
+
+                                            <?= Html::button('Редактировать', ['value' => Url::to(['/profile/edit', 'id'=>$model->id]) , 'style' => 'width: 100%', 'class' => 'btn btn-success' , 'id' => 'modalButton2']) ?>
+
                                     </div>
                                     <ul class="list-group">
                                         <hr>
@@ -138,10 +132,6 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="media">
-                                <?php Pjax::begin(['enablePushState' => false]);?>
-
-                                <?php Pjax::end();?>
-                                <?php Pjax::begin();?>
 
                                 <ul class="list-group">
                                     <hr>
