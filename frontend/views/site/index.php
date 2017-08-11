@@ -68,37 +68,43 @@ $this->title = 'My Yii Application';
     </div>
 </div>
 
-<!--slider-end-->
+                    <!--slider-end-->
 
-<div class="bg-img-1">
+
 
     <h2>Top viedo</h2>     
    <?= $this->render('../_video', [
         'model' => $model,
+        'lg' => 4,
+        'md' => 4,
+        'sm' => 4,
+         'xs' => 12,
+   ]);?>
+
+<div class="clearfix"></div>
+
+     <h2>Рандом</h2>     
+   <?= $this->render('../_video', [
+        'model' => $random,
         'lg' => 3,
         'md' => 3,
         'sm' => 4,
          'xs' => 12,
    ]);?>
 
-     <h2>Рандом</h2>     
-   <?= $this->render('../_video', [
-        'model' => $random,
-        'lg' => 2,
-        'md' => 2,
-        'sm' => 3,
-         'xs' => 12,
-   ]);?>
+<div class="clearfix"></div>
 
     <h2>Новые</h2>     
    <?= $this->render('../_video', [
         'model' => $newest,
-        'lg' => 2,
-        'md' => 2,
-        'sm' => 3,
+        'lg' => 3,
+        'md' => 3,
+        'sm' => 4,
          'xs' => 12,
    ]);?>
-</div>
+
+
+
 
 <script>
     (function( $ ) {
