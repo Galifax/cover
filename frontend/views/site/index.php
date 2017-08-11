@@ -89,6 +89,15 @@ $this->title = 'My Yii Application';
         'sm' => 3,
          'xs' => 12,
    ]);?>
+
+    <h2>Новые</h2>     
+   <?= $this->render('../_video', [
+        'model' => $newest,
+        'lg' => 2,
+        'md' => 2,
+        'sm' => 3,
+         'xs' => 12,
+   ]);?>
 </div>
 
 <script>
