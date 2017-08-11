@@ -1,6 +1,7 @@
 <?php use yii\helpers\Url;?>
 <?php $months = array( 1 => 'Января' , 'Февраля' , 'Марта' , 'Апреля' , 'Мая' , 'Июня' , 'Июля' , 'Августа' , 'Сентября' , 'Октября' , 'Ноября' , 'Декабря' );?>
 
+
 <?php foreach($model as $video):?>
 <div class="col-lg-<?=$lg?> col-md-<?=$md?> col-sm-<?=$sm?> col-xs-<?=$xs?>">
     <aside>
