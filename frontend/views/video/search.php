@@ -10,8 +10,8 @@ $this->title = $name ? $name : 'Все категории';
     <?= $this->render('../_video', [
         'model' => $model,
         'lg' => 3,
-        'md' => 3,
-        'sm' => 4,
+        'md' => 4,
+        'sm' => 6,
          'xs' => 12,
    ]);?>
 </div>

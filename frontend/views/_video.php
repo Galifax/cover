@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="content-footer">
-            <img  class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
+            <img  class="user-small-img" src="<?=$video->profile->avatar?>">
             <span style="color: #fff;">
                 <a style="font-size: 16px" class="username-video" href="<?=Url::to(['/profile', 'id' => $video->profile->id, 'name' => $video->profile->nickname])?>"><?= $video->profile->nickname?></a>
 
@@ -26,9 +26,9 @@
                     ?>
                     <i class="fa fa-eye" aria-hidden="true"> <?= $video->views?></i> | <?=$date->format('j').' '. $months[date($date->format('n'))]?>
                                     </p>
-				</span>
+            </span>
             <div class="user-ditels">
-                <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
+                <div class="user-img"><img src="<?=$video->profile->avatar?>" class="img-responsive"></div>
                 <span class="user-full-ditels">
                         <h3><?= $video->profile->nickname?></h3>
                         <p>МеснІЬй сторож</p>
