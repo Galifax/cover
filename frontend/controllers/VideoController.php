@@ -84,7 +84,10 @@ class VideoController extends Controller
 
 
         $comments = new Comments();
-        if($comments->load(Yii::$app->request->post()) && $comments->save());
+        if($comments->load(Yii::$app->request->post()) && $comments->save())
+        {
+            $comments = new Comments();
+        }
 
         if(isset($_GET['favorites'])){
         $favorites = Favorites::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->count();
@@ -100,7 +103,7 @@ class VideoController extends Controller
         }
 
         if(isset($_GET['like'])){
-        $likes = Likes::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->count();
+        $likes = Likes::find()->where(['video_id' => $id, '+profile_id' => Yii::$app->user->identity->id])->count();
         if($likes == 0){
         $model1 = new Likes();
         $model1->profile_id = Yii::$app->user->identity->id;

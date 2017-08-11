@@ -3,6 +3,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
 use yii\widgets\ActiveForm;
+use frontend\models\Comments;
 $this->title = $model->name;
 // echo substr(md5(uniqid()), 0, 20);
 ?>
@@ -103,8 +104,10 @@ $this->title = $model->name;
                         </ul>
                     </div>
 
+                                                <?php $comment = new Comments();?>
 
                        <div class="row"><!-- Ров1-->
+
                        <?php foreach($model->comments as $comments):?>
 
                         <div class="media"><!-- Первый уровень коментов-->
@@ -132,12 +135,13 @@ $this->title = $model->name;
                                         <span class="vote plus" title="Поставить лайк" style="float: right"><a href="#"><i class="fa fa-thumbs-up"></i> 100500</a></span>
                                         
                                       <div class="collapse" id="collapse1<?=$comments->id?>">
+
                 <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]]); ?>
-                <?= $form->field($comments, 'parent_id')->hiddenInput(['value' => $comments->id])->label(false) ?>
-                <?= $form->field($comments, 'video_id')->hiddenInput(['value' => $model->id])->label(false) ?>
-                <?= $form->field($comments, 'profile_id')->hiddenInput(['value' => $profile->id])->label(false) ?>
-                <?= $form->field($comments, 'date')->hiddenInput(['value' => date('Y-m-d H:i:s')])->label(false) ?>
-                <?= $form->field($comments, 'content')->textArea()->label('Текст') ?>
+                <?= $form->field($comment, 'parent_id')->hiddenInput(['value' => $comments->id])->label(false) ?>
+                <?= $form->field($comment, 'video_id')->hiddenInput(['value' => $model->id])->label(false) ?>
+                <?= $form->field($comment, 'profile_id')->hiddenInput(['value' => $profile->id])->label(false) ?>
+                <?= $form->field($comment, 'date')->hiddenInput(['value' => date('Y-m-d H:i:s')])->label(false) ?>
+                <?= $form->field($comment, 'content')->textArea()->label('Текст') ?>
                 <div class="form-group">
                     <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
                 </div>
@@ -169,24 +173,7 @@ $this->title = $model->name;
                                         </span>
                                         <span><a href="#">Удалить</a></span>
                                         <span><a href="#">Редактировать</a></span>
-                                        <a data-toggle="collapse" data-target="#collapse<?=$comments->id?>" aria-expanded="false" aria-controls="collapseExample">Показать коментарии (<?=count($comments->comments)?>)</a>
-                                        <span style="float:right"><a href="#">Лайк!</a></span>
-                                        
-                                      <div class="collapse" id="collapse<?=$comments->id?>">
-                 <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]]); ?>
-                <?= $form->field($comments, 'parent_id')->hiddenInput(['value' => $comments->parent_id])->label(false) ?>
-                <?= $form->field($comments, 'video_id')->hiddenInput(['value' => $model->id])->label(false) ?>
-                <?= $form->field($comments, 'profile_id')->hiddenInput(['value' => $profile->id])->label(false) ?>
-                <?= $form->field($comments, 'date')->hiddenInput(['value' => date('Y-m-d H:i:s')])->label(false) ?>
-                <?= $form->field($comments, 'content')->textArea()->label('Текст') ?>
-                <div class="form-group">
-                    <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
-                </div>
-                <?php ActiveForm::end(); ?>
-                                      </div>
-                                                            <!-- comment-meta -->
 
-                                     
                                       
                                     </div>
 
