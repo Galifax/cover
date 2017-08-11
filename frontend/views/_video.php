@@ -2,7 +2,7 @@
 <?php $months = array( 1 => 'Января' , 'Февраля' , 'Марта' , 'Апреля' , 'Мая' , 'Июня' , 'Июля' , 'Августа' , 'Сентября' , 'Октября' , 'Ноября' , 'Декабря' );?>
  <ul class="list-unstyled video-list-thumbs row">
          <?php foreach($model as $video):?>
-        <li class="col-lg-<?=$lg?> col-md-<?=$lg?> col-sm-<?=$lg?> col-xs-<?=$lg?>" style=" padding: 7px;">
+        <li class="col-lg-<?=$lg?> col-md-<?=$md?> col-sm-<?=$sm?> col-xs-<?=$xs?>" style=" padding: 7px;">
         <div class="content"
             <a data-pjax="0" class="video-list-thumbs-a" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="<?= $video->name?>">
 
