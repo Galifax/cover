@@ -43,6 +43,9 @@ a.desc:after {  content: "\e152";  }
 
 .content{
     background: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    border-radius: 5px;
+
 }
 
 

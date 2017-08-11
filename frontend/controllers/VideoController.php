@@ -115,7 +115,9 @@ class VideoController extends Controller
         
         
 
-        $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'comments.profile', 'category.video.profile', 'favorites', 'likes', 'comments' => function (ActiveQuery $query){
+        $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'comments.profile', 'category.video' => function($query) use($id){
+            $query->where(['!=', 'id', $id ])->limit(6)->with('profile');
+        }, 'favorites', 'likes', 'comments' => function (ActiveQuery $query){
                 $query->where(['parent_id' => 0])->with('comments.profile');
             }])->one();
 

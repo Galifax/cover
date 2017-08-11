@@ -32,24 +32,19 @@ $this->title = $model->name;
     
         </script>
 
-        <div class="about-video my-video-video border" style="padding-top: -15px; width: 100%">
-            <h2 style="margin: 0;padding: 10px;font-size: 23px "><?=$model->name?></h2>
-            <h2 style="margin: 0;padding: 10px;font-size: 23px ">Категория: <?= $model->category->name?></h2>
-            <p style="padding-left: 10px;">Добавленно <?=$model->date?></p>
-            <ul class="btn-group btn-group-justified text-center" style="font-size: 18px; ">
-                <li class="btn-group border" >
-                    <p>
+        <div class="about-video my-video-video content" style="padding-top: -15px; width: 100%">
+            <h1 style="margin: 0;padding: 10px;font-size: 23px "><?=$model->name?></h1>
+              <img style="width: 70px; float: left" src="<?=empty($model->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->profile->avatar?>" alt="">
+                   <div style="margin-left: 10px; float: left">
+                    <a href="<?=Url::to(['/profile', 'id' => $model->profile->id, 'name' => $model->profile->nickname])?>"><?=$model->profile->nickname?></a>
                     <?php Pjax::begin(['enablePushState' => false]);?>
                         <?php if($favorites == 0):?>
-                            <span class="vote plus" title="В понравившиеся видео"><a href="<?=Url::to(['video/view', 'id' => $id, 'favorites' => 'favorites'])?>">Добавить в избранное <i class="fa fa-plus" aria-hidden="true"></i></i></a></span>
+                            <span class="vote plus" title="В понравившиеся видео"><a href="<?=Url::to(['video/view', 'id' => $id, 'favorites' => 'favorites'])?>">В избранное <i class="fa fa-plus" aria-hidden="true"></i></a></span>
                         <?php else:?>
                             <span  class="vote plus" title="Убрть из понравившиеся видео"><a href="<?=Url::to(['video/view', 'id' => $id, 'favorites' => 'favorites'])?>">Убрать из избранного <i  class="fa fa-minus" aria-hidden="true"></i></a></span>
                         <?php endif;?>
                     <?php Pjax::end();?>
-                    </p>
-                </li>
-                <div class="btn-group border">
-                    <p>
+
                     <?php Pjax::begin(['enablePushState' => false]);?>
 
                     <?php if($likes == 0):?>
@@ -58,38 +53,26 @@ $this->title = $model->name;
                         <span class="vote plus" title="Убрать лайк"><a href="<?=Url::to(['video/view', 'id' => $id, 'like' => 'like'])?>"><i class="fa fa-thumbs-o-up"></i></a> <?=count($model->likes)?></span>
                     <?php endif;?>
                     <?php Pjax::end();?>
-
-                    </p>
                 </div>
-                <div class="btn-group border" style="padding-top: 10px">
-                    <p><i class="fa fa-eye" aria-hidden="true"></i> <?= $model->views?></p>
-                </div>
-            </ul>
-
-                 <div class="profile-sidebar col-md-4">
-                    <!-- SIDEBAR USERPIC -->
-                    <div class="profile-userpic">
-                        <img class="media-object img-rounded img1" src="<?=empty($model->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->profile->avatar?>" alt="">
-                    </div>
-                    <!-- END SIDEBAR USERPIC -->
-                    <!-- SIDEBAR USER TITLE -->
-                    <div class="profile-usertitle ">
-                        <div class="profile-usertitle-name">
-                            <a href="<?=Url::to(['/profile', 'id' => $model->profile->id, 'name' => $model->profile->nickname])?>"><?=$model->profile->nickname?></a>
-                        </div>
-                    </div>
-                    <!-- END SIDEBAR USER TITLE -->
-                </div>
-
-            <div class="" style="padding:5px;font-size: 16px">
-
-                <p><?=$model->description?></lore></p>
-
-            </div
-
+                <p style="float: right;">Просмотры<br><i class="fa fa-eye" style="float: right" aria-hidden="true"> <?=$model->views?></i></p>
         </div>
-        <?php Pjax::begin();?>
-        <div class="my-video-video " style="width: 100%">
+
+          
+
+        
+         <?php $months = array( 1 => 'Января' , 'Февраля' , 'Марта' , 'Апреля' , 'Мая' , 'Июня' , 'Июля' , 'Августа' , 'Сентября' , 'Октября' , 'Ноября' , 'Декабря' );?>
+            <div class="description content" style="margin-top: 140px; padding: 20px;">
+                 <?php 
+                $date = new DateTime($video->date);        
+                ?>
+              <p>Опубликовано <?=$date->format('j').' '. $months[date($date->format('n'))]?></p>
+              <p><?=$model->description?></p>
+              <p>Категория: <?=$model->category->name?></p>
+            </div>
+
+
+            <?php Pjax::begin();?>
+        <div class="my-video-video content" style="width: 100%; margin-top: 16px;">
 
 
 
@@ -231,9 +214,7 @@ $this->title = $model->name;
         <?php Pjax::end();?>
    </div> <!-- col-md-8-->
 
-</div>
-
-    <div class="col-sm-4 padding-30" style="margin: 0px">
+    <div class="col-md-4" style="margin-top: 15px;">
               <?= $this->render('../_video', [
         'model' => $model->category->video,
         'lg' => 12,
@@ -241,6 +222,7 @@ $this->title = $model->name;
         'sm' => 12,
          'xs' => 12,
    ]);?>
+    </div>
     </div>
 
 

@@ -80,6 +80,15 @@ $this->title = 'My Yii Application';
         'sm' => 4,
          'xs' => 12,
    ]);?>
+
+     <h2>Рандом</h2>     
+   <?= $this->render('../_video', [
+        'model' => $random,
+        'lg' => 2,
+        'md' => 2,
+        'sm' => 3,
+         'xs' => 12,
+   ]);?>
 </div>
 
 <script>

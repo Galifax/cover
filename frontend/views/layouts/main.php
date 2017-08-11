@@ -176,7 +176,7 @@ AppAsset::register($this);
 
     <main id="main">
 
-        <div class="container content" style="margin-top:50px; min-height: 94.5vh">
+        <div class="container" style="margin-top:50px; min-height: 94.5vh">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>

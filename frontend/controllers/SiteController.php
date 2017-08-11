@@ -17,7 +17,7 @@ use frontend\models\View;
 use frontend\models\Profile;
 use frontend\models\Likes;
 use yii\db\AccessQuery;
-use yii\db\ActiveQuery;
+use yii\db\Expression;
 /**
  * Site controller
  */
@@ -78,8 +78,9 @@ class SiteController extends Controller
     public function actionIndex()
     {
     
-        $model = Video::find()->limit(4)->with('likes','profile')->orderBy(['views' => SORT_DESC])->all();
-        return $this->render('index', compact('model'));
+        $model = Video::find()->limit(4)->with('profile')->orderBy(['views' => SORT_DESC])->all();
+        $random = Video::find()->limit(6)->with('profile')->orderBy(new Expression('rand()'))->all();
+        return $this->render('index', compact('model', 'random'));
     }
 
     /**
