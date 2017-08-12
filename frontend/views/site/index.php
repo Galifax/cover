@@ -69,8 +69,9 @@ $this->title = 'My Yii Application';
 </div>
 
                     <!--slider-end-->
-<div class="content ">
-    <h2>Top viedo</h2>    
+<div class="content">
+    <h2 style="padding: 10px; font-size: 30px; margin: 0px; text-align: center">Top viedo</h2>
+</div>
    <?= $this->render('../_video', [
         'model' => $top,
         'lg' => 4,
@@ -78,10 +79,13 @@ $this->title = 'My Yii Application';
         'sm' => 4,
          'xs' => 12,
    ]);?>
-</div>
+
 
 <div class="clearfix"></div>
-     <h2>Рандом</h2>     
+
+<div class="content">
+     <h2 style="padding: 10px; font-size: 30px; margin: 0px; text-align: center">Рандом</h2>
+</div>
    <?= $this->render('../_video', [
         'model' => $random,
         'lg' => 3,
@@ -89,9 +93,13 @@ $this->title = 'My Yii Application';
         'sm' => 4,
          'xs' => 12,
    ]);?>
+
+
 <div class="clearfix"></div>
 
-    <h2>Новые</h2>     
+<div class="content">
+    <h2 style="padding: 10px; font-size: 30px; margin: 0px; text-align: center">Новые</h2>
+</div>
    <?= $this->render('../_video', [
         'model' => $newest,
         'lg' => 3,
