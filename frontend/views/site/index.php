@@ -72,7 +72,7 @@ $this->title = 'My Yii Application';
 <div class="content ">
     <h2>Top viedo</h2>    
    <?= $this->render('../_video', [
-        'model' => $model,
+        'model' => $top,
         'lg' => 4,
         'md' => 4,
         'sm' => 4,
