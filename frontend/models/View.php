@@ -29,9 +29,11 @@ class View extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['video_id', 'views'], 'required'],
-            [['video_id', 'views'], 'integer'],
-            [['video_id'], 'exist', 'skipOnError' => true, 'targetClass' => Video::className(), 'targetAttribute' => ['video_id' => 'id']],
+            [['video_id'], 'required'],
+            [['video_id'], 'integer'],
+            [['ip'], 'string', 'max' => 255],
+            [['date'], 'safe'],
+
         ];
     }
 
@@ -43,7 +45,6 @@ class View extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'video_id' => 'Video ID',
-            'views' => 'Views',
         ];
     }
 

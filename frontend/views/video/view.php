@@ -3,6 +3,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
 use yii\widgets\ActiveForm;
+use yii\widgets\LinkPager;
 use frontend\models\Comments;
 $this->title = $model->name;
 // echo substr(md5(uniqid()), 0, 20);
@@ -72,7 +73,7 @@ $this->title = $model->name;
             </div>
 
 
-            <?php Pjax::begin();?>
+            <?php Pjax::begin(['enablePushState' => false]);?>
         <div class="my-video-video content" style="width: 100%; margin-top: 16px;">
 
 
@@ -84,17 +85,18 @@ $this->title = $model->name;
                 <?= $form->field($comments, 'video_id')->hiddenInput(['value' => $model->id])->label(false) ?>
                 <?= $form->field($comments, 'profile_id')->hiddenInput(['value' => $profile->id])->label(false) ?>
                 <?= $form->field($comments, 'date')->hiddenInput(['value' => date('Y-m-d H:i:s')])->label(false) ?>
-                <?= $form->field($comments, 'content')->textArea()->label('Оставить комментарий') ?>
+                <?= $form->field($comments, 'content')->textArea(['placeholder' => Yii::$app->session->getFlash('success')])->label('Оставить комментарий') ?>
                 <div class="form-group">
                     <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
                 </div>
                 <?php ActiveForm::end(); ?>
+                
 
                     <div class="comments-nav">
                         <ul class="nav nav-pills">
                             <li role="presentation" class="dropdown">
                                 <p style="padding-top: 10px">
-                                    Всего <?=count($model->comments)?> комментария <span class="caret"></span>
+                                    Всего комментариев: <?=Comments::find()->where(['video_id' => $id])->count()?><span class="caret"></span>
                                 </p>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Best</a></li>
@@ -108,7 +110,7 @@ $this->title = $model->name;
 
                        <div class="row"><!-- Ров1-->
 
-                       <?php foreach($model->comments as $comments):?>
+                       <?php foreach($comm as $comments):?>
 
                         <div class="media"><!-- Первый уровень коментов-->
 
@@ -126,13 +128,18 @@ $this->title = $model->name;
 
                                     <p><?= $comments->content?></p>
                                     <div class="comment-meta">
-                                          <span>
+                                          <span style="float: left">
                                         <a class="" role="button" data-toggle="collapse" href="#collapse1<?=$comments->id?>" aria-expanded="false" aria-controls="collapseExample">Ответить</a>
                                         </span>
-                                        <span><a href="#">Удалить</a></span>
-                                        <span><a href="#">Редактировать</a></span>
+                                        
+                                        <?php if($model->profile_id == Yii::$app->user->id or $comments->profile_id == Yii::$app->user->id):?>
+                                        <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true, 'style' => 'float: left']]); ?>
+                                        <input type="hidden" name="delcom" value="<?=$comments->id?>">
+                                        <input type="submit" name="" value="Удалить">
+                                        <?php ActiveForm::end();?>
+                                        <?php endif;?>
                                         <a data-toggle="collapse" data-target="#collapse<?=$comments->id?>" aria-expanded="false" aria-controls="collapseExample">Показать коментарии (<?=count($comments->comments)?>)</a>
-                                        <span class="vote plus" title="Поставить лайк" style="float: right"><a href="#"><i class="fa fa-thumbs-up"></i> 100500</a></span>
+                                       <div class="clearfix"></div>
                                         
                                       <div class="collapse" id="collapse1<?=$comments->id?>">
 
@@ -169,11 +176,18 @@ $this->title = $model->name;
                                     <p><?= $comments->content?></p>
                                     <div class="comment-meta">
                                               <span>
-                                        <a class="" role="button" data-toggle="collapse" href="#collapse<?=$comments->id?>" aria-expanded="false" aria-controls="collapseExample">Ответить</a>
+                                         <span style="float: left">
+                                        <a class="" role="button" data-toggle="collapse" href="#collapse1<?=$comments->id?>" aria-expanded="false" aria-controls="collapseExample">Ответить</a>
                                         </span>
-                                        <span><a href="#">Удалить</a></span>
-                                        <span><a href="#">Редактировать</a></span>
-
+                                        
+                                        <?php if($model->profile_id == Yii::$app->user->id or $comments->profile_id == Yii::$app->user->id):?>
+                                        <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true, 'style' => 'float: left']]); ?>
+                                        <input type="hidden" name="delcom" value="<?=$comments->id?>">
+                                        <input type="submit" name="" value="Удалить">
+                                        <?php ActiveForm::end();?>
+                                        <?php endif;?>
+                                      
+                                       <div class="clearfix"></div>
                                       
                                     </div>
 
@@ -190,6 +204,11 @@ $this->title = $model->name;
 
                         </div><!-- Первый уровень коментов \/ вставлять ниже-->
                     <?php endforeach;?>
+                   <?php 
+                   echo LinkPager::widget([
+                        'pagination' => $pages,
+                    ]);
+                    ?>
                     </div><!-- Ров1-->
             
 

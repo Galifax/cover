@@ -87,10 +87,7 @@ class Video extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Likes::className(), ['video_id' => 'id']);
     }
-        public function getCount()
-    {
-        return $this->getLikes()->count(); 
-    }
+      
 
     
       public function getComments()

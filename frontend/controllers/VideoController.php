@@ -15,6 +15,7 @@ use frontend\models\Comments;
 use frontend\models\Category;
 use frontend\models\Favorites;
 use yii\db\ActiveQuery;
+use yii\data\Pagination;
 
 /**
  * Site controller
@@ -82,10 +83,16 @@ class VideoController extends Controller
     public function actionView($id)
     {
 
-
+        $delcom = Yii::$app->request->post('delcom');
+        if($delcom){
+            Comments::find()->where(['id' => $delcom])->one()->delete();
+            Comments::deleteAll(['parent_id' => $delcom]);
+         
+        }
         $comments = new Comments();
         if($comments->load(Yii::$app->request->post()) && $comments->save())
         {
+            \Yii::$app->getSession()->setFlash('success', 'Сообщение отправлено');
             $comments = new Comments();
         }
 
@@ -118,18 +125,46 @@ class VideoController extends Controller
         
         
 
-        $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'comments.profile', 'category.video' => function($query) use($id){
+        $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'category.video' 
+            => function($query) use($id){
             $query->where(['!=', 'id', $id ])->limit(6)->with('profile');
-        }, 'favorites', 'likes', 'comments' => function (ActiveQuery $query){
-                $query->where(['parent_id' => 0])->with('comments.profile');
-            }])->one();
+        }, 'favorites', 'likes'])->one();
 
-        $model->views+=1;
-        $model->save();
+        $query = Comments::find()->with('comments.profile', 'profile')->where(['video_id' => $id])->andWhere(['parent_id' => 0]);
+        // делаем копию выборки
+        $countQuery = clone $query;
+        // подключаем класс Pagination, выводим по 10 пунктов на страницу
+        $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 4]);
+        // приводим параметры в ссылке к ЧПУ
+        $pages->pageSizeParam = false;
+        $comm = $query->offset($pages->offset)
+        ->limit($pages->limit)
+        ->all();
+        
+        $views = View::find()->where(['ip' => $_SERVER['REMOTE_ADDR']])->one();
+
+        if(empty($views->date) or date('Y-m-d H:i:s', strtotime($views->date) + 1 * 24 * 3600) < date('Y-m-d H:i:s')){
+                $model->views+=1;
+                $model->save();
+                if(!empty($views)){
+                $views->date = date('Y-m-d H:i:s');
+                $views->save();
+            } 
+                if(empty($views)){
+                $view = new View();
+                $view->video_id = $id;
+                $view->ip = $_SERVER['REMOTE_ADDR'];
+                $view->date = date('Y-m-d H:i:s');
+                $view->save();
+            }
+        }
+
+      
+
         // echo "<pre>";
         // print_r($model->likes);
         // echo "</pre>";
-        return $this->render('view', compact('model', 'id', 'favorites', 'likes', 'comments', 'profile'));
+        return $this->render('view', compact('model', 'comm', 'pages','id', 'favorites', 'likes', 'comments', 'profile'));
     }
     public function actionSearch($id = Null, $s = Null, $name = Null){
                $model = Video::find()->with('profile')->andFilterWhere(['like', 'video.name', $s])->joinWith(['category' => function(ActiveQuery $query) use($id){
