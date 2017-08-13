@@ -141,9 +141,9 @@ class VideoController extends Controller
         ->limit($pages->limit)
         ->all();
         
-        $views = View::find()->where(['ip' => $_SERVER['REMOTE_ADDR']])->one();
+        $views = View::find()->where(['ip' => $_SERVER['REMOTE_ADDR'], 'video_id' => $id])->one();
 
-        if(empty($views->date) or date('Y-m-d H:i:s', strtotime($views->date) + 1 * 24 * 3600) < date('Y-m-d H:i:s')){
+        if(empty($views->date) or date('Y-m-d H:i:s', strtotime($views->date) + 3600) < date('Y-m-d H:i:s')){
                 $model->views+=1;
                 $model->save();
                 if(!empty($views)){
