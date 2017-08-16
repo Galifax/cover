@@ -207,7 +207,7 @@ a.desc:after {  content: "\e152";  }
 
 
 #navbar {
-    background: white;
+    background: none;
     height: 53px;
 }
 
