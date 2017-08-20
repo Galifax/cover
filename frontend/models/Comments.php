@@ -54,7 +54,7 @@ class Comments extends \yii\db\ActiveRecord
             'parent_id' => 'Parent ID',
             'video_id' => 'Video ID',
             'profile_id' => 'Profile ID',
-            'content' => 'Content',
+            'content' => 'Контент',
             'date' => 'Date',
         ];
     }

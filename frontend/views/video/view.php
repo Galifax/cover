@@ -85,7 +85,10 @@ $this->title = $model->name;
                 <?= $form->field($comments, 'video_id')->hiddenInput(['value' => $model->id])->label(false) ?>
                 <?= $form->field($comments, 'profile_id')->hiddenInput(['value' => $profile->id])->label(false) ?>
                 <?= $form->field($comments, 'date')->hiddenInput(['value' => date('Y-m-d H:i:s')])->label(false) ?>
-                <?= $form->field($comments, 'content')->textArea(['placeholder' => Yii::$app->session->getFlash('success')])->label('Оставить комментарий') ?>
+                <?= $form->field($comments, 'content', ['template' => "{input}"
+                    ])->textArea(['placeholder' => 
+                    Yii::$app->session->getFlash('success') ? Yii::$app->session->getFlash('success') : 'Введите текст'])
+                    ->label('Оставить комментарий') ?>
                 <div class="form-group">
                     <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
                 </div>
