@@ -110,7 +110,7 @@ class VideoController extends Controller
         }
 
         if(isset($_GET['like'])){
-        $likes = Likes::find()->where(['video_id' => $id, '+profile_id' => Yii::$app->user->identity->id])->count();
+        $likes = Likes::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->count();
         if($likes == 0){
         $model1 = new Likes();
         $model1->profile_id = Yii::$app->user->identity->id;
@@ -130,7 +130,7 @@ class VideoController extends Controller
             $query->where(['!=', 'id', $id ])->limit(6)->with('profile');
         }, 'favorites', 'likes'])->one();
 
-        $query = Comments::find()->with('comments.profile', 'profile')->where(['video_id' => $id])->andWhere(['parent_id' => 0]);
+        $query = Comments::find()->with(['comments.profile', 'profile'])->where(['video_id' => $id])->andWhere(['parent_id' => 0]);
         // делаем копию выборки
         $countQuery = clone $query;
         // подключаем класс Pagination, выводим по 10 пунктов на страницу
@@ -159,6 +159,7 @@ class VideoController extends Controller
             }
         }
 
+    
       
 
         // echo "<pre>";
