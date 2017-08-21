@@ -1,5 +1,11 @@
 html {}
 
+button{
+    background: none;
+    border: 0px solid;
+;
+}
+
 *{font-family: 'Droid Serif', serif; }
 
 body {  height: 100%;  overflow-x: hidden; word-wrap: break-word; }
