@@ -57,6 +57,10 @@ $('#modalButton, #modalButton1, #modalButton2, #upload').click(function(){
                 $('#sidebar-r').addClass('hidden');
                 $('#sidebar-l').removeClass('hidden');
             }
+            if (value == 'sidebar-fixed-left') {
+                $('#sidebar-l').addClass('hidden');
+                $('#sidebar-r').removeClass('hidden');
+            }
             // Show toggle buttons
 
         });
