@@ -3,7 +3,13 @@ html {}
 button{
     background: none;
     border: 0px solid;
-;
+}
+input{
+    background: none;
+    border: 0px;
+    color: grey;
+    font-weight: bolder;
+    margin-right: 5px;
 }
 
 *{font-family: 'Droid Serif', serif; }
