@@ -69,6 +69,14 @@
                             </div>
 
                                 <div class="media-left">
+                                  <?php $form = ActiveForm::begin([
+                                        'options' => ['data-pjax' => true]
+                                    ]);?>
+                                       <input type="hidden" name="id" value="<?=$_GET['id']?>">
+                                       <input type="hidden" name="name" value="<?=$_GET['name']?>">
+                                       <input type="checkbox" name="is_view" id="is<?=$comment->id?>" value="<?=$comment->id?>" >
+                                       <input type="submit">
+                                   <?php ActiveForm::end();?>
                                    <img class="media-object img-rounded img1" src="<?=empty($comment->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $comment->profile->avatar?>" alt="">
                                 </div>
                                 <!-- media-left -->

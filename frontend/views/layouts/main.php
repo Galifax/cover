@@ -13,6 +13,7 @@ use yii\helpers\Url;
 use yii\widgets\Pjax;
 use frontend\models\Profile;
 use frontend\models\Category;
+use frontend\models\Comments;
 use yii\bootstrap\Modal;
 
 
@@ -33,7 +34,8 @@ AppAsset::register($this);
     <?php $this->head() ?>
     <?php $profile = Profile::find()->where(['id' =>Yii::$app->user->id])->one();?>
     <?php $category = Category::find()->where(['parent_id' =>0])->all();?>
-</head>
+    <?php $count_comments = Comments::find()->where(['profile_id' => Yii::$app->user->id])->andWhere(['is_viewed' => Null])->count(); ?>
+    </head>
 
 <body>
 <?php $this->beginBody() ?>
@@ -153,7 +155,7 @@ AppAsset::register($this);
             <li>
                 <a href="#">
                     Новых комментариев
-                    <span class="sidebar-badge">3</span>
+                    <span class="sidebar-badge"><?= $count_comments?></span>
                 </a>
             </li>
 
