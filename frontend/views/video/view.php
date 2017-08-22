@@ -122,7 +122,7 @@ $this->title = $model->name;
                             </div>
 
                                 <div class="media-left">
-                                   <img class="media-object img-rounded img1" src="http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg" alt="">
+                                   <img class="media-object img-rounded img1" src="<?=empty($comments->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $comments->profile->avatar?>" alt="">
                                 </div>
                                 <!-- media-left -->
 
@@ -169,7 +169,7 @@ $this->title = $model->name;
                             </div>
 
                                 <div class="media-left">
-                                   <img class="media-object img-rounded img1" src="<?=empty($comments->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : '/'.$comments->profile->avatar?>" alt="">
+                                   <img class="media-object img-rounded img1" src="<?=empty($comments->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $comments->profile->avatar?>" alt="">
                                 </div>
                                 <!-- media-left -->
 
