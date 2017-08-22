@@ -13,7 +13,7 @@ class m170822_140458_category extends Migration
             
         ]);
         $this->createIndex('parent_id', '{{%category}}', 'parent_id');
-        $this->addForeignKey('category_fk', '{{%category}}', 'parent_id', '{{%category}}', 'id', 'CASCADE');
+        // $this->addForeignKey('category_fk', '{{%category}}', 'parent_id', '{{%category}}', 'id', 'CASCADE');
     }
 
     public function down()

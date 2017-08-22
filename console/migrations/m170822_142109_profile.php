@@ -7,7 +7,7 @@ class m170822_142109_profile extends Migration
     public function up()
     {
         $this->createTable('{{%profile}}', [
-            'id' => $this->primaryKey(11),
+            'id' => $this->integer(11),
             'nickname' => $this->string(255)->notNull(),
             'name' => $this->string(255),
             'surname' => $this->string(255),
@@ -19,10 +19,10 @@ class m170822_142109_profile extends Migration
             'favorites' => $this->string(255),
             'about_myself' => $this->string(255),
             'contacts' => $this->string(255),
-            'last_visit' => $this->date()->notNull(),
+            'last_visit' => $this->date(),
             
         ]);
-
+        $this->createIndex('id', '{{%profile}}', 'id');
         $this->addForeignKey('profile_fk', '{{%profile}}', 'id', '{{%user}}', 'id', 'CASCADE');
         $this->addPrimaryKey('profile_id_fk', '{{%profile}}', 'id');
     }

@@ -170,7 +170,7 @@ class SiteController extends Controller
                 if (Yii::$app->getUser()->login($user)) {
                     $profile = new Profile();
                     $profile->id = $user->id;
-                    $profile->date_registerated = date('Y-m-d H:i:s');
+                    $profile->nickname = 'Профиль'.$user->id;
                     $profile->save();
                     return $this->goHome();
                 }

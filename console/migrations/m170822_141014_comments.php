@@ -12,18 +12,17 @@ class m170822_141014_comments extends Migration
             'video_id' => $this->integer(11)->notNull(),
             'profile_id' => $this->integer(11)->notNull(),
             'content' => $this->string(255)->notNull(),
+            'is_viewed' => $this->integer(11),
             'date' => $this->date()->notNull(),
             
         ]);
 
         $this->createIndex('parent_id', '{{%comments}}', 'parent_id');
-        $this->addForeignKey('category1_fk', '{{%comments}}', 'parent_id', '{{%comments}}', 'id', 'CASCADE');
 
         $this->createIndex('video_id', '{{%comments}}', 'video_id');
-        $this->addForeignKey('category2_fk', '{{%comments}}', 'video_id', '{{%video}}', 'id', 'CASCADE');
 
         $this->createIndex('profile_id', '{{%comments}}', 'profile_id');
-        $this->addForeignKey('category3_fk', '{{%comments}}', 'profile_id', '{{%profile}}', 'id', 'CASCADE');
+        // $this->addForeignKey('category3_fk', '{{%comments}}', 'profile_id', '{{%profile}}', 'id', 'CASCADE');
     }
 
     public function down()

@@ -15,10 +15,10 @@ class m170822_141636_favorites extends Migration
         ]);
 
         $this->createIndex('video_id', '{{%favorites}}', 'video_id');
-        $this->addForeignKey('favorites1_fk', '{{%favorites}}', 'video_id', '{{%video}}', 'id', 'CASCADE');
+        // $this->addForeignKey('favorites1_fk', '{{%favorites}}', 'video_id', '{{%video}}', 'id', 'CASCADE');
 
         $this->createIndex('profile_id', '{{%favorites}}', 'profile_id');
-        $this->addForeignKey('favorites2_fk', '{{%favorites}}', 'profile_id', '{{%profile}}', 'id', 'CASCADE');
+        // $this->addForeignKey('favorites2_fk', '{{%favorites}}', 'profile_id', '{{%profile}}', 'id', 'CASCADE');
     }
 
     public function down()

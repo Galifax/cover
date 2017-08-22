@@ -17,7 +17,7 @@ class m170822_141929_likes extends Migration
         $this->addForeignKey('likes1_fk', '{{%likes}}', 'video_id', '{{%video}}', 'id', 'CASCADE');
 
         $this->createIndex('profile_id', '{{%likes}}', 'profile_id');
-        $this->addForeignKey('likes2_fk', '{{%likes}}', 'profile_id', '{{%profile}}', 'id', 'CASCADE');
+        // $this->addForeignKey('likes2_fk', '{{%likes}}', 'profile_id', '{{%profile}}', 'id', 'CASCADE');
     }
 
     public function down()

@@ -25,7 +25,7 @@ $form = ActiveForm::begin([
 
     <?= $form->field($model, 'favorites')->textInput() ?>
     <?= $form->field($model, 'about_myself')->textInput() ?>
-    <?= $form->field($model, 'contact')->textInput() ?>
+    <?= $form->field($model, 'contacts')->textInput() ?>
 
 
     <div class="form-group">

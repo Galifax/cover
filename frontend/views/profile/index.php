@@ -40,7 +40,7 @@
                                         <hr>
                                         <li class="list-group-item text-right"><span class="pull-left">Страна</span> <?= $model->country?></li>
                                         <hr>
-                                        <li class="list-group-item text-right"><span class="pull-left">Контакты</span> <?= $model->contact?></li>
+                                        <li class="list-group-item text-right"><span class="pull-left">Контакты</span> <?= $model->contacts?></li>
                                         <hr>
                                         <li class="list-group-item"><span class="">Любимая музыка</span><br><?= $model->favorites?> </li>
                                         <hr>
@@ -52,7 +52,6 @@
                        </div>
                     </div>
                 </div>
-        </div>
                 <div class="col-md-9" style="background-color: #f5f5f5">
 
                     <h2 class="text-center">Коментарии к моим видео</h2>
@@ -141,7 +140,7 @@
                                     <hr>
                                     <li class="list-group-item text-right"><span class="pull-left">Страна</span> <?= $model->country?></li>
                                     <hr>
-                                    <li class="list-group-item text-right"><span class="pull-left">Контакты</span> <?= $model->contact?></li>
+                                    <li class="list-group-item text-right"><span class="pull-left">Контакты</span> <?= $model->contacts?></li>
                                     <hr>
                                     <li class="list-group-item"><span class="">Любимая музыка</span><br><?= $model->favorites?> </li>
                                     <hr>
