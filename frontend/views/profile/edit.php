@@ -19,6 +19,7 @@ $form = ActiveForm::begin([
     ])->label('Пол') ?>
     <?= $form->field($model, 'country')->textInput() ?>
     <?= $form->field($model, 'file')->fileInput() ?>
+    <?= $form->field($model, 'file2')->fileInput() ?>
    
     <a class="btn btn-danger" href="<?=Url::to(['edit', 'ava' => $model->id])?>">Удалить</a>
 

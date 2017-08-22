@@ -66,11 +66,11 @@
                         <div class="media"><!-- Первый уровень коментов-->
 
                             <div class="media-heading">
-                                 <span class="label label-info"><?= $comment->video->profile->nickname?></span> <?= $comment->date?>
+                                 <span class="label label-info"><?= $comment->profile->nickname?></span> <?= $comment->date?>
                             </div>
 
                                 <div class="media-left">
-                                   <img class="media-object img-rounded img1" src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>" alt="">
+                                   <img class="media-object img-rounded img1" src="<?=empty($comment->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $comment->profile->avatar?>" alt="">
                                 </div>
                                 <!-- media-left -->
 

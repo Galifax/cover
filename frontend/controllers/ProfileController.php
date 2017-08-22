@@ -77,11 +77,10 @@ class ProfileController extends Controller
         if($com->load(Yii::$app->request->post()) && $com->save());
 
         $model = Profile::find()->where(['id' =>$id])->with('user', 'videos')->one();
-        $comments = Comments::find()->innerJoinWith(['video.profile' =>
-          function (ActiveQuery $query){
-            $query->where(['profile.id' =>$id]);
-          }])->orderBy(['comments.id' => SORT_DESC])->all();
-        // debug($comments);
+        $comments = Comments::find()->InnerJoinWith(['profile', 'video' => function(ActiveQuery $query){
+          $query->where(['video.profile_id' =>Yii::$app->user->id])->with('profile');
+        }])->orderBy(['comments.id' => SORT_DESC])->all();
+      //   debug($comments);
         return $this->render('index', compact('model', 'comments', 'com', 'id', 'name'));
     }
     
@@ -137,6 +136,15 @@ class ProfileController extends Controller
       $model->file->saveAs('avatars/'.$model->file->baseName . '.' .$model->file->extension);
       
       $model->avatar = '/avatars/' .$model->file->baseName . '.' .$model->file->extension;
+     }
+     $model->file2 = UploadedFile::getInstance($model, 'file2'); 
+      if($model->file2){
+          if (file_exists(substr($model->background, 1))){
+        unlink(substr($model->background, 1));
+      }
+      $model->file2->saveAs('avatars/'.$model->file2->baseName . '.' .$model->file2->extension);
+      
+      $model->background = '/avatars/' .$model->file2->baseName . '.' .$model->file2->extension;
      }
       $model->save();
           return $this->redirect(['/profile', 'id' => $model->id, 'name' => $model->nickname]);

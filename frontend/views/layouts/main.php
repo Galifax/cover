@@ -83,7 +83,7 @@ AppAsset::register($this);
     <aside id="sidebar" class="sidebar sidebar-default sidebar-fixed-left" role="navigation">
         <?php if(Yii::$app->user->id):?>
         <!-- Sidebar header -->
-        <div class="sidebar-header header-cover" style="background-image: url(http://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg);">
+        <div class="sidebar-header header-cover" style="background-image: url(<?=empty($profile->background)? 'http://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg' : $profile->background?>);"
             <!-- Top bar -->
             <div class="top-bar">
                 <img  src="img/logo.png" style="display: block; margin: 0 auto; ">

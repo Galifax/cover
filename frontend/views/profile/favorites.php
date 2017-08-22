@@ -2,7 +2,6 @@
 use yii\helpers\Url;
 use yii\widgets\Pjax; ?>
 
-<?php Pjax::begin()?>
  <div class="my-video-blok" style="padding-top: 30px;">
      <div class="container">
          <h2>Понравившиеся</h2>
@@ -16,4 +15,3 @@ use yii\widgets\Pjax; ?>
            
      </div>
 </div>
-<?php Pjax::end()?>

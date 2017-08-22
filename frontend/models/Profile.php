@@ -31,14 +31,14 @@ class Profile extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-    public $file;
+    public $file, $file2;
     public function rules()
     {
         return [
 
             [['id',], 'integer'],
-            [['file',], 'file'],
-            [['nickname', 'name', 'surname', 'avatar', 'about_myself', 'country', 'contact', 'favorites', 'floor' ], 'string', 'max' => 255],
+            [['file', 'file2',], 'file'],
+            [['nickname', 'name', 'surname', 'avatar', 'background', 'about_myself', 'country', 'contact', 'favorites', 'floor' ], 'string', 'max' => 255],
         ];
     }
 
@@ -53,6 +53,7 @@ class Profile extends \yii\db\ActiveRecord
             'name' => 'Name',
             'surname' => 'Surname',
             'avatar' => 'Avatar',
+            'background' => 'Background',
             'country' => 'Country',
             'favorites' => 'Favorites',
             'floor' => 'Floor',
