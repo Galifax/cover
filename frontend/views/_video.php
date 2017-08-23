@@ -18,17 +18,18 @@
             </div>
         </div>
         <div class="content-footer">
-            <img  class="user-small-img" src="<?=$video->profile->avatar?>">
-            <span style="color: #fff;">
-                <a style="font-size: 16px" class="username-video" href="<?=Url::to(['/profile', 'id' => $video->profile->id, 'name' => $video->profile->nickname])?>"><?= $video->profile->nickname?></a>
-
-            <p style="margin: 0px;font-size: 14px">
-                    <?php
-                    $date = new DateTime($video->date);
-                    ?>
+            <div class="content-footer__avatar">
+                <img  class="user-small-img" src="<?=$video->profile->avatar?>">
+            </div>
+            <div class="content-footer__details">
+                <span style="color: #fff;">
+                    <a style="font-size: 16px" class="username-video" href="<?=Url::to(['/profile', 'id' => $video->profile->id, 'name' => $video->profile->nickname])?>"><?= $video->profile->nickname?></a>
+                </span>
+                <p style="margin: 0px;font-size: 14px">
+                    <?php $date = new DateTime($video->date); ?>
                     <i class="fa fa-eye" aria-hidden="true"> <?= $video->views?></i> | <?=$date->format('j').' '. $months[date($date->format('n'))]?>
-                                    </p>
-            </span>
+                </p>
+            </div>
             <div class="user-ditels">
                 <div class="user-img"><img src="<?=$video->profile->avatar?>" class="img-responsive"></div>
                 <span class="user-full-ditels">

@@ -1,5 +1,8 @@
 html {}
 
+img {
+    max-width: 100%;
+}
 button{
     background: none;
     border: 0px solid;
@@ -86,6 +89,11 @@ a:hover{
     white-space: nowrap; /* Отменяем перенос текста */
     overflow: hidden; /* Обрезаем содержимое */
     text-overflow: ellipsis; /* Многоточие */
+    font-family: sans-serif;
+}
+
+.text-transfer:hover {
+    color: rgb(22, 122, 198);
 }
 /*Colors*/
 
@@ -397,7 +405,7 @@ aside .content-footer>img {
     }
 
 }
-.user-small-img{cursor: pointer; float:left}
+.user-small-img{cursor: pointer;}
 
 .content-footer:hover .user-ditels  {
     display: block;
@@ -1518,7 +1526,10 @@ Image credits: unsplash.com
 =========================================*/
 
 .video-item {
+    padding-bottom: 30px;
+}
 
+.video-item>div {
 }
 
 .video-item__thumb {
@@ -1526,6 +1537,35 @@ Image credits: unsplash.com
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #000;
+}
+.content-title {
+    background: none;
+    font-family: sans-serif;
+    background-color: rgba(255,255,255, .7);
+}
+
+.content-footer {
+    font-family: sans-serif;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.content-title a {
+    text-decoration: none;
+}
+
+.user-small-img {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+}
+
+.content-footer__avatar {
+    float: left;
+}
+
+.content-footer__details {
+    padding-left: 4em;
 }
 
 /*=====  End of Small video style  ======*/
