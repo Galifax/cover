@@ -176,7 +176,7 @@ AppAsset::register($this);
                         <li>
                             <label for="sidebar-position">Позиция</label>
                             <br>
-                            <select id="sidebar-position" name="sidebar-position">
+                            <select id="sidebar-position" name="sidebar-position" style="color: black">
                                 <option value="sidebar-fixed-left">Меню с лева</option>
                                 <option value="sidebar-fixed-right">Меню с права</option>
                             </select>
@@ -185,7 +185,7 @@ AppAsset::register($this);
                         <li>
                             <label for="sidebar-theme">Стиль</label>
                             <br>
-                            <select id="sidebar-theme" name="sidebar-theme">
+                            <select id="sidebar-theme" name="sidebar-theme" style="color: black">
                                 <option value="sidebar-default">Стандарт</option>
                                 <option value="sidebar-inverse">Стиль 1</option>
                                 <option value="sidebar-colored">Стил 2</option>

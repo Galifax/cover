@@ -34,7 +34,7 @@ $this->title = $model->name;
     
         </script>
 
-        <div class="about-video my-video-video content" style="padding-top: -15px; width: 100%">
+        <div class="about-video my-video-video" style="padding-top: -15px; width: 100%">
             <h1 style="margin: 0;padding: 10px;font-size: 23px "><?=$model->name?></h1>
               <img style="width: 70px; float: left" src="<?=empty($model->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->profile->avatar?>" alt="">
                    <div style="margin-left: 10px; float: left">
@@ -63,7 +63,7 @@ $this->title = $model->name;
 
         
          <?php $months = array( 1 => 'Января' , 'Февраля' , 'Марта' , 'Апреля' , 'Мая' , 'Июня' , 'Июля' , 'Августа' , 'Сентября' , 'Октября' , 'Ноября' , 'Декабря' );?>
-            <div class="description content" style="margin-top: 140px; padding: 20px;">
+            <div class="description content" style="margin-top: 10px; padding: 20px;">
                  <?php 
                 $date = new DateTime($video->date);        
                 ?>
