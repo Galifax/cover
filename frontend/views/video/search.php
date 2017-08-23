@@ -6,7 +6,8 @@ $this->title = $name ? $name : 'Все категории';
 <?php Pjax::begin();?>
   <div class="row">
 
-  <div class="col-sm-8 col-md-9 content" style="float: left; min-height: 80vh">
+  <div class="col-sm-8 col-md-9" style="float:left">
+      <div class="content" style="min-height: 80vh" >
     <?= $this->render('../_video', [
         'model' => $model,
         'lg' => 3,
@@ -14,10 +15,11 @@ $this->title = $name ? $name : 'Все категории';
         'sm' => 6,
          'xs' => 12,
    ]);?>
+      </div>
 </div>
-<div class="col-md-sm"></div>
-<div class="col-md-2 col-sm-3 content" style="float: right">
-<ul class="list-group">
+<div class="col-md-3 col-sm-4" style="float: right">
+<ul class="list-group content">
+    <h3 class="text-center" style="margin: 0px">Категории</h3>
   <a href="<?=Url::to(['video/search', 's' => $_GET["s"]])?>">
   <li class="list-group-item justify-content-between">
    Все категории
