@@ -34,7 +34,7 @@ $this->title = $model->name;
     
         </script>
 
-        <div class="about-video my-video-video" style="padding-top: -15px; width: 100%">
+        <div class="about-video my-video-video" style="padding-top: -15px; width: 100%;">
             <h1 style="margin: 0;padding: 10px;font-size: 23px "><?=$model->name?></h1>
               <img style="width: 70px; float: left" src="<?=empty($model->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->profile->avatar?>" alt="">
                    <div style="margin-left: 10px; float: left">
@@ -74,7 +74,7 @@ $this->title = $model->name;
 
 
             <?php Pjax::begin(['enablePushState' => false]);?>
-        <div class="my-video-video content" style="width: 100%; margin-top: 16px;">
+        <div class="my-video-video content" style="width: 100%; margin-top: 16px;border: none">
 
 
 

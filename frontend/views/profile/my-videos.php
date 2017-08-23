@@ -5,9 +5,9 @@
   use yii\bootstrap\Modal;
    ?>
 
-<div class="profile-content" style="background-color: none">
+<div class="profile-content content" style="min-height: 80vh">
 
-              <h2>Мои Видео</h2>
+              <h2 class="text-center" style="padding: 10px;font-size: 30px; margin: 0px;">Мои Видео</h2>
    <?= $this->render('../_video', [
         'model' => $model,
         'lg' => 3,

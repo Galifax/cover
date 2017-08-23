@@ -63,7 +63,7 @@ AppAsset::register($this);
                                             <div class="input-group ">
                                                 <input type="text" class="search-query form-control" placeholder="Поиск" value="<?=$_GET['s']?>" name="s"/>
                                                 <span class="input-group-btn">
-                                                    <button class="btn btn-danger" type="submit">
+                                                    <button class="btn" type="submit">
                                                         <span class=" glyphicon glyphicon-search"></span>
                                                     </button>
                                                 </span>
