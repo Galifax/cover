@@ -57,6 +57,9 @@ $this->title = $model->name;
                     <?php Pjax::end();?>
                 </div>
                 <p style="float: right;">Просмотры<br><i class="fa fa-eye" style="float: right" aria-hidden="true"> <?=$model->views?></i></p>
+                
+                    <a href="<?= Url::to(['/video/view', 'id'=>$id, 'user_id' => $model->profile_id])?>">Подписатся</a>
+                
         </div>
 
           
