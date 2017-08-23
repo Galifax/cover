@@ -3,10 +3,12 @@
 
 <div class="row" style="padding: 15px">
 <?php foreach($model as $video):?>
-<div class="col-lg-<?=$lg?> col-md-<?=$md?> col-sm-<?=$sm?> col-xs-<?=$xs?>">
-    <aside>
-        <a data-pjax="0" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="<?= $video->name?>">
-            <img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" />
+<div class="video-item col-lg-<?=$lg?> col-md-<?=$md?> col-sm-<?=$sm?> col-xs-<?=$xs?>">
+    <div>
+        <a class="video" data-pjax="0" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="<?= $video->name?>">
+            <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
+                 <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
+            </div>
         </a>
         <div class="content-title">
             <div class="text-center">
@@ -42,7 +44,7 @@
                 </div>
             </div>
         </div>
-    </aside>
+    </div>
 </div>
 <?php endforeach;?>
 </div>
