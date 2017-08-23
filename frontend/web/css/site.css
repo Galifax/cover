@@ -1542,4 +1542,22 @@ Image credits: unsplash.com
 /******sidebar-end********/
 /*************************/
 
+/*=========================================
+=            Small video style            =
+=========================================*/
+
+.video-item {
+
+}
+
+.video-item__thumb {
+    padding: 35% 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*=====  End of Small video style  ======*/
+
+
 
