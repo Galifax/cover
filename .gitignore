@@ -27,3 +27,7 @@ phpunit.phar
 
 # vagrant runtime
 /.vagrant
+
+# sublime project files
+*.sublime-*
+
