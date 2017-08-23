@@ -223,7 +223,7 @@ $this->title = $model->name;
         <?php Pjax::end();?>
    </div> <!-- col-md-8-->
 
-    <div class="col-sm-4" style="margin-top: 15px;">
+    <div class="col-sm-4 content" style="margin-top: 15px;">
               <?= $this->render('../_video', [
         'model' => $model->category->video,
         'lg' => 12,
