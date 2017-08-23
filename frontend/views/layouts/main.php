@@ -133,27 +133,31 @@ AppAsset::register($this);
             <!-- Sidebar navigation -->
         <ul class="nav sidebar-nav">
                     <li class="active">
+                        <a href="/">
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                            Главная </a>
+                    </li>
+                    <li >
                         <a href="<?=Url::to(['/profile', 'id'=>Yii::$app->user->id, 'name'=>$profile->nickname])?>">
                             <i class="glyphicon glyphicon-user"></i>
                             Мой профиль </a>
                     </li>
                     <li>
-                        <a  href="#" value="/profile/upload" id="upload"><i class="fa fa-upload" aria-hidden="true"></i>Загрузить видео</a>
-                    </li>
-                    <li>
                         <a href="<?= Url::to(['/profile/my-videos'])?>">
-                            <i class="fa fa-upload" aria-hidden="true"></i>
+                            <i class="fa fa-video-camera" aria-hidden="true"></i>
                             Мои видео </a>
                     </li>
                     <li>
                         <a href="<?= Url::to(['/profile/favorites'])?>">
-                            <i class="fa fa-upload" aria-hidden="true"></i>
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
                             Понравившиеся </a>
                     </li>
                     <li>
-                        <a href="<?=Url::to(['/site/logout'])?>"><i class="fa fa-sign-out" aria-hidden="true"></i>
-                            Выход</a>
+                        <a  href="#" value="/profile/upload" id="upload">
+                            <i class="fa fa-upload" aria-hidden="true"></i>
+                            Загрузить видео</a>
                     </li>
+
 
             <li class="divider"></li>
             <li>
@@ -163,7 +167,6 @@ AppAsset::register($this);
                 </a>
             </li>
 
-            <li class="divider"></li>
 
                 <li>
                    <a data-toggle="collapse" href="#menu-setings" >Настройки меню</a>
@@ -197,7 +200,10 @@ AppAsset::register($this);
 
             <li class="divider"></li>
 
-
+            <li>
+                <a href="<?=Url::to(['/site/logout'])?>"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                    Выход</a>
+            </li>
 
 
 

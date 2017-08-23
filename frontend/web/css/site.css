@@ -18,7 +18,14 @@ input :hover{
 
 *{font-family: 'Droid Serif', serif; }
 
-body {  height: 100%;  overflow-x: hidden; word-wrap: break-word; }
+body {  height: 100%;  overflow-x: hidden; word-wrap: break-word;color: white }
+
+a{ color: white;text-decoration: none}
+
+a:hover{
+    color: white;
+    text-decoration: underline;
+}
 
 .wrap {  min-height: 100%;  height: auto;  margin: 0 auto -60px;  padding: 0 0 60px;  }
 
@@ -270,7 +277,7 @@ a.desc:after {  content: "\e152";  }
     }
 }
 
-.profile {  margin: 20px 0; background-color: rgba(199,197,199,0.8);  }
+.profile {  margin: 20px 0; background-color: rgba(0,0,0,0.8) ; }
 
 /* Profile sidebar */
 .profile-sidebar {  padding: 10px 0 10px 0; }
@@ -325,9 +332,16 @@ a.desc:after {  content: "\e152";  }
 /* Profile Content */
 
 /*PROFILE*/
+.list-group-item{
+    background:none;
+}
 
 /*coments*/
-
+.media{
+    margin: 5px 10px;
+    padding: 5px;
+    border-bottom:solid 1px white;
+}
 
 .post-comments {
     padding-bottom: 9px;
@@ -351,7 +365,6 @@ a.desc:after {  content: "\e152";  }
     padding-top: 5px;
     padding-right: 5px;
     padding-bottom: 5px;
-
 }
 
 .post-comments .media-heading {
