@@ -75,11 +75,11 @@ $this->title = 'My Yii Application';
         'sm' => 3,
          'xs' => 12,
    ]);?>
-</div>
 
-<div class="clearfix"></div>
 
-<div class="content" style="margin-top: 40px">
+<hr>
+
+
      <h2 style="padding: 10px; font-size: 30px; margin: 0px; text-align: center">Рандом</h2>
 
    <?= $this->render('../_video', [
@@ -89,11 +89,11 @@ $this->title = 'My Yii Application';
         'sm' => 3,
          'xs' => 12,
    ]);?>
-</div>
 
-<div class="clearfix"></div>
 
-<div class="content" style="margin-top: 40px">
+<hr>
+
+
     <h2 style="padding: 10px; font-size: 30px; margin: 0px; text-align: center">Новые</h2>
 
    <?= $this->render('../_video', [
