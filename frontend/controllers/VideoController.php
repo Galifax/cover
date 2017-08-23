@@ -14,6 +14,7 @@ use frontend\models\likes;
 use frontend\models\Comments;
 use frontend\models\Category;
 use frontend\models\Favorites;
+use frontend\models\Subscription;
 use yii\db\ActiveQuery;
 use yii\data\Pagination;
 
@@ -109,13 +110,27 @@ class VideoController extends Controller
            }
         }
 
+        if(isset($_GET['user_id'])){
+        $subscription = Subscription::find()->where(['user_profile_id' => $_GET['user_id'], 'my_profile_id' => Yii::$app->user->identity->id])->count();
+        if($subscription == 0){
+        $model2 = new Subscription();
+        $model2->my_profile_id = Yii::$app->user->identity->id;
+        $model2->user_profile_id = $_GET['user_id'];
+        $model2->date = date('Y-m-d H:i:s');
+        $model2->save();
+           }else{
+            $subscription = Subscription::find()->where(['user_profile_id' => $_GET['user_id'], 'my_profile_id' => Yii::$app->user->identity->id])->one();
+            $subscription->delete();
+           }
+        }
+
         if(isset($_GET['like'])){
         $likes = Likes::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->count();
         if($likes == 0){
-        $model1 = new Likes();
-        $model1->profile_id = Yii::$app->user->identity->id;
-        $model1->video_id = $id;
-        $model1->save();
+        $model3 = new Likes();
+        $model3->profile_id = Yii::$app->user->identity->id;
+        $model3->video_id = $id;
+        $model3->save();
            }else{
             $likes = Likes::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->one();
             $likes->delete();
@@ -165,7 +180,7 @@ class VideoController extends Controller
         // echo "<pre>";
         // print_r($model->likes);
         // echo "</pre>";
-        return $this->render('view', compact('model', 'comm', 'pages','id', 'favorites', 'likes', 'comments', 'profile'));
+        return $this->render('view', compact('model', 'comm', 'pages', 'id', 'favorites', 'likes', 'comments', 'profile'));
     }
     public function actionSearch($id = Null, $s = Null, $name = Null){
                $model = Video::find()->with('profile')->andFilterWhere(['like', 'video.name', $s])->joinWith(['category' => function(ActiveQuery $query) use($id){
