@@ -138,7 +138,7 @@ $this->title = $model->name;
                                         <?php if($model->profile_id == Yii::$app->user->id or $comments->profile_id == Yii::$app->user->id):?>
                                         <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true, 'style' => 'float: left']]); ?>
                                         <input type="hidden" name="delcom" value="<?=$comments->id?>">
-                                        <input type="submit" name="" value="Удалить">
+                                        <input type="submit" name="" value="Удалить" style="font-size: 11.4px;">
                                         <?php ActiveForm::end();?>
                                         <?php endif;?>
                                         <a data-toggle="collapse" data-target="#collapse<?=$comments->id?>" aria-expanded="false" aria-controls="collapseExample">Показать коментарии (<?=count($comments->comments)?>)</a>

@@ -7,9 +7,13 @@ button{
 input{
     background: none;
     border: 0px;
+    font-size: 11.4px;
     color: grey;
     font-weight: bolder;
     margin-right: 5px;
+}
+input :hover{
+    text-decoration: underline;
 }
 
 *{font-family: 'Droid Serif', serif; }
@@ -947,7 +951,7 @@ Image credits: unsplash.com
 .sidebar .sidebar-image img {
     width: 75px;
     height: 75px;
-    margin: 16px;
+    margin: 0px 8px 0px 8px;
     border-radius: 50%;
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
