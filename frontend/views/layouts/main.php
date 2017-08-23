@@ -32,7 +32,7 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <?php $profile = Profile::find()->where(['id' =>Yii::$app->user->id])->one();?>
+    <?php $profile = Profile::find()->where(['id' =>Yii::$app->user->id])->with('subscription')->one();?>
     <?php $category = Category::find()->where(['parent_id' =>0])->all();?>
     <?php $count_comments = Comments::find()->where(['profile_id' => Yii::$app->user->id])->andWhere(['is_viewed' => Null])->count(); ?>
     </head>

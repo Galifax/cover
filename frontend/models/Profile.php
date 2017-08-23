@@ -89,4 +89,8 @@ class Profile extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Favorites::className(), ['profile_id' => 'id']);
     }
+    public function getSubscription()
+    {
+        return $this->hasMany(Subscription::className(), ['my_profile_id' => 'id']);
+    }
 }
