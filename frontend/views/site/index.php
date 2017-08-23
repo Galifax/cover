@@ -61,12 +61,6 @@ $this->title = 'My Yii Application';
             </div>
 
         </div>
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-            <i class="fa fa-angle-left"></i><span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-            <i class="fa fa-angle-right"></i><span class="sr-only">Next</span>
-        </a>
     </div>
 </div>
 
@@ -76,9 +70,9 @@ $this->title = 'My Yii Application';
 
    <?= $this->render('../_video', [
         'model' => $top,
-        'lg' => 4,
-        'md' => 4,
-        'sm' => 4,
+        'lg' => 3,
+        'md' => 3,
+        'sm' => 3,
          'xs' => 12,
    ]);?>
 </div>
@@ -90,9 +84,9 @@ $this->title = 'My Yii Application';
 
    <?= $this->render('../_video', [
         'model' => $random,
-        'lg' => 3,
-        'md' => 3,
-        'sm' => 4,
+        'lg' => 2,
+        'md' => 2,
+        'sm' => 3,
          'xs' => 12,
    ]);?>
 </div>
@@ -104,9 +98,9 @@ $this->title = 'My Yii Application';
 
    <?= $this->render('../_video', [
         'model' => $newest,
-        'lg' => 3,
-        'md' => 3,
-        'sm' => 4,
+        'lg' => 2,
+        'md' => 2,
+        'sm' => 3,
          'xs' => 12,
    ]);?>
 </div>

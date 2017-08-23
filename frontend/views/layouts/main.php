@@ -40,46 +40,46 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<div class="wrap color-1" style="padding-bottom: 0px;  ">
+<div class="wrap color-1" style="padding-bottom: 0px;">
 
     <!-- Second navbar for sign in -->
 
-    <nav class="navbar navbar-fixed-top">
-    <div id="navbar">
-        <div class="container-fluid">
-            <div class="row row1">
-                <div class="col-xs-3 col-sm-1">
-                    <button id="sidebar-r" class="sidebar-toggle fa fa-bars " style="font-size: 30px;color: #D6B1E5;"></button>
-                </div>
-                <div class="col-sm-3 col-md-2 col-xs-6 text-center">
-                    <a href="/">
-                    <img  src="/img/logo.png" style=" margin: 0 auto; width: 100%;max-width: 180px ">
-                    </a>
-                </div>
-                <div class="navbar-search smallsearch col-sm-7 col-md-6 hidden-xs">
-                <form action="<?=Url::to(['/video/search'])?>">
-                    <div class="row">
-                           <div id="custom-search-input">
-                                            <div class="input-group ">
-                                                <input type="text" class="search-query form-control" placeholder="Поиск" value="<?=$_GET['s']?>" name="s"/>
-                                                <span class="input-group-btn">
-                                                    <button class="btn" type="submit">
-                                                        <span class=" glyphicon glyphicon-search"></span>
-                                                    </button>
-                                                </span>
-                                            </div>
-                                        </div>
+        <nav class="navbar navbar-fixed-top">
+            <div id="navbar">
+                <div class="container-fluid">
+                    <div class="row row1">
+                        <div class="col-xs-3 col-sm-1">
+                            <button id="sidebar-r" class="sidebar-toggle fa fa-bars " style="font-size: 30px;color: #D6B1E5;"></button>
+                        </div>
+                        <div class="col-sm-3 col-md-2 col-xs-6 text-center">
+                            <a href="/">
+                            <img  src="/img/logo.png" style=" margin: 0 auto; width: 100%;max-width: 180px ">
+                            </a>
+                        </div>
+                        <div class="navbar-search smallsearch col-sm-7 col-md-6 hidden-xs">
+                        <form action="<?=Url::to(['/video/search'])?>">
+                            <div class="row">
+                                   <div id="custom-search-input">
+                                                    <div class="input-group ">
+                                                        <input type="text" class="search-query form-control" placeholder="Поиск" value="<?=$_GET['s']?>" name="s"/>
+                                                        <span class="input-group-btn">
+                                                            <button class="btn" type="submit">
+                                                                <span class=" glyphicon glyphicon-search"></span>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                            </div>
+                            </form>
+                        </div>
+                        <div class="col-md-2"></div>
+                        <div class="col-xs-3 col-sm-1 text-right">
+                            <button id="sidebar-l" class="sidebar-toggle fa fa-bars hidden" style="font-size: 30px;color: #D6B1E5;"></button>
+                        </div>
                     </div>
-                    </form>
-                </div>
-                <div class="col-md-2"></div>
-                <div class="col-xs-3 col-sm-1 text-right">
-                    <button id="sidebar-l" class="sidebar-toggle fa fa-bars hidden" style="font-size: 30px;color: #D6B1E5;"></button>
                 </div>
             </div>
-        </div>
-    </div>
-</nav>
+        </nav>
 
 <!--    <button class="sidebar-toggle fa fa-bars primary-navigation" style="font-size: 30px; color: black"></button>-->
 
@@ -87,11 +87,11 @@ AppAsset::register($this);
     <aside id="sidebar" class="sidebar sidebar-default sidebar-fixed-left" role="navigation">
         <?php if(Yii::$app->user->id):?>
         <!-- Sidebar header -->
-        <div class="sidebar-header header-cover" style="background-image: url(<?=empty($profile->background)? 'http://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg' : $profile->background?>);"
+        <div class="sidebar-header header-cover" style="background-image: url(<?=empty($profile->background)? 'http://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg' : $profile->background?>);">
             <!-- Top bar -->
             <div class="top-bar">
                 <button type="button" class="sidebar-toggle">
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <i class="fa fa-times" aria-hidden="true"style="color: white"></i>
                 </button>
             </div>
             <!-- Sidebar toggle button -->
@@ -198,6 +198,23 @@ AppAsset::register($this);
 
                 </li>
 
+            <li>
+                <a data-toggle="collapse" href="#menu-subs" >Мои подписки</a>
+
+                <ul class="constructor  collapse out" id="menu-subs">
+
+                    <li>
+                        <a href="/">Имя пользователя!!!Имя пользователя!!!Имя пользователя!!!</a>
+                    </li>
+
+                    <li>
+                        <a href="/">Имя пользователя!!!</a>
+                    </li>
+
+
+                </ul>
+            </li>
+
             <li class="divider"></li>
 
             <li>
@@ -223,9 +240,24 @@ AppAsset::register($this);
             </div>
             <!-- END MENU -->
         <?php else:?>
-            <div id="proffile-menu" class="profile-usermenu " >
-
-                <ul class="nav" style="margin-top:0px;">
+                <div class="top-bar">
+                    <button type="button" class="sidebar-toggle">
+                        <i class="fa fa-times" aria-hidden="true"style="color: white"></i>
+                    </button>
+                </div>
+                <form action="<?=Url::to(['/video/search'])?>" class="visible-xs">
+                    <div id="custom-search-input">
+                        <div class="input-group col-md-12">
+                            <input type="text" class="search-query form-control" placeholder="Поиск" value="<?=$_GET['s']?>" name="s"/>
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger" type="submit">
+                                    <span class=" glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+                <ul class="nav sidebar-nav">
                     <li>
                         <a  href="#" value="/site/login" id="modalButton"><i class="fa fa-upload" aria-hidden="true"></i>Войти</a>
                     </li>
@@ -234,7 +266,7 @@ AppAsset::register($this);
                     </li>
 
                 </ul>
-            </div>
+
         <?php endif;?>
         <!-- index SIDEBAR MENU -->
     </aside>
@@ -245,7 +277,7 @@ AppAsset::register($this);
 
 
 
-        <div class="container" style="min-height: 94.5vh; background: url("http://luxfon.com/images/201203/luxfon.com_10880.jpg")">
+        <div class="container" style="min-height: 94.5vh;">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>

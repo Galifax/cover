@@ -596,10 +596,7 @@ Image credits: unsplash.com
 #first-slider .carousel-indicators {
     bottom: 0;
 }
-#first-slider .carousel-control.right,
-#first-slider .carousel-control.left {
-    background-image: none;
-}
+
 #first-slider .carousel .item {
     min-height: 425px;
     height: 100%;
@@ -826,7 +823,7 @@ Image credits: unsplash.com
 
 .top-bar {
     height: 45px;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 
@@ -1071,7 +1068,7 @@ Image credits: unsplash.com
     line-height: 48px;
     padding: 0;
     padding-left: 16px;
-    padding-right: 56px;
+    /*padding-right: 56px;*/
     text-decoration: none;
     clear: both;
     font-weight: 500;
@@ -1088,6 +1085,10 @@ Image credits: unsplash.com
     -webkit-box-shadow: none;
     box-shadow: none;
     outline: none;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    height: auto;
 }
 .sidebar .sidebar-nav li a .caret {
     position: absolute;
