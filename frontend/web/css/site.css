@@ -1525,7 +1525,7 @@ Image credits: unsplash.com
 =========================================*/
 
 .video-item {
-
+    padding-bottom: 30px;
 }
 
 .video-item>div {
