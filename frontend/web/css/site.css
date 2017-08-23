@@ -364,7 +364,7 @@ a:hover{
 .content-title{padding:5px;background-color:#fff;}
 .content-title h3 a{color:#34495E;text-decoration:none; transition: 0.5s;}
 .content-title h3 a:hover{color:#F39C12; }
-.content-footer{background-color:#16A085;padding:10px;position: relative;}
+.content-footer{background-color:#16A085;padding:5px;position: relative;}
 .content-footer span a {
     color: #fff;
     display: inline-block;
@@ -1533,7 +1533,7 @@ Image credits: unsplash.com
 }
 
 .video-item__thumb {
-    padding: 35% 50%;
+    padding: 25% 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1555,8 +1555,8 @@ Image credits: unsplash.com
 }
 
 .user-small-img {
-    width: 3em;
-    height: 3em;
+    width: 2.3em;
+    height: 2.3em;
     border-radius: 50%;
 }
 
@@ -1564,11 +1564,10 @@ Image credits: unsplash.com
     float: left;
 }
 
-.content-footer__details {
-    padding-left: 4em;
-}
 
 /*=====  End of Small video style  ======*/
 
 
-
+.username-video{
+    padding: 0.35em;
+}

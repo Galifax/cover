@@ -21,7 +21,7 @@
             <div class="content-footer__avatar">
                 <img  class="user-small-img" src="<?=$video->profile->avatar?>">
             </div>
-            <div class="content-footer__details">
+            <div>
                 <span style="color: #fff;">
                     <a style="font-size: 16px" class="username-video" href="<?=Url::to(['/profile', 'id' => $video->profile->id, 'name' => $video->profile->nickname])?>"><?= $video->profile->nickname?></a>
                 </span>
