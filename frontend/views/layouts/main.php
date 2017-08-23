@@ -44,15 +44,17 @@ AppAsset::register($this);
 
     <!-- Second navbar for sign in -->
 
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-fixed-top">
     <div id="navbar">
         <div class="container-fluid">
             <div class="row row1">
                 <div class="col-xs-3 col-sm-1">
-                    <button id="sidebar-r" class="sidebar-toggle fa fa-bars " style="font-size: 30px; color: black"></button>
+                    <button id="sidebar-r" class="sidebar-toggle fa fa-bars " style="font-size: 30px;color: #D6B1E5;"></button>
                 </div>
                 <div class="col-sm-3 col-md-2 col-xs-6 text-center">
+                    <a href="/">
                     <img  src="/img/logo.png" style=" margin: 0 auto; width: 100%;max-width: 180px ">
+                    </a>
                 </div>
                 <div class="navbar-search smallsearch col-sm-7 col-md-6 hidden-xs">
                 <form action="<?=Url::to(['/video/search'])?>">
@@ -72,7 +74,7 @@ AppAsset::register($this);
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-xs-3 col-sm-1 text-right">
-                    <button id="sidebar-l" class="sidebar-toggle fa fa-bars hidden" style="font-size: 30px; color: black"></button>
+                    <button id="sidebar-l" class="sidebar-toggle fa fa-bars hidden" style="font-size: 30px;color: #D6B1E5;"></button>
                 </div>
             </div>
         </div>
@@ -88,12 +90,14 @@ AppAsset::register($this);
         <div class="sidebar-header header-cover" style="background-image: url(<?=empty($profile->background)? 'http://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg' : $profile->background?>);"
             <!-- Top bar -->
             <div class="top-bar">
-                <img  src="img/logo.png" style="display: block; margin: 0 auto; ">
+                <button type="button" class="sidebar-toggle">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
             </div>
             <!-- Sidebar toggle button -->
-            <button type="button" class="sidebar-toggle">
-                <i class="fa fa-times" aria-hidden="true"></i>
-            </button>
+<!--            <button type="button" class="sidebar-toggle">-->
+<!--                <i class="fa fa-times" aria-hidden="true"></i>-->
+<!--            </button>-->
 
             <!-- SIDEBAR USERPIC -->
             <div class="sidebar-image">
@@ -235,7 +239,7 @@ AppAsset::register($this);
 
 
 
-        <div class="container" style="margin-top:50px; min-height: 94.5vh">
+        <div class="container" style="min-height: 94.5vh; background: url("http://luxfon.com/images/201203/luxfon.com_10880.jpg")">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>

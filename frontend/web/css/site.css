@@ -7,9 +7,13 @@ button{
 input{
     background: none;
     border: 0px;
+    font-size: 11.4px;
     color: grey;
     font-weight: bolder;
     margin-right: 5px;
+}
+input :hover{
+    text-decoration: u;
 }
 
 *{font-family: 'Droid Serif', serif; }
@@ -54,7 +58,7 @@ a.desc:after {  content: "\e152";  }
 
 
 .content{
-    background: white;
+    background: rgba(0,0,0,0.8);
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
     border-radius: 5px;
 
@@ -107,7 +111,10 @@ a.desc:after {  content: "\e152";  }
 }
 /*Colors*/
 
-.color-1{background-color: #f1f1f1}
+.color-1{background: url(http://eishalle-darmstadt.de/wp-content/uploads/2014/06/ed-konzert-bg-12.jpg) no-repeat center center fixed;
+
+}
+
 .color-2{background-color: #6695C1}
 .color-3{background-color: #46ABA5}
 .background-gray{background-color: #F8F8F8}
@@ -167,7 +174,7 @@ a.desc:after {  content: "\e152";  }
 }
 
 #navbar {
-    background: none;
+    background: #33326B;
     height: 53px;
 }
 
@@ -236,7 +243,7 @@ a.desc:after {  content: "\e152";  }
 .fb-profile img.fb-image-lg{
     z-index: 0;
     width: 100%;
-    margin-bottom: 10px;
+    margin: -20px 0px 10px 0px;
 }
 
 .fb-image-profile
@@ -263,7 +270,7 @@ a.desc:after {  content: "\e152";  }
     }
 }
 
-.profile {  margin: 20px 0;  }
+.profile {  margin: 20px 0; background-color: rgba(199,197,199,0.8);  }
 
 /* Profile sidebar */
 .profile-sidebar {  padding: 10px 0 10px 0; }
@@ -921,7 +928,7 @@ Image credits: unsplash.com
 .sidebar .sidebar-toggle {
     position: relative;
     float: right;
-    margin: 16px;
+    margin: 2px;
     padding: 0;
     background-image: none;
     border: none;
@@ -947,7 +954,7 @@ Image credits: unsplash.com
 .sidebar .sidebar-image img {
     width: 75px;
     height: 75px;
-    margin: 16px;
+    margin: 0px 8px 0px 8px;
     border-radius: 50%;
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -1123,13 +1130,13 @@ Image credits: unsplash.com
     box-shadow: none;
 }
 .sidebar-default {
-    background-color: #ffffff;
+    background-color: #33326B
 }
 .sidebar-default .sidebar-header {
     background-color: #eceff1;
 }
 .sidebar-default .sidebar-toggle {
-    color: #212121;
+    color: #252e35;
     background-color: transparent;
 }
 .sidebar-default .sidebar-brand {
@@ -1138,8 +1145,8 @@ Image credits: unsplash.com
 }
 .sidebar-default .sidebar-brand:hover,
 .sidebar-default .sidebar-brand:focus {
-    color: #212121;
-    background-color: rgba(0, 0, 0, 0.1);
+    color: #2E9ACB;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 .sidebar-default .sidebar-badge {
     color: #ffffff;
@@ -1150,10 +1157,10 @@ Image credits: unsplash.com
     background-color: #bdbdbd;
 }
 .sidebar-default .sidebar-text {
-    color: #212121;
+    color: #2E9ACB;
 }
 .sidebar-default .sidebar-nav li > a {
-    color: #212121;
+    color: #2E9ACB;
     background-color: transparent;
 }
 .sidebar-default .sidebar-nav li > a i {
@@ -1161,8 +1168,8 @@ Image credits: unsplash.com
 }
 .sidebar-default .sidebar-nav li:hover > a,
 .sidebar-default .sidebar-nav li > a:hover {
-    color: #212121;
-    background-color: #e0e0e0;
+    color: #33326B;
+    background-color: #D6B1E5;
 }
 .sidebar-default .sidebar-nav li:hover > a i,
 .sidebar-default .sidebar-nav li > a:hover i {
@@ -1170,7 +1177,7 @@ Image credits: unsplash.com
 }
 .sidebar-default .sidebar-nav li:focus > a,
 .sidebar-default .sidebar-nav li > a:focus {
-    color: #212121;
+    color: #2E9ACB;
     background-color: transparent;
 }
 .sidebar-default .sidebar-nav li:focus > a i,
@@ -1180,38 +1187,22 @@ Image credits: unsplash.com
 .sidebar-default .sidebar-nav > .open > a,
 .sidebar-default .sidebar-nav > .open > a:hover,
 .sidebar-default .sidebar-nav > .open > a:focus {
-    color: #212121;
-    background-color: #e0e0e0;
+    color: #2E9ACB;
+    background-color: #D6B1E5;;
 }
 .sidebar-default .sidebar-nav > .active > a,
 .sidebar-default .sidebar-nav > .active > a:hover,
 .sidebar-default .sidebar-nav > .active > a:focus {
-    color: #212121;
-    background-color: #e0e0e0;
+    color: #33326B;
+    background-color: #D6B1E5;
 }
 .sidebar-default .sidebar-nav > .disabled > a,
 .sidebar-default .sidebar-nav > .disabled > a:hover,
 .sidebar-default .sidebar-nav > .disabled > a:focus {
-    color: #e0e0e0;
+    color: #D6B1E5;
     background-color: transparent;
 }
-.sidebar-default .sidebar-nav > .dropdown > .dropdown-menu {
-    background-color: #e0e0e0;
-}
-.sidebar-default .sidebar-nav > .dropdown > .dropdown-menu > li > a:focus {
-    background-color: #e0e0e0;
-    color: #212121;
-}
-.sidebar-default .sidebar-nav > .dropdown > .dropdown-menu > li > a:hover {
-    background-color: #cecece;
-    color: #212121;
-}
-.sidebar-default .sidebar-nav > .dropdown > .dropdown-menu > .active > a,
-.sidebar-default .sidebar-nav > .dropdown > .dropdown-menu > .active > a:hover,
-.sidebar-default .sidebar-nav > .dropdown > .dropdown-menu > .active > a:focus {
-    color: #212121;
-    background-color: #e0e0e0;
-}
+
 .sidebar-inverse {
     background-color: #212121;
 }
