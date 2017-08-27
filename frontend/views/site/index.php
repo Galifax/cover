@@ -88,7 +88,7 @@ $this->title = 'My Yii Application';
                         </div>
                     </div>
                     <div class="content-footer2">
-                        <img class="user-small-img text-left" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
+                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
                         <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
                        <p>
                            10000 O I 12 12 12
