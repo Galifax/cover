@@ -33,7 +33,7 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
     <?php $profile = Profile::find()->where(['id' =>Yii::$app->user->id])->with('subscription.profile')->one();?>
-    <?php debug($profile)?> 
+  <!--  <?php debug($profile)?> -->
     <?php $category = Category::find()->where(['parent_id' =>0])->all();?>
     <?php $count_comments = Comments::find()->where(['profile_id' => Yii::$app->user->id])->andWhere(['is_viewed' => Null])->count(); ?>
     </head>
@@ -204,7 +204,7 @@ AppAsset::register($this);
                 <?php foreach($profile->subscription as $sub):?>
                 <ul class="constructor  collapse out" id="menu-subs">
                     <li>  
-                        <a href="/"><?= $sub->profile->nickname?>111</a>
+                        <a href="/"><?= $sub->profile->nickname?></a>
                     </li>  
                 </ul>
                 <?php endforeach;?>
