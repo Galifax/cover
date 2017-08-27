@@ -108,10 +108,33 @@ $('#modalButton, #modalButton1, #modalButton2, #upload').click(function(){
 
     })(jQuery.fn.removeClass);
 
-    // ******************************
+    // ****************************
     //input area
     //*****************************
     function textAreaAdjust(o) {
         o.style.height = "1px";
         o.style.height = (25+o.scrollHeight)+"px";
+    }
+    // ****************************
+    //3d Test
+    //*****************************
+    var carousel1 = $(".carousel1"),
+        currdeg  = 0;
+
+    $(".next1").on("click", { d: "n1" }, rotate);
+    $(".prev1").on("click", { d: "p1" }, rotate);
+
+    function rotate(e){
+        if(e.data.d=="n1"){
+            currdeg = currdeg - 60;
+        }
+        if(e.data.d=="p1"){
+            currdeg = currdeg + 60;
+        }
+        carousel1.css({
+            "-webkit-transform": "rotateY("+currdeg+"deg)",
+            "-moz-transform": "rotateY("+currdeg+"deg)",
+            "-o-transform": "rotateY("+currdeg+"deg)",
+            "transform": "rotateY("+currdeg+"deg)"
+        });
     }

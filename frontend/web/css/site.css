@@ -378,7 +378,6 @@ a:hover{
 .content-title{padding:5px;background-color:#fff;}
 .content-title h3 a{color:#34495E;text-decoration:none; transition: 0.5s;}
 .content-title h3 a:hover{color:#F39C12; }
-.content-footer{background-color:#16A085;padding:5px;position: relative;}
 .content-footer span a {
     color: #fff;
     display: inline-block;
@@ -1582,6 +1581,8 @@ Image credits: unsplash.com
 .content-footer {
     font-family: sans-serif;
     background-color: rgba(0, 0, 0, .6);
+    padding: 5px;
+    position: relative;
 }
 
 .content-title a {
@@ -1605,3 +1606,108 @@ Image credits: unsplash.com
 .username-video{
     padding: 0.35em;
 }
+
+/********************/
+/***TEST*****3D******/
+/********************/
+.content-footer2{padding:5px;
+    position: relative;
+    font-family: sans-serif;
+    background-color: rgba(0, 0, 0, .9);
+    height: 50px;
+}
+.content-title2{
+    background: none;
+    font-family: sans-serif;
+    background-color: rgba(255,255,255, .8);
+    color: black;
+    position: absolute;
+    bottom: 50px;
+
+}
+
+.container1 {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    perspective: 1500px;
+    top: 300px;
+}
+
+.carousel1{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.item1{
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    line-height: 14px;
+    font-size: 12px;
+    text-align: center;
+    color: #FFF;
+    opacity: 0.95;
+    border-radius: 10px;
+}
+
+
+.top1 {  transform: rotateY(0deg) rotateX(30deg) translateZ(320px);   top: -50px;  }
+.top2 {  transform: rotateY(60deg) rotateX(30deg) translateZ(320px);   top: -50px;  }
+.top3 {  transform: rotateY(120deg) rotateX(30deg) translateZ(320px);   top: -50px;  }
+.top4 {  transform: rotateY(180deg) rotateX(30deg) translateZ(320px);   top: -50px;  }
+.top5 {  transform: rotateY(240deg) rotateX(30deg) translateZ(320px);   top: -50px;  }
+.top6 {  transform: rotateY(300deg) rotateX(30deg) translateZ(320px);  top: -50px;  }
+
+.center1 {  transform: rotateY(0deg) translateZ(340px);   }
+.center2 {  transform: rotateY(40deg) translateZ(340px);    }
+.center3 {  transform: rotateY(80deg) translateZ(340px);    }
+.center4 {  transform: rotateY(120deg) translateZ(340px);   }
+.center5 {  transform: rotateY(160deg) translateZ(340px);    }
+.center6 {  transform: rotateY(200deg) translateZ(340px);   }
+.center7 {  transform: rotateY(240deg) translateZ(340px);   }
+.center8 {  transform: rotateY(280deg) translateZ(340px);    }
+.center9 {  transform: rotateY(320deg) translateZ(340px);    }
+
+.center12 {  transform: rotateY(0deg) translateZ(20px);  }
+.center22 {  transform: rotateY(40deg) translateZ(20px);  }
+.center32 {  transform: rotateY(80deg) translateZ(20px);  }
+.center42 {  transform: rotateY(120deg) translateZ(20px);  }
+.center52 {  transform: rotateY(160deg) translateZ(20px);  }
+.center62 {  transform: rotateY(200deg) translateZ(20px);  }
+.center72 {  transform: rotateY(240deg) translateZ(20px);  }
+.center82 {  transform: rotateY(280deg) translateZ(20px); }
+.center92 {  transform: rotateY(320deg) translateZ(20px); }
+
+.bot1 {  transform: rotateY(0deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
+.bot2 {  transform: rotateY(60deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
+.bot3 {  transform: rotateY(120deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
+.bot4 {  transform: rotateY(180deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
+.bot5 {  transform: rotateY(240deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
+.bot6 {  transform: rotateY(300deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
+
+
+.next1, .prev1 {
+    color: #444;
+    position: absolute;
+    bottom: 100px;
+    padding: 1em 2em;
+    cursor: pointer;
+    background: #CCC;
+    border-radius: 5px;
+    border-top: 1px solid #FFF;
+    box-shadow: 0 5px 0 #999;
+    transition: box-shadow 0.1s, top 0.1s;
+}
+.next1:hover, .prev:hover { color: #000; }
+.next1:active, .prev:active {
+    bottom: 100px;
+    box-shadow: 0 1px 0 #999;
+}
+.next1 { right: 5em; }
+.prev1 { left: 5em; }
