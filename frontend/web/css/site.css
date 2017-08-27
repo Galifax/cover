@@ -113,6 +113,7 @@ a:hover{
 /*Upload*/
 .modal-header {
     padding-bottom: 5px;
+    border: none;
 }
 
 .modal-footer {
@@ -316,6 +317,19 @@ a:hover{
 }
 
 /*coments*/
+.pre1{
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+     color: white;
+    word-break: break-all;
+    word-wrap: break-word;
+     background:none ;
+     border: none;
+
+}
 .media{
     margin: 5px 10px;
     padding: 5px;
@@ -468,6 +482,26 @@ td, th {
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 /****** LOGIN MODAL ******/
+.modal-content{
+    position: relative;
+    background-color: rgba(0, 0, 0, .7);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-radius: 5px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(255, 255, 255, .3);
+    box-shadow: 0 3px 9px rgba(255, 255, 255, .3);
+}
+
+.close{
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    opacity: .8;
+}
+
 .loginmodal-container {
     padding: 30px;
     max-width: 350px;

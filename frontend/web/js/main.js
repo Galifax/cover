@@ -107,3 +107,11 @@ $('#modalButton, #modalButton1, #modalButton2, #upload').click(function(){
         }
 
     })(jQuery.fn.removeClass);
+
+    // ******************************
+    //input area
+    //*****************************
+    function textAreaAdjust(o) {
+        o.style.height = "1px";
+        o.style.height = (25+o.scrollHeight)+"px";
+    }
