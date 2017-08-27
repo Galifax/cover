@@ -70,7 +70,12 @@ $this->title = 'My Yii Application';
     <div class="hidden-sm hidden-xs">
         <div class="container1">
             <div class="carousel1" style="background: ">
+
+
+
+
                 <div class="item1 top1">
+
                     <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
                         <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
                             <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
@@ -83,518 +88,59 @@ $this->title = 'My Yii Application';
                         </div>
                     </div>
                     <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
+                        <img class="user-small-img text-left" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
                         <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
+                       <p>
+                           10000 O I 12 12 12
+                       </p>
                     </div>
+
                 </div>
                 <div class="item1 top2">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="item1 top3">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="item1 top4">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="item1 top5">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="item1 top6">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
 
                 <div class="item1 center1">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                        <div class="content-footer2">
-                            <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                            <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                            <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                            <div class="user-ditels">
-                                <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                                <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                                <div class="social-icon">
-                                    <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                    <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                    <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                                </div>
-                            </div>
-                        </div>
+
                 </div>
                 <div class="item1 center2">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="item1 center3">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="item1 center4">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="item1 center5">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
+
                 </div>
                 <div class="item1 center6">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="item1 center7">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="item1 center8">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
+
                 </div>
                 <div class="item1 center9">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
+
                 </div>
 
     <!--            <div class="item1 center12"><img src="http://s1.iconbird.com/ico/2013/6/353/w256h2561372333145microphoneicon.png" style="height: 700px;"></div>-->
@@ -608,214 +154,23 @@ $this->title = 'My Yii Application';
     <!--            <div class="item1 center92"><img src="http://s1.iconbird.com/ico/2013/6/353/w256h2561372333145microphoneicon.png" style="height: 700px;"></div>-->
 
                 <div class="item1 bot1">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="item1 bot2">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="item1 bot3">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="item1 bot4">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="item1 bot5">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="item1 bot6">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
-                        <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
-                        </div>
-                    </a>                <div class="content-title">
-                        <div class="text-center">
-                            <a style="color: black" href="/">
-                                <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque beatae delectus, error eveniet fuga fugit illum iusto odit omnis perferendis, quaerat, repellendus saepe voluptatibus. Id nostrum officia quia?</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                        <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                    </span>
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
+
                 </div>
             </div>
         </div>
