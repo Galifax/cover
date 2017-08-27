@@ -93,4 +93,9 @@ class Profile extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Subscription::className(), ['my_profile_id' => 'id']);
     }
+    public function getSubscriptionUser()
+    {
+        return $this->hasMany(Subscription::className(), ['user_profile_id' => 'id']);
+    }
+    
 }

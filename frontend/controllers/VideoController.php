@@ -180,7 +180,7 @@ class VideoController extends Controller
         // echo "<pre>";
         // print_r($model->likes);
         // echo "</pre>";
-        return $this->render('view', compact('model', 'comm', 'pages', 'id', 'favorites', 'likes', 'comments', 'profile'));
+        return $this->render('view', compact('model', 'comm', 'pages', 'id', 'favorites', 'likes', 'comments', 'profile', 'subscription'));
     }
     public function actionSearch($id = Null, $s = Null, $name = Null){
                $model = Video::find()->with('profile')->andFilterWhere(['like', 'video.name', $s])->joinWith(['category' => function(ActiveQuery $query) use($id){

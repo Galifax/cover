@@ -32,7 +32,8 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <?php $profile = Profile::find()->where(['id' =>Yii::$app->user->id])->with('subscription')->one();?>
+    <?php $profile = Profile::find()->where(['id' =>Yii::$app->user->id])->with('subscription.profile')->one();?>
+    <?php debug($profile)?> 
     <?php $category = Category::find()->where(['parent_id' =>0])->all();?>
     <?php $count_comments = Comments::find()->where(['profile_id' => Yii::$app->user->id])->andWhere(['is_viewed' => Null])->count(); ?>
     </head>
@@ -200,19 +201,13 @@ AppAsset::register($this);
 
             <li>
                 <a data-toggle="collapse" href="#menu-subs" >Мои подписки</a>
-
+                <?php foreach($profile->subscription as $sub):?>
                 <ul class="constructor  collapse out" id="menu-subs">
-
-                    <li>
-                        <a href="/">Имя пользователя!!!Имя пользователя!!!Имя пользователя!!!</a>
-                    </li>
-
-                    <li>
-                        <a href="/">Имя пользователя!!!</a>
-                    </li>
-
-
+                    <li>  
+                        <a href="/"><?= $sub->profile->nickname?>111</a>
+                    </li>  
                 </ul>
+                <?php endforeach;?>
             </li>
 
             <li class="divider"></li>
