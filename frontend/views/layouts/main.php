@@ -33,7 +33,6 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
     <?php $profile = Profile::find()->where(['id' =>Yii::$app->user->id])->with('subscription.profile')->one();?>
-  <!--  <?php debug($profile)?> -->
     <?php $category = Category::find()->where(['parent_id' =>0])->all();?>
     <?php $count_comments = Comments::find()->where(['profile_id' => Yii::$app->user->id])->andWhere(['is_viewed' => Null])->count(); ?>
     </head>
@@ -81,7 +80,7 @@ AppAsset::register($this);
                 </div>
             </div>
         </nav>
-
+     
 <!--    <button class="sidebar-toggle fa fa-bars primary-navigation" style="font-size: 30px; color: black"></button>-->
 
     <!-- Material sidebar -->
@@ -201,13 +200,15 @@ AppAsset::register($this);
 
             <li>
                 <a data-toggle="collapse" href="#menu-subs" >Мои подписки</a>
-                <?php foreach($profile->subscription as $sub):?>
                 <ul class="constructor  collapse out" id="menu-subs">
+                <?php foreach($profile->subscription as $sub):?>
+
                     <li>  
                         <a href="/"><?= $sub->profile->nickname?></a>
                     </li>  
+                 <?php endforeach;?>
+
                 </ul>
-                <?php endforeach;?>
             </li>
 
             <li class="divider"></li>
