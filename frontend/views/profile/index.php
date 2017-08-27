@@ -25,7 +25,7 @@
 
                         <div class="panel-default">
                             <div class="panel-body">
-                                <div class="media">
+                                <div class="media" style="border: none">
 
                                     <div style="height: 30px">
 

@@ -78,8 +78,12 @@ $this->title = $model->name;
         <?= $form->field($comments, 'date')->hiddenInput(['value' => date('Y-m-d H:i:s')])->label(false) ?>
         <?= $form->field($comments, 'content', ['template' => "{input}"
         ])->textArea(['placeholder' =>
-        Yii::$app->session->getFlash('success') ? Yii::$app->session->getFlash('success') : 'Введите текст'])
+        Yii::$app->session->getFlash('success') ? Yii::$app->session->getFlash('success') : 'Введите текст','onkeyup'=>'textAreaAdjust(this)','style'=>'overflow:hidden'])
         ->label('Оставить комментарий') ?>
+
+
+
+
         <div class="form-group">
             <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
         </div>
@@ -110,7 +114,7 @@ $this->title = $model->name;
         </div>
         <!-- media-left -->
         <div class="media-body"> <!-- комментарий пользователя не имеет ответа -->
-        <pre><?= $comments->content?></pre>
+        <pre class="pre1"><?= $comments->content?></pre>
         <div class="comment-meta">
             <span style="float: left">
                 <a class="" role="button" data-toggle="collapse" href="#collapse1<?=$comments->id?>" aria-expanded="false" aria-controls="collapseExample">Ответить</a>
