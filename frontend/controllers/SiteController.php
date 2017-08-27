@@ -16,6 +16,7 @@ use frontend\models\Video;
 use frontend\models\View;
 use frontend\models\Profile;
 use frontend\models\Likes;
+use frontend\models\Subscription;
 use yii\db\AccessQuery;
 use yii\db\Expression;
 /**
@@ -83,7 +84,7 @@ class SiteController extends Controller
         $random = $model->limit(4)->orderBy(new Expression('rand()'))->all();
         $newest = $model->limit(4)->orderBy(['id' => SORT_DESC])->all();
       
-        return $this->render('index', compact('top', 'random', 'newest'));
+        return $this->render('index', compact('top', 'random', 'newest', 'profile', 'profile'));
     }
 
     /**

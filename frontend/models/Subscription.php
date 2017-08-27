@@ -63,7 +63,7 @@ class Subscription extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUserProfile()
+    public function getProfile()
     {
         return $this->hasOne(Profile::className(), ['id' => 'user_profile_id']);
     }
