@@ -89,7 +89,7 @@ $this->title = 'My Yii Application';
                         </div>
                     </div>
                     <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
+                        <img class="user-small-img" src="<?=empty($new->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $new->profile->avatar?>" alt="Profile image example>">
 
                         <span style="font-size: 16px;color: #fff;"><?= $new->profile->nickname?></span>
                         <span class="pull-right">
@@ -124,7 +124,7 @@ $this->title = 'My Yii Application';
                         </div>
                     </div>
                         <div class="content-footer2">
-                            <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
+                            <img class="user-small-img" src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
                             <span style="font-size: 16px;color: #fff;"><?= $to->profile->nickname?></span>
                             <span class="pull-right">
                     <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
@@ -170,7 +170,7 @@ $this->title = 'My Yii Application';
                         </div>
                     </div>
                     <div class="content-footer2">
-                        <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
+                        <img class="user-small-img" src="<?=empty($rand->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $rand->profile->avatar?>" alt="Profile image example>">
                         <span style="font-size: 16px;color: #fff;"><?= $rand->profile->nickname?></span>
                         <span class="pull-right">
                     <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
