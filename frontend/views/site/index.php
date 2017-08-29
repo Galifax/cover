@@ -82,12 +82,15 @@ $this->title = 'My Yii Application';
                     </a>                <div class="content-title">
                         <div class="text-center">
                             <a style="color: black" href="/">
+
                                 <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px"><?= $new->name?></h2>
+
                             </a>
                         </div>
                     </div>
                     <div class="content-footer2">
                         <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
+
                         <span style="font-size: 16px;color: #fff;"><?= $new->profile->nickname?></span>
                         <span class="pull-right">
                     <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
@@ -135,6 +138,7 @@ $this->title = 'My Yii Application';
                             </span>
                             </div>
                         </div>
+
                 </div>
                 <?php endforeach;?>
                 
