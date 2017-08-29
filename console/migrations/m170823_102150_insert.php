@@ -74,55 +74,59 @@ class m170823_102150_insert extends Migration
         ));
            
 
-        // $this->insert('user', array( 
-        // 'username' => 'zACz',
-        // 'auth_key' => '1YR6QY8FdpTVqALGk_TGJmFkORBmpTG-',
-        // 'password_hash' => '$2y$13$0Y0whW0DxQPlCUbqa7qQj.8pCmcZZuy2ey0yirRQxJ1WMnes/VnRC',
-        // 'password_reset_token' => 'njrfthhhshsh',
-        // 'email' => 'AC95UA@gmail.com',
-        // 'status' => '10',
-        // 'created_at' => '1503491102',
-        // 'updated_at' => '1503491102',
-        // ));
-        // $this->insert('user', array( 
-        // 'username' => 'Galifax',
-        // 'auth_key' => 'VfOfnebvW-wZyqwFLbvgXr_mCGjmD8Gx',
-        // 'password_hash' => '$2y$13$0Y0whW0DxQPlCUbqa7qQj.8pCmcZZuy2ey0yirRQxJ1WMnes/VnRC',
-        // 'password_reset_token' => '$2y$13$Q5qLCKyMO6cMGxv45VAMvO7zSoaQLMq5SX.Fu1Et3iYPO4jQDkbMO',
-        // 'email' => 'Agalio94@gmail.com',
-        // 'status' => '10',
-        // 'created_at' => '1503491314',
-        // 'updated_at' => '1503491314',
-        // ));
+        $this->insert('user', array(
+        'id' => '1', 
+        'username' => 'zACz',
+        'auth_key' => '1YR6QY8FdpTVqALGk_TGJmFkORBmpTG-',
+        'password_hash' => '$2y$13$0Y0whW0DxQPlCUbqa7qQj.8pCmcZZuy2ey0yirRQxJ1WMnes/VnRC',
+        'password_reset_token' => 'njrfthhhshsh',
+        'email' => 'AC95UA@gmail.com',
+        'status' => '10',
+        'created_at' => '1503491102',
+        'updated_at' => '1503491102',
+        ));
+        $this->insert('user', array(
+        'id' => '2',
+        'username' => 'Galifax',
+        'auth_key' => 'VfOfnebvW-wZyqwFLbvgXr_mCGjmD8Gx',
+        'password_hash' => '$2y$13$0Y0whW0DxQPlCUbqa7qQj.8pCmcZZuy2ey0yirRQxJ1WMnes/VnRC',
+        'password_reset_token' => '$2y$13$Q5qLCKyMO6cMGxv45VAMvO7zSoaQLMq5SX.Fu1Et3iYPO4jQDkbMO',
+        'email' => 'Agalio94@gmail.com',
+        'status' => '10',
+        'created_at' => '1503491314',
+        'updated_at' => '1503491314',
+        ));
 
-        // $this->insert('profile', array( 
-        // 'nickname' => 'zACz',
-        // 'name' => 'Андрей',
-        // 'surname' => 'Сисёмка',
-        // 'patronymic' => 'Владимирович',
-        // 'floor' => 'Мужской',
-        // 'country' => 'Украина',
-        // 'avatar' => 'аватар',
-        // 'background' => 'бэкграунд',
-        // 'favorites' => 'Рамштайн',
-        // 'about_myself' => 'О себе',
-        // 'contacts' => 'Контакты',
-        // 'last_visit' => '',
-        // ));
-        // $this->insert('profile', array( 
-        // 'nickname' => 'Galifax',
-        // 'name' => 'Андрей',
-        // 'surname' => 'Хзеков',
-        // 'patronymic' => 'Хзекович',
-        // 'floor' => 'Мужской',
-        // 'country' => 'Украина',
-        // 'avatar' => 'аватар',
-        // 'background' => 'бэкграунд',
-        // 'favorites' => 'Падиниц',
-        // 'about_myself' => 'О себе',
-        // 'contacts' => 'Контакты',
-        // 'last_visit' => '',
-        // ));
+        $this->insert('profile', array(
+        'id' => '1', 
+        'nickname' => 'zACz',
+        'name' => 'Андрей',
+        'surname' => 'Сисёмка',
+        'patronymic' => 'Владимирович',
+        'floor' => 'Мужской',
+        'country' => 'Украина',
+        'avatar' => 'аватар',
+        'background' => 'бэкграунд',
+        'favorites' => 'Рамштайн',
+        'about_myself' => 'О себе',
+        'contacts' => 'Контакты',
+        'last_visit' => '',
+        ));
+        $this->insert('profile', array(
+        'id' => '2', 
+        'nickname' => 'Galifax',
+        'name' => 'Андрей',
+        'surname' => 'Хзеков',
+        'patronymic' => 'Хзекович',
+        'floor' => 'Мужской',
+        'country' => 'Украина',
+        'avatar' => 'аватар',
+        'background' => 'бэкграунд',
+        'favorites' => 'Падиниц',
+        'about_myself' => 'О себе',
+        'contacts' => 'Контакты',
+        'last_visit' => '',
+        ));
 
 
 
