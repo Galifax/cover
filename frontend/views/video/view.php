@@ -52,9 +52,13 @@ $this->title = $model->name;
             <?php Pjax::end();?>
         </div>
         <p style="float: right;">Просмотры<br><i class="fa fa-eye" style="float: right" aria-hidden="true"> <?=$model->views?></i></p>
-        
+        <?php Pjax::begin(['enablePushState' => false]);?>
+        <?php if ($subscription == 0): ?>
         <a href="<?= Url::to(['/video/view', 'id'=>$id, 'user_id' => $model->profile_id])?>">Подписатся</a>
-        
+        <?php else: ?>
+        <a href="<?= Url::to(['/video/view', 'id'=>$id, 'user_id' => $model->profile_id])?>">Отписаться</a>
+        <?php endif;?>
+        <?php Pjax::end();?>
     </div>
     
     
