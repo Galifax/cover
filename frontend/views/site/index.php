@@ -81,7 +81,7 @@ $this->title = 'My Yii Application';
                         </div>
                     </a>                <div class="content-title">
                         <div class="text-center">
-                            <a style="color: black" href="/">
+                            <a style="color: black" href="../video/view?id=<?= $new->id?>">
 
                                 <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px"><?= $new->name?></h2>
 
@@ -118,7 +118,7 @@ $this->title = 'My Yii Application';
                         </div>
                     </a>                <div class="content-title">
                         <div class="text-center">
-                            <a style="color: black" href="/">
+                            <a style="color: black" href="../video/view?id=<?= $to->id?>">
                                 <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px"><?= $to->name?></h2>
                             </a>
                         </div>
@@ -164,7 +164,7 @@ $this->title = 'My Yii Application';
                         </div>
                     </a>                <div class="content-title">
                         <div class="text-center">
-                            <a style="color: black" href="/">
+                            <a style="color: black" href="../video/view?id=<?= $rand->id?>">
                                 <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px"><?= $rand->name?></h2>
                             </a>
                         </div>

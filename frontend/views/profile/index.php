@@ -11,7 +11,7 @@
         <div class="row profile ">
 
             <div class="fb-profile">
-                <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
+                <img align="left" class="fb-image-lg" src="<?= $model->background?>" alt="Profile image example"/>
                 <img align="left" class="fb-image-profile thumbnail"  src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>" alt="Profile image example"/>
                  <div class="fb-profile-text">
                     <h1>Профиль: <?= $model->nickname?></h1>
@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <div class="col-md-9">
-
+                    
                     <h2 class="text-center">Коментарии к моим видео</h2>
 
                     <h2 class="text-center">Коментариев нет (если коментов нет)</h2>
