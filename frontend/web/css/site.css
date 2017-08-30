@@ -1647,10 +1647,9 @@ Image credits: unsplash.com
     display: block;
     position: absolute;
     width: 200px;
-    height: 200px;
+    height: 175px;
     line-height: 14px;
     font-size: 12px;
-    text-align: center;
     color: #FFF;
     opacity: 0.95;
     border-radius: 10px;
@@ -1674,15 +1673,27 @@ Image credits: unsplash.com
 .center8 {  transform: rotateY(280deg) translateZ(340px);    }
 .center9 {  transform: rotateY(320deg) translateZ(340px);    }
 
-.center12 {  transform: rotateY(0deg) translateZ(20px);  }
-.center22 {  transform: rotateY(40deg) translateZ(20px);  }
-.center32 {  transform: rotateY(80deg) translateZ(20px);  }
-.center42 {  transform: rotateY(120deg) translateZ(20px);  }
-.center52 {  transform: rotateY(160deg) translateZ(20px);  }
-.center62 {  transform: rotateY(200deg) translateZ(20px);  }
-.center72 {  transform: rotateY(240deg) translateZ(20px);  }
-.center82 {  transform: rotateY(280deg) translateZ(20px); }
-.center92 {  transform: rotateY(320deg) translateZ(20px); }
+
+.center12, .center22, .center32, .center42, .center52, .center62, .center72, .center82, .center92{
+    height: 600px;
+    width: 600px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 15px 8px #F1FAFF;
+    top: -200px;
+    left: -200px;
+    background-color: black;
+
+}
+
+.center12 {  transform: rotateY(0deg) translateZ(0px);  }
+.center22 {  transform: rotateY(40deg) translateZ(0px);  }
+.center32 {  transform: rotateY(80deg) translateZ(0px);  }
+.center42 {  transform: rotateY(120deg) translateZ(0px);  }
+.center52 {  transform: rotateY(160deg) translateZ(0px);  }
+.center62 {  transform: rotateY(200deg) translateZ(0px);  }
+.center72 {  transform: rotateY(240deg) translateZ(0px);  }
+.center82 {  transform: rotateY(280deg) translateZ(0px); }
+.center92 {  transform: rotateY(320deg) translateZ(0px); }
 
 .bot1 {  transform: rotateY(0deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
 .bot2 {  transform: rotateY(60deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
@@ -1693,21 +1704,42 @@ Image credits: unsplash.com
 
 
 .next1, .prev1 {
-    color: #444;
     position: absolute;
-    bottom: 100px;
-    padding: 1em 2em;
+    bottom: -205px;
+    padding: 1.5em 1.5em;
     cursor: pointer;
-    background: #CCC;
-    border-radius: 5px;
-    border-top: 1px solid #FFF;
-    box-shadow: 0 5px 0 #999;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0px 0px 100px 0px;
+    box-shadow: 2px 2px 15px 8px #94F;
     transition: box-shadow 0.1s, top 0.1s;
 }
-.next1:hover, .prev:hover { color: #000; }
-.next1:active, .prev:active {
-    bottom: 100px;
-    box-shadow: 0 1px 0 #999;
+.next1:hover, .prev1:hover {
+    box-shadow: 1px 1px 10px 6px #ff1702;
 }
-.next1 { right: 5em; }
-.prev1 { left: 5em; }
+
+.next1:active, .prev1:active {
+    box-shadow: 1px 1px 7px 4px #00ffff;
+}
+ .next1 {
+    right: 2em;
+    transform: rotateZ(133deg);
+}
+.next1 i{
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    transform: rotateZ(-133deg);
+    color: white;
+
+}
+.prev1 {
+    left: 2em;
+    transform: rotateZ(-45deg);
+}
+.prev1 i{
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    transform: rotateZ(45deg);
+    color: white;
+}

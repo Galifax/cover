@@ -143,15 +143,15 @@ $this->title = 'My Yii Application';
                 <?php endforeach;?>
                 
 
-    <!--            <div class="item1 center12"><img src="http://s1.iconbird.com/ico/2013/6/353/w256h2561372333145microphoneicon.png" style="height: 700px;"></div>-->
-    <!--            <div class="item1 center22"><img src="http://s1.iconbird.com/ico/2013/6/353/w256h2561372333145microphoneicon.png" style="height: 700px;"></div>-->
-    <!--            <div class="item1 center32"><img src="http://s1.iconbird.com/ico/2013/6/353/w256h2561372333145microphoneicon.png" style="height: 700px;"></div>-->
-    <!--            <div class="item1 center42"><img src="http://s1.iconbird.com/ico/2013/6/353/w256h2561372333145microphoneicon.png" style="height: 700px;"></div>-->
-    <!--            <div class="item1 center52"><img src="http://s1.iconbird.com/ico/2013/6/353/w256h2561372333145microphoneicon.png" style="height: 700px;"></div>-->
-    <!--            <div class="item1 center62"><img src="http://s1.iconbird.com/ico/2013/6/353/w256h2561372333145microphoneicon.png" style="height: 700px;"></div>-->
-    <!--            <div class="item1 center72"><img src="http://s1.iconbird.com/ico/2013/6/353/w256h2561372333145microphoneicon.png" style="height: 700px;"></div>-->
-    <!--            <div class="item1 center82"><img src="http://s1.iconbird.com/ico/2013/6/353/w256h2561372333145microphoneicon.png" style="height: 700px;"></div>-->
-    <!--            <div class="item1 center92"><img src="http://s1.iconbird.com/ico/2013/6/353/w256h2561372333145microphoneicon.png" style="height: 700px;"></div>-->
+                <div class="item1 center12"></div>
+                <div class="item1 center22"></div>
+                <div class="item1 center32"></div>
+                <div class="item1 center42"></div>
+                <div class="item1 center52"></div>
+                <div class="item1 center62"></div>
+                <div class="item1 center72"></div>
+                <div class="item1 center82"></div>
+                <div class="item1 center92"></div>
 
                 
                 <?php $n = 0?>
@@ -189,16 +189,15 @@ $this->title = 'My Yii Application';
                 
             </div>
         </div>
-        <div class="next1">
-            <a class="next">
+        <div class="clearfix"></div>
+        <div class="col-md-12">
+            <a class="next1">
             <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </a>
-        </div>
-        <div class="prev1">
-        <a class="prev">
-            <i class="fa fa-chevron-leftt" aria-hidden="true"></i>
-        </a>
-    </div>
+            <a class="prev1">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </a>
+            </div>
     </div>
 
 
