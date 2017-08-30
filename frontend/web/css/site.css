@@ -1678,7 +1678,7 @@ Image credits: unsplash.com
     height: 600px;
     width: 600px;
     border-radius: 50%;
-    box-shadow: 2px 2px 15px 8px #F1FAFF;
+    box-shadow: 2px 2px 15px 8px black;
     top: -200px;
     left: -200px;
     background-color: black;
@@ -1708,17 +1708,19 @@ Image credits: unsplash.com
     bottom: -205px;
     padding: 1.5em 1.5em;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.3);
+    background:  #94F;;
     border-radius: 0px 0px 100px 0px;
     box-shadow: 2px 2px 15px 8px #94F;
     transition: box-shadow 0.1s, top 0.1s;
 }
 .next1:hover, .prev1:hover {
     box-shadow: 1px 1px 10px 6px #ff1702;
+    background-color: #ff1702;
 }
 
 .next1:active, .prev1:active {
     box-shadow: 1px 1px 7px 4px #00ffff;
+    background-color: #00ffff;;
 }
  .next1 {
     right: 2em;
