@@ -83,13 +83,15 @@ class VideoController extends Controller
 
     public function actionView($id)
     {
+        $mod = Video::findOne($id);
 
         $delcom = Yii::$app->request->post('delcom');
         if($delcom){
             Comments::find()->where(['id' => $delcom])->one()->delete();
             Comments::deleteAll(['parent_id' => $delcom]);
-         
         }
+
+
         $comments = new Comments();
         if($comments->load(Yii::$app->request->post()) && $comments->save())
         {
@@ -110,19 +112,16 @@ class VideoController extends Controller
            }
         }
 
-        if(isset($_GET['user_id'])){
-        $subscription = Subscription::find()->where(['user_profile_id' => $_GET['user_id'], 'my_profile_id' => Yii::$app->user->identity->id])->count();
-        if($subscription == 0){
-        $model2 = new Subscription();
-        $model2->my_profile_id = Yii::$app->user->identity->id;
-        $model2->user_profile_id = $_GET['user_id'];
-        $model2->date = date('Y-m-d H:i:s');
-        $model2->save();
-           }else{
-            $subscription = Subscription::find()->where(['user_profile_id' => $_GET['user_id'], 'my_profile_id' => Yii::$app->user->identity->id])->one();
-            $subscription->delete();
-           }
+       
+        if(Yii::$app->request->get('sub')){
+            $subscription = Subscription::find()->where(['user_profile_id' => $mod->profile_id, 'my_profile_id' => Yii::$app->user->id])->count();
+            if($subscription == 0){
+
+            }else{
+                $subscription->delete();
+            }
         }
+        $subscription = Subscription::find()->where(['user_profile_id' => $mod->profile_id, 'my_profile_id' => Yii::$app->user->id])->count();
 
         if(isset($_GET['like'])){
         $likes = Likes::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->count();
