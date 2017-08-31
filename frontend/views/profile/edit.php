@@ -20,7 +20,7 @@ $form = ActiveForm::begin([
     <?= $form->field($model, 'country')->textInput()->label('Страна')?>
     <?= $form->field($model, 'file')->fileInput()->label('Аватар')?>
 
-    <a class="btn btn-danger" href="<?=Url::to(['edit', 'ava' => $model->id])?>">Удалить(андрей поправь)</a>
+    <a class="btn btn-danger" href="<?=Url::to(['edit', 'ava' => $model->id])?>">Удалить</a>
 
     <?= $form->field($model, 'file2')->fileInput()->label('Задник')?>
    
