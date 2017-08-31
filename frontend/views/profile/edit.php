@@ -24,7 +24,7 @@ $form = ActiveForm::begin([
 
     <?= $form->field($model, 'file2')->fileInput()->label('Задник')?>
    
-    <a class="btn btn-danger" href="<?=Url::to(['edit', 'ava' => $model->id])?>">Удалить</a>
+    <a class="btn btn-danger" href="<?=Url::to(['edit', 'zad' => $model->id])?>">Удалить</a>
 
     <?= $form->field($model, 'favorites')->textInput()->label('Нравится')?>
     <?= $form->field($model, 'about_myself')->textInput()->label('О себе')?>

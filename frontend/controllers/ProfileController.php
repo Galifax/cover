@@ -63,15 +63,7 @@ class ProfileController extends Controller
      */
     public function actionIndex($id=Null, $name=Null)
     {
-       $ava = Yii::$app->request->get('ava');
-        if ($ava){
-            $delete = Profile::findOne($ava);
-            if ($delete){ 
-              $delete->avatar='';
-              $delete->save();
-            }
-            
-        }
+       
         
          $com = new Comments();
         if($com->load(Yii::$app->request->post()) && $com->save());
@@ -123,6 +115,17 @@ class ProfileController extends Controller
               $delete->avatar='';
               $delete->save();  
               return $this->redirect(['/profile/index', 'id' => $ava]);
+
+            }
+            
+        }
+        $zad = Yii::$app->request->get('zad');
+        if ($zad){
+            $delete = Profile::findOne($zad);
+            if ($delete){ 
+              $delete->background='';
+              $delete->save();  
+              return $this->redirect(['/profile/index', 'id' => $zad]);
 
             }
             
