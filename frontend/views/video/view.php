@@ -52,19 +52,14 @@ $this->title = $model->name;
             <?php Pjax::end();?>
         </div>
         <p style="float: right;">Просмотры<br><i class="fa fa-eye" style="float: right" aria-hidden="true"> <?=$model->views?></i></p>
-
         <?php Pjax::begin(['enablePushState' => false]);?>
-        <a href="<?= Url::to(['/video/view', 'id'=>$id, 'sub' => $model->profile_id])?>">
-        <?php if($subscription == 0):?>
-        Подписатся
-        <?php else:?>
-        Отписатся
+        <?php if ($subscription == 0): ?>
+        <a href="<?= Url::to(['/video/view', 'id'=>$id, 'user_id' => $model->profile_id])?>">Подписатся</a>
+        <?php else: ?>
+        <a href="<?= Url::to(['/video/view', 'id'=>$id, 'user_id' => $model->profile_id])?>">Отписаться</a>
         <?php endif;?>
-        </a>
         <?php Pjax::end();?>
-
     </div>
-
     
     
     <?php $months = array( 1 => 'Января' , 'Февраля' , 'Марта' , 'Апреля' , 'Мая' , 'Июня' , 'Июля' , 'Августа' , 'Сентября' , 'Октября' , 'Ноября' , 'Декабря' );?>
