@@ -124,6 +124,12 @@ $('#modalButton, #modalButton1, #modalButton2, #upload').click(function(){
     $(".next1").on("click", { d: "n1" }, rotate);
     $(".prev1").on("click", { d: "p1" }, rotate);
 
+    $("#comments-content").emojioneArea({
+       pickerPosition: "bottom" 
+    });
+
+
+
     function rotate(e){
         if(e.data.d=="n1"){
             currdeg = currdeg - 60;
