@@ -75,9 +75,9 @@ $this->title = 'My Yii Application';
                 <?php $n += 1?>
                 <div class="item1 top<?= $n?>">
 
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
+                    <a class="video" data-pjax="0" href="../video/view?id=<?= $new->id?>">
                         <div class="video-item__thumb" style="background-image: url(<?=$new->preloader?>)">
-                            <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
+<!--                            <img style="border-bottom: 1px solid black" src="--><?//=$video->preloader?><!--" width="100%" >-->
                         </div>
                     </a>                <div class="content-title">
                         <div class="text-center">
@@ -112,7 +112,7 @@ $this->title = 'My Yii Application';
             <?php foreach($top as $to):?>
             <?php $n += 1?>
                 <div class="item1 center<?= $n?>">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
+                    <a class="video" data-pjax="0" href="../video/view?id=<?= $to->id?>">
                         <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
                             <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
                         </div>
@@ -158,7 +158,7 @@ $this->title = 'My Yii Application';
                 <?php foreach($random as $rand):?>
                 <?php $n += 1?>
                 <div class="item1 bot<?= $n?>">
-                    <a class="video" data-pjax="0" href="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg">
+                    <a class="video" data-pjax="0" href="../video/view?id=<?= $rand->id?>">
                         <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
                             <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
                         </div>

@@ -60,8 +60,8 @@ $this->title = $model->name;
         <?php endif;?>
         <?php Pjax::end();?>
     </div>
-    
-    
+
+
     <?php $months = array( 1 => 'Января' , 'Февраля' , 'Марта' , 'Апреля' , 'Мая' , 'Июня' , 'Июля' , 'Августа' , 'Сентября' , 'Октября' , 'Ноября' , 'Декабря' );?>
     <div class="description content" style="margin-top: 10px; padding: 20px;">
         <?php
@@ -71,6 +71,20 @@ $this->title = $model->name;
         <p><?=$model->description?></p>
         <p>Категория: <?=$model->category->name?></p>
     </div>
+
+
+    <div class="col-sm-4 content visible-xs" style="margin-top: 15px;">
+        <?= $this->render('../_video', [
+            'model' => $model->category->video,
+            'lg' => 12,
+            'md' => 12,
+            'sm' => 12,
+            'xs' => 12,
+        ]);?>
+    </div>
+
+
+
     <?php Pjax::begin(['enablePushState' => false]);?>
     <div class="my-video-video content" style="width: 100%; margin-top: 16px;border: none">
         <div class="" style="padding: 15px"><!-- стиль-->
@@ -92,7 +106,7 @@ $this->title = $model->name;
             <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
         </div>
         <?php ActiveForm::end(); ?>
-        
+
         <div class="comments-nav">
             <ul class="nav nav-pills">
                 <li role="presentation" class="dropdown">
@@ -123,7 +137,7 @@ $this->title = $model->name;
             <span style="float: left">
                 <a class="" role="button" data-toggle="collapse" href="#collapse1<?=$comments->id?>" aria-expanded="false" aria-controls="collapseExample">Ответить</a>
             </span>
-            
+
             <?php if($model->profile_id == Yii::$app->user->id or $comments->profile_id == Yii::$app->user->id):?>
             <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true, 'style' => 'float: left']]); ?>
             <input type="hidden" name="delcom" value="<?=$comments->id?>">
@@ -132,7 +146,7 @@ $this->title = $model->name;
             <?php endif;?>
             <a data-toggle="collapse" data-target="#collapse<?=$comments->id?>" aria-expanded="false" aria-controls="collapseExample">Показать коментарии (<?=count($comments->comments)?>)</a>
             <div class="clearfix"></div>
-            
+
             <div class="collapse" id="collapse1<?=$comments->id?>">
                 <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]]); ?>
                 <?= $form->field($comment, 'parent_id')->hiddenInput(['value' => $comments->id])->label(false) ?>
@@ -163,16 +177,16 @@ $this->title = $model->name;
                         <span style="float: left">
                             <a class="" role="button" data-toggle="collapse" href="#collapse1<?=$comments->id?>" aria-expanded="false" aria-controls="collapseExample">Ответить</a>
                         </span>
-                        
+
                         <?php if($model->profile_id == Yii::$app->user->id or $comments->profile_id == Yii::$app->user->id):?>
                         <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true, 'style' => 'float: left']]); ?>
                         <input type="hidden" name="delcom" value="<?=$comments->id?>">
                         <input type="submit" name="" value="Удалить">
                         <?php ActiveForm::end();?>
                         <?php endif;?>
-                        
+
                         <div class="clearfix"></div>
-                        
+
                     </div>
                     </div><!-- медиа боди-->
                     </div><!-- Первый уровень коментов \/ вставлять ниже-->
@@ -189,14 +203,16 @@ $this->title = $model->name;
             ]);
             ?>
             </div><!-- Ров1-->
-            
-            
+
+
             </div><!-- Начало ковентов-->
             </div><!-- стиль-->
             </div> <!-- мои видео задник-->
             <?php Pjax::end();?>
-            </div> <!-- col-md-8-->
-            <div class="col-sm-4 content" style="margin-top: 15px;">
+</div> <!-- col-md-8-->
+
+
+            <div class="col-sm-4 content hidden-xs" style="margin-top: 15px;">
                 <?= $this->render('../_video', [
                 'model' => $model->category->video,
                 'lg' => 12,
@@ -205,7 +221,7 @@ $this->title = $model->name;
                 'xs' => 12,
                 ]);?>
             </div>
-        </div>
+
         <script>
         
         $('[data-toggle="collapse"]').on('click', function() {
@@ -221,3 +237,4 @@ $this->title = $model->name;
         $parent.find('.glyphicon').not(currentIcon).removeClass('glyphicon-minus').addClass('glyphicon-plus');
         });
         </script>
+

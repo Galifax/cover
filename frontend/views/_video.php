@@ -30,20 +30,20 @@
                     <i class="fa fa-eye" aria-hidden="true"> <?= $video->views?></i> | <?=$date->format('j').' '. $months[date($date->format('n'))]?>
                 </p>
             </div>
-            <div class="user-ditels">
-                <div class="user-img"><img src="<?=$video->profile->avatar?>" class="img-responsive"></div>
-                <span class="user-full-ditels">
-                        <h3><?= $video->profile->nickname?></h3>
-                        <p>МеснІЬй сторож</p>
-                        </span>
-                <div class="social-icon">
-                    <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                    <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                    <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
+<!--            <div class="user-ditels">-->
+<!--                <div class="user-img"><img src="--><?//=$video->profile->avatar?><!--" class="img-responsive"></div>-->
+<!--                <span class="user-full-ditels">-->
+<!--                        <h3>--><?//= $video->profile->nickname?><!--</h3>-->
+<!--                        <p>МеснІЬй сторож</p>-->
+<!--                        </span>-->
+<!--                <div class="social-icon">-->
+<!--                    <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>-->
+<!--                    <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>-->
+<!--                    <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>-->
+<!--                    <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>-->
 <!--                    <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>-->
-                </div>
-            </div>
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </div>
 </div>
