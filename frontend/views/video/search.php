@@ -7,7 +7,7 @@ $this->title = $name ? $name : 'Все категории';
   <div class="row">
 
   <div class="col-sm-8 col-md-9" style="float:left">
-      <div class="content" style="min-height: 80vh" >
+      <div class="content" style="min-height: 90vh" >
     <?= $this->render('../_video', [
         'model' => $model,
         'lg' => 3,

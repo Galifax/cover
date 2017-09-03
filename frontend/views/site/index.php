@@ -4,8 +4,6 @@ use yii\widgets\Pjax;
 $this->title = 'My Yii Application';
 ?>
 
-<!--<img src="/img/123.jpg" style="width: 100%">-->
-
 <div id="first-slider">
     <div id="carousel-example-generic" class="carousel slide carousel-fade">
         <ol class="carousel-indicators">
