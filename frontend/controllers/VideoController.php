@@ -91,8 +91,10 @@ class VideoController extends Controller
          
         }
         $comments = new Comments();
-        if($comments->load(Yii::$app->request->post()) && $comments->save())
+        if($comments->load(Yii::$app->request->post()))
         {
+            $comments->content = iconv("UTF-8", "CP1252", $_POST['Comments']['content']);
+            $comments->save();
             \Yii::$app->getSession()->setFlash('success', 'Сообщение отправлено');
             $comments = new Comments();
         }

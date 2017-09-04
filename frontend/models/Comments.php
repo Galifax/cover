@@ -35,10 +35,9 @@ class Comments extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parent_id', 'video_id', 'profile_id', 'content', 'date'], 'required'],
+            [['parent_id', 'video_id', 'profile_id', 'date'], 'required'],
             [['parent_id', 'video_id', 'profile_id'], 'integer'],
             [['date'], 'safe'],
-            [['content'], 'string', 'max' => 1000],
             [['video_id'], 'exist', 'skipOnError' => true, 'targetClass' => Video::className(), 'targetAttribute' => ['video_id' => 'id']],
             [['profile_id'], 'exist', 'skipOnError' => true, 'targetClass' => Profile::className(), 'targetAttribute' => ['profile_id' => 'id']],
         ];
