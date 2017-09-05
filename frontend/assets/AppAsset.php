@@ -26,6 +26,7 @@ class AppAsset extends AssetBundle
         'http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js',
         'http://vjs.zencdn.net/6.2.4/video.js',
         'js/emojionearea.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/utf8/2.1.2/utf8.min.js',
         'js/main.js',
 
     ];
