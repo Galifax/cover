@@ -29,10 +29,6 @@ class ComposerStaticInit57eab4d0870c082e9f88da494937fc2a
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
-        'k' => 
-        array (
-            'kop\\y2sp\\' => 9,
-        ),
         'c' => 
         array (
             'cebe\\markdown\\' => 14,
@@ -112,10 +108,6 @@ class ComposerStaticInit57eab4d0870c082e9f88da494937fc2a
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-        ),
-        'kop\\y2sp\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kop/yii2-scroll-pager',
         ),
         'cebe\\markdown\\' => 
         array (

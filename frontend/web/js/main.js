@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function() {
     var num = 20;
 
@@ -28,6 +29,8 @@ $(document).ready(function() {
         }
     }
 })
+=======
+>>>>>>> parent of e1aa40c... detete
     $(function(){
 $('#modalButton, #modalButton1, #modalButton2, #upload').click(function(){
     $('#modal').modal('show')

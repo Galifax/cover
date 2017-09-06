@@ -17,7 +17,7 @@ use frontend\models\Favorites;
 use frontend\models\Subscription;
 use yii\db\ActiveQuery;
 use yii\data\Pagination;
-use yii\data\ActiveDataProvider;
+
 /**
  * Site controller
  */
@@ -93,7 +93,7 @@ class VideoController extends Controller
         $comments = new Comments();
         if($comments->load(Yii::$app->request->post()))
         {
-            $comments->content = mb_convert_encoding($_POST['Comments']['content'], 'UTF-8');
+            $comments->content = iconv("UTF-8", "CP1252", $_POST['Comments']['content']);
             $comments->save();
             \Yii::$app->getSession()->setFlash('success', 'Сообщение отправлено');
             $comments = new Comments();
@@ -157,11 +157,6 @@ class VideoController extends Controller
         $comm = $query->offset($pages->offset)
         ->limit($pages->limit)
         ->all();
-
-        $dataProvider = new ActiveDataProvider([
-            'query' => Comments::find()->with(['comments.profile', 'profile'])->where(['video_id' => $id])->andWhere(['parent_id' => 0]),
-            'pagination' => ['pageSize' => '2'],
-        ]);
         
         $views = View::find()->where(['ip' => $_SERVER['REMOTE_ADDR'], 'video_id' => $id])->one();
 
@@ -187,7 +182,7 @@ class VideoController extends Controller
         // echo "<pre>";
         // print_r($model->likes);
         // echo "</pre>";
-        return $this->render('view', compact('model', 'comm', 'pages', 'id', 'favorites', 'likes', 'comments', 'profile', 'subscription', 'dataProvider'));
+        return $this->render('view', compact('model', 'comm', 'pages', 'id', 'favorites', 'likes', 'comments', 'profile', 'subscription'));
     }
     public function actionSearch($id = Null, $s = Null, $name = Null){
                $model = Video::find()->with('profile')->andFilterWhere(['like', 'video.name', $s])->joinWith(['category' => function(ActiveQuery $query) use($id){
@@ -199,6 +194,4 @@ class VideoController extends Controller
             }])->all();
             return $this->render('search', compact('model', 'category', 'video', 'name'));
     }
-
-  
 }
