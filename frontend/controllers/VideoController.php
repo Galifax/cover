@@ -144,19 +144,11 @@ class VideoController extends Controller
 
         $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'category.video' 
             => function($query) use($id){
-            $query->where(['!=', 'id', $id ])->limit(6)->with('profile');
+            $query->where(['!=', 'id', $id ])->limit(3)->with('profile');
         }, 'favorites', 'likes'])->one();
 
-        $query = Comments::find()->with(['comments.profile', 'profile'])->where(['video_id' => $id])->andWhere(['parent_id' => 0]);
-        // делаем копию выборки
-        $countQuery = clone $query;
-        // подключаем класс Pagination, выводим по 10 пунктов на страницу
-        $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 4]);
-        // приводим параметры в ссылке к ЧПУ
-        $pages->pageSizeParam = false;
-        $comm = $query->offset($pages->offset)
-        ->limit($pages->limit)
-        ->all();
+        $comm = Comments::find()->with(['comments.profile', 'profile'])->where(['video_id' => $id])->limit(2)->andWhere(['parent_id' => 0])->all();
+   
         
         $views = View::find()->where(['ip' => $_SERVER['REMOTE_ADDR'], 'video_id' => $id])->one();
 
@@ -182,7 +174,7 @@ class VideoController extends Controller
         // echo "<pre>";
         // print_r($model->likes);
         // echo "</pre>";
-        return $this->render('view', compact('model', 'comm', 'pages', 'id', 'favorites', 'likes', 'comments', 'profile', 'subscription'));
+        return $this->render('view', compact('model', 'comm', 'pages', 'id', 'favorites', 'likes', 'comments', 'profile', 'subscription', 'comm'));
     }
     public function actionSearch($id = Null, $s = Null, $name = Null){
                $model = Video::find()->with('profile')->andFilterWhere(['like', 'video.name', $s])->joinWith(['category' => function(ActiveQuery $query) use($id){
@@ -194,4 +186,27 @@ class VideoController extends Controller
             }])->all();
             return $this->render('search', compact('model', 'category', 'video', 'name'));
     }
+
+        public function actionComments($num, $id){
+              $delcom = Yii::$app->request->post('delcom');
+        if($delcom){
+            Comments::find()->where(['id' => $delcom])->one()->delete();
+            Comments::deleteAll(['parent_id' => $delcom]);
+         
+        }
+            $comment = new Comments();
+             if($comment->load(Yii::$app->request->post()))
+            {
+                $comment->content = $_POST['Comments']['content'];
+                $comment->save();
+                \Yii::$app->getSession()->setFlash('success', 'Сообщение отправлено');
+                $comment = new Comments();
+            }
+             $model = Video::find()->where(['id' => $id])->with(['profile.videos'])->one();
+             $profile = Profile::find()->where(['id' => Yii::$app->user->id])->one();
+             $comm = Comments::find()->with(['comments.profile', 'profile'])->where(['video_id' => $id, 'parent_id' => 0])->offset($num)->limit(10)->all();
+           
+            return $this->renderAjax('comments', compact('model', 'comment', 'profile', 'comm'));
+    }
+
 }

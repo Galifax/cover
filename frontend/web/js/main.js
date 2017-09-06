@@ -1,36 +1,35 @@
-<<<<<<< HEAD
-$(document).ready(function() {
-    var num = 20;
-
-    $(window).scroll(function){
-        if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
-
-            $.ajax({
-               url: '/video/comments',
-               method: 'GET',
-               data: ("num" : num), 
-               beforeSend: function() {
-                inProcess = true;
-               }
-            }).done(function(data)) {
-                console.log(data);
-
-                data = jQuery.parseJSON(data);
-
-                if (data.length > 0) {
-                    $.each(data, function(index, data){
-                        $("comments").append();
-                    });
-                    inProcess = false;
-                    num += 10;
-                }
-
-            }
-        }
+function $_GET(key) {
+    var s = window.location.search;
+    s = s.match(new RegExp(key + '=([^&=]+)'));
+    return s ? s[1] : false;
     }
-})
-=======
->>>>>>> parent of e1aa40c... detete
+
+
+$(document).ready(function() {
+    
+    var num = 10;
+    var inProcess = false;
+    $(window).scroll(function(){
+        if ($(window).scrollTop() + $(window).height() >= $(document).height() && !inProcess) {
+            $.ajax({
+                url: '/video/comments',
+                method: 'GET',
+                data: {"num": num, "id": $_GET('id')},
+                beforeSend: function(){
+                    inProcess = true;
+                }
+            }).done(function(data){
+                if(data.length > 0){
+                $('.comments-load').append(data);
+                inProcess = false;
+                num +=10;
+                }
+            });
+         }
+    });
+});
+
+
     $(function(){
 $('#modalButton, #modalButton1, #modalButton2, #upload').click(function(){
     $('#modal').modal('show')
