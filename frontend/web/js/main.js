@@ -1,4 +1,33 @@
+$(document).ready(function() {
+    var num = 20;
 
+    $(window).scroll(function){
+        if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+
+            $.ajax({
+               url: '/video/comments',
+               method: 'GET',
+               data: ("num" : num), 
+               beforeSend: function() {
+                inProcess = true;
+               }
+            }).done(function(data)) {
+                console.log(data);
+
+                data = jQuery.parseJSON(data);
+
+                if (data.length > 0) {
+                    $.each(data, function(index, data){
+                        $("comments").append();
+                    });
+                    inProcess = false;
+                    num += 10;
+                }
+
+            }
+        }
+    }
+})
     $(function(){
 $('#modalButton, #modalButton1, #modalButton2, #upload').click(function(){
     $('#modal').modal('show')
