@@ -105,6 +105,12 @@ a:hover{
 .color-3{background-color: #46ABA5}
 .background-gray{background-color: #F8F8F8}
 
+.img-bg{
+    background-size: cover;
+    width: 100%;
+    height: 30em;
+}
+
 /*Colors*/
 
 

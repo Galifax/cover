@@ -168,48 +168,48 @@ AppAsset::register($this);
             </li>
 
 
-                <li>
-                   <a data-toggle="collapse" href="#menu-setings" >Настройки меню</a>
+<!--                <li>-->
+<!--                   <a data-toggle="collapse" href="#menu-setings" >Настройки меню</a>-->
+<!---->
+<!--                    <ul class="constructor  collapse out" id="menu-setings">-->
+<!---->
+<!--                        <li>-->
+<!--                            <label for="sidebar-position">Позиция</label>-->
+<!--                            <br>-->
+<!--                            <select id="sidebar-position" name="sidebar-position" style="color: black">-->
+<!--                                <option value="sidebar-fixed-left">Меню с лева</option>-->
+<!--                                <option value="sidebar-fixed-right">Меню с права</option>-->
+<!--                            </select>-->
+<!--                        </li>-->
+<!---->
+<!--                        <li>-->
+<!--                            <label for="sidebar-theme">Стиль</label>-->
+<!--                            <br>-->
+<!--                            <select id="sidebar-theme" name="sidebar-theme" style="color: black">-->
+<!--                                <option value="sidebar-default">Стандарт</option>-->
+<!--                                <option value="sidebar-inverse">Стиль 1</option>-->
+<!--                                <option value="sidebar-colored">Стил 2</option>-->
+<!--                                <option value="sidebar-colored-inverse">Стиль 3</option>-->
+<!--                            </select>-->
+<!--                        </li>-->
+<!---->
+<!---->
+<!--                    </ul>-->
+<!---->
+<!--                </li>-->
 
-                    <ul class="constructor  collapse out" id="menu-setings">
-
-                        <li>
-                            <label for="sidebar-position">Позиция</label>
-                            <br>
-                            <select id="sidebar-position" name="sidebar-position" style="color: black">
-                                <option value="sidebar-fixed-left">Меню с лева</option>
-                                <option value="sidebar-fixed-right">Меню с права</option>
-                            </select>
-                        </li>
-
-                        <li>
-                            <label for="sidebar-theme">Стиль</label>
-                            <br>
-                            <select id="sidebar-theme" name="sidebar-theme" style="color: black">
-                                <option value="sidebar-default">Стандарт</option>
-                                <option value="sidebar-inverse">Стиль 1</option>
-                                <option value="sidebar-colored">Стил 2</option>
-                                <option value="sidebar-colored-inverse">Стиль 3</option>
-                            </select>
-                        </li>
-
-
-                    </ul>
-
-                </li>
-
-            <li>
-                <a data-toggle="collapse" href="#menu-subs" >Мои подписки</a>
-                <ul class="constructor  collapse out" id="menu-subs">
-                <?php foreach($profile->subscription as $sub):?>
-
-                    <li>  
-                        <a href="/"><?= $sub->profile->nickname?></a>
-                    </li>  
-                 <?php endforeach;?>
-
-                </ul>
-            </li>
+<!--            <li>-->
+<!--                <a data-toggle="collapse" href="#menu-subs" >Мои подписки</a>-->
+<!--                <ul class="constructor  collapse out" id="menu-subs">-->
+<!--                --><?php //foreach($profile->subscription as $sub):?>
+<!---->
+<!--                    <li>  -->
+<!--                        <a href="/">--><?//= $sub->profile->nickname?><!--</a>-->
+<!--                    </li>  -->
+<!--                 --><?php //endforeach;?>
+<!---->
+<!--                </ul>-->
+<!--            </li>-->
 
             <li class="divider"></li>
 

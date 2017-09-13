@@ -13,8 +13,8 @@
 
 
             <div class="fb-profile">
-                <div style="height: 10em;">
-                                    <img align="left" class="fb-image-lg" src="<?=empty($model->background)? 'http://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg' : $model->background?>"/>
+                <div class="img-bg" style="background: url(<?=empty($model->background)? 'http://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg' : $model->background?>) 100% 100% no-repeat;background-size: cover;">
+<!--                     <img align="left" class="fb-image-lg" src="--><?//=empty($model->background)? 'http://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg' : $model->background?><!--"/>-->
                 </div>
                 <img align="left" class="fb-image-profile thumbnail"  src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>" alt="Profile image example"/>
                  <div class="fb-profile-text">
