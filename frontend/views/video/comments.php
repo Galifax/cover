@@ -1,11 +1,4 @@
-  <?php
-use frontend\models\Comments;
-use yii\widgets\ActiveForm;
-use yii\helpers\Html;
-use yii\widgets\Pjax;
- ?>  	
- 		<?php Pjax::begin();?>
-        <?php foreach($comm as $comments):?>
+<?php foreach($comm as $comments):?>
         <div class="media"><!-- Первый уровень коментов-->
         <div class="media-heading">
             <span class="label label-info"><?= $comments->profile->nickname?></span> <?= $comments->date?>
@@ -80,4 +73,3 @@ use yii\widgets\Pjax;
             </div><!-- медиа боди-->
             </div><!-- Первый уровень коментов \/ вставлять ниже-->
             <?php endforeach;?>
-            <?php Pjax::end();?>

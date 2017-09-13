@@ -17,6 +17,7 @@ use frontend\models\Favorites;
 use frontend\models\Subscription;
 use yii\db\ActiveQuery;
 use yii\data\Pagination;
+use yii\data\ActiveDataProvider;
 
 /**
  * Site controller
@@ -148,7 +149,15 @@ class VideoController extends Controller
         }, 'favorites', 'likes'])->one();
 
         $comm = Comments::find()->with(['comments.profile', 'profile'])->where(['video_id' => $id])->limit(2)->andWhere(['parent_id' => 0])->all();
-   
+        
+        $dataProvider = new ActiveDataProvider([
+            'query' => Comments::find()->with(['comments.profile', 'profile'])->where(['video_id' => $id])->andWhere(['parent_id' => 0])->orderBy(['id' => SORT_DESC]),
+            'pagination' => [
+            'pageSize' => 10,
+            ]
+
+
+            ]);
         
         $views = View::find()->where(['ip' => $_SERVER['REMOTE_ADDR'], 'video_id' => $id])->one();
 
@@ -174,7 +183,7 @@ class VideoController extends Controller
         // echo "<pre>";
         // print_r($model->likes);
         // echo "</pre>";
-        return $this->render('view', compact('model', 'comm', 'pages', 'id', 'favorites', 'likes', 'comments', 'profile', 'subscription', 'comm'));
+        return $this->render('view', compact('dataProvider', 'model', 'comm', 'pages', 'id', 'favorites', 'likes', 'comments', 'profile', 'subscription', 'comm'));
     }
     public function actionSearch($id = Null, $s = Null, $name = Null){
                $model = Video::find()->with('profile')->andFilterWhere(['like', 'video.name', $s])->joinWith(['category' => function(ActiveQuery $query) use($id){
@@ -207,6 +216,20 @@ class VideoController extends Controller
              $comm = Comments::find()->with(['comments.profile', 'profile'])->where(['video_id' => $id, 'parent_id' => 0])->offset($num)->limit(10)->all();
            
             return $this->renderAjax('comments', compact('model', 'comment', 'profile', 'comm'));
+    }
+
+    public function actionTest()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Comments::find()->where(['parent_id' => 0])->with('comments.profile', 'profile'),
+            'pagination' => [
+            'pageSize' => 20,
+            ]
+
+
+            ]);
+
+        return $this->render('comments', compact('dataProvider'));
     }
 
 }
