@@ -1,3 +1,6 @@
+$('#input-born').dateDropper();
+
+
 function $_GET(key) {
     var s = window.location.search;
     s = s.match(new RegExp(key + '=([^&=]+)'));

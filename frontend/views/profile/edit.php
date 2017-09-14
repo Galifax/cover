@@ -13,6 +13,7 @@ $form = ActiveForm::begin([
     <?= $form->field($model, 'nickname')->textInput()->label('Никнейм')?>
     <?= $form->field($model, 'name')->textInput()->label('Имя')?>
     <?= $form->field($model, 'surname')->textInput()->label('Фамилия')?>
+    <?= $form->field($model, 'born')->textInput(['id' =>'input-born'])->label('Дата рождения')?>
     <?= $form->field($model, 'floor')->dropDownList([
     'Мужской' => 'Мужской',
     'Женский' => 'Женский',
@@ -35,3 +36,5 @@ $form = ActiveForm::begin([
             <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 <?php ActiveForm::end(); 
+?>
+<script>$('#input-born').dateDropper();</script>

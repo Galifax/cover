@@ -13,6 +13,7 @@ class m170822_142109_profile extends Migration
             'surname' => $this->string(255),
             'patronymic' => $this->string(255),
             'floor' => $this->string(255),
+            'born' => $this->string(10),
             'country' => $this->string(255),
             'avatar' => $this->string(255),
             'background' => $this->string(255),

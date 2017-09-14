@@ -38,7 +38,7 @@ class Profile extends \yii\db\ActiveRecord
 
             [['id',], 'integer'],
             [['file', 'file2',], 'file'],
-            [['nickname', 'name', 'surname', 'avatar', 'background', 'about_myself', 'country', 'contacts', 'favorites', 'floor' ], 'string', 'max' => 255],
+            [['nickname', 'born', 'name', 'surname', 'avatar', 'background', 'about_myself', 'country', 'contacts', 'favorites', 'floor' ], 'string', 'max' => 255],
         ];
     }
 

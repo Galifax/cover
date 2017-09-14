@@ -44,6 +44,8 @@
                                         <hr>
                                         <li class="list-group-item text-right"><span class="pull-left">Страна</span> <?= $model->country?></li>
                                         <hr>
+                                        <li class="list-group-item text-right"><span class="pull-left">Дата рождения</span> <?= $model->born?></li>
+                                        <hr>
                                         <li class="list-group-item text-right"><span class="pull-left">Контакты</span> <?= $model->contacts?></li>
                                         <hr>
                                         <li class="list-group-item"><span class="">Любимая музыка</span><br><?= $model->favorites?> </li>
