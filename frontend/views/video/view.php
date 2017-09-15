@@ -18,7 +18,7 @@ $this->title = $model->name;
             style="width: 100%">
             <source src="<?= $model->src?>" type='video/mp4'>
             <p class="vjs-no-js">
-                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                Ты что не видишь - видео загружается
                 <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
             </p>
         </video>

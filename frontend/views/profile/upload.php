@@ -4,6 +4,7 @@ use yii\widgets\ActiveForm;
 use yii\widgets\Pjax;
 use yii\helpers\ArrayHelper;
 use frontend\models\Category;
+Pjax::begin();
 $category = Category::find()->all();
  $items = ArrayHelper::map($category,'id','name');
     $params = [
@@ -26,3 +27,4 @@ $form = ActiveForm::begin([
             <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 <?php ActiveForm::end(); 
+Pjax::end();
