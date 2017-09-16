@@ -130,7 +130,8 @@ $this->title = $model->name;
     'pager' => ['class' => \kop\y2sp\ScrollPager::className()],
     'viewParams' => [
     'video' => $model,
-    'comment' => $comment
+    'comment' => $comment,
+    'profile' => $profile
     ]
     
 
