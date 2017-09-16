@@ -34,7 +34,7 @@ class m170823_102150_insert extends Migration
 
         $this->insert('video', array(
             'profile_id' => '1',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video1',
             'description' => 'description1',
@@ -44,7 +44,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '1',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video2',
             'description' => 'description2',
@@ -54,7 +54,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '2',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video3',
             'description' => 'description3',
@@ -64,7 +64,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '2',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video4',
             'description' => 'description4',
@@ -74,7 +74,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '1',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video5',
             'description' => 'description5',
@@ -84,7 +84,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '1',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video6',
             'description' => 'description6',
@@ -94,7 +94,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '2',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video7',
             'description' => 'description7',
@@ -104,7 +104,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '2',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video8',
             'description' => 'description8',
@@ -114,7 +114,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '1',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video9',
             'description' => 'description9',
@@ -124,7 +124,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '1',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video10',
             'description' => 'description10',
@@ -134,7 +134,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '2',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video11',
             'description' => 'description11',
@@ -144,7 +144,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '2',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video12',
             'description' => 'description12',
@@ -154,7 +154,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '1',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video13',
             'description' => 'description13',
@@ -164,7 +164,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '1',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video14',
             'description' => 'description14',
@@ -174,7 +174,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '2',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video15',
             'description' => 'description15',
@@ -184,7 +184,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '2',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video16',
             'description' => 'description16',
@@ -194,7 +194,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '1',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video16',
             'description' => 'description16',
@@ -204,7 +204,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '1',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video17',
             'description' => 'description17',
@@ -214,7 +214,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '2',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader18',
             'name' => 'Video',
             'description' => 'description18',
@@ -224,7 +224,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '2',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video19',
             'description' => 'description19',
@@ -234,7 +234,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '1',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video20',
             'description' => 'description20',
@@ -244,7 +244,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '1',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video21',
             'description' => 'description21',
@@ -254,7 +254,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '2',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video22',
             'description' => 'description22',
@@ -264,7 +264,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '2',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video23',
             'description' => 'description23',
@@ -274,7 +274,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '1',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video24',
             'description' => 'description24',
@@ -284,7 +284,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '1',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video25',
             'description' => 'description25',
@@ -294,7 +294,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '2',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video26',
             'description' => 'description26',
@@ -304,7 +304,7 @@ class m170823_102150_insert extends Migration
         ));
         $this->insert('video', array(
             'profile_id' => '2',
-            'srс' => 'pyt/pyt',
+            'src' => 'pyt/pyt',
             'preloader' => 'preloader',
             'name' => 'Video27',
             'description' => 'description27',

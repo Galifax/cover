@@ -1,3 +1,6 @@
+$('#input-born').dateDropper();
+
+
 function $_GET(key) {
     var s = window.location.search;
     s = s.match(new RegExp(key + '=([^&=]+)'));
@@ -37,6 +40,7 @@ $('#modalButton, #modalButton1, #modalButton2, #upload').click(function(){
         .load($(this).attr('value'));
 });
 });
+
 
 
     /**

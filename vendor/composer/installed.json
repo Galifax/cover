@@ -3041,56 +3041,6 @@
         ]
     },
     {
-        "name": "kop/yii2-scroll-pager",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/kop/yii2-scroll-pager.git",
-            "reference": "9b9727ce441fbfc487044535ab6ce0b7694d810b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/kop/yii2-scroll-pager/zipball/9b9727ce441fbfc487044535ab6ce0b7694d810b",
-            "reference": "9b9727ce441fbfc487044535ab6ce0b7694d810b",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4.0",
-            "webcreate/jquery-ias": "^2.2.1",
-            "yiisoft/yii2": "*"
-        },
-        "time": "2016-07-06T19:56:33+00:00",
-        "type": "yii2-extension",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "kop\\y2sp\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Ivan Koptiev",
-                "email": "ivan.koptiev@codex.systems",
-                "role": "Developer"
-            }
-        ],
-        "description": "Infinite AJAX scrolling for Yii2 ListView widget",
-        "homepage": "http://kop.github.io/yii2-scroll-pager/",
-        "keywords": [
-            "pager",
-            "pagination",
-            "scroll",
-            "scrolling",
-            "yii",
-            "yii2"
-        ]
-    },
-    {
         "name": "bower-asset/bootstrap",
         "version": "v3.3.7",
         "version_normalized": "3.3.7.0",
@@ -3169,5 +3119,55 @@
             "bower-asset-main": "dist/typeahead.bundle.js"
         },
         "installation-source": "dist"
+    },
+    {
+        "name": "kop/yii2-scroll-pager",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kop/yii2-scroll-pager.git",
+            "reference": "9b9727ce441fbfc487044535ab6ce0b7694d810b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kop/yii2-scroll-pager/zipball/9b9727ce441fbfc487044535ab6ce0b7694d810b",
+            "reference": "9b9727ce441fbfc487044535ab6ce0b7694d810b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0",
+            "webcreate/jquery-ias": "^2.2.1",
+            "yiisoft/yii2": "*"
+        },
+        "time": "2016-07-06T19:56:33+00:00",
+        "type": "yii2-extension",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "kop\\y2sp\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ivan Koptiev",
+                "email": "ivan.koptiev@codex.systems",
+                "role": "Developer"
+            }
+        ],
+        "description": "Infinite AJAX scrolling for Yii2 ListView widget",
+        "homepage": "http://kop.github.io/yii2-scroll-pager/",
+        "keywords": [
+            "pager",
+            "pagination",
+            "scroll",
+            "scrolling",
+            "yii",
+            "yii2"
+        ]
     }
 ]

@@ -179,6 +179,8 @@ class ProfileController extends Controller
         }
         if(Yii::$app->request->isAjax){
         return $this->renderAjax('update', compact('model'));
+        }else{
+            return $this->render('update', compact('model'));
         }
     }
     public function actionMyVideos()
@@ -200,7 +202,7 @@ class ProfileController extends Controller
 
     public function actionFavorites()
     {   
-        $model = Video::find()->with('profile')->joinWith(['favorites.profile' =>
+        $model = Video::find()->with('profile')->joinWith(['likes.profile' =>
             function (ActiveQuery $query){
             $query->where(['profile.id'=>Yii::$app->user->id]);
       }])->all();

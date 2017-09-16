@@ -9,7 +9,7 @@ class m170822_141013_video extends Migration
          $this->createTable('{{%video}}', [
             'id' => $this->primaryKey(11),
             'profile_id' => $this->integer(11)->notNull(),
-            'srс' => $this->string(255),
+            'src' => $this->string(255)->notNull(),
             'preloader' => $this->string(255)->notNull(),
             'name' => $this->string(255)->notNull(),
             'description' => $this->string(1000)->notNull(),

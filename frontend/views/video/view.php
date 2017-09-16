@@ -18,7 +18,7 @@ $this->title = $model->name;
             style="width: 100%">
             <source src="<?= $model->src?>" type='video/mp4'>
             <p class="vjs-no-js">
-                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                Ты что не видишь - видео загружается
                 <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
             </p>
         </video>
@@ -37,32 +37,36 @@ $this->title = $model->name;
         <h1 style="margin: 0;padding: 10px;font-size: 23px "><?=$model->name?></h1>
         <img style="width: 70px; float: left" src="<?=empty($model->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->profile->avatar?>" alt="">
         <div style="margin-left: 10px; float: left">
-            <a href="<?=Url::to(['/profile', 'id' => $model->profile->id, 'name' => $model->profile->nickname])?>"><?=$model->profile->nickname?></a>
-            <?php Pjax::begin(['enablePushState' => false]);?>
-            <?php if($favorites == 0):?>
-            <span class="vote plus" title="В понравившиеся видео"><a href="<?=Url::to(['video/view', 'id' => $id, 'favorites' => 'favorites'])?>">В избранное <i class="fa fa-plus" aria-hidden="true"></i></a></span>
-            <?php else:?>
-            <span  class="vote plus" title="Убрть из понравившиеся видео"><a href="<?=Url::to(['video/view', 'id' => $id, 'favorites' => 'favorites'])?>">Убрать из избранного <i  class="fa fa-minus" aria-hidden="true"></i></a></span>
-            <?php endif;?>
-            <?php Pjax::end();?>
-            <?php Pjax::begin(['enablePushState' => false]);?>
-            <?php if($likes == 0):?>
-            <span class="vote plus" title="Поставить лайк"><a href="<?=Url::to(['video/view', 'id' => $id, 'like' => 'like'])?>"><i class="fa fa-thumbs-up"></i></a> <?=count($model->likes)?></span>
-            <?php elseif($likes == 1):?>
-            <span class="vote plus" title="Убрать лайк"><a href="<?=Url::to(['video/view', 'id' => $id, 'like' => 'like'])?>"><i class="fa fa-thumbs-o-up"></i></a> <?=count($model->likes)?></span>
-            <?php endif;?>
-            <?php Pjax::end();?>
-        </div>
-        <p style="float: right;">Просмотры<br><i class="fa fa-eye" style="float: right" aria-hidden="true"> <?=$model->views?></i></p>
-        <?php Pjax::begin(['enablePushState' => false]);?>
-        <?php if ($subscription == 0): ?>
-        <a href="<?= Url::to(['/video/view', 'id'=>$id, 'user_id' => $model->profile_id])?>">Подписатся</a>
-        <?php else: ?>
-        <a href="<?= Url::to(['/video/view', 'id'=>$id, 'user_id' => $model->profile_id])?>">Отписаться</a>
-        <?php endif;?>
-        <?php Pjax::end();?>
-    </div>
 
+        <?php Pjax::begin(['enablePushState' => false]);?>
+            <a href="<?=Url::to(['/profile', 'id' => $model->profile->id, 'name' => $model->profile->nickname])?>"><?=$model->profile->nickname?></a>
+
+            <span>
+            <a href="<?=Url::to(['/video/view', 'id' => $model->id, 'idproflike' => $profile->id])?>">
+            <?php if($likes):?> 
+               <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <?php else:?>
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+            <?php endif;?>
+            </a>
+            <?=count($model->likes);?>
+            </span>
+
+            <span>
+            <a href="<?=Url::to(['/video/view', 'id' => $model->id, 'idprofsub' => $profile->id, 'idsubuser' => $model->profile->id])?>">
+            <?php if($subs):?> 
+               Отписаться
+            <?php else:?>
+               Подписаться
+            <?php endif;?>
+            </a>
+            </span>
+
+        <?php Pjax::end();?>
+        </div>
+        <p style="float: right;">Просмотры<br><i class="fa fa-eye" style="float: right" aria-hidden="true"> <?=$views?></i></p>
+
+        </div>
 
     <?php $months = array( 1 => 'Января' , 'Февраля' , 'Марта' , 'Апреля' , 'Мая' , 'Июня' , 'Июля' , 'Августа' , 'Сентября' , 'Октября' , 'Ноября' , 'Декабря' );?>
     <div class="description content" style="margin-top: 10px; padding: 20px;">
@@ -130,7 +134,8 @@ $this->title = $model->name;
     'pager' => ['class' => \kop\y2sp\ScrollPager::className()],
     'viewParams' => [
     'video' => $model,
-    'comment' => $comment
+    'comment' => $comment,
+    'profile' => $profile
     ]
     
 

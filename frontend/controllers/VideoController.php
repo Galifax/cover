@@ -99,54 +99,53 @@ class VideoController extends Controller
             \Yii::$app->getSession()->setFlash('success', 'Сообщение отправлено');
             $comments = new Comments();
         }
-
-        if(isset($_GET['favorites'])){
-        $favorites = Favorites::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->count();
-        if($favorites == 0){
-        $model1 = new Favorites();
-        $model1->profile_id = Yii::$app->user->identity->id;
-        $model1->video_id = $id;
-        $model1->save();
-           }else{
-            $favorites = Favorites::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->one();
-            $favorites->delete();
-           }
-        }
-
-        if(isset($_GET['user_id'])){
-        $subscription = Subscription::find()->where(['user_profile_id' => $_GET['user_id'], 'my_profile_id' => Yii::$app->user->identity->id])->count();
-        if($subscription == 0){
-        $model2 = new Subscription();
-        $model2->my_profile_id = Yii::$app->user->identity->id;
-        $model2->user_profile_id = $_GET['user_id'];
-        $model2->date = date('Y-m-d H:i:s');
-        $model2->save();
-           }else{
-            $subscription = Subscription::find()->where(['user_profile_id' => $_GET['user_id'], 'my_profile_id' => Yii::$app->user->identity->id])->one();
-            $subscription->delete();
-           }
-        }
-
-        if(isset($_GET['like'])){
-        $likes = Likes::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->count();
-        if($likes == 0){
-        $model3 = new Likes();
-        $model3->profile_id = Yii::$app->user->identity->id;
-        $model3->video_id = $id;
-        $model3->save();
-           }else{
-            $likes = Likes::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->one();
-            $likes->delete();
-           }
-        }
         $profile = Profile::find()->where(['id' => Yii::$app->user->id])->one();
+
+
+        if($_GET['idproflike']){
+            $like = Likes::find()->where(['video_id' => $_GET['id'], 'profile_id' => $_GET['idproflike']])->count();
+            if($like == 0){
+                $like = new Likes();
+                $like->video_id = $_GET['id'];
+                $like->profile_id = $_GET['idproflike'];
+                $like->save();
+            }else{
+                $like = Likes::find()->where(['video_id' => $_GET['id'], 'profile_id' => $_GET['idproflike']])->one();
+                $like->delete();
+            }
+        }
+
+        $likes = Likes::find()->where(['video_id' => $id, 'profile_id' => $profile->id])->count();
+
+
+     
+
         
         
 
         $model = Video::find()->where(['id' => $id])->with(['profile.videos', 'category.video' 
             => function($query) use($id){
             $query->where(['!=', 'id', $id ])->limit(3)->with('profile');
-        }, 'favorites', 'likes'])->one();
+        }, 'likes'])->one();
+
+
+        
+
+         if($_GET['idprofsub']){
+            $sub = Subscription::find()->where(['my_profile_id' => $_GET['idprofsub'], 'user_profile_id' => $_GET['idsubuser']])->count();
+            if($sub == 0){
+                $sub = new Subscription();
+                $sub->my_profile_id = $_GET['idprofsub'];
+                $sub->user_profile_id = $_GET['idsubuser'];
+                $sub->date = date("Y-m-d H:i:s ");
+                $sub->save();
+            }else{
+              $sub = Subscription::find()->where(['my_profile_id' => $_GET['idprofsub'], 'user_profile_id' => $_GET['idsubuser']])->one();
+                $sub->delete();
+            }
+        }
+        $subs =   $sub = Subscription::find()->where(['my_profile_id' =>$profile->id, 'user_profile_id' => $model->profile->id])->count();
+
 
         $comm = Comments::find()->with(['comments.profile', 'profile'])->where(['video_id' => $id])->limit(2)->andWhere(['parent_id' => 0])->all();
         
@@ -161,29 +160,16 @@ class VideoController extends Controller
         
         $views = View::find()->where(['ip' => $_SERVER['REMOTE_ADDR'], 'video_id' => $id])->one();
 
-        if(empty($views->date) or date('Y-m-d H:i:s', strtotime($views->date) + 3600) < date('Y-m-d H:i:s')){
-                $model->views+=1;
-                $model->save();
-                if(!empty($views)){
-                $views->date = date('Y-m-d H:i:s');
-                $views->save();
-            } 
-                if(empty($views)){
-                $view = new View();
-                $view->video_id = $id;
-                $view->ip = $_SERVER['REMOTE_ADDR'];
-                $view->date = date('Y-m-d H:i:s');
-                $view->save();
-            }
+        if(!$views){
+            $views = new View();
+            $views->video_id = $id;
+            $views->ip = $_SERVER['REMOTE_ADDR'];
+            $views->date = date('Y-m-d H:i:s');
+            $views->save();
         }
+        $views = View::find()->where(['video_id' => $id])->count();
 
-    
-      
-
-        // echo "<pre>";
-        // print_r($model->likes);
-        // echo "</pre>";
-        return $this->render('view', compact('dataProvider', 'model', 'comm', 'pages', 'id', 'favorites', 'likes', 'comments', 'profile', 'subscription', 'comm'));
+        return $this->render('view', compact('dataProvider', 'model', 'comm', 'pages', 'id', 'likes', 'comments', 'profile', 'subscription', 'comm', 'subs', 'views'));
     }
     public function actionSearch($id = Null, $s = Null, $name = Null){
                $model = Video::find()->with('profile')->andFilterWhere(['like', 'video.name', $s])->joinWith(['category' => function(ActiveQuery $query) use($id){
