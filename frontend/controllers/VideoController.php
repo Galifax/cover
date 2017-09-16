@@ -104,6 +104,7 @@ class VideoController extends Controller
         $favorites = Favorites::find()->where(['video_id' => $id, 'profile_id' => Yii::$app->user->identity->id])->count();
         if($favorites == 0){
         $model1 = new Favorites();
+        $model1->date = date('Y-m-d H:i:s');
         $model1->profile_id = Yii::$app->user->identity->id;
         $model1->video_id = $id;
         $model1->save();
