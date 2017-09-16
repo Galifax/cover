@@ -200,7 +200,7 @@ class ProfileController extends Controller
 
     public function actionFavorites()
     {   
-        $model = Video::find()->with('profile')->joinWith(['favorites.profile' =>
+        $model = Video::find()->with('profile')->joinWith(['likes.profile' =>
             function (ActiveQuery $query){
             $query->where(['profile.id'=>Yii::$app->user->id]);
       }])->all();
