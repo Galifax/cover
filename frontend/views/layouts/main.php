@@ -43,43 +43,102 @@ AppAsset::register($this);
 <div class="wrap color-1" style="padding-bottom: 0px;">
 
     <!-- Second navbar for sign in -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                    <button id="sidebar-r" class="sidebar-toggle fa fa-user-o " style="font-size: 30px;color: #D6B1E5;vertical-align: middle; padding: 10px 0;"></button>
+                <a href="/">
+                    <img  src="/img/logo.png" style=" margin: 0 auto; width: 100%;max-width: 180px;padding: 0px 10px ">
+                </a>
 
-        <nav class="navbar navbar-fixed-top">
-            <div id="navbar">
-                <div class="container-fluid">
-                    <div class="row row1">
-                        <div class="col-xs-3 col-sm-1">
-                            <button id="sidebar-r" class="sidebar-toggle fa fa-bars " style="font-size: 30px;color: #D6B1E5;"></button>
-                        </div>
-                        <div class="col-sm-3 col-md-2 col-xs-6 text-center">
-                            <a href="/">
-                            <img  src="/img/logo.png" style=" margin: 0 auto; width: 100%;max-width: 180px ">
-                            </a>
-                        </div>
-                        <div class="navbar-search smallsearch col-sm-7 col-md-6 hidden-xs">
-                        <form action="<?=Url::to(['/video/search'])?>">
-                            <div class="row">
-                                   <div id="custom-search-input">
-                                                    <div class="input-group ">
-                                                        <input type="text" class="search-query form-control" placeholder="Поиск" value="<?=$_GET['s']?>" name="s"/>
-                                                        <span class="input-group-btn">
-                                                            <button class="btn" type="submit">
-                                                                <span class=" glyphicon glyphicon-search"></span>
-                                                            </button>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                            </div>
-                            </form>
-                        </div>
-                        <div class="col-md-2"></div>
-                        <div class="col-xs-3 col-sm-1 text-right">
-                            <button id="sidebar-l" class="sidebar-toggle fa fa-bars hidden" style="font-size: 30px;color: #D6B1E5;"></button>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </nav>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="col-md-6 col-md-push-2">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+                </div>
+                <div class="hidden-xs">
+                <br>
+                <br>
+                <br>
+                </div>
+
+
+<!--                        <div class="form-group">-->
+<!--                            <input type="text" class="form-control" placeholder="Search">-->
+<!--                        </div>-->
+<!--                        <button type="submit" class="btn btn-default">Submit</button>-->
+<!--                    </form>-->
+                    <form class="col-md-6 col-md-push-3"action="<?=Url::to(['/video/search'])?>">
+                                                    <div class="row">
+                                                           <div id="custom-search-input">
+                                                                            <div class="input-group ">
+                                                                                <input type="text" class="search-query form-control" placeholder="Поиск" value="<?=$_GET['s']?>" name="s"/>
+                                                                                <span class="input-group-btn">
+                                                                                    <button class="btn" type="submit">
+                                                                                        <span class=" glyphicon glyphicon-search"></span>
+                                                                                    </button>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                    </div>
+                                                    </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+<!--        <nav class="navbar navbar-fixed-top">-->
+<!--            <div id="navbar">-->
+<!--                <div class="container-fluid">-->
+<!--                    <div class="row row1">-->
+<!--                        <div class="col-xs-3 col-sm-1">-->
+<!--                            <button id="sidebar-r" class="sidebar-toggle fa fa-bars " style="font-size: 30px;color: #D6B1E5;"></button>-->
+<!--                        </div>-->
+<!--                        <div class="col-sm-3 col-md-2 col-xs-6 text-center">-->
+<!--                            <a href="/">-->
+<!--                            <img  src="/img/logo.png" style=" margin: 0 auto; width: 100%;max-width: 180px ">-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="navbar-search smallsearch col-sm-7 col-md-6 hidden-xs">-->
+<!--                        <form action="--><?//=Url::to(['/video/search'])?><!--">-->
+<!--                            <div class="row">-->
+<!--                                   <div id="custom-search-input">-->
+<!--                                                    <div class="input-group ">-->
+<!--                                                        <input type="text" class="search-query form-control" placeholder="Поиск" value="--><?//=$_GET['s']?><!--" name="s"/>-->
+<!--                                                        <span class="input-group-btn">-->
+<!--                                                            <button class="btn" type="submit">-->
+<!--                                                                <span class=" glyphicon glyphicon-search"></span>-->
+<!--                                                            </button>-->
+<!--                                                        </span>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                            </div>-->
+<!--                            </form>-->
+<!--                        </div>-->
+<!---->
+<!--                        <div class="col-xs-3 col-sm-1 text-right">-->
+<!--                            <button id="sidebar-l" class="sidebar-toggle fa fa-bars hidden" style="font-size: 30px;color: #D6B1E5;"></button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </nav>-->
      
 <!--    <button class="sidebar-toggle fa fa-bars primary-navigation" style="font-size: 30px; color: black"></button>-->
 
@@ -273,7 +332,7 @@ AppAsset::register($this);
 
 
 
-        <div class="container" style="min-height: 100vh;">
+        <div style="min-height: 100vh;">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>

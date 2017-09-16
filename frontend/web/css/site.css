@@ -16,11 +16,11 @@ input{
     margin-right: 5px;
 }
 
-*{font-family: 'Droid Serif', serif; }
+*{font-family: 'Droid Serif', serif;color: #E2C86E}
 
 body {  height: 100%;  overflow-x: hidden; word-wrap: break-word;color: white }
 
-a{ color: white;text-decoration: none}
+a{ color: #E2C86E;text-decoration: none}
 
 a:hover{
     color: white;
@@ -142,84 +142,84 @@ a:hover{
 
 /*navbar*/
 
-.primary-navigation {
-    display:inline-block;
-    position:fixed;
-    transition:all 0.4s ease-out;
-    transform:translateX(0px);
-    z-index:3000;
-    top:0px;  left:0px;
-}
+/*.primary-navigation {*/
+    /*display:inline-block;*/
+    /*position:fixed;*/
+    /*transition:all 0.4s ease-out;*/
+    /*transform:translateX(0px);*/
+    /*z-index:3000;*/
+    /*top:0px;  left:0px;*/
+/*}*/
 
 
-.primary-navigation.opened {
+/*.primary-navigation.opened {*/
 
-    transform:translateX(0px) rotateX(180deg) rotateY(180deg) ;
-    transition:all 0.4s ease-out;
+    /*transform:translateX(0px) rotateX(180deg) rotateY(180deg) ;*/
+    /*transition:all 0.4s ease-out;*/
 
-}
+/*}*/
 
 
-.primary-navigation a {
-    color:#fff;
-    padding:10px 10px;
-    display:block;
-}
+/*.primary-navigation a {*/
+    /*color:#fff;*/
+    /*padding:10px 10px;*/
+    /*display:block;*/
+/*}*/
 
-#navbar {
-    background: #33326B;
-    height: 53px;
-}
+/*#navbar {*/
+    /*background: #33326B;*/
+    /*height: 53px;*/
+/*}*/
 
-.row1 {
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
+/*.row1 {*/
+    /*padding-bottom: 10px;*/
+    /*padding-top: 10px;*/
+/*}*/
 
-.navbar-input {
-    padding: 11px 16px;
-    border-radius: 2px 0 0 2px;
-    border: 0 none;
-    outline: 0 none;
-    font-size: 15px;
-    color: #000;
-    border: 1.1px solid black;
-}
+/*.navbar-input {*/
+    /*padding: 11px 16px;*/
+    /*border-radius: 2px 0 0 2px;*/
+    /*border: 0 none;*/
+    /*outline: 0 none;*/
+    /*font-size: 15px;*/
+    /*color: #000;*/
+    /*border: 1.1px solid black;*/
+/*}*/
 
-.nav{padding: 10px; margin-top: -30px;}
+/*.nav{padding: 10px; margin-top: -30px;}*/
 
-.navbar-button-1 {
-    background-color: #ffad1e;
-    border: 1px solid #ffad1e;
-    border-radius: 0 2px 2px 0;
-    color: #1a1a1a;
-    padding: 10px 0;
-    height: 43px;
-    cursor: pointer;
-}
-.navbar-button-2 {
-    background-color: #ffad1e;
-    border: 1px solid #ffad1e;
-    border-radius: 0 2px 2px 0;
-    color: #1a1a1a;
-    padding: 10px 0;
-    height: 43px;
-    cursor: pointer;
-    width: auto;
-    /*-webkit-transform: rotate(90deg); transform: rotate(90deg);*/
-}
+/*.navbar-button-1 {*/
+    /*background-color: #ffad1e;*/
+    /*border: 1px solid #ffad1e;*/
+    /*border-radius: 0 2px 2px 0;*/
+    /*color: #1a1a1a;*/
+    /*padding: 10px 0;*/
+    /*height: 43px;*/
+    /*cursor: pointer;*/
+/*}*/
+/*.navbar-button-2 {*/
+    /*background-color: #ffad1e;*/
+    /*border: 1px solid #ffad1e;*/
+    /*border-radius: 0 2px 2px 0;*/
+    /*color: #1a1a1a;*/
+    /*padding: 10px 0;*/
+    /*height: 43px;*/
+    /*cursor: pointer;*/
+    /*width: auto;*/
+    /*!*-webkit-transform: rotate(90deg); transform: rotate(90deg);*!*/
+/*}*/
 
-@media screen and (min-width: 768px) {
-    .largenav {
-        display: block;
-    }
-    .smallnav{
-        display: none;
-    }
-    .smallsearch{
-        margin: 0px;
-    }
-}
+/*@media screen and (min-width: 768px) {*/
+    /*.largenav {*/
+        /*display: block;*/
+    /*}*/
+    /*.smallnav{*/
+        /*display: none;*/
+    /*}*/
+    /*.smallsearch{*/
+        /*margin: 0px;*/
+    /*}*/
+/*}*/
 
 
 /*navbar*/
@@ -1688,7 +1688,7 @@ Image credits: unsplash.com
     box-shadow: 2px 2px 15px 8px white;
     top: -240px;
     left: -240px;
-    background: url("https://vignette.wikia.nocookie.net/scribblenauts/images/0/0f/Earth_SU.png/revision/latest?cb=20130416212823") 100% 100%;
+    background: url("https://t7.rbxcdn.com/b55b4be1000aa2ab6fb60cdddf2cc729") 100% 100%;
     background-size: cover;
 
 }
@@ -1742,3 +1742,132 @@ Image credits: unsplash.com
     transform: rotateZ(45deg);
     color: white;
 }
+/********************/
+/***TEST*****3D******/
+/********************/
+/*********footer***********/
+.footer-top-layout {
+    background: #1c1c1c none repeat scroll 0 0;
+    color: #ffffff;
+    padding: 40px 0;
+}
+.footer-top-layout h4 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 21px;
+}
+.post-blog-date::after {
+    background: #ffffff none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 4px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    width: 50px;
+}
+.post-blog-date {
+    padding-bottom: 25px;
+    position: relative;
+}
+
+.footer-top-layout [class*="col-sm-"]:first-child {
+    padding: 0;
+}
+.footer-top-layout [class*="col-sm-"] {
+    border-right: 2px solid #333333;
+    padding: 0 0 0 28px;
+
+}
+.footer-top-layout {
+    color: #ffffff;
+}
+.footer-col-item {
+    min-height: 140px;
+}
+
+address {
+    color: #545454;
+}
+
+
+.footer-top-layout [class*="col-sm-"]:last-child {
+    border-right: medium none;
+}
+.footer-top-layout {
+    color: #ffffff;
+}
+
+.footer-top-layout h4 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 21px;
+}
+
+.footer-col-item .item-contact a {
+    color: #545454;
+    display: inline-block;
+    margin-bottom: 7px;
+    width: 100%;
+}
+
+.footer-col-item .item-contact a .link-id {
+    color: #ffffff;
+    margin-left: 0;
+    margin-right: 6px;
+}
+.footer-col-item span {
+    margin-left: 7px;
+}
+.footer-col-item .item-contact a {
+    color: #545454;
+}
+
+.footer-top-layout h4 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 21px;
+}
+.signUpNewsletter {
+    position: relative;
+}
+.signUpNewsletter .gt-email {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid #666666;
+    border-radius: 0;
+    color: #ffffff;
+    height: 52px;
+}
+.signUpNewsletter .btn-go {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border-color: #666666;
+    border-style: solid;
+    border-width: 0 0 0 1px;
+    bottom: 0;
+    color: #ffffff;
+    font-size: 16px;
+    position: absolute;
+    right: 0;
+    text-transform: uppercase;
+    top: 0;
+    width: 52px;
+}
+.footer-bottom-layout {
+    background: #222222 none repeat scroll 0 0;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.socialMedia-footer {
+    margin-bottom: 20px;
+}
+.socialMedia-footer > a {
+    display: inline-block;
+    margin: 0 8px;
+}
+.footer-bottom-layout {
+    text-align: center;
+}
+
+/*********footer***********/
