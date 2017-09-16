@@ -179,6 +179,8 @@ class ProfileController extends Controller
         }
         if(Yii::$app->request->isAjax){
         return $this->renderAjax('update', compact('model'));
+        }else{
+            return $this->render('update', compact('model'));
         }
     }
     public function actionMyVideos()

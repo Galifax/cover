@@ -42,6 +42,7 @@ $('#modalButton, #modalButton1, #modalButton2, #upload').click(function(){
 });
 
 
+
     /**
      * Created by Kupletsky Sergey on 17.10.14.
      *
