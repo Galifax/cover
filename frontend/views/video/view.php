@@ -44,9 +44,9 @@ $this->title = $model->name;
             <span>
             <a href="<?=Url::to(['/video/view', 'id' => $model->id, 'idproflike' => $profile->id])?>">
             <?php if($likes):?> 
-               <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <i class="fa fa-hand-peace-o" style="color: red;" aria-hidden="true"></i>
             <?php else:?>
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+            <i class="fa fa-hand-peace-o" aria-hidden="true"></i>
             <?php endif;?>
             </a>
             <?=count($model->likes);?>
