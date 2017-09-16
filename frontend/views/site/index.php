@@ -9,6 +9,7 @@ $this->title = 'My Yii Application';
 
     <div class="hidden-sm hidden-xs">
         <div class="container1">
+            <div class="item1 img-earth"></div>
             <div class="carousel1" style="background: ">
                 <?php $n = 0?>
                 <?php foreach($newest as $new):?>
@@ -81,19 +82,6 @@ $this->title = 'My Yii Application';
 
                 </div>
                 <?php endforeach;?>
-                
-
-                <div class="item1 center12"></div>
-                <div class="item1 center22"></div>
-                <div class="item1 center32"></div>
-                <div class="item1 center42"></div>
-                <div class="item1 center52"></div>
-                <div class="item1 center62"></div>
-                <div class="item1 center72"></div>
-                <div class="item1 center82"></div>
-                <div class="item1 center92"></div>
-
-                
                 <?php $n = 0?>
                 <?php foreach($random as $rand):?>
                 <?php $n += 1?>

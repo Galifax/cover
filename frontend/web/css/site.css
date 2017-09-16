@@ -1659,6 +1659,7 @@ Image credits: unsplash.com
     color: #FFF;
     opacity: 0.95;
     border-radius: 10px;
+    backface-visibility: hidden;
 }
 
 
@@ -1680,27 +1681,17 @@ Image credits: unsplash.com
 .center9 {  transform: rotateY(320deg) translateZ(340px);    }
 
 
-.center12, .center22, .center32, .center42, .center52, .center62, .center72, .center82, .center92{
-    height: 600px;
-    width: 600px;
+.img-earth{
+    height: 680px;
+    width: 680px;
     border-radius: 50%;
-    box-shadow: 2px 2px 15px 8px black;
-    top: -200px;
-    left: -200px;
-    background-color: black;
+    box-shadow: 2px 2px 15px 8px white;
+    top: -240px;
+    left: -240px;
+    background: url("https://vignette.wikia.nocookie.net/scribblenauts/images/0/0f/Earth_SU.png/revision/latest?cb=20130416212823") 100% 100%;
+    background-size: cover;
 
 }
-
-.center12 {  transform: rotateY(0deg) translateZ(0px);  }
-.center22 {  transform: rotateY(40deg) translateZ(0px);  }
-.center32 {  transform: rotateY(80deg) translateZ(0px);  }
-.center42 {  transform: rotateY(120deg) translateZ(0px);  }
-.center52 {  transform: rotateY(160deg) translateZ(0px);  }
-.center62 {  transform: rotateY(200deg) translateZ(0px);  }
-.center72 {  transform: rotateY(240deg) translateZ(0px);  }
-.center82 {  transform: rotateY(280deg) translateZ(0px); }
-.center92 {  transform: rotateY(320deg) translateZ(0px); }
-
 .bot1 {  transform: rotateY(0deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
 .bot2 {  transform: rotateY(60deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
 .bot3 {  transform: rotateY(120deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
