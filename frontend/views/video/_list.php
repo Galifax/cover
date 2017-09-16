@@ -4,7 +4,6 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
  ?>  	
- 		
         <div class="media"><!-- Первый уровень коментов-->
         <div class="media-heading">
             <span class="label label-info"><?= $model->profile->nickname?></span> <?= $model->date?>
@@ -79,5 +78,4 @@ use yii\widgets\Pjax;
             </div><!-- медиа боди-->
             </div><!-- Первый уровень коментов \/ вставлять ниже-->
            
-
-            
+        

@@ -1,5 +1,7 @@
 html {}
-
+.container-fluid{
+    background: white;
+}
 img {
     max-width: 100%;
 }
@@ -16,11 +18,13 @@ input{
     margin-right: 5px;
 }
 
-*{font-family: 'Droid Serif', serif;color: #E2C86E}
+*{font-family: 'Droid Serif', serif;color: black}
 
-body {  height: 100%;  overflow-x: hidden; word-wrap: break-word;color: white }
 
-a{ color: #E2C86E;text-decoration: none}
+
+body {  height: 100%;  overflow-x: hidden; word-wrap: break-word;}
+
+a{ text-decoration: none}
 
 a:hover{
     color: white;
@@ -29,16 +33,17 @@ a:hover{
 
 .wrap {  min-height: 100%;  height: auto;  margin: 0 auto -60px;  padding: 0 0 60px;  }
 
-.wrap > .container {  padding: 70px 15px 20px;  }
-
+/*.wrap > .container {  padding: 70px 15px 20px;  }
+*/
 
 .btn:hover { color: white  }
 
 
 
 .content{
-    background: rgba(0,0,0,0.8);
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+/*    background: rgba(0,0,0,0.8);
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);*/
+    background: white;
     border-radius: 5px;
 
 }
@@ -97,8 +102,11 @@ a:hover{
 }
 /*Colors*/
 
-.color-1{background: url(http://eishalle-darmstadt.de/wp-content/uploads/2014/06/ed-konzert-bg-12.jpg) no-repeat center center fixed;
+/*.color-1{background: url(http://eishalle-darmstadt.de/wp-content/uploads/2014/06/ed-konzert-bg-12.jpg) no-repeat center center fixed;}
+*/
 
+.color-1{
+    background: url(/avatars/bg.jpg)
 }
 
 .color-2{background-color: #6695C1}
@@ -263,7 +271,7 @@ a:hover{
     }
 }
 
-.profile {  margin: 20px 0; background-color: rgba(0,0,0,0.8) ; }
+.profile {  margin: 20px 0; background-color: white ; }
 
 /* Profile sidebar */
 .profile-sidebar {  padding: 10px 0 10px 0; }
@@ -329,7 +337,6 @@ a:hover{
     margin: 0 0 10px;
     font-size: 13px;
     line-height: 1.42857143;
-     color: white;
     word-break: break-all;
     word-wrap: break-word;
      background:none ;

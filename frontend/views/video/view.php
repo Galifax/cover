@@ -88,7 +88,8 @@ $this->title = $model->name;
             'xs' => 12,
         ]);?>
     </div>
-  <?php Pjax::begin(['enablePushState' => false]);?>
+    <?php Pjax::begin();?>
+
     <div class="my-video-video content" style="width: 100%; margin-top: 16px;border: none">
         <div class="" style="padding: 15px"><!-- стиль-->
         <div class="post-comments"><!-- Начало ковентов-->
@@ -148,7 +149,7 @@ $this->title = $model->name;
             </div><!-- Начало ковентов-->
             </div><!-- стиль-->
             </div> <!-- мои видео задник-->
-            <?php Pjax::end();?>
+        <?php Pjax::end();?>
 
 
       

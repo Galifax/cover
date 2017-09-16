@@ -43,7 +43,7 @@ AppAsset::register($this);
 <div class="wrap color-1" style="padding-bottom: 0px;">
 
     <!-- Second navbar for sign in -->
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -332,7 +332,7 @@ AppAsset::register($this);
 
 
 
-        <div style="min-height: 100vh;">
+        <div class="container" style="min-height: 100vh;">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
