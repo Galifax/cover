@@ -40,7 +40,9 @@ class Video extends \yii\db\ActiveRecord
             [['profile_id', 'name', 'description', 'date', 'category_id', 'preloader', 'src'], 'required'],
             [['profile_id', 'category_id', 'views'], 'integer'],
             [['date'], 'safe'],
-            [['file', 'file2' ], 'file'],
+            [['file'], 'file', 'extensions' => 'mp4, avi'],
+            [['file2'], 'file', 'extensions' => 'png, jpg'],
+
             [['name'], 'string', 'max' => 255],
             [['description'], 'string', 'max' => 1000],
            

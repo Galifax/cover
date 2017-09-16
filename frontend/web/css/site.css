@@ -18,7 +18,7 @@ input{
     margin-right: 5px;
 }
 
-*{font-family: 'Droid Serif', serif;color: black}
+*{font-family: 'Droid Serif', serif;}
 
 
 
@@ -496,8 +496,8 @@ td, th {
 /****** LOGIN MODAL ******/
 .modal-content{
     position: relative;
-    background-color: rgba(0, 0, 0, .7);
-    -webkit-background-clip: padding-box;
+/*    background-color: rgba(0, 0, 0, .7);
+*/    -webkit-background-clip: padding-box;
     background-clip: padding-box;
     border-radius: 5px;
     outline: 0;
