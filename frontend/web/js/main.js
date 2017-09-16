@@ -155,14 +155,15 @@ $('#modalButton, #modalButton1, #modalButton2, #upload').click(function(){
     //3d Test
     //*****************************
     var carousel1 = $(".carousel1"),
-        currdeg  = 0
+    currdeg  = 0
+
 
     $(".next1").on("click", { d: "n1" }, rotate);
     $(".prev1").on("click", { d: "p1" }, rotate);
 
-    $("#comments-content").emojioneArea({
-       pickerPosition: "bottom" 
-    });
+    // $("#comments-content").emojioneArea({
+    //    pickerPosition: "bottom"
+    // });
 
 
 
@@ -180,6 +181,7 @@ $('#modalButton, #modalButton1, #modalButton2, #upload').click(function(){
             "-o-transform": "rotateY("+currdeg+"deg)",
             "transform": "rotateY("+currdeg+"deg)"
         });
+
 
     }
 

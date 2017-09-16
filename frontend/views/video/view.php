@@ -10,7 +10,7 @@ use frontend\models\Comments;
 $this->title = $model->name;
 // echo substr(md5(uniqid()), 0, 20);
 ?>
-<div class="col-sm-8 padding-30 " style="margin: 0px" >
+<div class="col-sm-8 col-xs-12 padding-30 " style="margin: 0px" >
     <div style="width: 100%;" >
         
         <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto"
@@ -79,7 +79,7 @@ $this->title = $model->name;
     </div>
 
 
-    <div class="col-sm-4 content visible-xs" style="margin-top: 15px;">
+    <div class="col-sm-4 content col-xs-12 visible-xs" style="margin-top: 15px;">
         <?= $this->render('../_video', [
             'model' => $model->category->video,
             'lg' => 12,
