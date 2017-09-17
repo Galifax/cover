@@ -10,6 +10,8 @@ use frontend\models\Comments;
 $this->title = $model->name;
 // echo substr(md5(uniqid()), 0, 20);
 ?>
+
+<div class="container">
 <div class="col-sm-8 col-xs-12 padding-30 " style="margin: 0px" >
     <div style="width: 100%;" >
         
@@ -181,4 +183,4 @@ $this->title = $model->name;
         $parent.find('.glyphicon').not(currentIcon).removeClass('glyphicon-minus').addClass('glyphicon-plus');
         });
         </script>
-    
+</div>
