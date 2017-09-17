@@ -392,7 +392,6 @@ a:hover{
 .content-title h3 a{color:#34495E;text-decoration:none; transition: 0.5s;}
 .content-title h3 a:hover{color:#F39C12; }
 .content-footer span a {
-    color: #fff;
     display: inline-block;
     text-decoration: none;
     transition: 0.5s;
@@ -1593,7 +1592,6 @@ Image credits: unsplash.com
 
 .content-footer {
     font-family: sans-serif;
-    background-color: rgba(0, 0, 0, .6);
     padding: 5px;
     position: relative;
 }

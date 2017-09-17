@@ -37,12 +37,11 @@ class Video extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['profile_id', 'name', 'description', 'date', 'category_id', 'preloader', 'src'], 'required'],
+            [['profile_id', 'name', 'description', 'date', 'category_id', 'src'], 'required'],
             [['profile_id', 'category_id', 'views'], 'integer'],
             [['date'], 'safe'],
             [['file'], 'file', 'extensions' => 'mp4, avi'],
             [['file2'], 'file', 'extensions' => 'png, jpg'],
-
             [['name'], 'string', 'max' => 255],
             [['description'], 'string', 'max' => 1000],
            

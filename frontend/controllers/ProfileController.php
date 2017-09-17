@@ -92,10 +92,7 @@ class ProfileController extends Controller
       $model->file->saveAs('uploads/'. $substr . '.mp4');
       $model->src = '/uploads/'. $substr . '.mp4';
 
-      $model->file2 = UploadedFile::getInstance($model, 'file2');
-      $model->file2->saveAs('preloader/'. $substr2 . '.jpg');
-      $model->preloader = '/preloader/'. $substr2 . '.jpg';
-
+   
       $model->save();
         return $this->redirect(['/video/view', 'id' => $model->id]);
         } 
