@@ -332,7 +332,7 @@ AppAsset::register($this);
 
 
 
-        <div class="container" style="min-height: 100vh;">
+        <div  style="min-height: 100vh;">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>

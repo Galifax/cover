@@ -8,7 +8,7 @@ return [
             'password' => '',
             'charset' => 'utf8',
 
-            'enableSchemaCache' => true,
+//            'enableSchemaCache' => true,
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
