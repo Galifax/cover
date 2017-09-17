@@ -1,194 +1,200 @@
-<?php
-    use yii\widgets\Pjax;
-    use yii\helpers\Url;
-    use yii\helpers\Html;
-    use yii\widgets\ActiveForm;
-    use yii\jui\DatePicker;
-    $this->title = 'Профиль | '. $model->nickname ? $model->nickname : 1;
-    ?>
-    <?php if ($id==Yii::$app->user->id):?>
-
-        <div class="row profile ">
-<!--    margin: -20px 15px 0px 18px;-->
-
-
-            <div class="fb-profile">
-                <div class="img-bg" style="background: url(<?=empty($model->background)? 'http://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg' : $model->background?>) 100% 100% no-repeat;background-size: cover;">
-<!--                     <img align="left" class="fb-image-lg" src="--><?//=empty($model->background)? 'http://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg' : $model->background?><!--"/>-->
-                </div>
-                <img align="left" class="fb-image-profile thumbnail"  src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>" alt="Profile image example"/>
-                 <div class="fb-profile-text">
-                    <h1>Профиль: <?= $model->nickname?></h1>
-                </div>
-            </div>
-            <hr>
-         
-            <div class="clearfix"></div>
-            
-                <div class="col-md-3">
-
-                        <div class="panel-default">
-                            <div class="panel-body">
-                                <div class="media" style="border: none">
-
-                                    <div style="height: 30px">
-
-                                            <?= Html::button('Редактировать', ['value' => Url::to(['/profile/edit', 'id'=>$model->id]) , 'style' => 'width: 100%', 'class' => 'btn btn-success' , 'id' => 'modalButton2']) ?>
-
-                                    </div>
-                                    <ul class="list-group">
-                                        <hr>
-                                        <li class="list-group-item text-right"><span class="pull-left">Имя</span> <?= $model->name?></li>
-                                        <hr>
-                                        <li class="list-group-item text-right"><span class="pull-left">Пол</span> <?= $model->floor?></li>
-                                        <hr>
-                                        <li class="list-group-item text-right"><span class="pull-left">Страна</span> <?= $model->country?></li>
-                                        <hr>
-                                        <li class="list-group-item text-right"><span class="pull-left">Дата рождения</span> <?= $model->born?></li>
-                                        <hr>
-                                        <li class="list-group-item text-right"><span class="pull-left">Контакты</span> <?= $model->contacts?></li>
-                                        <hr>
-                                        <li class="list-group-item"><span class="">Любимая музыка</span><br><?= $model->favorites?> </li>
-                                        <hr>
-                                        <li class="list-group-item"><span class="pull-left">О себе</span><br> <?= $model->about_myself?></li>
-                                        <hr>
-                                    </ul>
-
-                              </div>
-                       </div>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    
-                    <h2 class="text-center">Коментарии к моим видео</h2>
-
-                    <h2 class="text-center">Коментариев нет (если коментов нет)</h2>
-                      
-                       <div class="row"><!-- Ров1-->
-                         <?php Pjax::begin();?>
-                       <?php foreach($comments as $comment):?>
-
-                        <div class="media"><!-- Первый уровень коментов-->
-
-                            <div class="media-heading">
-                                 <span class="label label-info"><?= $comment->profile->nickname?></span> <?= $comment->date?>
-                            </div>
-
-                                <div class="media-left">
-                                  <?php $form = ActiveForm::begin([
-                                        'options' => ['data-pjax' => true]
-                                    ]);?>
-                                       <input type="hidden" name="id" value="<?=$_GET['id']?>">
-                                       <input type="hidden" name="name" value="<?=$_GET['name']?>">
-                                       <input type="checkbox" name="is_view" id="is<?=$comment->id?>" value="<?=$comment->id?>" >
-                                       <input type="submit">
-                                   <?php ActiveForm::end();?>
-                                   <img class="media-object img-rounded img1" src="<?=empty($comment->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $comment->profile->avatar?>" alt="">
-                                </div>
-                                <!-- media-left -->
-
-
-                                <div class="media-body"> <!-- комментарий пользователя не имеет ответа -->
-
-                                    <p><?= $comment->content?></p>
-                                    <div class="comment-meta">
-                                          <span>
-                                        <a class="" role="button" data-toggle="collapse" href="#collapse1<?=$comment->id?>" aria-expanded="false" aria-controls="collapseExample">Ответить</a>
-                                        </span>
-                                        <span><a href="#">Удалить</a></span>
-                                        <span><a href="#">Редактировать</a></span>
-                                  
-                                        <span style="float:right"><a href="#">Лайк!</a></span>
-                                        
-                                      <div class="collapse" id="collapse1<?=$comment->id?>">
-                <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]]); ?>
-                <?= $form->field($com, 'parent_id')->hiddenInput(['value' => $comment->id])->label(false) ?>
-                <?= $form->field($com, 'video_id')->hiddenInput(['value' => $model->id])->label(false) ?>
-                <?= $form->field($com, 'profile_id')->hiddenInput(['value' => $comment->video->profile->id])->label(false) ?>
-                <?= $form->field($com, 'date')->hiddenInput(['value' => date('Y-m-d H:i:s')])->label(false) ?>
-                <?= $form->field($com, 'content')->textArea()->label('Текст') ?>
-                <div class="form-group">
-                    <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
-                </div>
-                <?php ActiveForm::end(); ?>
-                                      </div>
-                                        
-
-                                    </div>
-
-                                </div><!-- медиа боди-->
-
-                        </div><!-- Первый уровень коментов \/ вставлять ниже-->
-                    <?php endforeach;?>
-                      <?php Pjax::end();?>
-                    </div><!-- Ров1-->
-                  
-                    
-            </div>
-
-    <?php else:?>
-    <div class="row profile">
-
+<div class="container">
+    <div class="row">
         <div class="fb-profile">
-            <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
-            <img align="left" class="fb-image-profile thumbnail"  src="<?=empty($model->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->avatar?>" alt="Profile image example"/>
+            <img align="left" class="fb-image-lg " src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
+            <img align="left" class="fb-image-profile thumbnail" src="http://lorempixel.com/180/180/people/9/" alt="Profile image example"/>
             <div class="fb-profile-text">
-                <h1>Профиль: <?= $model->nickname?></h1>
+                <h1>Eli Macy</h1>
+
             </div>
         </div>
-        <hr>
-        <div class="clearfix"></div>
+    </div>
+</div> <!-- /container fluid-->
+<div class="container">
+    <div class="col-sm-12">
 
-                <div class="col-md-3">
+        <div data-spy="scroll" class="tabbable-panel">
+            <div class="tabbable-line">
+                <ul class="nav nav-tabs ">
+                    <li class="active">
+                        <a href="#tab_default_1" data-toggle="tab">
+                            About Her </a>
+                    </li>
+                    <li>
+                        <a href="#tab_default_2" data-toggle="tab">
+                            Education& Career</a>
+                    </li>
+                    <li>
+                        <a href="#tab_default_3" data-toggle="tab">
+                            Family Details</a>
+                    </li>
+                    <li>
+                        <a href="#tab_default_4" data-toggle="tab">
+                            Desire Partner</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab_default_1">
+
+                        <p>
+                            My daughter  is good looking, with pleasant personality, smart, well educated, from well cultural and  a religious family background. having respect in heart for others.
+                            would like to thanks you for visiting through my daughter;s profile.
+                            She has done PG in Human Resources after her graduation.
+                            At present working IN INSURANCE sector as Manager Training .
+                        </p>
+                        <h4>About her Family</h4>
+                        <p>
+                            About her family she belongs to a religious and a well cultural family background.
+                            Father - Retired from a Co-operate Bank as a Manager.
+                            Mother - she is a home maker.
+                            1 younger brother - works for Life Insurance n manages cluster.
+                        </p>
+                        <h4>Education </h4>
+                        <p>I have done PG in Human Resourses</p>
+                        <h4>Occupation</h4>
+                        <p>At present Working in Insurance sector</p>
+
+                    </div>
+                    <div class="tab-pane" id="tab_default_2">
+                        <p>
+                            Education& Career
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="email">Highest Education:</label>
+                                    <p> MBA/PGDM</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+
+                            </div>
+                        </div>
 
 
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="media"style="border: none;">
 
-                                <ul class="list-group">
-                                    <hr>
-                                    <li class="list-group-item text-right"><span class="pull-left">Имя</span> <?= $model->name?></li>
-                                    <hr>
-                                    <li class="list-group-item text-right"><span class="pull-left">Пол</span> <?= $model->floor?></li>
-                                    <hr>
-                                    <li class="list-group-item text-right"><span class="pull-left">Страна</span> <?= $model->country?></li>
-                                    <hr>
-                                    <li class="list-group-item text-right"><span class="pull-left">Контакты</span> <?= $model->contacts?></li>
-                                    <hr>
-                                    <li class="list-group-item"><span class="">Любимая музыка</span><br><?= $model->favorites?> </li>
-                                    <hr>
-                                    <li class="list-group-item"><span class="pull-left">О себе</span><br> <?= $model->about_myself?></li>
-                                    <hr>
-                                </ul>
+                    </div>
+                    <div class="tab-pane" id="tab_default_3">
+                        <p>
+                            Family Details
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="email">Highest Education:</label>
+                                    <p> MBA/PGDM</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab_default_4">
+                        <p>
+                            Lifestyle
+
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="email">Highest Education:</label>
+                                    <p> MBA/PGDM</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Place of Birth:</label>
+                                    <p> pune, maharashtra</p>
+                                </div>
 
                             </div>
                         </div>
                     </div>
                 </div>
-    </div>
-
-                <div class="col-md-9">
-                    <h2 class="text-center">Видео пользователя</h2>
- <ul class="list-unstyled video-list-thumbs row">
-         <?php foreach($model->videos as $video):?>
-        <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-    
-            <a data-pjax="0" class="video-list-thumbs-a" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="Claudio Bravo, antes su debut con el Barça en la Liga">
-
-                <img src="https://lh3.ggpht.com/AHE17IyTUhPeOst60dZcobobMDip8grLupjfUlNJCZHKulvTMI42A4UqO_jVUduFZOo=h310" alt="Barca" class="img-responsive" height="130px" />
-                <span class="glyphicon glyphicon-play-circle"></span>
-                <span class="duration">03:15</span>
-                <h2><?= $video->name?></h2>
-            </a>
-            <div class="video-text">
-                <p><?= $video->date?></p>
             </div>
-        </li>
-        <?php endforeach;?>
-</ul>   
-            </div>
-            
         </div>
 
-    <?php endif;?>
+    </div>
+
+</div>

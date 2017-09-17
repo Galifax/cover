@@ -53,7 +53,7 @@ AppAsset::register($this);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                    <button id="sidebar-r" class="sidebar-toggle fa fa-user-o " style="font-size: 30px;color: #D6B1E5;vertical-align: middle; padding: 10px 0;"></button>
+                    <button id="sidebar-r" class="sidebar-toggle fa fa-user-o " style="font-size: 30px;color: #E2C86E;vertical-align: middle; padding: 10px 0;"></button>
                 <a href="/">
                     <img  src="/img/logo.png" style=" margin: 0 auto; width: 100%;max-width: 180px;padding: 0px 10px ">
                 </a>
@@ -332,7 +332,7 @@ AppAsset::register($this);
 
 
 
-        <div class="container" style="min-height: 100vh;">
+        <div  style="min-height: 100vh;">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>

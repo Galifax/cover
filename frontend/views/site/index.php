@@ -4,6 +4,7 @@ use yii\widgets\Pjax;
 $this->title = 'My Yii Application';
 ?>
 
+<div class="container">
     <div id="first-slider">
         <div id="carousel-example-generic" class="carousel slide carousel-fade">
             <!-- Indicators -->
@@ -76,10 +77,7 @@ $this->title = 'My Yii Application';
         </div>
     </div>
 
-
-<div class="container-fluid">
-
-    <div class="container hidden-sm hidden-xs"style="margin-top: -15px;margin-bottom: 570px;">
+    <div class=" hidden-sm hidden-xs"style="margin-top: -15px;margin-bottom: 570px;">
         <div class="container1">
             <div class="item1 img-earth"></div>
             <div class="carousel1" style="background: ">

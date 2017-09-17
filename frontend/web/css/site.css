@@ -1,6 +1,6 @@
 html {}
 .container-fluid{
-    background: white;
+    background: #222222;
 }
 img {
     max-width: 100%;
@@ -18,13 +18,13 @@ input{
     margin-right: 5px;
 }
 
-*{font-family: 'Droid Serif', serif;}
+*{font-family: 'Droid Serif', serif; color: #E2C86E}
 
 
 
 body {  height: 100%;  overflow-x: hidden; word-wrap: break-word;}
 
-a{ text-decoration: none}
+a{ text-decoration: none;color: #E2C86E}
 
 a:hover{
     color: white;
@@ -41,15 +41,23 @@ a:hover{
 
 
 .content{
-/*    background: rgba(0,0,0,0.8);
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);*/
-    background: white;
+    background: rgba(0,0,0,0.8);
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
     border-radius: 5px;
 
 }
-
-
-
+.paralax{
+    position: relative;
+    opacity: 0.65;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.paralax-img{
+    background-image: url(http://lorempixel.com/850/280/nightlife/5/);
+    min-height: 400px;
+}
 /* align the logout "link" (button in form) of the navbar */
 
 /*Other stiels*/
@@ -106,7 +114,8 @@ a:hover{
 */
 
 .color-1{
-    background: url(/avatars/bg.jpg)
+    background: url(https://solarsystem.nasa.gov/kids/images/layers/png/background.jpg) no-repeat;
+    background-size: cover;
 }
 
 .color-2{background-color: #6695C1}
@@ -174,10 +183,13 @@ a:hover{
     /*display:block;*/
 /*}*/
 
-/*#navbar {*/
-    /*background: #33326B;*/
-    /*height: 53px;*/
-/*}*/
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+    border: 0px solid transparent;
+    color: #333333;
+}
 
 /*.row1 {*/
     /*padding-bottom: 10px;*/
@@ -495,8 +507,8 @@ td, th {
 /****** LOGIN MODAL ******/
 .modal-content{
     position: relative;
-/*    background-color: rgba(0, 0, 0, .7);
-*/    -webkit-background-clip: padding-box;
+  background-color: rgba(0, 0, 0, .7);*
+   -webkit-background-clip: padding-box;
     background-clip: padding-box;
     border-radius: 5px;
     outline: 0;
@@ -1167,7 +1179,7 @@ Image credits: unsplash.com
     box-shadow: none;
 }
 .sidebar-default {
-    background-color: #33326B
+    background-color: #333333;
 }
 .sidebar-default .sidebar-header {
     background-color: #eceff1;
@@ -1182,7 +1194,7 @@ Image credits: unsplash.com
 }
 .sidebar-default .sidebar-brand:hover,
 .sidebar-default .sidebar-brand:focus {
-    color: #2E9ACB;
+    color: #E2C86E;
     background-color: rgba(255, 255, 255, 0.1);
 }
 .sidebar-default .sidebar-badge {
@@ -1194,10 +1206,10 @@ Image credits: unsplash.com
     background-color: #bdbdbd;
 }
 .sidebar-default .sidebar-text {
-    color: #2E9ACB;
+    color: #E2C86E;
 }
 .sidebar-default .sidebar-nav li > a {
-    color: #2E9ACB;
+    color: #E2C86E;
     background-color: transparent;
 }
 .sidebar-default .sidebar-nav li > a i {
@@ -1205,16 +1217,17 @@ Image credits: unsplash.com
 }
 .sidebar-default .sidebar-nav li:hover > a,
 .sidebar-default .sidebar-nav li > a:hover {
-    color: #33326B;
-    background-color: #D6B1E5;
+    color: gold;
+    background-color: #333333
+;
 }
 .sidebar-default .sidebar-nav li:hover > a i,
 .sidebar-default .sidebar-nav li > a:hover i {
-    color: #757575;
+    color: gold;
 }
 .sidebar-default .sidebar-nav li:focus > a,
 .sidebar-default .sidebar-nav li > a:focus {
-    color: #2E9ACB;
+    color: #dbdbdb;
     background-color: transparent;
 }
 .sidebar-default .sidebar-nav li:focus > a i,
@@ -1224,19 +1237,22 @@ Image credits: unsplash.com
 .sidebar-default .sidebar-nav > .open > a,
 .sidebar-default .sidebar-nav > .open > a:hover,
 .sidebar-default .sidebar-nav > .open > a:focus {
-    color: #2E9ACB;
-    background-color: #D6B1E5;;
+    color: #dbdbdb;
+    background-color: #333333
+;;
 }
 .sidebar-default .sidebar-nav > .active > a,
 .sidebar-default .sidebar-nav > .active > a:hover,
 .sidebar-default .sidebar-nav > .active > a:focus {
-    color: #33326B;
-    background-color: #D6B1E5;
+    color: #dbdbdb;
+    background-color: #333333
+;
 }
 .sidebar-default .sidebar-nav > .disabled > a,
 .sidebar-default .sidebar-nav > .disabled > a:hover,
 .sidebar-default .sidebar-nav > .disabled > a:focus {
-    color: #D6B1E5;
+    color: #333333
+;
     background-color: transparent;
 }
 
@@ -1690,10 +1706,10 @@ Image credits: unsplash.com
     height: 680px;
     width: 680px;
     border-radius: 50%;
-    box-shadow: 2px 2px 15px 8px white;
+    /*box-shadow: 2px 2px 15px 8px white;*/
     top: -240px;
     left: -240px;
-    background: url("https://t7.rbxcdn.com/b55b4be1000aa2ab6fb60cdddf2cc729") 100% 100%;
+    background: url("http://www.pngpix.com/wp-content/uploads/2016/10/PNGPIX-COM-Earth-PNG-Transparent-Image.png") 100% 100%;
     background-size: cover;
 
 }
