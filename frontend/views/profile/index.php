@@ -1,10 +1,18 @@
+<?php  
+  use yii\helpers\Url;
+  use yii\helpers\Html;
+  use yii\widgets\Pjax;
+  use yii\bootstrap\Modal;
+   ?>
+
+
 <div class="container">
     <div class="row">
         <div class="fb-profile">
-            <img align="left" class="fb-image-lg " src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
-            <img align="left" class="fb-image-profile thumbnail" src="http://lorempixel.com/180/180/people/9/" alt="Profile image example"/>
+            <img align="left" class="fb-image-lg " src="<?= $model->background ? $model->background : 'http://lorempixel.com/850/280/nightlife/5/'?>" alt="Profile image example"/>
+            <img align="left" class="fb-image-profile thumbnail" src="<?= $model->avatar ? $model->avatar : 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg'?>" alt="Profile image example"/>
             <div class="fb-profile-text">
-                <h1>Eli Macy</h1>
+                <h1><?= $model->name?></h1>
 
             </div>
         </div>
@@ -18,86 +26,50 @@
                 <ul class="nav nav-tabs ">
                     <li class="active">
                         <a href="#tab_default_1" data-toggle="tab">
-                            About Her </a>
+                            О себе </a>
                     </li>
-                    <li>
+                    <li class="load-profile">
                         <a href="#tab_default_2" data-toggle="tab">
-                            Education& Career</a>
+                            Редактировать</a>
                     </li>
                     <li>
                         <a href="#tab_default_3" data-toggle="tab">
-                            Family Details</a>
+                            Последние комментарии</a>
                     </li>
                     <li>
                         <a href="#tab_default_4" data-toggle="tab">
-                            Desire Partner</a>
+                            Все комментарии</a>
                     </li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab_default_1">
 
-                        <p>
-                            My daughter  is good looking, with pleasant personality, smart, well educated, from well cultural and  a religious family background. having respect in heart for others.
-                            would like to thanks you for visiting through my daughter;s profile.
-                            She has done PG in Human Resources after her graduation.
-                            At present working IN INSURANCE sector as Manager Training .
-                        </p>
-                        <h4>About her Family</h4>
-                        <p>
-                            About her family she belongs to a religious and a well cultural family background.
-                            Father - Retired from a Co-operate Bank as a Manager.
-                            Mother - she is a home maker.
-                            1 younger brother - works for Life Insurance n manages cluster.
-                        </p>
-                        <h4>Education </h4>
-                        <p>I have done PG in Human Resourses</p>
-                        <h4>Occupation</h4>
-                        <p>At present Working in Insurance sector</p>
+                            <p>
+                                <?= $model->about_myself?>
+                            </p>
+                        <h4>Возраст</h4>
+                            <p>
+                                <?= $model->born?>
+                            </p>
+                        <h4>Страна </h4>
+                            <p>
+                                <?= $model->country?>
+                            </p>
+                        <h4>Контакты</h4>
+                            <p>
+                                <?= $model->contacts?>
+                            </p>
+                        <h4>Любимые группы</h4>
+                            <p>
+                                <?= $model->favorites?>
+                            </p>
 
                     </div>
-                    <div class="tab-pane" id="tab_default_2">
-                        <p>
-                            Education& Career
-                        </p>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="email">Highest Education:</label>
-                                    <p> MBA/PGDM</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
+                    <div class="tab-pane" value="/profile/edit?id=1" id="tab_default_2">
+                       <div id="load-profile">
 
-                            </div>
-                        </div>
+                       </div>
+                        
 
 
 
@@ -198,3 +170,4 @@
     </div>
 
 </div>
+

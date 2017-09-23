@@ -1,3 +1,7 @@
+$('.load-profile').click(function(){
+    $('#load-profile').load('/profile/edit?id=1')
+})
+
 $('#input-born').dateDropper();
 
 
