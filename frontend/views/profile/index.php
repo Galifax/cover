@@ -8,7 +8,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="fb-profile">
+        <div class="fb-profile"style="max-height: 400px;width: 100%;">
             <img align="left" class="fb-image-lg " src="<?= $model->background ? $model->background : 'http://lorempixel.com/850/280/nightlife/5/'?>" alt="Profile image example"/>
             <img align="left" class="fb-image-profile thumbnail" src="<?= $model->avatar ? $model->avatar : 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg'?>" alt="Profile image example"/>
             <div class="fb-profile-text">
