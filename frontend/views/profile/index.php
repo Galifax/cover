@@ -75,12 +75,6 @@
 
                     </div>
                     <div class="tab-pane" id="tab_default_3">
-
-                        <div style="overflow:hidden;height: 420px;">
-                            <div id="croppic"></div>
-                            <span class="btn" id="cropContainerHeaderButton">click here to try it</span>
-                        </div>
-
                         <p>
                             Family Details
                         </p>
@@ -123,9 +117,6 @@
 
                             </div>
                         </div>
-
-
-
                     </div>
                     <div class="tab-pane" id="tab_default_4">
                         <p>
