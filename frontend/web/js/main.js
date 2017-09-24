@@ -1,3 +1,9 @@
+$('.viewed').change(function(){
+    $(this.form).ajaxForm({
+        target: '#results'
+    }).submit()
+})
+
 $('.load-profile').click(function(){
     $('#load-profile').load('/profile/edit?id=1')
 })

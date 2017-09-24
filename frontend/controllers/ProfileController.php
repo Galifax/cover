@@ -69,8 +69,8 @@ class ProfileController extends Controller
         if($com->load(Yii::$app->request->post()) && $com->save());
 
         $model = Profile::find()->where(['id' =>$id])->with('user', 'videos')->one();
-        $comments = Comments::find()->InnerJoinWith(['profile', 'video' => function(ActiveQuery $query){
-          $query->where(['video.profile_id' =>Yii::$app->user->id])->with('profile');
+        $comments = Comments::find()->where(['is_viewed' => NULL, 'parent_id' => 0])->InnerJoinWith(['profile', 'video' => function(ActiveQuery $query){
+          $query->where(['video.profile_id' =>Yii::$app->user->id]);
         }])->orderBy(['comments.id' => SORT_DESC])->all();
       //   debug($comments);
         return $this->render('index', compact('model', 'comments', 'com', 'id', 'name'));
@@ -220,6 +220,23 @@ class ProfileController extends Controller
                 'model' => $model,
             ]);
         }
+    }
+
+    public function actionViewed()
+    {
+      $view = Yii::$app->request->post('viewed');
+      foreach($view as $key => $val){
+        $v[] = $key;
+      }
+      $model = Comments::find()->where(['id' => $v])->all();
+      foreach($model as $mod){
+        if ($mod->is_viewed != 1){
+         $mod->is_viewed = 1;
+         $mod->save();
+         echo "<script>$('.h".$mod->id."').hide()</script>";
+         }
+      }
+     
     }
 
 }

@@ -28,6 +28,7 @@ class AppAsset extends AssetBundle
         'http://vjs.zencdn.net/6.2.4/video.js',
         'js/emojionearea.js',
         'https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js',
         'js/main.js',
 
     ];

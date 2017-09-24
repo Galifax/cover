@@ -3,12 +3,18 @@
   use yii\helpers\Html;
   use yii\widgets\Pjax;
   use yii\bootstrap\Modal;
+  use yii\bootstrap\ActiveForm;
+
    ?>
 
 
 <div class="container">
+<div class="cropHeaderWrapper">
+                    <div id="croppic"></div>
+                    <span class="btn" id="cropContainerHeaderButton">click here to try it</span>
+                </div>
     <div class="row">
-        <div class="fb-profile"style="max-height: 400px;width: 100%;">
+        <div class="fb-profile" style="max-height: 400px;width: 100%;">
             <img align="left" class="fb-image-lg " src="<?= $model->background ? $model->background : 'http://lorempixel.com/850/280/nightlife/5/'?>" alt="Profile image example"/>
             <img align="left" class="fb-image-profile thumbnail" src="<?= $model->avatar ? $model->avatar : 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg'?>" alt="Profile image example"/>
             <div class="fb-profile-text">
@@ -75,48 +81,20 @@
 
                     </div>
                     <div class="tab-pane" id="tab_default_3">
-                        <p>
-                            Family Details
-                        </p>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="email">Highest Education:</label>
-                                    <p> MBA/PGDM</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-
-                            </div>
-                        </div>
+                    <?php Pjax::begin();?>
+                      <?php $form = ActiveForm::begin([
+                                'method' => 'post',
+                                'action' => '/profile/viewed'
+                            ])?>
+                        <?php foreach($comments as $com):?>
+                            <li class="h<?=$com->id?>">
+                                <input type="checkbox" name="viewed[<?=$com->id?>]" class="viewed">
+                                <?=$com->content?>
+                            </li>
+                        <?php endforeach;?>
+                        <?php ActiveForm::end();?>
+                    <?php Pjax::end();?>
+                         <div id="results"></div>
                     </div>
                     <div class="tab-pane" id="tab_default_4">
                         <p>
