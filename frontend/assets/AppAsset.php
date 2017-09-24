@@ -19,6 +19,7 @@ class AppAsset extends AssetBundle
         'https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.min.css',
         'css/emojionearea.css',
         'css/site.css',
+        'css/croppic.css',
 
     ];
 
@@ -30,6 +31,8 @@ class AppAsset extends AssetBundle
         'https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js',
         'js/main.js',
+        'js/jquery.mousewheel.min.js',
+        'js/croppic.min.js',
 
     ];
 
