@@ -1,3 +1,5 @@
+
+
 $('.viewed').change(function(){
     $(this.form).ajaxForm({
         target: '#results'
@@ -5,8 +7,13 @@ $('.viewed').change(function(){
 })
 
 $('.load-profile').click(function(){
-    $('#load-profile').load('/profile/edit?id=1')
+    $('#load-profile').load('/profile/edit')
 })
+
+$('.load-comments').click(function(){
+    $('#load-comments').load('/profile/all-comments')
+})
+
 
 $('#input-born').dateDropper();
 

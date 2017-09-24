@@ -9,10 +9,7 @@
 
 
 <div class="container">
-<div class="cropHeaderWrapper">
-                    <div id="croppic"></div>
-                    <span class="btn" id="cropContainerHeaderButton">click here to try it</span>
-                </div>
+
     <div class="row">
         <div class="fb-profile" style="max-height: 400px;width: 100%;">
             <img align="left" class="fb-image-lg " src="<?= $model->background ? $model->background : 'http://lorempixel.com/850/280/nightlife/5/'?>" alt="Profile image example"/>
@@ -40,9 +37,9 @@
                     </li>
                     <li>
                         <a href="#tab_default_3" data-toggle="tab">
-                            Последние комментарии</a>
+                            Непрочитаные комментарии <span class="badge"><?=count($comments)?></span></a>
                     </li>
-                    <li>
+                    <li class="load-comments">
                         <a href="#tab_default_4" data-toggle="tab">
                             Все комментарии</a>
                     </li>
@@ -71,7 +68,7 @@
                             </p>
 
                     </div>
-                    <div class="tab-pane" value="/profile/edit?id=1" id="tab_default_2">
+                    <div class="tab-pane" id="tab_default_2">
                        <div id="load-profile">
 
                        </div>
@@ -81,65 +78,27 @@
 
                     </div>
                     <div class="tab-pane" id="tab_default_3">
-                    <?php Pjax::begin();?>
+                    <?php if($comments):?>
                       <?php $form = ActiveForm::begin([
                                 'method' => 'post',
                                 'action' => '/profile/viewed'
                             ])?>
                         <?php foreach($comments as $com):?>
-                            <li class="h<?=$com->id?>">
-                                <input type="checkbox" name="viewed[<?=$com->id?>]" class="viewed">
-                                <?=$com->content?>
+                            <li class="h<?=$com->id?> prof-com">
+                                <p> <input type="checkbox" name="viewed[<?=$com->id?>]" class="viewed">
+                                <a href="<?=Url::to(['/video/view', 'id' => $com->video->id])?>"><?=$com->video->name?></a></p>
+                                <p><?=$com->profile->nickname?></p> <p><?=$com->content?></p>
+                                <p><?=$com->date?></p>
                             </li>
                         <?php endforeach;?>
                         <?php ActiveForm::end();?>
-                    <?php Pjax::end();?>
-                         <div id="results"></div>
+                        <div id="results"></div>
+                    <?php else:?>
+                        <h2>Новых комментариев нету</h2>
+                    <?php endif;?>
                     </div>
                     <div class="tab-pane" id="tab_default_4">
-                        <p>
-                            Lifestyle
-
-                        </p>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="email">Highest Education:</label>
-                                    <p> MBA/PGDM</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Place of Birth:</label>
-                                    <p> pune, maharashtra</p>
-                                </div>
-
-                            </div>
-                        </div>
+                        <div id="load-comments"></div>
                     </div>
                 </div>
             </div>

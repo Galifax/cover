@@ -239,4 +239,13 @@ class ProfileController extends Controller
      
     }
 
+    public function actionAllComments()
+    {
+          $model = Comments::find()->where(['parent_id' => 0])->InnerJoinWith(['profile', 'video' => function(ActiveQuery $query){
+          $query->where(['video.profile_id' =>Yii::$app->user->id]);
+        }])->orderBy(['comments.id' => SORT_DESC])->all();
+
+          return $this->renderAjax('all-comments', compact('model'));
+    }
+
 }

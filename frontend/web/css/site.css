@@ -1894,3 +1894,11 @@ address {
 }
 
 /*********footer***********/
+
+.prof-com{
+    border: 2px solid white;
+    margin: 5px;
+    list-style-type: none;
+    padding: 10px;
+    border-radius: 10px;
+}
