@@ -103,45 +103,6 @@ AppAsset::register($this);
         </div><!-- /.container-fluid -->
     </nav>
 
-<!--        <nav class="navbar navbar-fixed-top">-->
-<!--            <div id="navbar">-->
-<!--                <div class="container-fluid">-->
-<!--                    <div class="row row1">-->
-<!--                        <div class="col-xs-3 col-sm-1">-->
-<!--                            <button id="sidebar-r" class="sidebar-toggle fa fa-bars " style="font-size: 30px;color: #D6B1E5;"></button>-->
-<!--                        </div>-->
-<!--                        <div class="col-sm-3 col-md-2 col-xs-6 text-center">-->
-<!--                            <a href="/">-->
-<!--                            <img  src="/img/logo.png" style=" margin: 0 auto; width: 100%;max-width: 180px ">-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                        <div class="navbar-search smallsearch col-sm-7 col-md-6 hidden-xs">-->
-<!--                        <form action="--><?//=Url::to(['/video/search'])?><!--">-->
-<!--                            <div class="row">-->
-<!--                                   <div id="custom-search-input">-->
-<!--                                                    <div class="input-group ">-->
-<!--                                                        <input type="text" class="search-query form-control" placeholder="Поиск" value="--><?//=$_GET['s']?><!--" name="s"/>-->
-<!--                                                        <span class="input-group-btn">-->
-<!--                                                            <button class="btn" type="submit">-->
-<!--                                                                <span class=" glyphicon glyphicon-search"></span>-->
-<!--                                                            </button>-->
-<!--                                                        </span>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                            </div>-->
-<!--                            </form>-->
-<!--                        </div>-->
-<!---->
-<!--                        <div class="col-xs-3 col-sm-1 text-right">-->
-<!--                            <button id="sidebar-l" class="sidebar-toggle fa fa-bars hidden" style="font-size: 30px;color: #D6B1E5;"></button>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </nav>-->
-     
-<!--    <button class="sidebar-toggle fa fa-bars primary-navigation" style="font-size: 30px; color: black"></button>-->
-
     <!-- Material sidebar -->
     <aside id="sidebar" class="sidebar sidebar-default sidebar-fixed-left" role="navigation">
         <?php if(Yii::$app->user->id):?>

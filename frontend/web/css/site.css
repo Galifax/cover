@@ -113,10 +113,10 @@ a:hover{
 /*.color-1{background: url(http://eishalle-darmstadt.de/wp-content/uploads/2014/06/ed-konzert-bg-12.jpg) no-repeat center center fixed;}
 */
 
-.color-1{
-    background: url(https://solarsystem.nasa.gov/kids/images/layers/png/background.jpg) no-repeat;
-    background-size: cover;
-}
+/*.color-1{*/
+    /*background: url(https://solarsystem.nasa.gov/kids/images/layers/png/background.jpg) no-repeat;*/
+    /*background-size: cover;*/
+/*}*/
 
 .color-2{background-color: #6695C1}
 .color-3{background-color: #46ABA5}
@@ -727,6 +727,42 @@ Image credits: unsplash.com
 }
 
 
+
+
+
+#second-slider, #first-slider .main-container {
+    padding: 0;
+}
+
+
+#second-slider .carousel-indicators {
+    bottom: 0;
+}
+
+#second-slider .carousel .item {
+    min-height: 425px;
+    height: 100%;
+    width:100%;
+}
+
+#second-slider .carousel-control {
+    width: 6%;
+    text-shadow: none;
+}
+
+#second-slider .carousel-indicators li {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255,255,255,.4);
+    border:none;
+}
+#second-slider .carousel-indicators .active{
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border:none;
+}
+
 .carousel-fade .carousel-inner .item {
     -webkit-transition-property: opacity;
     transition-property: opacity;
@@ -792,22 +828,22 @@ Image credits: unsplash.com
 /********************************/
 /*       Slides backgrounds     */
 /********************************/
-#first-slider .slide1 {
+.slide1 {
     background-image: url(http://s20.postimg.org/h50tgcuz1/image.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
-#first-slider .slide2 {
+.slide2 {
     background-image: url(http://s20.postimg.org/uxf8bzlql/image.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
-#first-slider .slide3 {
+.slide3 {
     background-image: url(http://s20.postimg.org/el56m97f1/image.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
-#first-slider .slide4 {
+.slide4 {
     background-image: url(http://s20.postimg.org/66pjy66dp/image.jpg);
     background-size: cover;
     background-repeat: no-repeat;
