@@ -68,7 +68,7 @@ class ProfileController extends Controller
          $com = new Comments();
         if($com->load(Yii::$app->request->post()) && $com->save());
 
-        $model = Profile::find()->where(['id' =>$id])->with('user', 'videos')->one();
+        $model = Profile::find()->where(['id' => Yii::$app->user->id])->with('user', 'videos')->one();
         $comments = Comments::find()->where(['is_viewed' => NULL, 'parent_id' => 0])->InnerJoinWith(['profile', 'video' => function(ActiveQuery $query){
           $query->where(['video.profile_id' =>Yii::$app->user->id]);
         }])->orderBy(['comments.id' => SORT_DESC])->all();

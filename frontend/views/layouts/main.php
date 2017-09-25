@@ -158,7 +158,7 @@ AppAsset::register($this);
                             Главная </a>
                     </li>
                     <li >
-                        <a href="<?=Url::to(['/profile', 'id'=>Yii::$app->user->id, 'name'=>$profile->nickname])?>">
+                        <a href="<?=Url::to(['/profile'])?>">
                             <i class="glyphicon glyphicon-user"></i>
                             Мой профиль </a>
                     </li>
@@ -181,7 +181,7 @@ AppAsset::register($this);
 
             <li class="divider"></li>
             <li>
-                <a href="#">
+                <a href="<?=Url::to(['/profile', '#' => 'tab_default_3'])?>" data-toggle="tab">
                     Новых комментариев
                     <span class="sidebar-badge"><?= $count_comments?></span>
                 </a>
