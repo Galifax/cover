@@ -4,126 +4,15 @@ use yii\widgets\Pjax;
 $this->title = 'My Yii Application';
 ?>
 
-<div id="second-slider">
-    <div id="slide-2" class="carousel slide carousel-fade">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#slide-2" data-slide-to="0" class="active"></li>
-            <li data-target="#slide-2" data-slide-to="1"></li>
-            <li data-target="#slide-2" data-slide-to="2"></li>
-            <li data-target="#slide-2" data-slide-to="3"></li>
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <!-- Item 1 -->
-            <div class="item active slide1" style="height: 100vh; position: fixed;z-index: -2 ;top: 0px;">
-
-            </div>
-            <!-- Item 2 -->
-            <div class="item slide2" style="height: 100vh; position: fixed;z-index: -2; top: 0px;">
-
-            </div>
-            <!-- Item 3 -->
-            <div class="item slide3" style="height: 100vh; position: fixed;z-index: -2; top: 0px;">
-
-            </div>
-            <!-- Item 4 -->
-            <div class="item slide4" style="height: 100vh; position: fixed;z-index: -2;top: 0px;">
-
-            </div>
-            <!-- End Item 4 -->
-
-        </div>
-        <!-- End Wrapper for slides-->
-<!--        <div style="display: none">-->
-        <a class="left carousel-control" href="#slide-2" role="button" data-slide="prev">
-            <i class="fa fa-angle-left"></i><span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control"href="#slide-2" role="button" data-slide="next">
-            <i class="fa fa-angle-right"></i><span class="sr-only">Next</span>
-        </a>
-<!--        </div>-->
-    </div>
-</div>
-
-
 <div class="container">
-    <div id="first-slider">
-        <div id="slide-1" class="carousel slide carousel-fade">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#slide-1" data-slide-to="0" class="active"></li>
-                <li data-target="#slide-1" data-slide-to="1"></li>
-                <li data-target="#slide-1" data-slide-to="2"></li>
-                <li data-target="#slide-1" data-slide-to="3"></li>
-            </ol>
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <!-- Item 1 -->
-                <div class="item active slide1">
-                    <div class="row"><div class="container">
-                            <div class="col-md-3 text-right">
-                                <img style="max-width: 200px;"  data-animation="animated zoomInLeft" src="http://s20.postimg.org/pfmmo6qj1/window_domain.png">
-                            </div>
-                            <div class="col-md-9 text-left">
-                                <h3 data-animation="animated bounceInDown">Add images, or even your logo!</h3>
-                                <h4 data-animation="animated bounceInUp">Easily use stunning effects</h4>
-                            </div>
-                        </div></div>
-                </div>
-                <!-- Item 2 -->
-                <div class="item slide2">
-                    <div class="row"><div class="container">
-                            <div class="col-md-7 text-left">
-                                <h3 data-animation="animated bounceInDown"> 50 animation options A beautiful</h3>
-                                <h4 data-animation="animated bounceInUp">Create beautiful slideshows </h4>
-                            </div>
-                            <div class="col-md-5 text-right">
-                                <img style="max-width: 200px;"  data-animation="animated zoomInLeft" src="http://s20.postimg.org/sp11uneml/rack_server_unlock.png">
-                            </div>
-                        </div></div>
-                </div>
-                <!-- Item 3 -->
-                <div class="item slide3">
-                    <div class="row"><div class="container">
-                            <div class="col-md-7 text-left">
-                                <h3 data-animation="animated bounceInDown">Simple Bootstrap Carousel</h3>
-                                <h4 data-animation="animated bounceInUp">Bootstrap Image Carousel Slider with Animate.css</h4>
-                            </div>
-                            <div class="col-md-5 text-right">
-                                <img style="max-width: 200px;"  data-animation="animated zoomInLeft" src="http://s20.postimg.org/eq8xvxeq5/globe_network.png">
-                            </div>
-                        </div></div>
-                </div>
-                <!-- Item 4 -->
-                <div class="item slide4">
-                    <div class="row"><div class="container">
-                            <div class="col-md-7 text-left">
-                                <h3 data-animation="animated bounceInDown">We are creative</h3>
-                                <h4 data-animation="animated bounceInUp">Get start your next awesome project</h4>
-                            </div>
-                            <div class="col-md-5 text-right">
-                                <img style="max-width: 200px;"  data-animation="animated zoomInLeft" src="http://s20.postimg.org/9vf8xngel/internet_speed.png">
-                            </div>
-                        </div></div>
-                </div>
-                <!-- End Item 4 -->
 
-            </div>
-            <!-- End Wrapper for slides-->
-            <a class="left carousel-control" href="#slide-1" role="button" data-slide="prev">
-                <i class="fa fa-angle-left"></i><span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control"href="#slide-1" role="button" data-slide="next">
-                <i class="fa fa-angle-right"></i><span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-
-    <div class=" hidden-sm hidden-xs"style="margin-top: -15px;margin-bottom: 570px;">
+    <div class="planet-block hidden-sm hidden-xs">
         <div class="container1">
             <div class="item1 img-earth"></div>
-            <div class="carousel1" style="background: ">
+
+            <div class="carousel1">
+
+
                 <?php $n = 0?>
                 <?php foreach($newest as $new):?>
                 <?php $n += 1?>
@@ -143,25 +32,27 @@ $this->title = 'My Yii Application';
                         </div>
                     </div>
                     <div class="content-footer2">
-                        <img class="user-small-img" src="<?=empty($new->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $new->profile->avatar?>" alt="Profile image example>">
 
-                        <span style="font-size: 16px;color: #fff;"><?= $new->profile->nickname?></span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $new->views?></a>
-                    </span>
+                        <img class="user-small-img"  src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
+
+                        <p class="text-center">
+                            <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
+                            <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $to->views?></a>
+                            <br>
+                            <span><?= $to->profile->nickname?></span></p>
+
                         <div class="user-ditels">
                             <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
                             <span class="user-full-ditels">
-                            <h3><?= $new->name?></h3>
+                            <h3>Sumit Kumar</h3>
                             <p>Web & Graphics Disigner</p>
                             </span>
                         </div>
                     </div>
                 </div>
             <?php endforeach;?>
-                
-                
+
+
             <?php $n = 0?>
             <?php foreach($top as $to):?>
             <?php $n += 1?>
@@ -178,12 +69,15 @@ $this->title = 'My Yii Application';
                         </div>
                     </div>
                         <div class="content-footer2">
-                            <img class="user-small-img" src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
-                            <span style="font-size: 16px;color: #fff;"><?= $to->profile->nickname?></span>
-                            <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $to->views?></a>
-                    </span>
+
+                            <img class="user-small-img"  src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
+
+                            <p class="text-center">
+                            <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
+                            <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $to->views?></a>
+                                <br>
+                            <span><?= $to->profile->nickname?></span></p>
+
                             <div class="user-ditels">
                                 <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
                                 <span class="user-full-ditels">
@@ -195,6 +89,8 @@ $this->title = 'My Yii Application';
 
                 </div>
                 <?php endforeach;?>
+
+
                 <?php $n = 0?>
                 <?php foreach($random as $rand):?>
                 <?php $n += 1?>
@@ -211,12 +107,15 @@ $this->title = 'My Yii Application';
                         </div>
                     </div>
                     <div class="content-footer2">
-                        <img class="user-small-img" src="<?=empty($rand->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $rand->profile->avatar?>" alt="Profile image example>">
-                        <span style="font-size: 16px;color: #fff;"><?= $rand->profile->nickname?></span>
-                        <span class="pull-right">
-                    <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                    <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $rand->views?></a>
-                    </span>
+
+                        <img class="user-small-img"  src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
+
+                        <p class="text-center">
+                            <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
+                            <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $to->views?></a>
+                            <br>
+                            <span><?= $to->profile->nickname?></span></p>
+
                         <div class="user-ditels">
                             <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
                             <span class="user-full-ditels">
@@ -227,17 +126,28 @@ $this->title = 'My Yii Application';
                     </div>
                 </div>
                 <?php endforeach;?>
-                
             </div>
-        </div>
+         </div>
+
         <div class="clearfix"></div>
-        <div class="col-md-12">
-            <a class="next1">
-            <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            </a>
-            <a class="prev1">
-                <i class="fa fa-chevron-left" aria-hidden="true"></i>
-            </a>
+
+            <div class="col-md-12">
+                <p class="img-text" style="right: 80px;top: -160px;">
+                    Новинки
+                </p>
+                <p class="img-text" style="right: 0px;top: 40px;">
+                    Хиты
+                </p>
+                <p class="img-text" style="right: -30px;top: 280px;">
+                    Рекомендованные
+                </p>
+                <a class="next1">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+
+                <a class="prev1">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
             </div>
     </div>
 
@@ -288,130 +198,3 @@ $this->title = 'My Yii Application';
 </div>
 
 </div>
-
-
-<footer id="footer-Section">
-    <div class="footer-top-layout">
-        <div class="container">
-            <div class="row">
-                <div class=" col-lg-8 col-lg-offset-2">
-                    <div class="col-sm-4">
-                        <div class="footer-col-item">
-                            <h4>Go Travel Cloud</h4>
-                            <address>
-                                501,507 your company address<br>
-                                400015 Maharashtra, UK
-                            </address>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="footer-col-item">
-                            <h4>Reach Us</h4>
-                            <div class="item-contact"> <a href="tel:630-885-9200"><span class="link-id">P</span>:<span>630-885-9200</span></a> <a href="tel:630-839.2006"><span class="link-id">F</span>:<span>630-839.2006</span></a> <a href="mailto:info@brandcatmedia.com"><span class="link-id">E</span>:<span>info@brandcatmedia.com</span></a> </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="footer-col-item">
-                            <h4>Sign up for Newsletter</h4>
-                            <form class="signUpNewsletter" action="" method="get">
-                                <input name="" class="gt-email form-control" placeholder="You@youremail.com" type="text">
-                                <input name="" class="btn-go" value="Go" type="button">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom-layout">
-        <div class="socialMedia-footer"> <a href="#"><img src="img/socialMedia_01.png"></a> <a href="#"><img src="img/socialMedia_02.png"></a> <a href="#"><img src="img/socialMedia_03.png"></a> <a href="#"><img src="img/socialMedia_04.png"></a> <a href="#"><img src="img/socialMedia_05.png"></a> </div>
-        <div class="copyright-tag">Copyright © 2017 company name. All Rights Reserved.</div>
-    </div>
-</footer>
-
-<script>
-    (function( $ ) {
-
-        //Function to animate slider captions
-        function doAnimations( elems ) {
-            //Cache the animationend event in a variable
-            var animEndEv = 'webkitAnimationEnd animationend';
-
-            elems.each(function () {
-                var $this = $(this),
-                    $animationType = $this.data('animation');
-                $this.addClass($animationType).one(animEndEv, function () {
-                    $this.removeClass($animationType);
-                });
-            });
-        }
-
-        //Variables on page load
-        var $myCarousel = $('#slide-1'),
-            $firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
-
-        //Initialize carousel
-        $myCarousel.carousel();
-
-        //Animate captions in first slide on page load
-        doAnimations($firstAnimatingElems);
-
-        //Pause carousel
-        $myCarousel.carousel('pause');
-
-
-        //Other slides to be animated on carousel slide event
-        $myCarousel.on('slide.bs.carousel', function (e) {
-            var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
-            doAnimations($animatingElems);
-        });
-        $('#slide-1').carousel({
-            interval:500,
-            pause: "false"
-        });
-
-    })(jQuery);
-
-    (function( $ ) {
-
-        //Function to animate slider captions
-        function doAnimations( elems ) {
-            //Cache the animationend event in a variable
-            var animEndEv = 'webkitAnimationEnd animationend';
-
-            elems.each(function () {
-                var $this = $(this),
-                    $animationType = $this.data('animation');
-                $this.addClass($animationType).one(animEndEv, function () {
-                    $this.removeClass($animationType);
-                });
-            });
-        }
-
-        //Variables on page load
-        var $myCarousel = $('#slide-2'),
-            $firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
-
-        //Initialize carousel
-        $myCarousel.carousel();
-
-        //Animate captions in first slide on page load
-        doAnimations($firstAnimatingElems);
-
-        //Pause carousel
-        $myCarousel.carousel('pause');
-
-
-        //Other slides to be animated on carousel slide event
-        $myCarousel.on('slide.bs.carousel', function (e) {
-            var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
-            doAnimations($animatingElems);
-        });
-        $('#slide-2').carousel({
-            interval:500,
-            pause: "false"
-        });
-
-    })(jQuery);
-
-</script>

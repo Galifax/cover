@@ -41,10 +41,13 @@ a:hover{
 
 
 .content{
-    background: rgba(0,0,0,0.8);
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    background: rgba(255,255,255,0.15);
     border-radius: 5px;
-
+}
+.content-2{
+    background: rgba(255,255,255,0.8);
+    /*box-shadow: 0 0 5px rgba(0,0,0,0.5);*/
+    border-radius: 5px;
 }
 .paralax{
     position: relative;
@@ -63,6 +66,10 @@ a:hover{
 /*Other stiels*/
 .padding-30{margin-top: 30px; padding: 15px}
 
+.main-bg{
+    background: url("/img/bg.jpg") no-repeat center;
+    background-size: cover;
+}
 
 
 .img1 {  float: none;  margin: 0 auto;  width: 50px;
@@ -71,10 +78,6 @@ a:hover{
 .nopadding{padding: 0;}
 
 .index-h2{padding-left: 25px;color: #21761d}
-
-.bg-img-2{background-image: url("../img/img-bg-2 (2).jpg");
-    background-size: 50% 50%;
-}
 
 .video-font{color: #f99500; font-size: 20px; font-weight: 800; text-decoration: none;
 
@@ -252,20 +255,36 @@ a:hover{
 .list-group hr{
     margin: 10px;
 }
-
+.fb-profile{
+    margin-top: -60px;
+}
 .fb-profile img.fb-image-lg{
     z-index: 0;
     width: 100%;
     margin: -20px 0px 10px 0px;
     overflow: hidden;
 }
-
+.content-2 li a{
+    color: #1D0E47;
+    border: 2px solid #1D0E47;
+    border-radius: 0px;
+    font-size: 18px;
+    margin-right: -5px;
+}
+.content-2 li a:hover, .content-2 .active a{
+    background-color: #1D0E47;
+    color: white;
+    border: 2px solid #1D0E47;
+}
 .fb-image-profile
 {
-    margin: -90px 10px 0px 44px;
+    position: relative;
+    margin: auto;
     z-index: 9;
     max-width: 200px;
-
+    max-height: 200px;
+    border: 3px solid #1D0E47;
+    border-radius: 5px;
 }
 
 @media (max-width:768px)
@@ -318,8 +337,16 @@ a:hover{
 /* Profile container */
 .profile {  margin: 20px 0;  }
 
-/* Profile sidebar */
+.nav-center li {
+    display: inline-block;
+    float: none;
+}
 
+.tab-content{
+    padding: 5px 15px;
+    min-height: 500px;
+}
+/* Profile sidebar */
 
 .profile-usermenu ul li {  border-bottom: 1px solid #f0f4f7;  }
 
@@ -443,7 +470,7 @@ aside .content-footer>img {
     }
 
 }
-.user-small-img{cursor: pointer;}
+
 
 .content-footer:hover .user-ditels  {
     display: block;
@@ -629,7 +656,6 @@ Bootstrap Image Carousel Slider with Animate.css
 Code snippet by Hashif (http://hashif.com) for Bootsnipp.com
 Image credits: unsplash.com
 */
-@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700);
 
 /********************************/
 /*          Main CSS     */
@@ -1654,9 +1680,11 @@ Image credits: unsplash.com
 }
 
 .user-small-img {
-    width: 2.3em;
-    height: 2.3em;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    cursor: pointer;
+    float: left;
 }
 
 .content-footer__avatar {
@@ -1674,11 +1702,16 @@ Image credits: unsplash.com
 /********************/
 /***TEST*****3D******/
 /********************/
-.content-footer2{padding:5px;
+.content-footer2{
+    padding: 5px 25px 5px 25px;
     position: relative;
-    font-family: sans-serif;
-    background-color: rgba(0, 0, 0, .9);
     height: 50px;
+}
+.content-footer2 p{
+     margin: 6px 5px 6px 45px;
+ }
+.content-footer2 a{
+    margin: 5px;
 }
 .content-title2{
     background: none;
@@ -1690,6 +1723,19 @@ Image credits: unsplash.com
 
 }
 
+.planet-block{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 800px;
+}
+.img-text{
+    position: absolute;
+    font-size: 32px;
+    transform: rotateY(20deg) rotateZ(8deg);
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 6px 18px;
+}
 .container1 {
     margin: 0 auto;
     width: 200px;
@@ -1743,11 +1789,10 @@ Image credits: unsplash.com
     height: 680px;
     width: 680px;
     border-radius: 50%;
-    /*box-shadow: 2px 2px 15px 8px white;*/
     top: -240px;
     left: -240px;
-    /*background: url("http://www.playcast.ru/uploads/2015/12/22/16450307.gif") 100% 100%;*/
-    background: url("http://www.pngall.com/wp-content/uploads/2016/06/Earth-PNG.png") 100% 100%;
+    background: url("../img/planet.png") 100% 100%;
+    /*background: url("http://www.pngall.com/wp-content/uploads/2016/06/Earth-PNG.png") 100% 100%;*/
     background-size: cover;
 
 }

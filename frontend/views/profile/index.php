@@ -10,96 +10,140 @@
 
 <div class="container">
 
-    <div class="row">
-        <div class="fb-profile" style="max-height: 400px;width: 100%;">
-            <img align="left" class="fb-image-lg " src="<?= $model->background ? $model->background : 'http://lorempixel.com/850/280/nightlife/5/'?>" alt="Profile image example"/>
-            <img align="left" class="fb-image-profile thumbnail" src="<?= $model->avatar ? $model->avatar : 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg'?>" alt="Profile image example"/>
-            <div class="fb-profile-text">
-                <h1><?= $model->name?></h1>
+    <div class="content" style="margin-top: 80px">
 
-            </div>
+    <div class="row">
+        <div class="fb-profile col-sm-4 text-center">
+            <img style="height: 200px;width: 200px" class="fb-image-profile thumbnail" src="<?= $model->avatar ? $model->avatar : 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg'?>" alt="Profile image example"/>
+            <button class="btn btn-default" style="margin: 20px 0px">Настройки профиля</button>
+        </div>
+
+        <div class="col-sm-6 text-center" style="margin-top: 20px">
+            <p>То что мне нравится</p>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="textinput">Клип</label>
+                        <div class="col-sm-4">
+                            <input id="textinput" name="textinput" type="text" class="form-control input-md" style="width: initial;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="textinput">Исполнитель</label>
+                        <div class="col-sm-4">
+                            <input id="textinput" name="textinput" type="text" class="form-control input-md" style="width: initial;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="textinput">Группа</label>
+                        <div class="col-sm-4">
+                            <input id="textinput" name="textinput" type="text" class="form-control input-md" style="width: initial;">
+                        </div>
+                    </div>
+                </form>
         </div>
     </div>
-</div> <!-- /container fluid-->
-<div class="container">
-    <div class="col-sm-12">
+
+    <div class="col-sm-12 content" style="padding: 0px">
 
         <div data-spy="scroll" class="tabbable-panel">
             <div class="tabbable-line">
-                <ul class="nav nav-tabs ">
+                <ul class="nav nav-tabs content-2 nav-center text-center">
                     <li class="active">
                         <a href="#tab_default_1" data-toggle="tab">
-                            О себе </a>
+                            Мои видео
+                        </a>
                     </li>
                     <li class="load-profile">
                         <a href="#tab_default_2" data-toggle="tab">
-                            Редактировать</a>
+                            Сообщения <span class="badge"><?=count($comments)?></span>
+                        </a>
                     </li>
                     <li>
                         <a href="#tab_default_3" data-toggle="tab">
-                            Непрочитаные комментарии <span class="badge"><?=count($comments)?></span></a>
+                            Любимое
+                        </a>
                     </li>
                     <li class="load-comments">
                         <a href="#tab_default_4" data-toggle="tab">
-                            Все комментарии</a>
+                            Недавние просмотры</a>
                     </li>
                 </ul>
 
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab_default_1">
 
-                            <p>
-                                <?= $model->about_myself?>
-                            </p>
-                        <h4>Возраст</h4>
-                            <p>
-                                <?= $model->born?>
-                            </p>
-                        <h4>Страна </h4>
-                            <p>
-                                <?= $model->country?>
-                            </p>
-                        <h4>Контакты</h4>
-                            <p>
-                                <?= $model->contacts?>
-                            </p>
-                        <h4>Любимые группы</h4>
-                            <p>
-                                <?= $model->favorites?>
-                            </p>
+                        <h2 class="text-center" style="padding: 10px;font-size: 30px; margin: 0px;">Мои Видео</h2>
+                        <?php $months = array( 1 => 'Января' , 'Февраля' , 'Марта' , 'Апреля' , 'Мая' , 'Июня' , 'Июля' , 'Августа' , 'Сентября' , 'Октября' , 'Ноября' , 'Декабря' );?>
+
+                        <div class="row" style="padding: 15px 5px">
+                            <?php Pjax::begin(['enablePushState' => false]);?>
+                            <?php foreach($model as $video):?>
+                                <div class="video-item col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                                    <div>
+                                        <a class="video" data-pjax="0" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="<?= $video->name?>">
+                                            <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
+                                                <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
+                                            </div>
+                                        </a>
+                                        <div class="content-title">
+                                            <div class="text-center">
+                                                <a style="color: black" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="<?= $video->name?>">
+                                                    <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 17px"><?= $video->name?></h2>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="content-footer">
+                                            <div class="content-footer__avatar">
+                                                <img  class="user-small-img" src="<?=$video->profile->avatar?>">
+                                            </div>
+                                            <div>
+                                                    <span style="color: #fff;">
+                                                        <a style="font-size: 16px" class="username-video" href="<?=Url::to(['/profile', 'id' => $video->profile->id, 'name' => $video->profile->nickname])?>"><?= $video->profile->nickname?></a>
+                                                    </span>
+                                                    <p style="margin: 0px;font-size: 14px">
+                                                    <?php $date = new DateTime($video->date); ?>
+                                                    <i class="fa fa-eye" aria-hidden="true"> <?= $video->views?></i> | <?=$date->format('j').' '. $months[date($date->format('n'))]?>
+                                                </p>
+                                            </div>
+                                            <a href="<?=Url::to(['/profile/update', 'id' => $video->id])?>" data-pjax="0" class="btn btn-success">Редактировать</a>
+
+                                            <a href="<?=Url::to(['/profile/my-videos', 'del' => $video->id])?>" class="btn btn-danger">Удалить</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach;?>
+                            <?php Pjax::end();?>
+                        </div>
 
                     </div>
+
                     <div class="tab-pane" id="tab_default_2">
-                       <div id="load-profile">
-
-                       </div>
-                        
-
-
-
-                    </div>
-                    <div class="tab-pane" id="tab_default_3">
-                    <?php if($comments):?>
-                      <?php $form = ActiveForm::begin([
+                        <?php if($comments):?>
+                            <?php $form = ActiveForm::begin([
                                 'method' => 'post',
                                 'action' => '/profile/viewed'
                             ])?>
-                        <?php foreach($comments as $com):?>
-                            <li class="h<?=$com->id?> prof-com">
-                                <p> <input type="checkbox" name="viewed[<?=$com->id?>]" class="viewed">
-                                <a href="<?=Url::to(['/video/view', 'id' => $com->video->id])?>"><?=$com->video->name?></a></p>
-                                <p><?=$com->profile->nickname?></p> <p><?=$com->content?></p>
-                                <p><?=$com->date?></p>
-                            </li>
-                        <?php endforeach;?>
-                        <?php ActiveForm::end();?>
-                        <div id="results"></div>
-                    <?php else:?>
-                        <h2>Новых комментариев нету</h2>
-                    <?php endif;?>
+                            <?php foreach($comments as $com):?>
+                                <li class="h<?=$com->id?> prof-com">
+                                    <p> <input type="checkbox" name="viewed[<?=$com->id?>]" class="viewed">
+                                        <a href="<?=Url::to(['/video/view', 'id' => $com->video->id])?>"><?=$com->video->name?></a></p>
+                                    <p><?=$com->profile->nickname?></p> <p><?=$com->content?></p>
+                                    <p><?=$com->date?></p>
+                                </li>
+                            <?php endforeach;?>
+                            <?php ActiveForm::end();?>
+                            <div id="results"></div>
+                        <?php else:?>
+                            <h2>Новых комментариев нету</h2>
+                        <?php endif;?>
                     </div>
+
+                    <div class="tab-pane" id="tab_default_3">
+
+                    </div>
+
                     <div class="tab-pane" id="tab_default_4">
-                        <div id="load-comments"></div>
+
                     </div>
                 </div>
             </div>
@@ -107,4 +151,7 @@
 
     </div>
 
+    </div>
+
 </div>
+<div class="clearfix"></div>

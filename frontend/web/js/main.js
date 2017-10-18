@@ -171,34 +171,36 @@ $('#modalButton, #modalButton1, #modalButton2, #upload').click(function(){
     // ****************************
     //3d Test
     //*****************************
-    var carousel1 = $(".carousel1"),
-    currdeg  = 0
+
+    var carousel1 = $(".carousel1")
 
 
-    $(".next1").on("click", { d: "n1" }, rotate);
-    $(".prev1").on("click", { d: "p1" }, rotate);
+    currdeg1  = 0
+
+
+
+    $(".next1").on("click", { d: "n1" }, rotate1);
+    $(".prev1").on("click", { d: "p1" }, rotate1);
 
     // $("#comments-content").emojioneArea({
     //    pickerPosition: "bottom"
     // });
 
-
-
-    function rotate(e){
-        if(e.data.d=="n1"){
-            currdeg = currdeg - 60;
-        }
-        if(e.data.d=="p1"){
-            currdeg = currdeg + 60;
-        }
-
-        carousel1.css({
-            "-webkit-transform": "rotateY("+currdeg+"deg)",
-            "-moz-transform": "rotateY("+currdeg+"deg)",
-            "-o-transform": "rotateY("+currdeg+"deg)",
-            "transform": "rotateY("+currdeg+"deg)"
-        });
-
-
+function rotate1(e){
+    if(e.data.d=="n1"){
+        currdeg1 = currdeg1 - 60;
     }
+    if(e.data.d=="p1"){
+        currdeg1 = currdeg1 + 60;
+    }
+
+    carousel1.css({
+        "-webkit-transform": "rotateY("+currdeg1+"deg)",
+        "-moz-transform": "rotateY("+currdeg1+"deg)",
+        "-o-transform": "rotateY("+currdeg1+"deg)",
+        "transform": "rotateY("+currdeg1+"deg)"
+    });
+
+
+}
 
