@@ -18,32 +18,15 @@
             </div>
         </div>
         <div class="content-footer">
-            <div class="content-footer__avatar">
-                <img  class="user-small-img" src="<?=$video->profile->avatar?>">
-            </div>
-            <div>
-                <span style="color: #fff;">
-                    <a style="font-size: 16px" class="username-video" href="<?=Url::to(['/profile', 'id' => $video->profile->id, 'name' => $video->profile->nickname])?>"><?= $video->profile->nickname?></a>
-                </span>
-                <p style="margin: 0px;font-size: 14px">
-                    <?php $date = new DateTime($video->date); ?>
-                    <i class="fa fa-eye" aria-hidden="true"> <?= $video->views?></i> | <?=$date->format('j').' '. $months[date($date->format('n'))]?>
-                </p>
-            </div>
-<!--            <div class="user-ditels">-->
-<!--                <div class="user-img"><img src="--><?//=$video->profile->avatar?><!--" class="img-responsive"></div>-->
-<!--                <span class="user-full-ditels">-->
-<!--                        <h3>--><?//= $video->profile->nickname?><!--</h3>-->
-<!--                        <p>МеснІЬй сторож</p>-->
-<!--                        </span>-->
-<!--                <div class="social-icon">-->
-<!--                    <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>-->
-<!--                    <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>-->
-<!--                    <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>-->
-<!--                    <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>-->
-<!--                    <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>-->
-<!--                </div>-->
-<!--            </div>-->
+
+            <img class="user-small-img"  src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
+
+            <p class="text-center">
+                <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
+                <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $to->views?></a>
+                <br>
+                <span><?= $to->profile->nickname?></span></p>
+
         </div>
     </div>
 </div>

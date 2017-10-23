@@ -31,6 +31,7 @@ $this->title = 'My Yii Application';
                             </a>
                         </div>
                     </div>
+
                     <div class="content-footer2">
 
                         <img class="user-small-img"  src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
@@ -39,15 +40,8 @@ $this->title = 'My Yii Application';
                             <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
                             <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $to->views?></a>
                             <br>
+                            <br>
                             <span><?= $to->profile->nickname?></span></p>
-
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                        </div>
                     </div>
                 </div>
             <?php endforeach;?>
@@ -56,6 +50,7 @@ $this->title = 'My Yii Application';
             <?php $n = 0?>
             <?php foreach($top as $to):?>
             <?php $n += 1?>
+
                 <div class="item1 center<?= $n?>">
                     <a class="video" data-pjax="0" href="../video/view?id=<?= $to->id?>">
                         <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
@@ -68,32 +63,28 @@ $this->title = 'My Yii Application';
                             </a>
                         </div>
                     </div>
-                        <div class="content-footer2">
 
-                            <img class="user-small-img"  src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
+                    <div class="content-footer2">
 
-                            <p class="text-center">
+                        <img class="user-small-img"  src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
+
+                        <p class="text-center">
                             <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
                             <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $to->views?></a>
-                                <br>
+                            <br>
+                            <br>
                             <span><?= $to->profile->nickname?></span></p>
-
-                            <div class="user-ditels">
-                                <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                                <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                            </div>
-                        </div>
+                    </div>
 
                 </div>
+
                 <?php endforeach;?>
 
 
                 <?php $n = 0?>
                 <?php foreach($random as $rand):?>
                 <?php $n += 1?>
+
                 <div class="item1 bot<?= $n?>">
                     <a class="video" data-pjax="0" href="../video/view?id=<?= $rand->id?>">
                         <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
@@ -114,15 +105,8 @@ $this->title = 'My Yii Application';
                             <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
                             <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $to->views?></a>
                             <br>
+                            <br>
                             <span><?= $to->profile->nickname?></span></p>
-
-                        <div class="user-ditels">
-                            <div class="user-img"><img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive"></div>
-                            <span class="user-full-ditels">
-                            <h3>Sumit Kumar</h3>
-                            <p>Web & Graphics Disigner</p>
-                            </span>
-                        </div>
                     </div>
                 </div>
                 <?php endforeach;?>
@@ -132,13 +116,13 @@ $this->title = 'My Yii Application';
         <div class="clearfix"></div>
 
             <div class="col-md-12">
-                <p class="img-text" style="right: 80px;top: -160px;">
+                <p class="img-text" style="right: 55px;top: -195px;">
                     Новинки
                 </p>
-                <p class="img-text" style="right: 0px;top: 40px;">
+                <p class="img-text" style="right: 0px;top: 25px;">
                     Хиты
                 </p>
-                <p class="img-text" style="right: -30px;top: 280px;">
+                <p class="img-text" style="right: -90px;top: 310px;">
                     Рекомендованные
                 </p>
                 <a class="next1">

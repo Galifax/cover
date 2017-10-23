@@ -35,38 +35,34 @@ $this->title = $model->name;
     });
     
     </script>
+
     <div class="about-video my-video-video" style="padding-top: -15px; width: 100%;">
+
         <h1 style="margin: 0;padding: 10px;font-size: 23px "><?=$model->name?></h1>
-        <img style="width: 70px; float: left" src="<?=empty($model->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->profile->avatar?>" alt="">
-        <div style="margin-left: 10px; float: left">
 
-        <?php Pjax::begin(['enablePushState' => false]);?>
-            <a href="<?=Url::to(['/profile', 'id' => $model->profile->id, 'name' => $model->profile->nickname])?>"><?=$model->profile->nickname?></a>
+        <img style="width: 90px; float: left" src="http://minionomaniya.ru/wp-content/uploads/2016/01/%D0%9A%D0%B5%D0%B2%D0%B8%D0%BD.jpg" alt="">
 
-            <span>
-            <a href="<?=Url::to(['/video/view', 'id' => $model->id, 'idproflike' => $profile->id])?>">
-            <?php if($likes):?> 
-            <i class="fa fa-hand-peace-o" style="color: red;" aria-hidden="true"></i>
-            <?php else:?>
-            <i class="fa fa-hand-peace-o" aria-hidden="true"></i>
-            <?php endif;?>
+        <a href="" class="video-username">
+            Name user
+        </a>
+
+        <a href="" class="btn btn-add-to-favor">
+            Добавить в избранное
+        </a>
+
+        <div style="margin-left: 112px; text-align: center;max-width: 100px;">
+
+
+            <a href="">
+                <i class="fa fa-hand-peace-o" style="color: red;" aria-hidden="true"></i>
             </a>
             <?=count($model->likes);?>
-            </span>
 
-            <span>
-            <a href="<?=Url::to(['/video/view', 'id' => $model->id, 'idprofsub' => $profile->id, 'idsubuser' => $model->profile->id])?>">
-            <?php if($subs):?> 
-               Отписаться
-            <?php else:?>
-               Подписаться
-            <?php endif;?>
-            </a>
-            </span>
+            <i class="fa fa-eye" aria-hidden="true" style="padding: 8px"> <?=$views?></i>
 
-        <?php Pjax::end();?>
         </div>
-        <p style="float: right;">Просмотры<br><i class="fa fa-eye" style="float: right" aria-hidden="true"> <?=$views?></i></p>
+
+
 
         </div>
 
@@ -102,14 +98,14 @@ $this->title = $model->name;
         <?= $form->field($comments, 'date')->hiddenInput(['value' => date('Y-m-d H:i:s')])->label(false) ?>
         <?= $form->field($comments, 'content', ['template' => "{input}"
         ])->textArea(['placeholder' =>
-        Yii::$app->session->getFlash('success') ? Yii::$app->session->getFlash('success') : 'Введите текст','onkeyup'=>'textAreaAdjust(this)','style'=>'overflow:hidden'])
+        Yii::$app->session->getFlash('success') ? Yii::$app->session->getFlash('success') : 'Введите текст','onkeyup'=>'textAreaAdjust(this)','style'=>'overflow:hidden; border-radius: 20px;'])
         ->label('Оставить комментарий') ?>
 
 
 
 
         <div class="form-group">
-            <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
+            <?= Html::submitButton('Отправить', ['class' => 'btn btn-post']) ?>
         </div>
         <?php ActiveForm::end(); ?>
 

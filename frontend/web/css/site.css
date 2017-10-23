@@ -13,18 +13,18 @@ input{
     background: none;
     border: 0px;
     font-size: 11.4px;
-    color: grey;
+    color: white;
     font-weight: bolder;
     margin-right: 5px;
 }
 
-*{font-family: 'Droid Serif', serif; color: #E2C86E}
+*{font-family: 'Droid Serif', serif; color: white}
 
 
 
 body {  height: 100%;  overflow-x: hidden; word-wrap: break-word;}
 
-a{ text-decoration: none;color: #E2C86E}
+a{ text-decoration: none;color: white}
 
 a:hover{
     color: white;
@@ -85,7 +85,6 @@ a:hover{
 .video-font:hover {color: #f99500; }
 
 .my-video-video{padding: 5px; margin:10px 0px 10px 0px ;width: 20%;float: left;overflow: hidden;
-    border-bottom: 1px solid white;
 }
 
 .border-radius{border: solid 1px #CCCCCC; border-radius: 40px  0px 40px 0px; padding: 5px;}
@@ -381,12 +380,12 @@ a:hover{
     word-wrap: break-word;
      background:none ;
      border: none;
+    color: white;
 
 }
 .media{
     margin: 5px 10px;
     padding: 5px;
-    border-bottom:solid 1px white;
 }
 
 .post-comments {
@@ -395,12 +394,10 @@ a:hover{
 }
 
 .comments-nav {
-    border-bottom: 1px solid #eee;
     margin-bottom: 5px;
 }
 
 .post-comments .comment-meta {
-    border-top: 1px solid #eee;
     margin-bottom: 5px;
 }
 
@@ -414,12 +411,10 @@ a:hover{
 
 .post-comments .media-heading {
     font-size: 12px;
-    color: grey;
 }
 
 .post-comments .comment-meta a {
     font-size: 12px;
-    color: grey;
     font-weight: bolder;
     margin-right: 5px;
 }
@@ -428,9 +423,42 @@ a:hover{
 
 /*VIEW VIDEO*/
 
+.btn-add-to-favor{
+    background: #1D0E47;
+    padding: 5px 10px;
+    float: right;
+    margin: 0px 20px;
+}
+.btn-post{
+    background: #1D0E47;
+    padding: 5px 10px;
+    float: right;
+    margin: 0px 20px;
+}
+.video-username{
+    font-size: 24px;
+    padding: 5px 20px;
+    text-decoration: none;
+}
+
+.content-footer{
+    padding: 5px 25px 5px 25px;
+    margin: 5px 30px;
+    position: relative;
+    height: 50px;
+
+}
+.content-footer p{
+    margin: 6px 5px 6px 45px;
+
+}
+.content-footer a{
+    margin: 5px;
+}
+
+
 .content-title{padding:5px;background-color:#fff;}
 .content-title h3 a{color:#34495E;text-decoration:none; transition: 0.5s;}
-.content-title h3 a:hover{color:#F39C12; }
 .content-footer span a {
     display: inline-block;
     text-decoration: none;
@@ -1680,8 +1708,8 @@ Image credits: unsplash.com
 }
 
 .user-small-img {
-    width: 40px;
-    height: 40px;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
     cursor: pointer;
     float: left;
@@ -1703,16 +1731,23 @@ Image credits: unsplash.com
 /***TEST*****3D******/
 /********************/
 .content-footer2{
-    padding: 5px 25px 5px 25px;
+    padding: 5px 10px 5px 25px;
+    margin: 5px;
     position: relative;
-    height: 50px;
+    height: 66px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 0px 15px 0px 15px;
+    border: 1px solid #1D0E47;
+
 }
 .content-footer2 p{
      margin: 6px 5px 6px 45px;
+     color: black;
  }
 .content-footer2 a{
     margin: 5px;
-}
+    color: black;  }
+
 .content-title2{
     background: none;
     font-family: sans-serif;
@@ -1734,6 +1769,8 @@ Image credits: unsplash.com
     transform: rotateY(20deg) rotateZ(8deg);
     color: white;
     background: rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 8px 5px rgba(0,0,0,0.5);
+    border-radius: 15px 0px 15px 0px;
     padding: 6px 18px;
 }
 .container1 {
@@ -1767,41 +1804,47 @@ Image credits: unsplash.com
 }
 
 
-.top1 {  transform: rotateY(0deg) rotateX(30deg) translateZ(320px);   top: -50px;  }
-.top2 {  transform: rotateY(60deg) rotateX(30deg) translateZ(320px);   top: -50px;  }
-.top3 {  transform: rotateY(120deg) rotateX(30deg) translateZ(320px);   top: -50px;  }
-.top4 {  transform: rotateY(180deg) rotateX(30deg) translateZ(320px);   top: -50px;  }
-.top5 {  transform: rotateY(240deg) rotateX(30deg) translateZ(320px);   top: -50px;  }
-.top6 {  transform: rotateY(300deg) rotateX(30deg) translateZ(320px);  top: -50px;  }
+.top1 {  transform: rotateY(0deg)   rotateX(26deg) translateZ(380px);  top: -50px;  }
+.top2 {  transform: rotateY(40deg)  rotateX(26deg) translateZ(380px);  top: -50px;  }
+.top3 {  transform: rotateY(80deg)  rotateX(26deg) translateZ(380px);  top: -50px;  }
+.top4 {  transform: rotateY(120deg) rotateX(26deg) translateZ(380px);  top: -50px;  }
+.top5 {  transform: rotateY(160deg) rotateX(26deg) translateZ(380px);  top: -50px;  }
+.top6 {  transform: rotateY(200deg) rotateX(26deg) translateZ(380px);  top: -50px;  }
+.top7 {  transform: rotateY(240deg) rotateX(26deg) translateZ(380px);  top: -50px;  }
+.top8 {  transform: rotateY(280deg) rotateX(26deg) translateZ(380px);  top: -50px;  }
+.top9 {  transform: rotateY(320deg) rotateX(26deg) translateZ(380px);  top: -50px;  }
 
-.center1 {  transform: rotateY(0deg) translateZ(340px);   }
-.center2 {  transform: rotateY(40deg) translateZ(340px);    }
-.center3 {  transform: rotateY(80deg) translateZ(340px);    }
-.center4 {  transform: rotateY(120deg) translateZ(340px);   }
-.center5 {  transform: rotateY(160deg) translateZ(340px);    }
-.center6 {  transform: rotateY(200deg) translateZ(340px);   }
-.center7 {  transform: rotateY(240deg) translateZ(340px);   }
-.center8 {  transform: rotateY(280deg) translateZ(340px);    }
-.center9 {  transform: rotateY(320deg) translateZ(340px);    }
-
+.center1  {  transform: rotateY(0deg)   translateZ(400px);   }
+.center2  {  transform: rotateY(30deg)  translateZ(400px);   }
+.center3  {  transform: rotateY(60deg)  translateZ(400px);   }
+.center4  {  transform: rotateY(90deg)  translateZ(400px);   }
+.center5  {  transform: rotateY(120deg) translateZ(400px);   }
+.center6  {  transform: rotateY(150deg) translateZ(400px);   }
+.center7  {  transform: rotateY(180deg) translateZ(400px);   }
+.center8  {  transform: rotateY(210deg) translateZ(400px);   }
+.center9  {  transform: rotateY(240deg) translateZ(400px);   }
+.center10 {  transform: rotateY(270deg) translateZ(400px);   }
+.center11 {  transform: rotateY(300deg) translateZ(400px);   }
+.center12 {  transform: rotateY(330deg) translateZ(400px);   }
 
 .img-earth{
-    height: 680px;
-    width: 680px;
-    border-radius: 50%;
-    top: -240px;
-    left: -240px;
+    height: 780px;
+    width: 780px;
+    top: -295px;
+    left: -290px;
     background: url("../img/planet.png") 100% 100%;
-    /*background: url("http://www.pngall.com/wp-content/uploads/2016/06/Earth-PNG.png") 100% 100%;*/
     background-size: cover;
 
 }
-.bot1 {  transform: rotateY(0deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
-.bot2 {  transform: rotateY(60deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
-.bot3 {  transform: rotateY(120deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
-.bot4 {  transform: rotateY(180deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
-.bot5 {  transform: rotateY(240deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
-.bot6 {  transform: rotateY(300deg) rotateX(-30deg) translateZ(320px);    bottom: -50px;  }
+.bot1 {  transform: rotateY(0deg)   rotateX(-26deg) translateZ(380px);    bottom: -30px;  }
+.bot2 {  transform: rotateY(40deg)  rotateX(-26deg) translateZ(380px);    bottom: -30px;  }
+.bot3 {  transform: rotateY(80deg)  rotateX(-26deg) translateZ(380px);    bottom: -30px;  }
+.bot4 {  transform: rotateY(120deg) rotateX(-26deg) translateZ(380px);    bottom: -30px;  }
+.bot5 {  transform: rotateY(160deg) rotateX(-26deg) translateZ(380px);    bottom: -30px;  }
+.bot6 {  transform: rotateY(200deg) rotateX(-26deg) translateZ(380px);    bottom: -30px;  }
+.bot7 {  transform: rotateY(240deg) rotateX(-26deg) translateZ(380px);    bottom: -30px;  }
+.bot8 {  transform: rotateY(280deg) rotateX(-26deg) translateZ(380px);    bottom: -30px;  }
+.bot9 {  transform: rotateY(320deg) rotateX(-26deg) translateZ(380px);    bottom: -30px;  }
 
 
 .next1, .prev1 {
@@ -1824,7 +1867,7 @@ Image credits: unsplash.com
     background-color: #00ffff;;
 }
  .next1 {
-    right: 2em;
+    right: -1em;
     transform: rotateZ(133deg);
 }
 .next1 i{
@@ -1836,7 +1879,7 @@ Image credits: unsplash.com
 
 }
 .prev1 {
-    left: 2em;
+    left: -1em;
     transform: rotateZ(-45deg);
 }
 .prev1 i{

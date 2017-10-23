@@ -19,27 +19,33 @@
         </div>
 
         <div class="col-sm-6 text-center" style="margin-top: 20px">
-            <p>То что мне нравится</p>
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" for="textinput">Клип</label>
-                        <div class="col-sm-4">
-                            <input id="textinput" name="textinput" type="text" class="form-control input-md" style="width: initial;">
-                        </div>
+
+            <div class="item1 center<?= $n?>">
+                <a class="video" data-pjax="0" href="../video/view?id=<?= $to->id?>">
+                    <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
+                        <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
                     </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" for="textinput">Исполнитель</label>
-                        <div class="col-sm-4">
-                            <input id="textinput" name="textinput" type="text" class="form-control input-md" style="width: initial;">
-                        </div>
+                </a>                <div class="content-title">
+                    <div class="text-center">
+                        <a style="color: black" href="../video/view?id=<?= $to->id?>">
+                            <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 14px;bottom: 30px">имя имя имя</h2>
+                        </a>
                     </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" for="textinput">Группа</label>
-                        <div class="col-sm-4">
-                            <input id="textinput" name="textinput" type="text" class="form-control input-md" style="width: initial;">
-                        </div>
-                    </div>
-                </form>
+                </div>
+
+                <div class="content-footer">
+
+                    <img class="user-small-img"  src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
+
+                    <p class="text-center">
+                        <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 999999</a>
+                        <br>
+                        <br>
+                        <span>Имя пользователя</span></p>
+                </div>
+            </div>
+
         </div>
     </div>
 
