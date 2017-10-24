@@ -14,7 +14,11 @@ input{
     font-weight: bolder;
     margin-right: 5px;
 }
-
+@media (max-width:860px) {
+    .input-group {
+        max-width: 390px;
+    }
+}
 *{font-family: 'Droid Serif', serif; color: white}
 
 
@@ -1660,7 +1664,7 @@ Image credits: unsplash.com
     margin: 5px;
     position: relative;
     height: 66px;
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(57, 48, 91, 0.8);
     border-radius: 0px 15px 0px 15px;
     border: 1px solid #39305b;
 

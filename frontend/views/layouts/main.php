@@ -59,13 +59,13 @@ AppAsset::register($this);
                     <img class="logo-img" src="/img/logo.png">
                 </a>
 
-                <button id="sidebar-r" class="sidebar-toggle fa fa-user-o my-proffile-btn" style="font-size: 30px"> Мой профиль</button>
+                <button id="sidebar-r" class="sidebar-toggle fa fa-user-o my-proffile-btn" style="font-size: 30px"></button>
 
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                <div class="col-sm-6 col-sm-push-1">
+                <div class="col-md-6 col-sm-push-1">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                         <li><a href="#">Link</a></li>
@@ -77,7 +77,7 @@ AppAsset::register($this);
                     </ul>
                 </div>
 
-                    <form class="col-sm-6 col-sm-push-1"action="<?=Url::to(['/video/search'])?>">
+                    <form class="col-md-6 col-sm-push-1"action="<?=Url::to(['/video/search'])?>">
                         <div class="row">
                             <div id="custom-search-input">
                                 <div class="input-group ">
