@@ -46,12 +46,14 @@ $this->title = $model->name;
             Name user
         </a>
 
-        <a href="" class="btn btn-add-to-favor">
-            Добавить в избранное
-        </a>
 
-        <div style="margin-left: 112px; text-align: center;max-width: 100px;">
 
+        <div style="margin: 0px 10px;text-align: right;float: right;">
+
+            <a href="" class="btn btn-add-to-favor">
+                Добавить в избранное
+            </a>
+            <br>
 
             <a href="">
                 <i class="fa fa-hand-peace-o" style="color: red;" aria-hidden="true"></i>
@@ -71,13 +73,15 @@ $this->title = $model->name;
         <?php
         $date = new DateTime($video->date);
         ?>
-        <p>Опубликовано <?=$date->format('j').' '. $months[date($date->format('n'))]?></p>
-        <p><?=$model->description?></p>
+        <p style="float: right">Опубликовано <?=$date->format('j').' '. $months[date($date->format('n'))]?></p>
         <p>Категория: <?=$model->category->name?></p>
+
+        <p><?=$model->description?></p>
+
     </div>
 
 
-    <div class="col-sm-4 content col-xs-12 visible-xs" style="margin-top: 15px;">
+    <div class="col-sm-4 content-3 col-xs-12 visible-xs" style="margin-top: 15px;">
         <?= $this->render('../_video', [
             'model' => $model->category->video,
             'lg' => 12,
@@ -154,7 +158,7 @@ $this->title = $model->name;
 </div> <!-- col-md-8-->
 
 
-            <div class="col-sm-4 content hidden-xs" style="margin-top: 15px;">
+            <div class="col-sm-4 content-3 hidden-xs" style="margin-top: 15px;">
                 <?= $this->render('../_video', [
                 'model' => $model->category->video,
                 'lg' => 12,

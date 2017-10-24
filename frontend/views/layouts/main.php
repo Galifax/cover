@@ -42,9 +42,10 @@ AppAsset::register($this);
 
 <div class="wrap color-1" style="padding-bottom: 0px;">
 
+
     <!-- Second navbar for sign in -->
     <nav class="navbar">
-        <div class="container-fluid">
+        <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -53,52 +54,41 @@ AppAsset::register($this);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                    <button id="sidebar-r" class="sidebar-toggle fa fa-user-o " style="font-size: 30px;color: #E2C86E;vertical-align: middle; padding: 10px 0;"></button>
+                    <button id="sidebar-r" class="sidebar-toggle fa fa-user-o my-proffile-btn" style="font-size: 30px"> Мой профиль</button>
                 <a href="/">
-                    <img  src="/img/logo.png" style=" margin: 0 auto; width: 100%;max-width: 180px;padding: 0px 10px ">
+                    <img class="logo-img" src="/img/logo.png">
                 </a>
 
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <div class="col-md-6 col-md-push-2">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                </ul>
-                </div>
-                <div class="hidden-xs">
-                <br>
-                <br>
-                <br>
+
+                <div class="col-md-6 col-md-push-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
                 </div>
 
-
-<!--                        <div class="form-group">-->
-<!--                            <input type="text" class="form-control" placeholder="Search">-->
-<!--                        </div>-->
-<!--                        <button type="submit" class="btn btn-default">Submit</button>-->
-<!--                    </form>-->
-                    <form class="col-md-6 col-md-push-3"action="<?=Url::to(['/video/search'])?>">
-                                                    <div class="row">
-                                                           <div id="custom-search-input">
-                                                                            <div class="input-group ">
-                                                                                <input type="text" class="search-query form-control" placeholder="Поиск" value="<?=$_GET['s']?>" name="s"/>
-                                                                                <span class="input-group-btn">
-                                                                                    <button class="btn" type="submit">
-                                                                                        <span class=" glyphicon glyphicon-search"></span>
-                                                                                    </button>
-                                                                                </span>
-                                                                            </div>
-                                                                        </div>
-                                                    </div>
-                                                    </form>
+                    <form class="col-sm-6 col-sm-push-1"action="<?=Url::to(['/video/search'])?>">
+                        <div class="row">
+                            <div id="custom-search-input">
+                                <div class="input-group ">
+                                    <input type="text" class="search-query form-control" placeholder="Поиск" value="<?=$_GET['s']?>" name="s"/>
+                                    <span class="input-group-btn">
+                                        <button class="btn" type="submit">
+                                            <span class=" glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>

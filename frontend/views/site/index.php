@@ -37,11 +37,14 @@ $this->title = 'My Yii Application';
                         <img class="user-small-img"  src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
 
                         <p class="text-center">
+                            <?= $to->profile->nickname?>
+                            <br>
                             <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
                             <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $to->views?></a>
                             <br>
-                            <br>
-                            <span><?= $to->profile->nickname?></span></p>
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            <span>999.999.9</span>
+                        </p>
                     </div>
                 </div>
             <?php endforeach;?>
@@ -69,11 +72,14 @@ $this->title = 'My Yii Application';
                         <img class="user-small-img"  src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
 
                         <p class="text-center">
+                            <?= $to->profile->nickname?>
+                            <br>
                             <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
                             <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $to->views?></a>
                             <br>
-                            <br>
-                            <span><?= $to->profile->nickname?></span></p>
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            <span>999.999.9</span>
+                        </p>
                     </div>
 
                 </div>
@@ -102,11 +108,14 @@ $this->title = 'My Yii Application';
                         <img class="user-small-img"  src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
 
                         <p class="text-center">
+                            <?= $to->profile->nickname?>
+                            <br>
                             <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
                             <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $to->views?></a>
                             <br>
-                            <br>
-                            <span><?= $to->profile->nickname?></span></p>
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            <span>999.999.9</span>
+                        </p>
                     </div>
                 </div>
                 <?php endforeach;?>
@@ -146,7 +155,7 @@ $this->title = 'My Yii Application';
         'model' => $top,
         'lg' => 3,
         'md' => 3,
-        'sm' => 3,
+        'sm' => 4,
          'xs' => 12,
    ]);?>
 
@@ -158,9 +167,9 @@ $this->title = 'My Yii Application';
 
    <?= $this->render('../_video', [
         'model' => $random,
-        'lg' => 2,
-        'md' => 2,
-        'sm' => 3,
+        'lg' => 3,
+        'md' => 3,
+        'sm' => 4,
          'xs' => 12,
    ]);?>
 
@@ -172,9 +181,9 @@ $this->title = 'My Yii Application';
 
    <?= $this->render('../_video', [
         'model' => $newest,
-        'lg' => 2,
-        'md' => 2,
-        'sm' => 3,
+        'lg' => 3,
+        'md' => 3,
+        'sm' => 4,
          'xs' => 12,
    ]);?>
 </div>
