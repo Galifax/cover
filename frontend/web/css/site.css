@@ -167,7 +167,7 @@ a:hover{
     margin-bottom: 0px;
     border: 0px solid transparent;
     border-radius: none;
-    color: #333333;
+    color: #39305b;;
     background: #39305b;
 }
 .logo-img{
@@ -213,16 +213,16 @@ a:hover{
     overflow: hidden;
 }
 .content-2 li a{
-    color: #1D0E47;
-    border: 2px solid #1D0E47;
+    color: #39305b;
+    border: 2px solid #39305b;
     border-radius: 0px;
     font-size: 18px;
     margin-right: -5px;
 }
 .content-2 li a:hover, .content-2 .active a{
-    background-color: #1D0E47;
+    background-color: #39305b;
     color: white;
-    border: 2px solid #1D0E47;
+    border: 2px solid #39305b;
 }
 .fb-image-profile
 {
@@ -231,7 +231,7 @@ a:hover{
     z-index: 9;
     max-width: 200px;
     max-height: 200px;
-    border: 3px solid #1D0E47;
+    border: 3px solid #39305b;
     border-radius: 5px;
 }
 
@@ -296,22 +296,6 @@ a:hover{
 }
 /* Profile sidebar */
 
-/*.profile-usermenu ul li {  border-bottom: 1px solid #f0f4f7;  }*/
-
-/*.profile-usermenu ul li:last-child {  border-bottom: none;  }*/
-
-/*!*.profile-usermenu ul li a {  color: #46ABA5; background-color: #96DCD4;  font-size: 14px;  font-weight: 400;  }*!*/
-
-/*.profile-usermenu ul li a i {  margin-right: 8px;  font-size: 14px;  }*/
-
-/*.profile-usermenu ul li a:hover {  background-color: #E4F2F3;  color: #46ABA5; border-left: 4px solid #6695C1;  margin-left: 4px;  }*/
-
-/*.profile-usermenu ul li.active {  border-bottom: none;  }*/
-
-/*!*.profile-usermenu ul li.active a {   background-color: #E4F2F3;  color: #46ABA5; border-left: 4px solid #6695C1;  margin-left: 0px; }*!*/
-
-
-/* Profile Content */
 
 /*PROFILE*/
 .list-group-item{
@@ -373,12 +357,12 @@ a:hover{
 /*VIEW VIDEO*/
 
 .btn-add-to-favor{
-    background: #1D0E47;
+    background: #39305b;
     padding: 5px 10px;
     margin-bottom: 8px;
 }
 .btn-post{
-    background: #1D0E47;
+    background: #39305b;
     padding: 5px 10px;
     float: right;
     margin: 0px 20px;
@@ -1256,7 +1240,7 @@ Image credits: unsplash.com
     box-shadow: none;
 }
 .sidebar-default {
-    background-color: #333333;
+    background-color: #39305b;;
 }
 .sidebar-default .sidebar-header {
     background-color: #eceff1;
@@ -1271,7 +1255,7 @@ Image credits: unsplash.com
 }
 .sidebar-default .sidebar-brand:hover,
 .sidebar-default .sidebar-brand:focus {
-    color: #E2C86E;
+    color: white;
     background-color: rgba(255, 255, 255, 0.1);
 }
 .sidebar-default .sidebar-badge {
@@ -1283,10 +1267,10 @@ Image credits: unsplash.com
     background-color: #bdbdbd;
 }
 .sidebar-default .sidebar-text {
-    color: #E2C86E;
+    color: white;
 }
 .sidebar-default .sidebar-nav li > a {
-    color: #E2C86E;
+    color: white;
     background-color: transparent;
 }
 .sidebar-default .sidebar-nav li > a i {
@@ -1294,13 +1278,13 @@ Image credits: unsplash.com
 }
 .sidebar-default .sidebar-nav li:hover > a,
 .sidebar-default .sidebar-nav li > a:hover {
-    color: gold;
-    background-color: #333333
+    color: white;
+    background-color: #39305b;
 ;
 }
 .sidebar-default .sidebar-nav li:hover > a i,
 .sidebar-default .sidebar-nav li > a:hover i {
-    color: gold;
+    color: white;
 }
 .sidebar-default .sidebar-nav li:focus > a,
 .sidebar-default .sidebar-nav li > a:focus {
@@ -1315,20 +1299,20 @@ Image credits: unsplash.com
 .sidebar-default .sidebar-nav > .open > a:hover,
 .sidebar-default .sidebar-nav > .open > a:focus {
     color: #dbdbdb;
-    background-color: #333333
+    background-color: #39305b;
 ;;
 }
 .sidebar-default .sidebar-nav > .active > a,
 .sidebar-default .sidebar-nav > .active > a:hover,
 .sidebar-default .sidebar-nav > .active > a:focus {
     color: #dbdbdb;
-    background-color: #333333
+    background-color: #39305b;
 ;
 }
 .sidebar-default .sidebar-nav > .disabled > a,
 .sidebar-default .sidebar-nav > .disabled > a:hover,
 .sidebar-default .sidebar-nav > .disabled > a:focus {
-    color: #333333
+    color: #39305b;
 ;
     background-color: transparent;
 }
@@ -1678,7 +1662,7 @@ Image credits: unsplash.com
     height: 66px;
     background: rgba(255, 255, 255, 0.25);
     border-radius: 0px 15px 0px 15px;
-    border: 1px solid #1D0E47;
+    border: 1px solid #39305b;
 
 }
 .content-footer2 p{
@@ -1706,8 +1690,8 @@ Image credits: unsplash.com
 }
 
 .planet-block{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 75px;
+    margin-bottom: 75px;
     height: 800px;
 }
 .img-text{
@@ -1840,133 +1824,6 @@ Image credits: unsplash.com
 /********************/
 /***TEST*****3D******/
 /********************/
-/*********footer***********/
-.footer-top-layout {
-    background: #1c1c1c none repeat scroll 0 0;
-    color: #ffffff;
-    padding: 40px 0;
-}
-.footer-top-layout h4 {
-    color: #ffffff;
-    font-size: 18px;
-    margin-bottom: 21px;
-}
-.post-blog-date::after {
-    background: #ffffff none repeat scroll 0 0;
-    bottom: 0;
-    content: "";
-    height: 4px;
-    left: 0;
-    margin: auto;
-    position: absolute;
-    right: 0;
-    width: 50px;
-}
-.post-blog-date {
-    padding-bottom: 25px;
-    position: relative;
-}
-
-.footer-top-layout [class*="col-sm-"]:first-child {
-    padding: 0;
-}
-.footer-top-layout [class*="col-sm-"] {
-    border-right: 2px solid #333333;
-    padding: 0 0 0 28px;
-
-}
-.footer-top-layout {
-    color: #ffffff;
-}
-.footer-col-item {
-    min-height: 140px;
-}
-
-address {
-    color: #545454;
-}
-
-
-.footer-top-layout [class*="col-sm-"]:last-child {
-    border-right: medium none;
-}
-.footer-top-layout {
-    color: #ffffff;
-}
-
-.footer-top-layout h4 {
-    color: #ffffff;
-    font-size: 18px;
-    margin-bottom: 21px;
-}
-
-.footer-col-item .item-contact a {
-    color: #545454;
-    display: inline-block;
-    margin-bottom: 7px;
-    width: 100%;
-}
-
-.footer-col-item .item-contact a .link-id {
-    color: #ffffff;
-    margin-left: 0;
-    margin-right: 6px;
-}
-.footer-col-item span {
-    margin-left: 7px;
-}
-.footer-col-item .item-contact a {
-    color: #545454;
-}
-
-.footer-top-layout h4 {
-    color: #ffffff;
-    font-size: 18px;
-    margin-bottom: 21px;
-}
-.signUpNewsletter {
-    position: relative;
-}
-.signUpNewsletter .gt-email {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    border: 1px solid #666666;
-    border-radius: 0;
-    color: #ffffff;
-    height: 52px;
-}
-.signUpNewsletter .btn-go {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    border-color: #666666;
-    border-style: solid;
-    border-width: 0 0 0 1px;
-    bottom: 0;
-    color: #ffffff;
-    font-size: 16px;
-    position: absolute;
-    right: 0;
-    text-transform: uppercase;
-    top: 0;
-    width: 52px;
-}
-.footer-bottom-layout {
-    background: #222222 none repeat scroll 0 0;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.socialMedia-footer {
-    margin-bottom: 20px;
-}
-.socialMedia-footer > a {
-    display: inline-block;
-    margin: 0 8px;
-}
-.footer-bottom-layout {
-    text-align: center;
-}
-
-/*********footer***********/
-
 .prof-com{
     border: 2px solid white;
     margin: 5px;

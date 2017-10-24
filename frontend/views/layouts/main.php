@@ -54,16 +54,18 @@ AppAsset::register($this);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                    <button id="sidebar-r" class="sidebar-toggle fa fa-user-o my-proffile-btn" style="font-size: 30px"> Мой профиль</button>
+
                 <a href="/">
                     <img class="logo-img" src="/img/logo.png">
                 </a>
+
+                <button id="sidebar-r" class="sidebar-toggle fa fa-user-o my-proffile-btn" style="font-size: 30px"> Мой профиль</button>
 
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                <div class="col-md-6 col-md-push-1">
+                <div class="col-sm-6 col-sm-push-1">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                         <li><a href="#">Link</a></li>
@@ -151,16 +153,6 @@ AppAsset::register($this);
                         <a href="<?=Url::to(['/profile'])?>">
                             <i class="glyphicon glyphicon-user"></i>
                             Мой профиль </a>
-                    </li>
-                    <li>
-                        <a href="<?= Url::to(['/profile/my-videos'])?>">
-                            <i class="fa fa-video-camera" aria-hidden="true"></i>
-                            Мои видео </a>
-                    </li>
-                    <li>
-                        <a href="<?= Url::to(['/profile/favorites'])?>">
-                            <i class="fa fa-user-plus" aria-hidden="true"></i>
-                            Понравившиеся </a>
                     </li>
                     <li>
                         <a  href="#" value="/profile/upload" id="upload">
@@ -283,7 +275,7 @@ AppAsset::register($this);
 
 
 
-        <div class="main-bg"  style="min-height: 91vh;">
+        <div class="main-bg"  style="min-height: 100vh;">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
