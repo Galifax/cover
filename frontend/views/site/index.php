@@ -37,13 +37,13 @@ $this->title = 'My Yii Application';
                         <img class="user-small-img"  src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
 
                         <p class="text-center">
-                            <?= $to->profile->nickname?>
+                            <?= $new->profile->nickname?>
                             <br>
                             <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
                             <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $to->views?></a>
                             <br>
                             <i class="fa fa-eye" aria-hidden="true"></i>
-                            <span>999.999.9</span>
+                            <span><?= $new->views?></span>
                         </p>
                     </div>
                 </div>
@@ -78,7 +78,7 @@ $this->title = 'My Yii Application';
                             <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $to->views?></a>
                             <br>
                             <i class="fa fa-eye" aria-hidden="true"></i>
-                            <span>999.999.9</span>
+                            <span><?= $to->views?></span>
                         </p>
                     </div>
 
@@ -108,13 +108,13 @@ $this->title = 'My Yii Application';
                         <img class="user-small-img"  src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
 
                         <p class="text-center">
-                            <?= $to->profile->nickname?>
+                            <?= $rand->profile->nickname?>
                             <br>
                             <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                            <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $to->views?></a>
+                            <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $rand->views?></a>
                             <br>
                             <i class="fa fa-eye" aria-hidden="true"></i>
-                            <span>999.999.9</span>
+                            <span><?= $rand->views?></span>
                         </p>
                     </div>
                 </div>

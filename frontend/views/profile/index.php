@@ -21,7 +21,7 @@
         <div class="col-sm-6 col-sm-push-1 text-center">
 
             <div class="video-item col-sm-8 col-sm-push-2">
-                <h2 class="my-best-video-h">Мой лучьшй ролик</h2>
+                <h2 class="my-best-video-h">Мой лучший ролик</h2>
                 <div>
                     <a class="video" data-pjax="0" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="<?= $video->name?>">
                         <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
@@ -68,6 +68,7 @@
 
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab_default_1">
+
 
                         <h2 class="text-center" style="padding: 10px;font-size: 30px; margin: 0px;">Мои Видео</h2>
                         <?php $months = array( 1 => 'Января' , 'Февраля' , 'Марта' , 'Апреля' , 'Мая' , 'Июня' , 'Июля' , 'Августа' , 'Сентября' , 'Октября' , 'Ноября' , 'Декабря' );?>
@@ -143,11 +144,26 @@
                     </div>
 
                     <div class="tab-pane" id="tab_default_4">
+                            <p>
+                                <?= $model->about_myself?>
+                            </p>
+                        <h4>Возраст</h4>
+                            <p>
+                                <?= $model->born?>
+                            </p>
+                        <h4>Страна </h4>
+                            <p>
+                                <?= $model->country?>
+                            </p>
+                        <h4>Контакты</h4>
+                            <p>
+                                <?= $model->contacts?>
+                            </p>
+                        <h4>Любимые группы</h4>
+                            <p>
+                                <?= $model->favorites?>
+                            </p>
 
-
-                        <p>
-
-                        </p>
                     </div>
                 </div>
             </div>

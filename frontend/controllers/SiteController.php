@@ -80,9 +80,9 @@ class SiteController extends Controller
     {
     
         $model = Video::find()->with('profile');
-        $top = $model->limit(9)->orderBy(['views' => SORT_DESC])->all();
-        $random = $model->limit(6)->orderBy(new Expression('rand()'))->all();
-        $newest = $model->limit(6)->orderBy(['id' => SORT_DESC])->all();
+        $top = $model->limit(12)->orderBy(['views' => SORT_DESC])->all();
+        $random = $model->limit(9)->orderBy(new Expression('rand()'))->all();
+        $newest = $model->limit(9)->orderBy(['id' => SORT_DESC])->all();
 
       
         return $this->render('index', compact('top', 'random', 'newest', 'profile', 'profile'));
