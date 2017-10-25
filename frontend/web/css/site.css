@@ -21,7 +21,11 @@ input{
 }
 *{font-family: 'Droid Serif', serif; color: white}
 
-
+@media (max-width:460px){
+    .container{
+        padding: 0px;
+    }
+}
 
 body {  height: 100%;  overflow-x: hidden; word-wrap: break-word;}
 
@@ -246,13 +250,6 @@ a:hover{
         font-weight: 700;
         font-size:16px;
     }
-
-    .fb-image-profile
-    {
-        margin: -45px 10px 0px 25px;
-        z-index: 9;
-        width: 20%;
-    }
 }
 
 .profile {  margin: 20px 0; background-color: white ; }
@@ -287,6 +284,15 @@ a:hover{
 
 /*PROFILE!*/
 /* Profile container */
+.my-best-video-h{
+    background: rgba(57, 48, 91, 0.8);
+    border-radius: 25px 25px 0px 0px;
+    color: white;
+    margin: 0px;
+    padding: 5px;
+
+
+}
 .profile {  margin: 20px 0;  }
 
 .nav-center li {
@@ -1035,6 +1041,14 @@ Image credits: unsplash.com
 .sidebar .sidebar-header:hover .sidebar-toggle {
     opacity: 1;
 }
+
+#sidebar-r{
+    font-size: 30px;
+    padding: 10px 15px;
+    border: 2px solid white;
+    border-radius: 7px;
+}
+
 .sidebar .sidebar-toggle {
     position: relative;
     float: right;
@@ -1092,26 +1106,7 @@ Image credits: unsplash.com
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
-.sidebar .sidebar-brand:hover,
-.sidebar .sidebar-brand:focus {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    outline: none;
-}
-.sidebar .sidebar-brand .caret {
-    position: absolute;
-    right: 24px;
-    top: 24px;
-}
-.sidebar .sidebar-brand .sidebar-badge {
-    position: absolute;
-    right: 16px;
-    top: 12px;
-}
-.sidebar .sidebar-brand:hover,
-.sidebar .sidebar-brand:focus {
-    text-decoration: none;
-}
+
 .sidebar .sidebar-badge {
     display: inline-block;
     min-width: 24px;
@@ -1661,11 +1656,10 @@ Image credits: unsplash.com
 /********************/
 .content-footer2{
     padding: 5px;
-    margin: 5px;
     position: relative;
     height: 66px;
     background: rgba(57, 48, 91, 0.8);
-    border-radius: 0px 15px 0px 15px;
+    border-radius: 0px 0px 25px 25px;
     border: 1px solid #39305b;
 
 }
@@ -1708,6 +1702,7 @@ Image credits: unsplash.com
     border-radius: 15px 0px 15px 0px;
     padding: 6px 18px;
 }
+
 .container1 {
     margin: 0 auto;
     width: 200px;

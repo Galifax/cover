@@ -47,19 +47,13 @@ AppAsset::register($this);
     <nav class="navbar">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+            <div class="navbar-header text-center">
 
-                <a href="/">
+                <a href="/" style="text-decoration: none">
                     <img class="logo-img" src="/img/logo.png">
                 </a>
 
-                <button id="sidebar-r" class="sidebar-toggle fa fa-user-o my-proffile-btn" style="font-size: 30px"></button>
+                <button id="sidebar-r" class="sidebar-toggle fa fa-user-o my-proffile-btn"></button>
 
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -170,48 +164,18 @@ AppAsset::register($this);
             </li>
 
 
-<!--                <li>-->
-<!--                   <a data-toggle="collapse" href="#menu-setings" >Настройки меню</a>-->
-<!---->
-<!--                    <ul class="constructor  collapse out" id="menu-setings">-->
-<!---->
-<!--                        <li>-->
-<!--                            <label for="sidebar-position">Позиция</label>-->
-<!--                            <br>-->
-<!--                            <select id="sidebar-position" name="sidebar-position" style="color: black">-->
-<!--                                <option value="sidebar-fixed-left">Меню с лева</option>-->
-<!--                                <option value="sidebar-fixed-right">Меню с права</option>-->
-<!--                            </select>-->
-<!--                        </li>-->
-<!---->
-<!--                        <li>-->
-<!--                            <label for="sidebar-theme">Стиль</label>-->
-<!--                            <br>-->
-<!--                            <select id="sidebar-theme" name="sidebar-theme" style="color: black">-->
-<!--                                <option value="sidebar-default">Стандарт</option>-->
-<!--                                <option value="sidebar-inverse">Стиль 1</option>-->
-<!--                                <option value="sidebar-colored">Стил 2</option>-->
-<!--                                <option value="sidebar-colored-inverse">Стиль 3</option>-->
-<!--                            </select>-->
-<!--                        </li>-->
-<!---->
-<!---->
-<!--                    </ul>-->
-<!---->
-<!--                </li>-->
 
-<!--            <li>-->
-<!--                <a data-toggle="collapse" href="#menu-subs" >Мои подписки</a>-->
-<!--                <ul class="constructor  collapse out" id="menu-subs">-->
-<!--                --><?php //foreach($profile->subscription as $sub):?>
-<!---->
-<!--                    <li>  -->
-<!--                        <a href="/">--><?//= $sub->profile->nickname?><!--</a>-->
-<!--                    </li>  -->
-<!--                 --><?php //endforeach;?>
-<!---->
-<!--                </ul>-->
-<!--            </li>-->
+                <ul class="nav navbar-nav visible-xs">
+                    <li class="divider"></li>
+
+                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
 
             <li class="divider"></li>
 
@@ -255,6 +219,9 @@ AppAsset::register($this);
                         </div>
                     </div>
                 </form>
+
+
+
                 <ul class="nav sidebar-nav">
                     <li>
                         <a  href="#" value="/site/login" id="modalButton"><i class="fa fa-upload" aria-hidden="true"></i>Войти</a>
@@ -265,6 +232,15 @@ AppAsset::register($this);
 
                 </ul>
 
+            <ul class="nav navbar-nav visible-xs">
+                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
         <?php endif;?>
         <!-- index SIDEBAR MENU -->
     </aside>

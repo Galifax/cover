@@ -10,7 +10,7 @@
 
 <div class="container">
 
-    <div style="margin-top: 80px">
+    <div style="margin-top: 30px">
 
     <div class="row">
         <div class="fb-profile col-sm-4 text-center">
@@ -18,10 +18,10 @@
             <button class="btn btn-default" style="margin: 20px 0px">Настройки профиля</button>
         </div>
 
-        <div class="col-sm-8 text-center" style="margin-top: -60px;">
+        <div class="col-sm-8 text-center">
 
-            <h2>Мой лучьшй ролик</h2>
             <div class="video-item col-sm-8 col-sm-push-2">
+                <h2 class="my-best-video-h">Мой лучьшй ролик</h2>
                 <div>
                     <a class="video" data-pjax="0" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="<?= $video->name?>">
                         <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
@@ -39,6 +39,7 @@
                 </div>
 
         </div>
+
     </div>
 
     <div class="col-sm-12 content" style="padding: 0px">
