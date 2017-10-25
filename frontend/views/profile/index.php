@@ -88,7 +88,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="content-footer">
+                                <div class="content-footer2">
 
                                     <img class="user-small-img"  src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
 
@@ -136,7 +136,7 @@
                             <?php ActiveForm::end();?>
                             <div id="results"></div>
                         <?php else:?>
-                            <h2>Новых комментариев нету</h2>
+                            <h2 class="text-center">Новых комментариев нету</h2>
                         <?php endif;?>
                     </div>
 

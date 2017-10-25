@@ -50,7 +50,7 @@ $this->title = $model->name;
 
         <div style="margin: 0px 10px;text-align: right;float: right;">
 
-            <a href="" class="btn btn-add-to-favor">
+            <a href="" class="btn btn-my-default">
                 Добавить в избранное
             </a>
             <br>
