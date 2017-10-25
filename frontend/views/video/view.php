@@ -158,7 +158,7 @@ $this->title = $model->name;
 </div> <!-- col-md-8-->
 
 
-            <div class="col-sm-4 content-3 hidden-xs" style="margin-top: 15px;">
+            <div class="col-sm-4 content-3 hidden-xs" style="margin-top: 15px;padding-left: 25px;padding-right: 25px">
                 <?= $this->render('../_video', [
                 'model' => $model->category->video,
                 'lg' => 12,

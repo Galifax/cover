@@ -71,6 +71,19 @@ $('#modalButton, #modalButton1, #modalButton2, #upload').click(function(){
 
 // Sidebar toggle
 //
+$('#add-col-3').click(function () {
+    $('.add-col').removeClass('col-sm-4 col-sm-6')
+    $('.add-col').addClass('col-sm-3')
+});
+$('#add-col-4').click(function () {
+    $('.add-col').removeClass('col-sm-3 col-sm-6 col-xs-12')
+    $('.add-col').addClass('col-sm-4 col-xs-6')
+});
+$('#add-col-6').click(function () {
+    $('.add-col').removeClass('col-sm-3 col-sm-4 col-xs-6')
+    $('.add-col').addClass('col-sm-6 col-xs-12')
+});
+
 // -------------------
     $(document).ready(function() {
         var overlay = $('.sidebar-overlay');
@@ -93,6 +106,21 @@ $('#modalButton, #modalButton1, #modalButton2, #upload').click(function(){
     });
 
     // Sidebar constructor
+$("#menu-close").click(function(e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+});
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+
+    if ( $("#menu-toggle").hasClass("rotate") ) {
+        $('#menu-toggle').removeClass('rotate');
+
+    } else $('#menu-toggle').addClass('rotate');
+
+});
+
     //
     // -------------------
     $(document).ready(function() {
@@ -108,10 +136,8 @@ $('#modalButton, #modalButton1, #modalButton2, #upload').click(function(){
             sidebar.removeClass('sidebar-fixed-left sidebar-fixed-right sidebar-stacked').addClass(value).addClass('open');
             if (value == 'sidebar-fixed-right') {
                 $('#sidebar-r').addClass('hidden');
-                $('#sidebar-l').removeClass('hidden');
             }
             if (value == 'sidebar-fixed-left') {
-                $('#sidebar-l').addClass('hidden');
                 $('#sidebar-r').removeClass('hidden');
             }
             // Show toggle buttons

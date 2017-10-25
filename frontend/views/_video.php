@@ -1,9 +1,9 @@
 <?php use yii\helpers\Url;?>
 <?php $months = array( 1 => 'Января' , 'Февраля' , 'Марта' , 'Апреля' , 'Мая' , 'Июня' , 'Июля' , 'Августа' , 'Сентября' , 'Октября' , 'Ноября' , 'Декабря' );?>
 
-<div class="row" style="padding: 15px 5px">
+<div class="row" style="padding: 15px 25px">
 <?php foreach($model as $video):?>
-<div class="video-item col-lg-<?=$lg?> col-md-<?=$md?> col-sm-<?=$sm?> col-xs-<?=$xs?>">
+<div class="video-item add-col">
     <div>
         <a class="video" data-pjax="0" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="<?= $video->name?>">
             <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">

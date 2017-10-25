@@ -13,12 +13,12 @@
     <div style="margin-top: 30px">
 
     <div class="row">
-        <div class="fb-profile col-sm-4 text-center">
+        <div class="fb-profile col-sm-4 col-sm-push-1 text-center">
             <img style="height: 200px;width: 200px" class="fb-image-profile thumbnail" src="<?= $model->avatar ? $model->avatar : 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg'?>" alt="Profile image example"/>
-            <button class="btn btn-default" style="margin: 20px 0px">Настройки профиля</button>
+            <button class="btn btn-my-default" style="margin: 20px 0px">Настройки профиля</button>
         </div>
 
-        <div class="col-sm-8 text-center">
+        <div class="col-sm-6 col-sm-push-1 text-center">
 
             <div class="video-item col-sm-8 col-sm-push-2">
                 <h2 class="my-best-video-h">Мой лучьшй ролик</h2>
@@ -42,31 +42,29 @@
 
     </div>
 
+
     <div class="col-sm-12 content" style="padding: 0px">
 
         <div data-spy="scroll" class="tabbable-panel">
+
+            <div class="btn-group btn-group-justified">
+
+                <a href="#tab_default_1" class="btn btn-prof-tab"  data-toggle="tab">
+                    Мои видео
+                </a>
+                <a href="#tab_default_2" class="btn btn-prof-tab" data-toggle="tab">
+                    Сообщения
+                    <span class="badge"><?=count($comments)?></span>
+                </a>
+                <a href="#tab_default_3" class="btn btn-prof-tab" data-toggle="tab">
+                    Любимое
+                </a>
+                <a href="#tab_default_4" class="btn btn-prof-tab" data-toggle="tab">
+                    Про меня
+                </a>
+            </div>
+
             <div class="tabbable-line">
-                <ul class="nav nav-tabs content-2 nav-center text-center">
-                    <li class="active">
-                        <a href="#tab_default_1" data-toggle="tab">
-                            Мои видео
-                        </a>
-                    </li>
-                    <li class="load-profile">
-                        <a href="#tab_default_2" data-toggle="tab">
-                            Сообщения <span class="badge"><?=count($comments)?></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#tab_default_3" data-toggle="tab">
-                            Любимое
-                        </a>
-                    </li>
-                    <li class="load-comments">
-                        <a href="#tab_default_4" data-toggle="tab">
-                            Про меня</a>
-                    </li>
-                </ul>
 
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab_default_1">
