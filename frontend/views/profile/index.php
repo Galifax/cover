@@ -5,6 +5,7 @@
   use yii\bootstrap\Modal;
   use yii\bootstrap\ActiveForm;
 
+
    ?>
 
 
@@ -15,7 +16,7 @@
     <div class="row">
         <div class="fb-profile col-sm-4 col-sm-push-1 text-center">
             <img style="height: 200px;width: 200px" class="fb-image-profile thumbnail" src="<?= $model->avatar ? $model->avatar : 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg'?>" alt="Profile image example"/>
-            <button class="btn btn-my-default" style="margin: 20px 0px">Настройки профиля</button>
+            <button href="#" value="/profile/edit" id="upload" class="btn btn-my-default" style="margin: 20px 0px">Настройки профиля</button>
         </div>
 
         <div class="col-sm-6 col-sm-push-1 text-center">
@@ -71,8 +72,9 @@
 
 
                         <h2 class="text-center" style="padding: 10px;font-size: 30px; margin: 0px;">Мои Видео</h2>
-                        <?php $months = array( 1 => 'Января' , 'Февраля' , 'Марта' , 'Апреля' , 'Мая' , 'Июня' , 'Июля' , 'Августа' , 'Сентября' , 'Октября' , 'Ноября' , 'Декабря' );?>
 
+                        <?php $months = array( 1 => 'Января' , 'Февраля' , 'Марта' , 'Апреля' , 'Мая' , 'Июня' , 'Июля' , 'Августа' , 'Сентября' , 'Октября' , 'Ноября' , 'Декабря' );?>
+                        <?php foreach($my_video as $video):?>
                         <div class="video-item col-md-4 col-sm-6 col-xs-12">
                             <div>
                                 <a class="video" data-pjax="0" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="<?= $video->name?>">
@@ -83,23 +85,22 @@
                                 <div class="content-title">
                                     <div class="text-center">
                                         <a style="color: black" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="<?= $video->name?>">
-                                            <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 17px">Video name</h2>
+                                            <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 17px"><?= $video->name?></h2>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="content-footer2">
 
-                                    <img class="user-small-img"  src="<?=empty($to->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $to->profile->avatar?>" alt="Profile image example>">
+                                    <img class="user-small-img"  src="<?=empty($model->profile->avatar) ? 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg' : $model->profile->avatar?>" alt="Profile image example>">
 
                                     <p class="text-center">
-                                        <?= $to->profile->nickname?>
-                                        user name
+                                        <?= $video->profile->nickname?>
                                         <br>
                                         <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 99999</a>
-                                        <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $to->views?>99999</a>
+                                        <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> <?= $video->views?></a>
                                         <br>
                                         <i class="fa fa-eye" aria-hidden="true"></i>
-                                        <span>999.999.9</span>
+                                        <span><?= $video->views?></span>
                                     </p>
 
                                 </div>
@@ -115,7 +116,7 @@
                             </div>
 
                         </div>
-
+                        <?php endforeach;?>
                     </div>
 
                     <div class="tab-pane" id="tab_default_2">
