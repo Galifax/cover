@@ -63,7 +63,13 @@ class ProfileController extends Controller
      */
     public function actionIndex($id=Null, $name=Null)
     {
-       
+        $top = Video::find()->with('view')->orderBy(['views' => SORT_DESC ])->innerjoinWith(['profile'=> function(ActiveQuery $query){
+            $query->where(['profile.id'=>Yii::$app->user->id]);
+        }])->one();      
+        $favorites = Video::find()->with('profile')->joinWith(['likes.profile' =>
+            function (ActiveQuery $query){
+            $query->where(['profile.id'=>Yii::$app->user->id]);
+      }])->all();
         $my_video = Video::find()->with('view')->innerjoinWith(['profile'=> function(ActiveQuery $query){
             $query->where(['profile.id'=>Yii::$app->user->id]);
         }])->all();
@@ -75,7 +81,7 @@ class ProfileController extends Controller
           $query->where(['video.profile_id' =>Yii::$app->user->id]);
         }])->orderBy(['comments.id' => SORT_DESC])->all();
       //   debug($comments);
-        return $this->render('index', compact('my_video', 'model', 'comments', 'com', 'id', 'name'));
+        return $this->render('index', compact('top', 'favorites', 'my_video', 'model', 'comments', 'com', 'id', 'name'));
     }
     
      public function actionMessage()
