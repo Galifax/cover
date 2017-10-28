@@ -77,14 +77,14 @@
                         <?php foreach($my_video as $video):?>
                         <div class="video-item col-md-4 col-sm-6 col-xs-12">
                             <div>
-                                <a class="video" data-pjax="0" href="<?=Url::to(['video/view', 'id' => $my_video->id])?>" title="<?= $my_video->name?>">
-                                    <div class="video-item__thumb" style="background-image: url(<?=$my_video->preloader?>)">
+                                <a class="video" data-pjax="0" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="<?= $video->name?>">
+                                    <div class="video-item__thumb" style="background-image: url(<?=$video->preloader?>)">
                                         <!--img style="border-bottom: 1px solid black" src="<?=$video->preloader?>" width="100%" /-->
                                     </div>
                                 </a>
                                 <div class="content-title">
                                     <div class="text-center">
-                                        <a style="color: black" href="<?=Url::to(['video/view', 'id' => $my_video->id])?>" title="<?= $my_video->name?>">
+                                        <a style="color: black" href="<?=Url::to(['video/view', 'id' => $video->id])?>" title="<?= $video->name?>">
                                             <h2 class="text-transfer" style="margin: 0px; text-align: start; font-size: 17px"><?= $video->name?></h2>
                                         </a>
                                     </div>
