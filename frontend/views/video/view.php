@@ -40,16 +40,24 @@ $this->title = $model->name;
 
         <h1 style="margin: 0;padding: 10px;font-size: 23px "><?=$model->name?></h1>
 
-        <img style="width: 90px; float: left" src="http://minionomaniya.ru/wp-content/uploads/2016/01/%D0%9A%D0%B5%D0%B2%D0%B8%D0%BD.jpg" alt="">
+        <img style="width: 90px; float: left" src="<?= $model->profile->avatar ? $model->profile->avatar : 'http://www.nykhas.ru/wp-content/uploads/2017/02/mister-x-jpg.jpg'?>" alt="Profile image example" alt="">
 
         <a href="" class="video-username">
-            Name user
+            <?= $model->profile->nickname?>
         </a>
 
 
 
         <div style="margin: 0px 10px;text-align: right;float: right;">
-
+            <span>
+            <a href="<?=Url::to(['/video/view', 'id' => $model->id, 'idprofsub' => $profile->id, 'idsubuser' => $model->profile->id])?>">
+            <?php if($subs):?> 
+               Отписаться
+            <?php else:?>
+               Подписаться
+            <?php endif;?>
+            </a>
+            </span>
             <a href="" class="btn btn-my-default">
                 Добавить в избранное
             </a>
